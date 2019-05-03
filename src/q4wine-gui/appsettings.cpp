@@ -225,6 +225,12 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
         cbUseSingleClick->setChecked(true);
     }
 
+    if (settings.value("hideArguments", 0).toInt()==0){
+        cbHideArguments->setChecked(false);
+    } else {
+        cbHideArguments->setChecked(true);
+    }
+
     if (settings.value("useNativeFileDialog", 1).toInt()==1){
         cbUseNativeDialog->setChecked(true);
     } else {
@@ -657,6 +663,12 @@ void AppSettings::cmdOk_Click(){
         settings.setValue("useSingleClick", 1);
     } else {
         settings.setValue("useSingleClick", 0);
+    }
+
+    if (cbHideArguments->isChecked()){
+        settings.setValue("hideArguments", 1);
+    } else {
+        settings.setValue("hideArguments", 0);
     }
 
     if (cbUseNativeDialog->isChecked()){

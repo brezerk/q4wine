@@ -213,19 +213,19 @@
     </message>
     <message>
         <location line="+1283"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+367"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+373"/>
         <location line="+116"/>
         <location line="+98"/>
         <source>No Proxy</source>
         <translation>Žádné proxy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-428"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-434"/>
         <source>generic</source>
         <translation>Obecné</translation>
     </message>
     <message>
-        <location line="+192"/>
+        <location line="+198"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
@@ -237,7 +237,7 @@
     <message>
         <location line="+138"/>
         <location line="+4"/>
-        <location line="+130"/>
+        <location line="+136"/>
         <location line="+64"/>
         <location line="+2"/>
         <location line="+6"/>
@@ -246,7 +246,7 @@
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-208"/>
+        <location line="-214"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Promiňte, zadejte hostitele proxy.</translation>
     </message>
@@ -256,7 +256,7 @@
         <translation>Promiňte, zadejte přípojku proxy.</translation>
     </message>
     <message>
-        <location line="+130"/>
+        <location line="+136"/>
         <source>Invalid virtual desktop size.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -282,38 +282,38 @@
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+587"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-612"/>
-        <location line="+457"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-624"/>
+        <location line="+463"/>
         <source>System Default</source>
         <translation>Výchozí nastavení systému</translation>
     </message>
     <message>
         <location line="-1811"/>
-        <location line="+2979"/>
+        <location line="+2986"/>
         <location line="+5"/>
         <location line="+4"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-292"/>
         <location line="+20"/>
-        <location line="+447"/>
+        <location line="+453"/>
         <source>General</source>
         <translation>Obecné</translation>
     </message>
     <message>
-        <location line="-2970"/>
+        <location line="-2977"/>
         <source>Wine settings</source>
         <translation>Nastavení wine</translation>
     </message>
     <message>
         <location line="+106"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-668"/>
-        <location line="+461"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-680"/>
+        <location line="+467"/>
         <source>Ambient Light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+9"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-459"/>
-        <location line="+461"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-465"/>
+        <location line="+467"/>
         <source>Ambient Dark</source>
         <translation type="unfinished"></translation>
     </message>
@@ -342,14 +342,14 @@
     </message>
     <message>
         <location line="+34"/>
-        <location line="+2746"/>
+        <location line="+2753"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-239"/>
-        <location line="+446"/>
+        <location line="+452"/>
         <source>System</source>
         <translation>Systém</translation>
     </message>
     <message>
-        <location line="-2728"/>
+        <location line="-2735"/>
         <source>System utils</source>
         <translation>Užitečné systémové programy</translation>
     </message>
@@ -387,14 +387,14 @@
     </message>
     <message>
         <location line="+563"/>
-        <location line="+2170"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-443"/>
-        <location line="+445"/>
+        <location line="+2177"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-449"/>
+        <location line="+451"/>
         <source>Utils</source>
         <translation>Užitečné programy</translation>
     </message>
     <message>
-        <location line="-2152"/>
+        <location line="-2159"/>
         <source>Console</source>
         <translation>Konzole</translation>
     </message>
@@ -405,22 +405,22 @@
     </message>
     <message>
         <location line="+511"/>
-        <location line="+1540"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-439"/>
-        <location line="+443"/>
+        <location line="+1547"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-445"/>
+        <location line="+449"/>
         <source>Quick Mount</source>
         <translation>Rychlé připojení</translation>
     </message>
     <message>
-        <location line="-1143"/>
-        <location line="+1163"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-428"/>
-        <location line="+438"/>
+        <location line="-1150"/>
+        <location line="+1170"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-434"/>
+        <location line="+444"/>
         <source>Logging</source>
         <translation>Zapisování</translation>
     </message>
     <message>
-        <location line="-1145"/>
+        <location line="-1152"/>
         <source>Logging subsystem:</source>
         <translation>Zapisovací podsystém:</translation>
     </message>
@@ -435,7 +435,7 @@
         <translation>Poznámka: Z důvodu zvláštnoti stroje SQLite, velké množství zapisovaných dat může omezit výkon Q4Wine. Používejte to opatrně. Byl jste varován.</translation>
     </message>
     <message>
-        <location line="+903"/>
+        <location line="+910"/>
         <source>Run recent program</source>
         <translation>Spustit naposledy otevřený program</translation>
     </message>
@@ -458,30 +458,30 @@
         <translation type="obsolete">icotool:</translation>
     </message>
     <message>
-        <location line="-1395"/>
+        <location line="-1402"/>
         <location line="+18"/>
-        <location line="+1266"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-447"/>
-        <location line="+441"/>
+        <location line="+1273"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-453"/>
+        <location line="+447"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
-        <location line="+440"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-444"/>
+        <location line="+446"/>
         <source>Themes</source>
         <translation>Témata</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1871"/>
-        <location line="+1856"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-452"/>
-        <location line="+444"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1878"/>
+        <location line="+1863"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-458"/>
+        <location line="+450"/>
         <source>Network</source>
         <translation>Síť</translation>
     </message>
     <message>
-        <location line="-1838"/>
+        <location line="-1845"/>
         <source>Proxy settings</source>
         <translation>Nastavení proxy</translation>
     </message>
@@ -577,14 +577,14 @@
     </message>
     <message>
         <location line="+279"/>
-        <location line="+1086"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-423"/>
-        <location line="+437"/>
+        <location line="+1093"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
+        <location line="+443"/>
         <source>AppDB browser</source>
         <translation>Prohlížeč AppDB</translation>
     </message>
     <message>
-        <location line="-1068"/>
+        <location line="-1075"/>
         <source>AppDB browser subsystem:</source>
         <translation>Podsystém prohlížeče AppDB:</translation>
     </message>
@@ -595,14 +595,14 @@
     </message>
     <message>
         <location line="+44"/>
-        <location line="+1028"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-431"/>
-        <location line="+435"/>
+        <location line="+1035"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
+        <location line="+441"/>
         <source>Desktop Menu</source>
         <translation>Nabídka plochy</translation>
     </message>
     <message>
-        <location line="-1022"/>
+        <location line="-1029"/>
         <source>Desktop menu plugin</source>
         <translation>Přídavný modul nabídky plochy</translation>
     </message>
@@ -628,14 +628,14 @@
     </message>
     <message>
         <location line="+47"/>
-        <location line="+951"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
-        <location line="+433"/>
+        <location line="+958"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-435"/>
+        <location line="+439"/>
         <source>Defaults</source>
         <translation>Výchozí</translation>
     </message>
     <message>
-        <location line="-710"/>
+        <location line="-717"/>
         <source>Program icons</source>
         <translation>Programové ikony</translation>
     </message>
@@ -645,7 +645,12 @@
         <translation>Použít programové ikony s jedním klepnutím pro spuštění.</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+10"/>
+        <source>Hide program arguments in the icon info display.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>File dialogs</source>
         <translation>Souborové dialogy</translation>
     </message>
@@ -662,8 +667,8 @@
     <message>
         <location line="+82"/>
         <location line="+559"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-430"/>
-        <location line="+432"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
+        <location line="+438"/>
         <source>Desktop Integration</source>
         <translation type="unfinished"></translation>
     </message>
@@ -700,8 +705,8 @@
     <message>
         <location line="+43"/>
         <location line="+258"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
-        <location line="+431"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-435"/>
+        <location line="+437"/>
         <source>Run dialog</source>
         <translation>Spouštěcí dialog</translation>
     </message>
@@ -709,8 +714,8 @@
         <location line="-189"/>
         <location line="+18"/>
         <location line="+176"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-428"/>
-        <location line="+430"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-434"/>
+        <location line="+436"/>
         <source>Wine desktop import</source>
         <translation>Zavedení plochy wine</translation>
     </message>
@@ -721,34 +726,34 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-466"/>
-        <location line="+442"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-472"/>
+        <location line="+448"/>
         <source>Interface</source>
         <translation>Rozhraní</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
-        <location line="+439"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-439"/>
+        <location line="+445"/>
         <source>Subsystems</source>
         <translation>Podsystémy</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-430"/>
-        <location line="+436"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
+        <location line="+442"/>
         <source>Plugins</source>
         <translation>Přídavné moduly</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-430"/>
-        <location line="+434"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
+        <location line="+440"/>
         <source>Advanced</source>
         <translation>Rozšířené volby</translation>
     </message>
     <message>
-        <location line="-941"/>
+        <location line="-948"/>
         <source>Default virtual desktop</source>
         <translation>Výchozí virtuální plocha</translation>
     </message>
@@ -774,7 +779,7 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-690"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-702"/>
         <source>Default</source>
         <translation type="unfinished">Výchozí</translation>
     </message>
@@ -790,12 +795,12 @@
     </message>
     <message>
         <location line="+11"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+565"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+577"/>
         <source>No virtual desktop</source>
         <translation>Žádná virtuální plocha</translation>
     </message>
     <message>
-        <location line="+736"/>
+        <location line="+743"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
         <translation>Zavést soubory plochy wine při spuštění Q4Wine.</translation>
     </message>
@@ -2569,12 +2574,11 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>%1 :. Qt GUI pro wine v%2</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+210"/>
         <source>Program: %1&lt;br&gt; Args: %2 </source>
-        <translation>Program: %1&lt;br&gt; Argumenty: %2 </translation>
+        <translation type="vanished">Program: %1&lt;br&gt; Argumenty: %2 </translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="+315"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
         <translation>Soubor zásuvky (socket) &quot;%1&quot; již existuje!</translation>
     </message>
@@ -2667,7 +2671,24 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Oznámení nápovědy</translation>
     </message>
     <message>
-        <location line="-13"/>
+        <location line="-209"/>
+        <source>Program: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+3"/>
+        <location line="+2"/>
+        <source>Args: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-2"/>
+        <source>hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+190"/>
         <location line="+3"/>
         <source>Cannot start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
         <translation>Nelze spustit program: &quot;%1&quot; pro předponu: &quot;%2&quot;.</translation>

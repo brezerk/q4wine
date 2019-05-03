@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>400</height>
+    <width>801</width>
+    <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -2444,6 +2444,13 @@
                  </property>
                  <property name="checked">
                   <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="cbHideArguments">
+                 <property name="text">
+                  <string>Hide program arguments in the icon info display.</string>
                  </property>
                 </widget>
                </item>

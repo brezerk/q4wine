@@ -266,7 +266,18 @@ void MainWindow::updateIconDesc(const QString &program, QString args, const QStr
         args=strip_arg;
     }
 
-    lblIconInfo0->setText(tr("Program: %1<br> Args: %2 ").arg(program) .arg(args));
+    QString iconInfo = QString(tr("Program: %1").arg(program));
+    iconInfo.append("<br>");
+        if (!CoreLib->getSetting("advanced", "hideArguments", false).toBool()){
+        iconInfo.append(QString(tr("Args: %1").arg(args)));
+    } else {
+        if (!args.isEmpty()) {
+            iconInfo.append(QString(tr("Args: %1").arg(tr("hidden"))));
+        } else {
+            iconInfo.append(QString(tr("Args: %1").arg("")));
+        };
+    };
+    lblIconInfo0->setText(iconInfo);
     lblIconInfo2->setText(tr("Description: %1").arg(desc));
 
     QString useconsole="";
