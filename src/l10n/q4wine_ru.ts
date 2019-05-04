@@ -581,7 +581,7 @@
     <message>
         <location line="+10"/>
         <source>Hide program arguments in the icon info display.</source>
-        <translation type="unfinished"></translation>
+        <translation>Скрыть аргументы программы в информации о значке.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -2956,19 +2956,19 @@ See help for details.</source>
     <message>
         <location line="-209"/>
         <source>Program: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Программа: %1</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+3"/>
         <location line="+2"/>
         <source>Args: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Аргументы: %1</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>скрытые</translation>
     </message>
     <message>
         <location line="+190"/>
