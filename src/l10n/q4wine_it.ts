@@ -3183,7 +3183,7 @@ Vedi l&apos;help per gli esempi.</translation>
     </message>
     <message>
         <location line="-127"/>
-        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update Q4Wine&apos;s cache of Winetricks applications.</source>
         <translation>Crea o aggiorna la cache di Q4wine per le applicazioni Winetricks.</translation>
     </message>
     <message>

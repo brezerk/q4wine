@@ -3539,7 +3539,7 @@ Consulte a ajuda para detalhes.</translation>
     </message>
     <message>
         <location line="-127"/>
-        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update Q4Wine&apos;s cache of Winetricks applications.</source>
         <translation>Criar ou atualizar cache de Q4Wine de aplicações do Winetricks.</translation>
     </message>
     <message>
@@ -3564,7 +3564,7 @@ Consulte a ajuda para detalhes.</translation>
         <translation>Desculpe, nenhuma configuração da unidade virtual encontrada.&lt;br&gt;Crie uma configuração de unidade virtual antes de tentar atualizá-la.</translation>
     </message>
     <message>
-        <source>Create or update q4wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update q4wine&apos;s cache of Winetricks applications.</source>
         <translation type="obsolete">Criar ou atualizar cache de q4wine dos programas Winetricks.</translation>
     </message>
     <message>
