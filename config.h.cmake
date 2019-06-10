@@ -60,7 +60,7 @@
 #define APPDB_HOSTNAME "q4wine.brezblock.org.ua"
 #define BUGS_HOSTNAME "bugs.winehq.org"
 
-#define APPDB_PORT 80
+#define APPDB_PORT 443
 
 #cmakedefine _OS_LINUX_
 #cmakedefine _OS_FREEBSD_

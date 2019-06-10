@@ -3,6 +3,7 @@ Version 1.3.12
   - Add an option to show / hide "Args" parameter [BUG-114];
  Fixed:
   - Fix parsing of env causing issues with wine kill [BUG-143];
+  - Error: wrong or broken XML data. Try again later. [BUG-146];
 
 Version 1.3.11
  Fixed:
@@ -421,7 +422,7 @@ Version 0.113
   - q4wine now remembers 8 recent launched binaries via Run dialog;
   - QtSingleApp integration. Now you can run only one instance of q4wine-gui;
   - Online documentation;
-  - New website: http://q4wine.brezblock.org.ua/;
+  - New website: https://q4wine.brezblock.org.ua/;
   - Now q4wine save last user selected prefix and dir;
   - Added "open directory" menu items via xdg-utils;
   - Added "open directory" menu items via winefile;

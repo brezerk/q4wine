@@ -74,8 +74,9 @@ void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
 {
     this->page = page;
     if (!this->getCacheFile(page)){
-        QString url = QString("http://%1:%2/%3").arg(host, QString::number(port), page);
+        QString url = QString("https://%1:%2/%3").arg(host, QString::number(port), page);
         QNetworkRequest request = QNetworkRequest(QUrl(url));
+        request.setSslConfiguration(QSslConfiguration::defaultConfiguration());
         request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
         request.setHeader(QNetworkRequest::UserAgentHeader, user_agent);
         http->get(request);

@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>q4wine-128x128.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>http://q4wine.brezblock.org.ua/</string>
+	<string>https://q4wine.brezblock.org.ua/</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleLongVersionString</key>
