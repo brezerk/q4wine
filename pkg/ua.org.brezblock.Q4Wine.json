@@ -1,0 +1,36 @@
+{
+    "app-id": "org.flatpak.Q4Wine",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.12",
+    "sdk": "org.kde.Sdk",
+    "command": "q4wine",
+    "modules": [
+        {
+            "name": "q4wine",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cd q4wine-1.3.11 && mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX=/app -DWITH_ICOUTILS=OFF && make -j4 && make install"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://netix.dl.sourceforge.net/project/q4wine/q4wine/q4wine%201.3.11/q4wine-1.3.11.tar.bz2",
+                    "sha256": "d07f7d9b5d080d45150a1f08d32b766d0ab3488e3e0bd5316d9143fbb22cec65"
+                }
+            ]
+        }
+    ],
+    "finish-args": [
+        "--share=ipc",
+        "--share=network",
+        "--socket=x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--filesystem=host",
+        "--filesystem=xdg-config/kdeglobals:ro",
+        "--system-talk-name=org.freedesktop.UDisks2",
+        "--persist=.config",
+        "--socket=system-bus",
+        "--socket=session-bus"
+    ]
+}
