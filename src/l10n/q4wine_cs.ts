@@ -3147,7 +3147,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="-127"/>
-        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update Q4Wine&apos;s cache of Winetricks applications.</source>
         <translation>Vytvořit nebo aktualizovat vyrovnávací paměť Q4Wine programů Winetricks (Kouzla wine).</translation>
     </message>
     <message>

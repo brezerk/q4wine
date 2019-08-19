@@ -3150,7 +3150,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="-127"/>
-        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update Q4Wine&apos;s cache of Winetricks applications.</source>
         <translation>创建或更新 Q4Wine 的 Winetricks 应用程序缓存。</translation>
     </message>
     <message>

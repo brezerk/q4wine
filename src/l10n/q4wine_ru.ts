@@ -3135,7 +3135,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="-127"/>
-        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update Q4Wine&apos;s cache of Winetricks applications.</source>
         <translation>Создать или обновить в Q4Wine кэш программ из Winetricks.</translation>
     </message>
     <message>

@@ -308,7 +308,7 @@ void PrefixConfigWidget::get_icons(){
                     iconItem->setIcon(CoreLib->loadIcon("download"));
                 } else if (items.at(i).name == "%REFRESH_WINETRICKS%"){
                     name = tr("Refresh Winetricks application list");
-                    desc = tr("Create or update Q4Wine's cache of Winetricks appications.");
+                    desc = tr("Create or update Q4Wine's cache of Winetricks applications.");
                     iconItem->setIcon(CoreLib->loadIcon("edit-redo"));
                 } else if (items.at(i).name == "%ABOUT_WINETRICKS%"){
                     name = tr("Goto Winetricks homepage");

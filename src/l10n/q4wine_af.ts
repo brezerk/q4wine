@@ -3165,7 +3165,7 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <location line="-127"/>
-        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update Q4Wine&apos;s cache of Winetricks applications.</source>
         <translation>Installeer &apos;n nuwe of opdateer &apos;n Q4Wine kas vir Winetricks programmatuur.</translation>
     </message>
     <message>
