@@ -66,6 +66,9 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
     if (QDir(this->prefix_path).exists())
        prefix_urls << QUrl::fromLocalFile(this->prefix_path);
 
+    if ((!txtWorkDir->text().isEmpty()) and (QDir(txtWorkDir->text()).exists()))
+       prefix_urls << QUrl::fromLocalFile(txtWorkDir->text());
+
     QString cd_mount = result.value("mount");
 
     if (!cd_mount.isEmpty())
@@ -240,6 +243,14 @@ void IconSettings::getIconReccord(){
     return;
 }
 
+void IconSettings::updateSidebarUrls( QFileDialog *dialog )
+{
+   if ((!txtWorkDir->text().isEmpty()) and (QDir(txtWorkDir->text()).exists())) {
+      prefix_urls << QUrl::fromLocalFile(txtWorkDir->text());
+   }
+   dialog->setSidebarUrls(prefix_urls);
+}
+
 bool IconSettings::eventFilter( QObject *object, QEvent *event )
 {
    //  firstly, check whether the object is the QTableWidget and if it's a mouse press event
@@ -302,6 +313,8 @@ void IconSettings::cmdGetWorkDir_Click(){
       dialog.setWindowTitle(tr("Open Directory"));
       dialog.setDirectory(searchPath);
 
+      this->updateSidebarUrls(&dialog);
+
       if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
@@ -354,6 +367,8 @@ void IconSettings::cmdGetProgram_Click(){
       dialog.setDirectory(searchPath);
       dialog.setFileMode(QFileDialog::ExistingFile);
       dialog.setNameFilter(tr("Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)"));
+
+      this->updateSidebarUrls(&dialog);
 
       if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
@@ -422,12 +437,13 @@ void IconSettings::cmdGetIcon_Click(){
       }
       dialog.setDirectory(searchPath);
 
+      this->updateSidebarUrls(&dialog);
+
         #ifndef WITH_ICOUTILS
         dialog.setNameFilter(tr("Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)"));
         #else
         dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;All files (*)"));
         #endif
-      //dialog.setSidebarUrls(add_prefix_urls);
 
      if (dialog.exec())
         fileName = dialog.selectedFiles().first();
