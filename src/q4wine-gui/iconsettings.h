@@ -121,6 +121,7 @@ class IconSettings : public QDialog, public Ui::IconSettings
 
         //! Side bar URLs list.
         QList<QUrl> prefix_urls;
+        void updateSidebarUrls(QFileDialog *dialog);
 
         //! Database prefix class definition.
         Prefix db_prefix;
