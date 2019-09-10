@@ -1,0 +1,203 @@
+app-id: ua.org.brezblock.Q4Wine
+branch: master
+runtime: org.kde.Sdk
+runtime-version: "5.12"
+sdk: org.kde.Sdk
+inherit-extensions:
+  - org.freedesktop.Platform.GL
+  - org.freedesktop.Platform.Timezones
+  - org.freedesktop.Platform.GStreamer
+  - org.freedesktop.Platform.VAAPI.Intel
+  - org.freedesktop.Sdk.Extension
+    #  - org.freedesktop.Platform.Compat.i386
+command: q4wine
+finish-args:
+  - --share=network
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --device=dri
+  - --allow=multiarch
+  - --env=PATH=/app/bin:/app/lib/wine/bin:/app/lib/wine-32bit/bin:/app/lib/32bit/wine:/usr/lib/wine/bin:/usr/lib/wine-32bit/bin:/usr/bin:/usr/lib/32bit/bin
+  - --env=XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/share
+  - --env=WINEDEBUG=-all
+  - --env=WINEPREFIX=/var/data/wine
+#  - --filesystem=host
+#  - --persist=.config
+cleanup:
+  - /share/doc
+  - /share/man
+  - '*.a'
+  - '*.la'
+cleanup-commands: # https://github.com/flatpak/flatpak-builder/issues/233
+  - rm -rf /app/{include,lib/{cmake,mkspecs,pkgconfig}}
+build-options:
+  cflags: -O2 -g -fstack-protector-strong -D_FORTIFY_SOURCE=2
+  cxxflags: -O2 -g -fstack-protector-strong -D_FORTIFY_SOURCE=2
+  ldflags: -fstack-protector-strong -Wl,-z,relro,-z,now
+  env:
+    V: '1'
+
+modules:
+  - name: openldap
+    config-opts:
+      - --disable-static
+    sources:
+      # OpenLDAP required for Wine
+      # Due to the licencing of BDB v6.* we must stick with OpenLDAP 2.4.46
+      # FTP isn't support in flatpak & flatpak-builder so we use he https mirror
+      # https://www.openldap.org/software/download/OpenLDAP/openldap-release/
+      - type: archive
+        url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.46.tgz
+        sha256: 9a90dcb86b99ae790ccab93b7585a31fbcbeec8c94bf0f7ab0ca0a87ea0c4b2d
+    modules:
+      - name: BDB
+        config-opts:
+          - --enable-compat185
+          - --enable-shared
+          - --enable-static
+          - --enable-cxx
+          - --enable-dbm
+          - --enable-stl
+        make-install-args:
+          - LIBSO_LIBS=-lpthread
+        sources:
+            # Bereley DB required for OpenLDAP
+            # Due to licencing v6.* will not work with later versions of OpenLDAP
+            # and for that matter a lot of other software. Stick to v5.3.28
+            # http://www.oracle.com/technetwork/products/berkeleydb/downloads/index-082944.html
+          - type: archive
+            url: http://download.oracle.com/berkeley-db/db-5.3.28.tar.gz
+            sha256: e0a992d740709892e81f9d93f06daf305cf73fb81b545afe72478043172c3628
+          - type: patch
+            path: files/db-5.1.29-rename-atomic-compare-exchange.patch
+          - type: script
+            dest-filename: configure
+            commands:
+            - "./dist/configure $@"
+
+  - name: q4wine
+    buildsystem: simple
+    build-commands:
+      - cd q4wine-1.3.11 &&
+        mkdir build &&
+        cd build &&
+        cmake .. -DCMAKE_INSTALL_PREFIX=/app -DWITH_ICOUTILS=OFF &&
+        make -j4 &&
+        make install
+    sources:
+      - type: archive
+        url: "https://netix.dl.sourceforge.net/project/q4wine/q4wine/q4wine%201.3.11/q4wine-1.3.11.tar.bz2"
+        sha256: d07f7d9b5d080d45150a1f08d32b766d0ab3488e3e0bd5316d9143fbb22cec65
+  - name: wine64
+    only-arches:
+      - x86_64
+#    buildsystem: autotools
+    config-opts:
+      - --enable-win64
+      - --disable-win16
+      - --disable-tests
+      - --with-x
+      - --with-pulse
+      - --with-dbus
+      - --without-hal
+      - --without-oss
+      - --with-ldap
+      - --without-cups
+      - --without-curses
+      - --without-capi
+      - --without-glu
+      - --without-gphoto
+      - --without-gsm
+      - --without-netapi
+      - --without-opencl
+      - --without-pcap
+      - --without-udev
+      - --without-v4l
+    cleanup:
+      - /share/man
+      - /share/applications
+    sources:
+      - type: archive
+        url: "https://dl.winehq.org/wine/source/4.0/wine-4.0.2.tar.xz"
+        sha256: 994050692f8417ee206daafa5fc0ff810cc9392ffda1786ac0f0fb0cf74dbd74
+  - name: wine32
+    only-arches:
+      - i386
+#    buildsystem: autotools
+    config-opts:
+      - --disable-win64
+      - --disable-win16
+      - --disable-tests
+      - --with-x
+      - --with-pulse
+      - --with-dbus
+      - --without-hal
+      - --without-oss
+      - --with-ldap
+      - --without-cups
+      - --without-curses
+      - --without-capi
+      - --without-glu
+      - --without-gphoto
+      - --without-gsm
+      - --without-netapi
+      - --without-opencl
+      - --without-pcap
+      - --without-udev
+      - --without-v4l
+    cleanup:
+      - /share/man
+      - /share/applications
+    sources:
+      - type: archive
+        url: "https://dl.winehq.org/wine/source/4.0/wine-4.0.2.tar.xz"
+        sha256: 994050692f8417ee206daafa5fc0ff810cc9392ffda1786ac0f0fb0cf74dbd74
+  - name: wine-gecko
+    buildsystem: simple
+    build-commands:
+      - install -D --target-directory=/app/usr/share/wine/gecko/ wine_gecko-*.msi
+    no-make-install: true
+    sources:
+      - type: file
+        only-arches:
+          - x86_64
+        url: https://dl.winehq.org/wine/wine-gecko/2.47/wine_gecko-2.47-x86_64.msi
+        sha256: c565ea25e50ea953937d4ab01299e4306da4a556946327d253ea9b28357e4a7d
+      - type: file
+        url: https://dl.winehq.org/wine/wine-gecko/2.47/wine_gecko-2.47-x86.msi
+        sha256: 3b8a361f5d63952d21caafd74e849a774994822fb96c5922b01d554f1677643a
+
+  - name: wine-mono
+    buildsystem: simple
+    build-commands:
+      - install -D --target-directory=/app/usr/share/wine/mono/ wine-mono-*.msi
+    no-make-install: true
+    sources:
+    - type: file
+      url: https://dl.winehq.org/wine/wine-mono/4.7.1/wine-mono-4.7.1.msi
+      sha256: 2c8d5db7f833c3413b2519991f5af1f433d59a927564ec6f38a3f1f8b2c629aa
+
+  - name: cabextract
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://www.cabextract.org.uk/cabextract-1.6.tar.gz
+        sha256: cee661b56555350d26943c5e127fc75dd290b7f75689d5ebc1f04957c4af55fb
+# FIXME
+#  - name: winetricks
+#    buildsystem: simple
+#    build-commands:
+#      - make
+#      - make install
+#    sources:
+#      - type: archive
+#        url: https://github.com/Winetricks/winetricks/archive/20180513.tar.gz
+#        sha256: 626aff64e3d93698704b0b668225d5504fd8ef556e3834f569058deaeafada8e
+  - name: icoutils
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: http://savannah.nongnu.org/download/icoutils/icoutils-0.32.3.tar.bz2
+        sha256: 17abe02d043a253b68b47e3af69c9fc755b895db68fdc8811786125df564c6e0
+
