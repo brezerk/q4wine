@@ -230,7 +230,7 @@
     <message>
         <location line="+18"/>
         <source>You can call it via Tools menu or via shortcut Ctrl+M</source>
-        <translation>&quot;ツール&quot; メニューもしくはショートカット Ctrl+M で呼び出すことができます</translation>
+        <translation>&quot;ツール&quot; メニューまたはショートカット Ctrl+M で呼び出すことができます</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -502,7 +502,7 @@
     <message>
         <location line="+10"/>
         <source>Hide program arguments in the icon info display.</source>
-        <translation type="unfinished"></translation>
+        <translation>アイコン情報表示でプログラムの引数を隠す</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -671,7 +671,7 @@
     <message>
         <location line="+136"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>仮想デスクトップのサイズが無効です。</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -2074,7 +2074,7 @@ See help for details.</source>
     <message>
         <location line="+38"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>仮想デスクトップのサイズが無効です。</translation>
     </message>
     <message>
         <location line="-388"/>
@@ -2576,19 +2576,19 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+210"/>
         <source>Program: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>プログラム: %1</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+3"/>
         <location line="+2"/>
         <source>Args: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>引数: %1</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>非表示</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2623,7 +2623,7 @@ See help for details.</source>
     <message>
         <location line="+1"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
-        <translation>別の Q4Wine が動作中か、もしくは前回 Q4Wine が正常に終了しなかったようです。ソケット ファイルを削除しますか?</translation>
+        <translation>別の Q4Wine が動作中か、または前回 Q4Wine が正常に終了しなかったようです。ソケット ファイルを削除しますか?</translation>
     </message>
     <message>
         <location line="+50"/>
@@ -2937,12 +2937,12 @@ See help for details.</source>
         <location line="+5"/>
         <location line="+135"/>
         <source>Install or update Winetricks script</source>
-        <translation>Winetricks スクリプトのインストールもしくは更新</translation>
+        <translation>Winetricks スクリプトのインストールまたは更新</translation>
     </message>
     <message>
         <location line="-134"/>
         <source>Install new or update installed Winetricks script.</source>
-        <translation>Winetricks スクリプトを新規にインストールするか、もしくは更新します。</translation>
+        <translation>Winetricks スクリプトを新規にインストールするか、または更新します。</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2953,7 +2953,7 @@ See help for details.</source>
     <message>
         <location line="-127"/>
         <source>Create or update Q4Wine&apos;s cache of Winetricks applications.</source>
-        <translation>Q4Wine による Winetricks アプリケーションのキャッシュを作成もしくは更新します。</translation>
+        <translation>Q4Wine による Winetricks アプリケーションのキャッシュを作成または更新します。</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4179,12 +4179,12 @@ See help for details.</source>
     <message>
         <location line="+1"/>
         <source>mount a cd image or drive for current prefix and exit</source>
-        <translation>現在の実行環境用に CD イメージもしくはドライブをマウントして終了</translation>
+        <translation>現在の実行環境用に CD イメージまたはドライブをマウントして終了</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>unmount a cd image or drive for current prefix and exit</source>
-        <translation>現在の実行環境用に CD イメージもしくはドライブをマウント解除して終了</translation>
+        <translation>現在の実行環境用に CD イメージまたはドライブをマウント解除して終了</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4463,7 +4463,7 @@ See help for details.</source>
     <message>
         <location line="+41"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>仮想デスクトップのサイズが無効です。</translation>
     </message>
     <message>
         <location line="+131"/>
