@@ -1,6 +1,7 @@
 Version 1.3.12
  Add:
   - Add an option to show / hide "Args" parameter [BUG-114];
+  - Generate StartupWMClass values in created .desktop files [BUG-153];
  Fixed:
   - Fix parsing of env causing issues with wine kill [BUG-143];
   - Error: wrong or broken XML data. Try again later. [BUG-146];

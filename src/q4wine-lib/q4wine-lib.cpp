@@ -1170,6 +1170,7 @@ QString corelib::createDesktopFile(const QString &prefix_name, const QString &di
     }
     out<<"Name="<<icon_name<<endl;
     out<<"Path="<<result.value("wrkdir")<<endl;
+    out<<"StartupWMClass="<<result.value("exec").split('/').last().split('\\').last()<<endl;
 
     file.close();
 
