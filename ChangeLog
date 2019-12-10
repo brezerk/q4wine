@@ -1,4 +1,11 @@
 Version 1.3.12
+ Updated:
+  - Afrikaans translation;
+  - Japanese translation;
+  - Ukrainian translation;
+  - Russian translation;
+  - Traditional Chinese translation;
+  - German translation;
  Add:
   - Add an option to show / hide "Args" parameter [BUG-114];
   - Generate StartupWMClass values in created .desktop files [BUG-153];
