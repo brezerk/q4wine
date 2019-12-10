@@ -263,7 +263,7 @@
     <message>
         <location line="+136"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige virtuele skermgrootte.</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -313,14 +313,14 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-680"/>
         <location line="+467"/>
         <source>Ambient Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Omliggend Lig</translation>
     </message>
     <message>
         <location line="+9"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-465"/>
         <location line="+467"/>
         <source>Ambient Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Omliggend Donker</translation>
     </message>
     <message>
         <location line="+758"/>
@@ -625,7 +625,7 @@
     <message>
         <location line="+7"/>
         <source>Export &apos;system&apos; folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Afvoer van &apos;system&apos; stelselgids</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -658,7 +658,7 @@
     <message>
         <location line="+10"/>
         <source>Hide program arguments in the icon info display.</source>
-        <translation type="unfinished"></translation>
+        <translation>Versteek die program se argumente in die ikoon inligting vertoon.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -682,37 +682,37 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
         <location line="+438"/>
         <source>Desktop Integration</source>
-        <translation type="unfinished"></translation>
+        <translation>Skermblad integrasie</translation>
     </message>
     <message>
         <location line="-553"/>
         <source>Default Wine Desktop Paths for new prefixes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verstek Wine skermblad paaie vir nuwe tuistes.</translation>
     </message>
     <message>
         <location line="+45"/>
         <source>Desktop:</source>
-        <translation type="unfinished">Lessenaar:</translation>
+        <translation>Skermblad:</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>My Documents:</source>
-        <translation type="unfinished">My Dokumente:</translation>
+        <translation>My Dokumente:</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>My Pictures:</source>
-        <translation type="unfinished">My Prente:</translation>
+        <translation>My Prente:</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>My Music:</source>
-        <translation type="unfinished">My Musiek:</translation>
+        <translation>My Musiek:</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>My Videos:</source>
-        <translation type="unfinished">My Video&apos;s:</translation>
+        <translation>My Video&apos;s:</translation>
     </message>
     <message>
         <location line="+43"/>
@@ -773,28 +773,28 @@
     <message>
         <location line="-2072"/>
         <source>You can call it via Tools menu or via shortcut Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation>U kan dit oproep deur die Nutsgoed keuse of deur die Ctrl+M kortpad</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Wine Version Manager</source>
-        <translation type="unfinished">Wine weergawebestuurder</translation>
+        <translation>Wine Weergawebestuurder</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>App Icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Toepassingsikoon</translation>
     </message>
     <message>
         <location line="+45"/>
         <source>App Icon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Toepassingsikoon:</translation>
     </message>
     <message>
         <location line="+14"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-702"/>
         <source>Default</source>
-        <translation type="unfinished">Verstek</translation>
+        <translation>Verstek</translation>
     </message>
     <message>
         <location line="+2011"/>
@@ -895,7 +895,7 @@
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-750"/>
         <location line="+738"/>
         <source>Scripts</source>
-        <translation type="unfinished">Skripte</translation>
+        <translation>Skripte</translation>
     </message>
     <message>
         <location line="-570"/>
@@ -1022,7 +1022,7 @@
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-745"/>
         <location line="+733"/>
         <source>File System</source>
-        <translation>Lêer Stelsel</translation>
+        <translation>Lêerstelsel</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1035,12 +1035,12 @@
     <message>
         <location line="-2403"/>
         <source>&amp;Reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>He&amp;rstel na verstek instelling</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>&amp;Use current Qt colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebr&amp;uik die huidige Qt kleure</translation>
     </message>
     <message>
         <location line="+100"/>
@@ -1055,12 +1055,12 @@
     <message>
         <location line="+73"/>
         <source>Post run script will be executed after the Prefix update. Wine environment settings will be exported as well.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nabetragtingsskript sal uitvoer na afloop van Tuiste opdatering. Wine omegewingsinstellings sal ook afgevoer word.</translation>
     </message>
     <message>
         <location line="+37"/>
         <source>Post run:</source>
-        <translation type="unfinished">Na lopie:</translation>
+        <translation>Nabetragtingslopie:</translation>
     </message>
     <message>
         <location line="+101"/>
@@ -1162,7 +1162,7 @@
     <message>
         <location line="-2754"/>
         <source>Use e&amp;xisting color theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik &amp;bestaande kleurskema</translation>
     </message>
     <message>
         <location line="+467"/>
@@ -1749,22 +1749,22 @@ Sien hulp vir verderre besonderhede.</translation>
         <location line="+24"/>
         <location line="+465"/>
         <source>Browse for application</source>
-        <translation type="unfinished"></translation>
+        <translation>Deursoek vir toepassing</translation>
     </message>
     <message>
         <location line="-446"/>
         <source>New icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuwe ikoon</translation>
     </message>
     <message>
         <location line="+501"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skyf beeldlêers (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;Alle lêers (*)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO beeldlêers (*.iso *.ISO);;Alle lêers (*)</translation>
     </message>
     <message>
         <location line="+42"/>
@@ -1979,17 +1979,17 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="-57"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Exe, MSI, BAT lêers (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe lêers (*.exe *.EXE);;MSI lêers (*.msi *.MSI);;BAT lêers (*.bat *.BAT);;Alle lêers (*)</translation>
     </message>
     <message>
         <location line="+70"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafiese lêers (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafiese en Win32 binêre lêers (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Grafiese lêers (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 Uitvoerkode lêers (*.exe *.EXE);;Win32 Gedeelded biblioteke (*.dll *.DLL);;Win32 Uitvoerbare lêers en Gedeelde biblioteke (*.exe *.EXE *.dll *.DLL);;All files (*)</translation>
     </message>
     <message>
         <location line="+123"/>
@@ -2051,7 +2051,7 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="+24"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige virtuele skermgrootte.</translation>
     </message>
     <message>
         <location line="+63"/>
@@ -2339,12 +2339,12 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="+24"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skyf beeldlêers (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;Alle lêers (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO beeldlêers (*.iso *.ISO);;Alle lêers (*)</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -2554,12 +2554,12 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="+3"/>
         <source>Prerun Exec string:</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorafgaande Exec teks:</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Postrun Exec string:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nabetragting Exec teks:</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2641,7 +2641,7 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="+0"/>
         <source>Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Win32 Uitvoerbare kode en Gedeelde biblioteke (*.exe *.EXE *.dll *.DLL);;Win32 Uitvoerbare kode (*.exe *.EXE);;Win32 Gedeelde biblioteke (*.dll *.DLL);;Alle lêers (*)</translation>
     </message>
     <message>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
@@ -2672,19 +2672,19 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="-12"/>
         <source>Program: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Program: %1</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+3"/>
         <location line="+2"/>
         <source>Args: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Argumente: %1</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>Versteek</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -2846,7 +2846,7 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="+17"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <source>Version Manager</source>
@@ -2855,57 +2855,57 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="-210"/>
         <source>He&amp;lp</source>
-        <translation type="unfinished"></translation>
+        <translation>Hu&amp;lp</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&amp;Handbook</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Handleiding</translation>
     </message>
     <message>
         <location line="+42"/>
         <source>&amp;Run...</source>
-        <translation type="unfinished"></translation>
+        <translation>Voe&amp;ruit...</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Verlaat</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>Meer &amp;Omtrent</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Meer omtrent &amp;Qt</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>&amp;Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Programmatuur</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>P&amp;rocess</source>
-        <translation type="unfinished"></translation>
+        <translation>P&amp;roses</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>Op&amp;stelling</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Pre&amp;fixes</source>
-        <translation type="unfinished"></translation>
+        <translation>T&amp;uistes</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Extract Images from PE Files</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Onttrek beelde vanuit PE-lêers</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2915,57 +2915,57 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="+5"/>
         <source>&amp;Options</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Keuses</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Disc Image Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Skyf afbeeldings bestuurder</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;First Steps</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Eerste stappe</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Short FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kort FAQ</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Index</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Inhoudsopgaaf</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Website</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Webwerf</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Donasie</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Bugs</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Foute</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Wine AppDB Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Wine AppDB-blaaier</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Logging</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Boekstawing</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Help &amp;for This Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Hulp &amp;vir hierdie oortjie</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2975,7 +2975,7 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="+5"/>
         <source>&amp;Import Wine Desktop Files</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Invoer van Wine skermblad se lêers</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2991,7 +2991,7 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="+5"/>
         <source>Wine &amp;Version Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Wine &amp;Weergawebestuurder</translation>
     </message>
     <message>
         <source>Short FAQ</source>
@@ -3116,13 +3116,13 @@ Sien hulp vir verderre besonderhede.</translation>
         <location line="-286"/>
         <location line="+1"/>
         <source>Zoom In</source>
-        <translation type="unfinished">Zoem in</translation>
+        <translation>Zoem in</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+1"/>
         <source>Zoom Out</source>
-        <translation type="unfinished">Zoem Uit</translation>
+        <translation>Zoem Uit</translation>
     </message>
     <message>
         <location line="+94"/>
@@ -3172,12 +3172,12 @@ Sien hulp vir verderre besonderhede.</translation>
         <location line="+3"/>
         <location line="+129"/>
         <source>Goto Winetricks homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Gaan na Winetricks tuisblad</translation>
     </message>
     <message>
         <location line="-128"/>
         <source>Read news, report bugs and join the Winetricks community at https://github.com/Winetricks/winetricks</source>
-        <translation type="unfinished"></translation>
+        <translation>Lees nuus, reporteer foute en tree toe tot die Winetricks gemeenskap by https://github.com/Winetricks/winetricks</translation>
     </message>
     <message>
         <location line="+97"/>
@@ -3311,7 +3311,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <location line="-176"/>
         <location line="+1"/>
         <source>Configure wine versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Stel wine weergawes in</translation>
     </message>
     <message>
         <location line="+169"/>
@@ -3321,7 +3321,7 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="+0"/>
         <source>Prefix archive images (*.tbz *.TBZ);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuiste argief beeldlêers (*.tbz *.TBZ);;Alle lêers (*)</translation>
     </message>
     <message>
         <location line="+109"/>
@@ -3715,12 +3715,12 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <location line="+1"/>
         <location line="+237"/>
         <source>Browse for wine binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Blaai vir Wine binêre lêers</translation>
     </message>
     <message>
         <location line="-217"/>
         <source>New directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuwe gids</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3845,12 +3845,12 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     <message>
         <location line="+94"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skyf beeldlêers (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;Alle lêers (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO beeldlêers (*.iso *.ISO);;Alle lêers (*)</translation>
     </message>
     <message>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
@@ -4513,7 +4513,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-185"/>
         <source>Remove prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwyder tuitste gids</translation>
     </message>
 </context>
 <context>
@@ -4576,12 +4576,12 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     <message>
         <location line="+41"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige virtuele skermblad grootte.</translation>
     </message>
     <message>
         <location line="+131"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Exe, MSI, BAT lêers (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe lêers (*.exe *.EXE);;MSI lêers (*.msi *.MSI);;BAT lêers (*.bat *.BAT);;Alle lêers (*)</translation>
     </message>
     <message>
         <location line="-189"/>
@@ -4761,7 +4761,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     <message>
         <location line="+29"/>
         <source>Optional</source>
-        <translation type="unfinished"></translation>
+        <translation>Optioneel</translation>
     </message>
     <message>
         <location line="+33"/>
@@ -5151,7 +5151,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     <message>
         <location line="+246"/>
         <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Alles is gereed die %1 opstelling te voltooi. &lt;/p&gt;&lt;p&gt;Druk asseblief die &lt;b&gt;Klaar&lt;/b&gt; knoppie om die proses te volttooi. Of druk &lt;b&gt;Terug&lt;/b&gt; knoppie om terug te gaan.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Nota:&lt;/b&gt; U kan die aanlyn dokumentasie engie tyd vind deur die &lt;b&gt;F1&lt;/b&gt; sleutel of deur die &quot;Hulp&quot; knoppie te druk.&lt;/p&gt;&lt;/p&gt;Indien u nuut is tot %1, gaan asseblief aanlyngids deur:&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -5217,7 +5217,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     <message>
         <location line="-102"/>
         <source>Open online guide</source>
-        <translation type="unfinished"></translation>
+        <translation>Open aanlyngids</translation>
     </message>
     <message>
         <location line="+356"/>
@@ -5292,37 +5292,37 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     <message>
         <location line="+120"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lêer &apos;%1&apos; is nie skryfbaar of leesbaar nie. Gaan die lêer se regte na.</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan nie lêer &apos;%1&apos; skep nie. Gaan die gids se regte na.</translation>
     </message>
     <message>
         <location line="+65"/>
         <source>Refreshing Winetricks application list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verfris Winetricks toepassingslys.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Winetricks plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Winetricks invoeging</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Dropping stale items...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwyder verouderde items...</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Getting list of installed items...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkry lys van geinstalleerde items...</translation>
     </message>
     <message>
         <location line="+73"/>
         <source>Adding verb: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Byvoeging van werkwoord: %1</translation>
     </message>
     <message>
         <source>Refreshing winetricks application list.</source>
