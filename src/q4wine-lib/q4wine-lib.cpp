@@ -743,8 +743,8 @@ QString corelib::getMountedImages(QString cdrom_mount) const{
     QFile file(filename);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
         QTextStream in(&file);
-        while (!in.atEnd()) {
-            QString line = in.readLine();
+        QString line;
+        while (in.readLineInto(&line)) {
 #ifdef DEBUG
             qDebug()<<"corelib::/etc/mtab:line"<<line;
 #endif
@@ -759,8 +759,8 @@ QString corelib::getMountedImages(QString cdrom_mount) const{
                     QFile file(filename);
                     if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
                         QTextStream in(&file);
-                        while (!in.atEnd()) {
-                            QString line = in.readLine();
+                        QString line;
+                        while (in.readLineInto(&line)) {
 #ifdef DEBUG
                             qDebug()<<"corelib::getMountedImages:line"<<line;
 #endif
