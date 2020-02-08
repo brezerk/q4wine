@@ -457,60 +457,47 @@ void IconSettings::cmdGetIcon_Click(){
             args << "-x";
             args << "-t" << "14";
 
-            QString tmpDir = QDir::tempPath();
-            tmpDir.append("/");
-            tmpDir.append(APP_SHORT_NAME);
-            tmpDir.append("-");
-            tmpDir.append(fileName.split("/").last());
+            QTemporaryDir tmpDir;
+            tmpDir.setAutoRemove(false);
+            if (tmpDir.isValid()) {
+                QString tmpDirPath = tmpDir.path();
+                qDebug() << "Using tmp path:" << tmpDirPath;
+                args << "-o" << tmpDirPath;
+                args << fileName;
 
-            QDir tmp(tmpDir);
-            QFileInfoList allFilesList = tmp.entryInfoList(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+                Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
+                if (exportProcess.exec()==QDialog::Accepted){
+                    // Updating file index
+                    QStringList nameFilters;
+                    nameFilters << "*.ico";
+                    QFileInfoList icoFilesList = QDir(tmpDirPath).entryInfoList(nameFilters, QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+                    if (icoFilesList.size() > 0) {
+                        //icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
+                        args.clear();
+                        args << "-x";
+                        //Creating file list for converting
+                        for (int i = 0; i < icoFilesList.size(); ++i) {
+                            QFileInfo fileInfo = icoFilesList.at(i);
+                            qDebug() << fileInfo.fileName();
+                            args << fileInfo.filePath();
+                        }
+                        args << "-o" << QString("%1/").arg(tmpDirPath);
 
-            if (tmp.exists(tmpDir)){
-                for (int i = 0; i < allFilesList.size(); ++i) {
-                    QFileInfo fileInfo = allFilesList.at(i);
-                    if (!tmp.remove(fileInfo.filePath()))
-                        qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
-                }
-            } else {
-                if (!tmp.mkdir(tmpDir)){
-                    qDebug()<<"[EE] - Cannot create temp directory at: "<<tmpDir;
-                }
-            }
-
-            args << "-o" << tmpDir;
-            args << fileName;
-
-            Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
-
-            if (exportProcess.exec()==QDialog::Accepted){
-            //icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
-                args.clear();
-                args << "-x";
-
-                // Updating file index
-                QStringList nameFilters;
-                nameFilters << "*.ico";
-
-                QFileInfoList icoFilesList = tmp.entryInfoList(nameFilters, QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-
-                //Creating file list for converting
-                for (int i = 0; i < icoFilesList.size(); ++i) {
-                    QFileInfo fileInfo = icoFilesList.at(i);
-                    qDebug() << fileInfo.fileName();
-                    args << fileInfo.filePath();
-                }
-
-                args << "-o" << QString("%1/").arg(tmpDir);
-
-                //Converting ico files to png
-
-                //Look here, this function checks if some icons found, or not. 5 -- is default number of arguments,
-                //if more -- then we have some ico file to convert
-                if (args.size()>=4){
-                    Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
-                    if (exportProcess.exec()==QDialog::Accepted){
-                        IconsView iconsView(tmpDir);
+                        //Converting ico files to png
+                        Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
+                        if (exportProcess.exec()==QDialog::Accepted){
+                            IconsView iconsView(tmpDirPath);
+                            if (iconsView.exec()==QDialog::Accepted){
+                                fileName=iconsView.selectedFile;
+                                cmdGetIcon->setIcon(QIcon(fileName));
+                                qDebug()<<"Selected:"<<fileName;
+                            } else {
+                                fileName.clear();
+                            }
+                        }
+                    } else {
+                        qDebug() << "[WW] No ico files found.";
+                        IconsView iconsView(tmpDirPath);
                         if (iconsView.exec()==QDialog::Accepted){
                             fileName=iconsView.selectedFile;
                             cmdGetIcon->setIcon(QIcon(fileName));
@@ -518,34 +505,10 @@ void IconSettings::cmdGetIcon_Click(){
                             fileName.clear();
                         }
                     }
-                } else {
-                    IconsView iconsView(tmpDir);
-                    if (iconsView.exec()==QDialog::Accepted){
-                        fileName=iconsView.selectedFile;
-                        cmdGetIcon->setIcon(QIcon(fileName));
-                    } else {
-                        fileName.clear();
-                    }
                 }
-            } else {
-                qDebug()<<"wrestool testing Rejected";
-                fileName.clear();
+                tmpDir.remove();
             }
-
-            //Clearing temp files
-            allFilesList = tmp.entryInfoList(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-
-                //Creating file list for converting
-            for (int i = 0; i < allFilesList.size(); ++i) {
-                QFileInfo fileInfo = allFilesList.at(i);
-                    if (!QFile::remove(fileInfo.filePath()))
-                        qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
-            }
-
-            if (!tmp.rmdir(tmpDir))
-                qDebug()<<"[EE] - Cannot delete tmp dir: "<<tmpDir;
         }
-
         if (!fileName.isEmpty())
             iconPath=fileName;
     }

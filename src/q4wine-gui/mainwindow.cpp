@@ -798,7 +798,7 @@ void MainWindow::mainExportIcons_Click(){
      * main Menu allow export icons
      */
 
-    QString fileName, tmpDir;
+    QString fileName;
     QStringList args;
 
     QFileDialog::Options options;
@@ -806,7 +806,7 @@ void MainWindow::mainExportIcons_Click(){
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
         options = QFileDialog::DontUseNativeDialog;
 
-    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)"), 0, options );
+    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)"), nullptr, options );
 
     if(fileName.isEmpty())
         return;
@@ -814,88 +814,46 @@ void MainWindow::mainExportIcons_Click(){
     args << "-x";
     args << "-t" << "14";
 
-    QStringList list1 = fileName.split("/");
+    QTemporaryDir tmpDir;
+    tmpDir.setAutoRemove(false);
+    if (tmpDir.isValid()) {
+        QString tmpDirPath = tmpDir.path();
+        qDebug() << "Using tmp path:" << tmpDirPath;
+        args << "-o" << tmpDirPath;
+        args << fileName;
 
-    tmpDir.clear();
+        Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
+        if (exportProcess.exec()==QDialog::Accepted){
+            // Updating file index
+            QStringList nameFilters;
+            nameFilters << "*.ico";
+            QFileInfoList icoFilesList = QDir(tmpDirPath).entryInfoList(nameFilters, QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+            if (icoFilesList.size() > 0) {
+                //icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
+                args.clear();
+                args << "-x";
+                //Creating file list for converting
+                for (int i = 0; i < icoFilesList.size(); ++i) {
+                    QFileInfo fileInfo = icoFilesList.at(i);
+                    qDebug() << fileInfo.fileName();
+                    args << fileInfo.filePath();
+                }
+                args << "-o" << QString("%1/").arg(tmpDirPath);
 
-    tmpDir.append(QDir::homePath());
-    tmpDir.append("/.config/");
-    tmpDir.append(APP_SHORT_NAME);
-    tmpDir.append("/tmp/");
-    tmpDir.append(list1.last());
-
-    QDir tmp(tmpDir);
-    tmp.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-    QFileInfoList list = tmp.entryInfoList();
-
-    if (tmp.exists(tmpDir)){
-        for (int i = 0; i < list.size(); ++i) {
-            QFileInfo fileInfo = list.at(i);
-            if (!tmp.remove(fileInfo.filePath()))
-                qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
-        }
-
-    } else {
-        if (!tmp.mkdir(tmpDir)){
-            qDebug()<<"[EE] - Cannot create temp directory at: "<<tmpDir;
-        }
-    }
-
-
-    args << "-o" << tmpDir;
-    args << fileName;
-
-    Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
-
-    if (exportProcess.exec()==QDialog::Accepted){
-        //icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
-
-
-
-        args.clear();
-        args << "-x";
-        args << "-o" << QString("%1/").arg(tmpDir);
-
-        // Updating file index
-        list = tmp.entryInfoList();
-
-        //Creating file list for converting
-        for (int i = 0; i < list.size(); ++i) {
-            QFileInfo fileInfo = list.at(i);
-            if (fileInfo.fileName().right(3)=="ico")
-                args << fileInfo.filePath();
-        }
-
-
-        //Look here, this function checks if some icons found, or not. 5 -- is default number of arguments,
-        //if more -- then we have some ico file to convert
-        if (args.size()>=4){
-
-            Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
-
-            if (exportProcess.exec()==QDialog::Accepted){
-                IconsView iconsView(tmpDir);
+                //Converting ico files to png
+                Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
+                if (exportProcess.exec()==QDialog::Accepted){
+                    IconsView iconsView(tmpDirPath);
+                    iconsView.exec();
+                }
+            } else {
+                qDebug() << "[WW] No ico files found.";
+                IconsView iconsView(tmpDirPath);
                 iconsView.exec();
             }
-
-        } else {
-            IconsView iconsView(tmpDir);
-            iconsView.exec();
         }
+        tmpDir.remove();
     }
-
-    //Clearing temp files
-    list = tmp.entryInfoList();
-
-    //Creating file list for converting
-    for (int i = 0; i < list.size(); ++i) {
-        QFileInfo fileInfo = list.at(i);
-        if (!QFile::remove(fileInfo.filePath()))
-            qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
-    }
-
-    if (!tmp.rmdir(tmpDir))
-        qDebug()<<"[EE] - Cannot delete tmp dir: "<<tmpDir;
 
     return;
 }

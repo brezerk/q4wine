@@ -43,6 +43,7 @@
 #include <QKeyEvent>
 #include <QHeaderView>
 #include <QTableWidgetItem>
+#include <QTemporaryDir>
 
 #include "q4wine-lib.h"
 

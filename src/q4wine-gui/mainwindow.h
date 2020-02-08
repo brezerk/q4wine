@@ -34,6 +34,7 @@
 #include <QLocalServer>
 #include <QLocalSocket>
 #include <QTabWidget>
+#include <QTemporaryDir>
 
 //Global config
 #include "config.h"
