@@ -9,13 +9,15 @@ Version 1.3.12
  Add:
   - Add an option to show / hide "Args" parameter [BUG-114];
   - Generate StartupWMClass values in created .desktop files [BUG-153];
+  - Added a feature to keep the terminal open when running winetricks so users can see the output.
  Fixed:
   - Fix parsing of env causing issues with wine kill [BUG-143];
   - Error: wrong or broken XML data. Try again later. [BUG-146];
   - Fixed a bug where /etc/mtab was not being read and resulted in being unable to unmount iso images.
   - Fixed a bug where the temporary director for generating icons wasn't being deleted. Refactored this to use QTemporaryDir.
   - Added workaround for st terminal, similar to konsole.
-  - Added a feature to keep the terminal open when running winetricks so users can see the output.
+  - Fixed warnings: Qt deprecated function useage;
+  - Fixed warnings: use of old-style cast
 
 Version 1.3.11
  Fixed:

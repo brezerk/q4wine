@@ -33,7 +33,7 @@ system_menu::system_menu()
     }
 
     // Getting corelib class pointer
-    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     QString home_path = QDir::homePath();
@@ -355,12 +355,10 @@ bool system_menu::generateSystemMenu(const QString &prefix_name, const QString &
             }
         }
     }
-
-    return writeXMLSystemMenu();
-
 #ifdef DEBUG
     qDebug() << "[DD] system_menu::generateSystemMenu: done";
 #endif
+    return writeXMLSystemMenu();
 }
 
 bool system_menu::wipeSystemMenu(){

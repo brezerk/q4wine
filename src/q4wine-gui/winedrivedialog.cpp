@@ -33,7 +33,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt
 	}
 
 	// Getting corelib class pointer
-	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
 	CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
@@ -72,7 +72,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter,
 	}
 
 	// Getting corelib class pointer
-	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
 	CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
 	if (removeLetters.count()>0){

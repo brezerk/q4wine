@@ -31,7 +31,7 @@ Registry::Registry(){
     }
 
     // Getting corelib class pointer
-    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
     return;
 }
@@ -149,7 +149,7 @@ QStringList Registry::readKeys(const QString &sysfile, const QString &path, cons
     QString searchPath;
 
     for (int i=0; i<keys.count(); i++){
-        ret.append(QString::null);
+        ret.append(QString());
     }
 
     searchPath="[";

@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
     }
 
     // Getting corelib class pointer
-    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(false)));
 
     QTranslator qtt;

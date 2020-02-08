@@ -33,7 +33,7 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
     }
 
     // Getting corelib class pointer
-    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
 
@@ -302,7 +302,7 @@ void LoggingWidget::logExport_Click(){
             if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
-            QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to save"), QDir::homePath(), tr("Log Files (*.log)"), 0, options);
+            QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to save"), QDir::homePath(), tr("Log Files (*.log)"), nullptr, options);
 
             if (fileName.isEmpty()){
                 item.release();
@@ -406,7 +406,7 @@ void LoggingWidget::getLogRecords(void){
                 QHash<uint, int> date_list = db_log.getDates(p_list.at(i), app_list.at(j));
 
                 QList<uint> date_keys = date_list.keys();
-                qSort(date_keys.begin(), date_keys.end(), qGreater<int>());
+                std::sort(date_keys.begin(), date_keys.end(), std::greater<int>());
 
                 for (int n=0; n<date_keys.count(); n++){
                     QDateTime date;
@@ -427,7 +427,7 @@ void LoggingWidget::getLogRecords(void){
                 }
                 appItem.release();
             }
-            prefixItem.release();;
+            prefixItem.release();
         }
     }
     return;

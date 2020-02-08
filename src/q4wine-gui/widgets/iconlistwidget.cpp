@@ -32,7 +32,7 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
     }
 
     // Getting corelib class pointer
-    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     setResizeMode(QListView::Adjust);
@@ -194,7 +194,7 @@ void IconListWidget::startDrag(){
         std::unique_ptr<QDrag> drag(new QDrag(this));
         drag->setMimeData(mimeData.release());
         drag->setPixmap(items.at(0)->icon().pixmap(32));
-        drag->start(Qt::MoveAction);
+        drag->exec(Qt::MoveAction);
         drag.release();
     }
 #endif

@@ -33,7 +33,7 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     }
 
     // Getting corelib class pointer
-    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     this->sort_order = CoreLib->getSetting("WinetricksWidget", "IconSort", false, D_SORT_TYPE_BY_DATE_ASC).toInt();

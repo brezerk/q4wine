@@ -33,7 +33,7 @@ AppDBWidget::AppDBWidget(QWidget *parent) : QWidget(parent)
     }
 
     // Getting corelib class pointer
-    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
     //Init AppDB Core Classes

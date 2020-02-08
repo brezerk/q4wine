@@ -32,7 +32,7 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
     }
 
     // Getting corelib class pointer
-    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     qRegisterMetaTypeStreamOperators<QList<int> >("QList<int>");
@@ -1208,7 +1208,7 @@ void FakeDriveSettings::loadSettings(){
     list << "\"Audio\"";
     list = reg.readKeys("user", "Software\\Wine\\Drivers", list);
     if (list.count()>0){
-        if (list.at(0) == QString::null){
+        if (list.at(0) == QString()){
             comboFakeSound_Driver->setCurrentIndex(comboFakeSound_Driver->findText("default"));
         } else if (!list.at(0).isEmpty()){
             comboFakeSound_Driver->setCurrentIndex(comboFakeSound_Driver->findText(list.at(0)));
@@ -1439,7 +1439,7 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
                 options = QFileDialog::DontUseNativeDialog | QFileDialog::DontResolveSymlinks;
 
         if (obj->objectName().right(3)=="Bin"){
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)", 0, options);
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)", nullptr, options);
         } else {
             file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path,  options);
         }
