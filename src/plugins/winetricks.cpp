@@ -134,7 +134,8 @@ void winetricks::run_winetricks(const QString &item){
         }
     }
 
-    if (console_bin.split("/").last() == "konsole"){
+    QString console_last = console_bin.split("/").last();
+    if ((console_last == "konsole") || (console_last == "st") || (console_last == "stterm")){
         args.append("/bin/sh");
         args.append("-c");
     }
@@ -211,6 +212,7 @@ QStringList winetricks::get_command(const QString &item){
     sh_args.append(CoreLib->getWhichOut("sh"));
     sh_args.append("-c");
     sh_args.append(QString("\"%1 --no-isolate %2\"").arg(this->winetricks_bin).arg(item));
+    sh_args.append("; echo '== Press Enter to Close =='; read n");
     return sh_args;
 }
 

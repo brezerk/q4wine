@@ -457,22 +457,18 @@ void IconSettings::cmdGetIcon_Click(){
             args << "-x";
             args << "-t" << "14";
 
-            QString tmpDir="";
-            QStringList list1 = fileName.split("/");
-
-            tmpDir.append(QDir::homePath());
-            tmpDir.append("/.config/");
+            QString tmpDir = QDir::tempPath();
+            tmpDir.append("/");
             tmpDir.append(APP_SHORT_NAME);
-            tmpDir.append("/tmp/");
-            tmpDir.append(list1.last());
+            tmpDir.append("-");
+            tmpDir.append(fileName.split("/").last());
 
             QDir tmp(tmpDir);
-            tmp.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-            QFileInfoList list = tmp.entryInfoList();
+            QFileInfoList allFilesList = tmp.entryInfoList(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
 
             if (tmp.exists(tmpDir)){
-                for (int i = 0; i < list.size(); ++i) {
-                    QFileInfo fileInfo = list.at(i);
+                for (int i = 0; i < allFilesList.size(); ++i) {
+                    QFileInfo fileInfo = allFilesList.at(i);
                     if (!tmp.remove(fileInfo.filePath()))
                         qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
                 }
@@ -492,16 +488,17 @@ void IconSettings::cmdGetIcon_Click(){
                 args.clear();
                 args << "-x";
 
-                QDir ico_dir(tmpDir);
                 // Updating file index
-                list = ico_dir.entryInfoList();
+                QStringList nameFilters;
+                nameFilters << "*.ico";
+
+                QFileInfoList icoFilesList = tmp.entryInfoList(nameFilters, QDir::Files | QDir::Hidden | QDir::NoSymLinks);
 
                 //Creating file list for converting
-                for (int i = 0; i < list.size(); ++i) {
-                    QFileInfo fileInfo = list.at(i);
+                for (int i = 0; i < icoFilesList.size(); ++i) {
+                    QFileInfo fileInfo = icoFilesList.at(i);
                     qDebug() << fileInfo.fileName();
-                    if (fileInfo.fileName().right(3)=="ico")
-                        args << fileInfo.filePath();
+                    args << fileInfo.filePath();
                 }
 
                 args << "-o" << QString("%1/").arg(tmpDir);
@@ -536,11 +533,11 @@ void IconSettings::cmdGetIcon_Click(){
             }
 
             //Clearing temp files
-            list = tmp.entryInfoList();
+            allFilesList = tmp.entryInfoList(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
 
                 //Creating file list for converting
-            for (int i = 0; i < list.size(); ++i) {
-                QFileInfo fileInfo = list.at(i);
+            for (int i = 0; i < allFilesList.size(); ++i) {
+                QFileInfo fileInfo = allFilesList.at(i);
                     if (!QFile::remove(fileInfo.filePath()))
                         qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
             }
