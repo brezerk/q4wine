@@ -45,7 +45,7 @@
 	    "<span style='color:#6495ed;'>Web</span>: <a href='https://brezblock.org.ua' style='color:#5f9ea0;'>https://brezblock.org.ua</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Kiev, Ukraine" \
+	    "Kyiv, Ukraine" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
@@ -127,7 +127,7 @@
 	    "<span style='color:#6495ed;'>Web</span>: <a href='https://brezblock.org.ua' style='color:#5f9ea0;'>https://brezblock.org.ua</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Kiev, Ukraine" \
+	    "Kyiv, Ukraine" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
@@ -373,7 +373,7 @@
 	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:yurchor@ukr.net' style='text-decoration: none; color:#5f9ea0;'>yurchor@ukr.net</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Kiev, Ukraine" \
+	    "Kyiv, Ukraine" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
