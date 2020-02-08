@@ -1,6 +1,6 @@
 #!/usr/bin/python2.7
 #
-# Copyright (C) 2008-2019 by Oleksii S. Malakhov <brezerk@gmail.com>
+# Copyright (C) 2008-2020 by Oleksii S. Malakhov <brezerk@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -76,7 +76,7 @@ class AuthrosHtmlTemplate:
 
     def header(self):
         self.header__.write("""/***************************************************************************
-*   Copyright (C) 2008-2019 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+*   Copyright (C) 2008-2020 by Oleksii S. Malakhov <brezerk@gmail.com>    *
 *                                                                         *
 *   This program is free software: you can redistribute it and/or modify  *
 *   it under the terms of the GNU General Public License as published by  *
