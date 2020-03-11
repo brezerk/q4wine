@@ -1877,7 +1877,7 @@ See help for details.</source>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+98"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+101"/>
         <source>Icon settings</source>
         <translation>Icon Settings</translation>
     </message>
@@ -1900,51 +1900,51 @@ See help for details.</source>
         <location line="+54"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
-        <location line="+99"/>
-        <location line="+259"/>
+        <location line="+109"/>
+        <location line="+222"/>
         <source>Native</source>
         <translation>Native</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-368"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-341"/>
         <location line="+11"/>
-        <location line="+99"/>
-        <location line="+262"/>
+        <location line="+109"/>
+        <location line="+225"/>
         <source>Built-in</source>
         <translation>Builtin</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+10"/>
-        <location line="+99"/>
-        <location line="+263"/>
+        <location line="+109"/>
+        <location line="+226"/>
         <source>Native, Built-in</source>
         <translation>ייעודי, מובנה</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+9"/>
-        <location line="+99"/>
-        <location line="+264"/>
+        <location line="+109"/>
+        <location line="+227"/>
         <source>Built-in, Native</source>
         <translation>מובנה, ייעודי</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-512"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-485"/>
         <source>Adding new icon</source>
         <translation>הוספת סמל חדש</translation>
     </message>
     <message>
-        <location line="+221"/>
+        <location line="+229"/>
         <source>Open Directory</source>
         <translation>פתיחת תיקייה</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <location line="+318"/>
+        <location line="+53"/>
+        <location line="+281"/>
         <location line="+27"/>
         <source>Open Exe file</source>
         <translation>פתיחת קובץ exe</translation>
@@ -1954,7 +1954,7 @@ See help for details.</source>
         <translation type="obsolete">קובצי Exe‏ (*.exe)</translation>
     </message>
     <message>
-        <location line="-285"/>
+        <location line="-246"/>
         <source>Open image file</source>
         <translation>פתיחת קובץ תמונה</translation>
     </message>
@@ -1967,12 +1967,12 @@ See help for details.</source>
         <translation type="obsolete">תמונות וקבצים בינריים של Win32‏ (‎*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;קובצי תמונות (‎*.png *.jpg *.gif *.bmp *.xpm);;קובצי הפעלה של Win32‏ (‎*.exe);;ספריות שיתופיות וקובצי הפעלה של Win32‏ (‎*.dll);;קובצי הפעלה וספריות שיתופיות של Win32‏ (‎*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="-57"/>
+        <location line="-59"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+74"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1982,19 +1982,19 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+44"/>
-        <location line="+26"/>
+        <location line="+23"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>מחולץ סמל מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>הסמל מחולץ</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+40"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
@@ -2025,10 +2025,10 @@ See help for details.</source>
         <translation>לא הוגדר שם לתכנית.</translation>
     </message>
     <message>
-        <location line="-338"/>
+        <location line="-311"/>
         <location line="+8"/>
-        <location line="+99"/>
-        <location line="+257"/>
+        <location line="+109"/>
+        <location line="+220"/>
         <source>Disabled</source>
         <translation>מנוטרל</translation>
     </message>
@@ -2616,12 +2616,12 @@ See help for details.</source>
         <translation>פתיחת קובץ תמונה</translation>
     </message>
     <message>
-        <location line="+192"/>
+        <location line="+150"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>ניתן להפעיל רק עותק אחד של %1 בעת ובעונה אחת.</translation>
     </message>
     <message>
-        <location line="-720"/>
+        <location line="-678"/>
         <source>Description: %1</source>
         <translation>תיאור: %1</translation>
     </message>
@@ -2650,19 +2650,19 @@ See help for details.</source>
         <translation type="obsolete">קובצי הפעלה וספריות משותפות לסביבת Win32‏ (‎*.exe *.dll);;קובצי הפעלה לסביבת Win32 (‏‎*.exe);;ספריות משותפות לסביבת Win32‏ (‎*.dll)</translation>
     </message>
     <message>
-        <location line="+473"/>
-        <location line="+26"/>
+        <location line="+450"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>מחולץ סמל מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>הסמל מחולץ</translation>
     </message>
     <message>
-        <location line="-445"/>
+        <location line="-415"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -2710,7 +2710,7 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+196"/>
+        <location line="+154"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
         <translation>הקובץ הבינרי &quot;%1&quot; אינו קיים.</translation>
@@ -2739,7 +2739,7 @@ See help for details.</source>
         <translation>קידומות</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-716"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-674"/>
         <source>Default</source>
         <translation>בררת מחדל</translation>
     </message>
@@ -3306,32 +3306,44 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+6"/>
+        <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+82"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>תמונות ארכיון קידומות ‎(*.tbz)‎</translation>
     </message>
     <message>
-        <location line="-103"/>
         <source>Do you really wish to delete all old prefix files?</source>
-        <translation>האם אכן ברצונך למחוק את כל קובצי הקידומת הישנים?</translation>
+        <translation type="vanished">האם אכן ברצונך למחוק את כל קובצי הקידומת הישנים?</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
-        <translation>הכונן המזויף הישן מוסר.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
+        <translation type="vanished">הכונן המזויף הישן מוסר.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-98"/>
         <source>Removing old fake drive</source>
         <translation>הסרת הכונן המזויף הישן</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
-        <translation>הקידומת מיובאת.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
+        <translation type="vanished">הקידומת מיובאת.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+16"/>
         <source>Importing prefix</source>
         <translation>הקידומת מיובאת</translation>
     </message>
@@ -5248,18 +5260,18 @@ Note: leave it blank for default.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+110"/>
-        <location line="+120"/>
+        <location line="+122"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>שגיאה</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-127"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>לא ניתן לאתר את הסקריפט Winetricks. נא להתקין אותו תחילה.</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+122"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1877,7 +1877,7 @@ See help for details.</source>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+98"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+101"/>
         <source>Icon settings</source>
         <translation>圖示設定</translation>
     </message>
@@ -1900,51 +1900,51 @@ See help for details.</source>
         <location line="+54"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
-        <location line="+99"/>
-        <location line="+259"/>
+        <location line="+109"/>
+        <location line="+222"/>
         <source>Native</source>
         <translation>原生</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-368"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-341"/>
         <location line="+11"/>
-        <location line="+99"/>
-        <location line="+262"/>
+        <location line="+109"/>
+        <location line="+225"/>
         <source>Built-in</source>
         <translation>內建</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+10"/>
-        <location line="+99"/>
-        <location line="+263"/>
+        <location line="+109"/>
+        <location line="+226"/>
         <source>Native, Built-in</source>
         <translation>原生、內建</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+9"/>
-        <location line="+99"/>
-        <location line="+264"/>
+        <location line="+109"/>
+        <location line="+227"/>
         <source>Built-in, Native</source>
         <translation>內建、原生</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-512"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-485"/>
         <source>Adding new icon</source>
         <translation>新增新圖示</translation>
     </message>
     <message>
-        <location line="+221"/>
+        <location line="+229"/>
         <source>Open Directory</source>
         <translation>開啟目錄</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <location line="+318"/>
+        <location line="+53"/>
+        <location line="+281"/>
         <location line="+27"/>
         <source>Open Exe file</source>
         <translation>開啟可執行檔案</translation>
@@ -1954,7 +1954,7 @@ See help for details.</source>
         <translation type="obsolete">可執行檔案 (*.exe)</translation>
     </message>
     <message>
-        <location line="-285"/>
+        <location line="-246"/>
         <source>Open image file</source>
         <translation>開啟映像檔</translation>
     </message>
@@ -1971,12 +1971,12 @@ See help for details.</source>
         <translation type="obsolete">圖片與 Win32 二進位檔 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;圖片檔 (*.png *.jpg *.gif *.bmp *.xpm);;Win32 可執行檔 (*.exe);;Win32 共享函式庫 (*.dll);;Win32 可執行檔及共享函式庫 (*.exe *.dll);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="-57"/>
+        <location line="-59"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation>Exe, MSI, BAT 檔案 (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe 檔案 (*.exe *.EXE);;MSI 檔案 (*.msi *.MSI);;BAT 檔案 (*.bat *.BAT);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+74"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
         <translation>圖片檔 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</translation>
     </message>
@@ -1986,7 +1986,7 @@ See help for details.</source>
         <translation>圖片與 Win32 二進位檔 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;圖片檔 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 可執行檔 (*.exe *.EXE);;Win32 共享函式庫 (*.dll *.DLL);;Win32 可執行檔與共享函式庫 (*.exe *.EXE *.dll *.DLL);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="+123"/>
+        <location line="+82"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
@@ -2026,22 +2026,22 @@ See help for details.</source>
         <translation type="obsolete">圖片與 Win32 二進位檔 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;圖片檔 (*.png *.jpg *.gif *.bmp *.xpm);;Win32 可執行檔 (*.exe);;Win32 共享函式庫 (*.dll);;Win32 可執行檔及共享函式庫 (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="-89"/>
-        <location line="+26"/>
+        <location line="-69"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>正在從二進位檔中解壓縮圖示。&lt;br&gt;這會花費一點時間...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>正在解壓縮圖示</translation>
     </message>
     <message>
-        <location line="-275"/>
+        <location line="-261"/>
         <location line="+8"/>
-        <location line="+99"/>
-        <location line="+257"/>
+        <location line="+109"/>
+        <location line="+220"/>
         <source>Disabled</source>
         <translation>已停用</translation>
     </message>
@@ -2654,24 +2654,24 @@ See help for details.</source>
         <translation type="obsolete">Win32 可執行檔與共享函式庫 (*.exe *.dll);;Win32 可執行檔 (*.exe);;Win32 共享函式庫 (*.dll)</translation>
     </message>
     <message>
-        <location line="+39"/>
-        <location line="+26"/>
+        <location line="+16"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>正在從二進位檔中解壓縮圖示。&lt;br&gt;這會花費一點時間...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>正在解壓縮圖示</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+115"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>同一時間只能有一個 %1 的實體可以執行。</translation>
     </message>
     <message>
-        <location line="-720"/>
+        <location line="-678"/>
         <source>Description: %1</source>
         <translation>描述：%1</translation>
     </message>
@@ -2738,7 +2738,7 @@ See help for details.</source>
         <translation type="obsolete">Win32 可執行檔與共享函式庫 (*.exe *.dll);;Win32 可執行檔 (*.exe);;Win32 共享函式庫 (*.dll);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="+255"/>
+        <location line="+213"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
         <translation>二進位檔「%1」不存在。</translation>
@@ -2767,7 +2767,7 @@ See help for details.</source>
         <translation>前綴</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-716"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-674"/>
         <source>Default</source>
         <translation>預設</translation>
     </message>
@@ -3330,36 +3330,48 @@ See help for details.</source>
         <translation>前綴封存映像檔 (*.tbz *.TBZ);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+6"/>
+        <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+82"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>前綴封存映像檔 (*.tbz)</translation>
     </message>
     <message>
-        <location line="-103"/>
         <source>Do you really wish to delete all old prefix files?</source>
-        <translation>您真的想要刪除所有舊的前綴檔案嗎？</translation>
+        <translation type="vanished">您真的想要刪除所有舊的前綴檔案嗎？</translation>
     </message>
     <message>
         <source>Prefix archive images (*.tbz);;All files (*)</source>
         <translation type="obsolete">前綴封存映像檔 (*.tbz);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
-        <translation>正在移除舊的虛擬磁碟。&lt;br&gt;這會花費一點時間...</translation>
+        <translation type="vanished">正在移除舊的虛擬磁碟。&lt;br&gt;這會花費一點時間...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-98"/>
         <source>Removing old fake drive</source>
         <translation>正在移除舊的虛擬磁碟</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
-        <translation>正在匯入前綴。&lt;br&gt;這會花費一點時間...</translation>
+        <translation type="vanished">正在匯入前綴。&lt;br&gt;這會花費一點時間...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+16"/>
         <source>Importing prefix</source>
         <translation>正在匯入前綴</translation>
     </message>
@@ -5273,18 +5285,18 @@ See help for details.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+110"/>
-        <location line="+120"/>
+        <location line="+122"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-127"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>無法定位 Winetricks 指令稿。請先安裝 Winetricks 指令稿。</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+122"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation>檔案「%1」不可寫入或讀取。請檢查檔案權限。</translation>
     </message>

@@ -1793,7 +1793,7 @@ See help for details.</source>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+98"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+101"/>
         <source>Icon settings</source>
         <translation>アイコンの設定</translation>
     </message>
@@ -1845,7 +1845,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+11"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+508"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+481"/>
         <source>No virtual desktop</source>
         <translation>仮想デスクトップなし</translation>
     </message>
@@ -1861,37 +1861,37 @@ See help for details.</source>
     </message>
     <message>
         <location line="+54"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-391"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-364"/>
         <location line="+12"/>
-        <location line="+99"/>
-        <location line="+259"/>
+        <location line="+109"/>
+        <location line="+222"/>
         <source>Native</source>
         <translation>ネイティブ版</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-368"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-341"/>
         <location line="+11"/>
-        <location line="+99"/>
-        <location line="+262"/>
+        <location line="+109"/>
+        <location line="+225"/>
         <source>Built-in</source>
         <translation>内蔵版</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+10"/>
-        <location line="+99"/>
-        <location line="+263"/>
+        <location line="+109"/>
+        <location line="+226"/>
         <source>Native, Built-in</source>
         <translation>ネイティブ版、内蔵版</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+9"/>
-        <location line="+99"/>
-        <location line="+264"/>
+        <location line="+109"/>
+        <location line="+227"/>
         <source>Built-in, Native</source>
         <translation>内蔵版、ネイティブ版</translation>
     </message>
@@ -1992,34 +1992,34 @@ See help for details.</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-512"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-485"/>
         <source>Adding new icon</source>
         <translation>新しいアイコンを追加</translation>
     </message>
     <message>
-        <location line="+221"/>
+        <location line="+229"/>
         <source>Open Directory</source>
         <translation>ディレクトリを開く</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <location line="+318"/>
+        <location line="+53"/>
+        <location line="+281"/>
         <location line="+27"/>
         <source>Open Exe file</source>
         <translation>EXE ファイルを開く</translation>
     </message>
     <message>
-        <location line="-285"/>
+        <location line="-246"/>
         <source>Open image file</source>
         <translation>画像ファイルを開く</translation>
     </message>
     <message>
-        <location line="-57"/>
+        <location line="-59"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation>EXE, MSI, BAT ファイル (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;EXE ファイル (*.exe *.EXE);;MSI ファイル (*.msi *.MSI);;BAT ファイル (*.bat *.BAT);;すべてのファイル (*)</translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+74"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
         <translation>画像ファイル (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</translation>
     </message>
@@ -2029,19 +2029,19 @@ See help for details.</source>
         <translation>画像ファイル と Win32 バイナリ ファイル (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;画像ファイル (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 実行形式 (*.exe *.EXE);;Win32 共有ライブラリ (*.dll *.DLL);;Win32 実行形式 と 共有ライブラリ (*.exe *.EXE *.dll *.DLL);;すべてのファイル (*)</translation>
     </message>
     <message>
-        <location line="+44"/>
-        <location line="+26"/>
+        <location line="+23"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>バイナリ ファイルからアイコンを抽出しています。&lt;br&gt;これにはしばらくかかるかもしれません...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>アイコンを抽出しています</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+40"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
@@ -2077,10 +2077,10 @@ See help for details.</source>
         <translation>仮想デスクトップのサイズが無効です。</translation>
     </message>
     <message>
-        <location line="-388"/>
+        <location line="-361"/>
         <location line="+8"/>
-        <location line="+99"/>
-        <location line="+257"/>
+        <location line="+109"/>
+        <location line="+220"/>
         <source>Disabled</source>
         <translation>無効化</translation>
     </message>
@@ -2694,19 +2694,19 @@ See help for details.</source>
         <translation type="obsolete">Win32 実行ファイルと共有ライブラリ (*.exe *.dll);;Win32 実行ファイル (*.exe);;Win32 共有ライブラリ (*.dll)</translation>
     </message>
     <message>
-        <location line="+39"/>
-        <location line="+26"/>
+        <location line="+16"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>バイナリ ファイルからアイコンを抽出しています。&lt;br&gt;これにはしばらくかかるかもしれません...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>アイコンを抽出しています</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+115"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>%1 は多重実行できません。</translation>
     </message>
@@ -3096,37 +3096,49 @@ See help for details.</source>
         <translation>インポートするファイルを選択</translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+6"/>
+        <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+82"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>実行環境の書庫イメージ (*.tbz)</translation>
     </message>
     <message>
-        <location line="-103"/>
         <source>Do you really wish to delete all old prefix files?</source>
-        <translation>本当に実行環境のすべてのファイルを削除しますか?</translation>
+        <translation type="vanished">本当に実行環境のすべてのファイルを削除しますか?</translation>
     </message>
     <message>
-        <location line="-6"/>
+        <location line="-109"/>
         <source>Prefix archive images (*.tbz *.TBZ);;All files (*)</source>
         <translation>実行環境の書庫イメージ (*.tbz *.TBZ);;すべてのファイル (*)</translation>
     </message>
     <message>
-        <location line="+11"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
-        <translation>古い仮想ドライブを削除しています。&lt;br&gt;これにはしばらくかかるかもしれません...</translation>
+        <translation type="vanished">古い仮想ドライブを削除しています。&lt;br&gt;これにはしばらくかかるかもしれません...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+11"/>
         <source>Removing old fake drive</source>
         <translation>古い仮想ドライブを削除しています</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
-        <translation>実行環境をインポートしています。&lt;br&gt;これにはしばらくかかるかもしれません...</translation>
+        <translation type="vanished">実行環境をインポートしています。&lt;br&gt;これにはしばらくかかるかもしれません...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+16"/>
         <source>Importing prefix</source>
         <translation>実行環境をインポートしています</translation>
     </message>
@@ -5019,18 +5031,18 @@ See help for details.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+110"/>
-        <location line="+120"/>
+        <location line="+122"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-127"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Winetricks のスクリプトが見つかりません。先にインストールしてください。</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+122"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation>ファイル &apos;%1&apos; は読み書き不可能です。ファイルのアクセス権を確認してください。</translation>
     </message>

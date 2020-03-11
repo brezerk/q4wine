@@ -2065,7 +2065,7 @@ Consulte a ajuda para detalhes.</translation>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+98"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+101"/>
         <source>Icon settings</source>
         <translation>Configurações Do ícone</translation>
     </message>
@@ -2122,35 +2122,35 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+311"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
-        <location line="+99"/>
-        <location line="+259"/>
+        <location line="+109"/>
+        <location line="+222"/>
         <source>Native</source>
         <translation>Nativo</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-368"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-341"/>
         <location line="+11"/>
-        <location line="+99"/>
-        <location line="+262"/>
+        <location line="+109"/>
+        <location line="+225"/>
         <source>Built-in</source>
         <translation>Embutido</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+10"/>
-        <location line="+99"/>
-        <location line="+263"/>
+        <location line="+109"/>
+        <location line="+226"/>
         <source>Native, Built-in</source>
         <translation>Nativo, Embutido</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+9"/>
-        <location line="+99"/>
-        <location line="+264"/>
+        <location line="+109"/>
+        <location line="+227"/>
         <source>Built-in, Native</source>
         <translation>Embutido, Nativo</translation>
     </message>
@@ -2283,18 +2283,18 @@ Consulte a ajuda para detalhes.</translation>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-512"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-485"/>
         <source>Adding new icon</source>
         <translation>Adicionando novo ícone</translation>
     </message>
     <message>
-        <location line="+221"/>
+        <location line="+229"/>
         <source>Open Directory</source>
         <translation>Abrir Diretório</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <location line="+318"/>
+        <location line="+53"/>
+        <location line="+281"/>
         <location line="+27"/>
         <source>Open Exe file</source>
         <translation>Abrir arquivo Executável</translation>
@@ -2304,7 +2304,7 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Arquivos executávies (*.exe)</translation>
     </message>
     <message>
-        <location line="-285"/>
+        <location line="-246"/>
         <source>Open image file</source>
         <translation>Abrir arquivo de imagem</translation>
     </message>
@@ -2313,14 +2313,14 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Arquivos de imagem e binários Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Arquivos de imagem (*.png *.jpg *.gif *.bmp *.xpm);;Executáveis Win32 (*.exe);;Bibliotecas Compartilhadas Win32 (*.dll);;Executáveis e bibliotecas Compartilhadas Win32 (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="+59"/>
-        <location line="+26"/>
+        <location line="+40"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Extraindo ícone do arquivo binário.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>Extraindo ícone</translation>
     </message>
@@ -2333,7 +2333,7 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Exportando ícone</translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+57"/>
         <location line="+5"/>
         <source>Sorry, an icon named %1 already exists.</source>
         <translation>Desculpe, um ícone chamado %1 já existe.</translation>
@@ -2343,10 +2343,10 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Diretório de trabalho selecionado não existe.</translation>
     </message>
     <message>
-        <location line="-350"/>
+        <location line="-323"/>
         <location line="+8"/>
-        <location line="+99"/>
-        <location line="+257"/>
+        <location line="+109"/>
+        <location line="+220"/>
         <source>Disabled</source>
         <translation>Desabilitado</translation>
     </message>
@@ -2370,12 +2370,12 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Convertendo ícone</translation>
     </message>
     <message>
-        <location line="-345"/>
+        <location line="-308"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+74"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2385,7 +2385,7 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+123"/>
+        <location line="+82"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
@@ -3349,14 +3349,14 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Executáveis e bibliotecas Compartilhadas Win32 (*.exe *.dll);;Executáveis Win32 (*.exe);;Bibliotecas compartilhadas Win32 (*.dll)</translation>
     </message>
     <message>
-        <location line="+39"/>
-        <location line="+26"/>
+        <location line="+16"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Extraindo ícone do arquivo binário.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>Extraindo ícone</translation>
     </message>
@@ -3373,7 +3373,7 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Exportando ícone</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+115"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Apenas uma instância de %1 pode ser executada ao mesmo tempo.</translation>
     </message>
@@ -3425,7 +3425,7 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Sobre</translation>
     </message>
     <message>
-        <location line="-723"/>
+        <location line="-681"/>
         <source>Yes</source>
         <translation>Sim</translation>
     </message>
@@ -3718,32 +3718,44 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+6"/>
+        <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+82"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>Imagens de arquivo de prefixo (*.tbz)</translation>
     </message>
     <message>
-        <location line="-103"/>
         <source>Do you really wish to delete all old prefix files?</source>
-        <translation>Você realmente deseja excluir todos os arquivos antigos do prefixo?</translation>
+        <translation type="vanished">Você realmente deseja excluir todos os arquivos antigos do prefixo?</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
-        <translation>Removendo unidade virtual antiga.&lt;br&gt;Isso pode demorar um pouco...</translation>
+        <translation type="vanished">Removendo unidade virtual antiga.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-98"/>
         <source>Removing old fake drive</source>
         <translation>Removendo unidade virtual antiga</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
-        <translation>Importando prefixo.&lt;br&gt;Isso pode demorar um pouco...</translation>
+        <translation type="vanished">Importando prefixo.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+16"/>
         <source>Importing prefix</source>
         <translation>Importando prefixo</translation>
     </message>
@@ -5857,18 +5869,18 @@ Nota: deixe em branco para o padrão.</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+110"/>
-        <location line="+120"/>
+        <location line="+122"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-127"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Não foi possível localizar o script Winetricks. Instale o script Winetricks primeiro.</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+122"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

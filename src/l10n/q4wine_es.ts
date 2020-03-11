@@ -1863,7 +1863,7 @@ Vea la ayuda para mas detalles.</translation>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+98"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+101"/>
         <source>Icon settings</source>
         <translation>Ajustes de iconos</translation>
     </message>
@@ -1886,55 +1886,55 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+54"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
-        <location line="+99"/>
-        <location line="+259"/>
+        <location line="+109"/>
+        <location line="+222"/>
         <source>Native</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-368"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-341"/>
         <location line="+11"/>
-        <location line="+99"/>
-        <location line="+262"/>
+        <location line="+109"/>
+        <location line="+225"/>
         <source>Built-in</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+10"/>
-        <location line="+99"/>
-        <location line="+263"/>
+        <location line="+109"/>
+        <location line="+226"/>
         <source>Native, Built-in</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+9"/>
-        <location line="+99"/>
-        <location line="+264"/>
+        <location line="+109"/>
+        <location line="+227"/>
         <source>Built-in, Native</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-512"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-485"/>
         <source>Adding new icon</source>
         <translation>Añadir nuevo icono</translation>
     </message>
     <message>
-        <location line="+221"/>
+        <location line="+229"/>
         <source>Open Directory</source>
         <translation>Abrir carpeta</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <location line="+318"/>
+        <location line="+53"/>
+        <location line="+281"/>
         <location line="+27"/>
         <source>Open Exe file</source>
         <translation>Abrir archivo exe</translation>
@@ -1944,7 +1944,7 @@ Vea la ayuda para mas detalles.</translation>
         <translation type="obsolete">Archivos exe (*.exe)</translation>
     </message>
     <message>
-        <location line="-285"/>
+        <location line="-246"/>
         <source>Open image file</source>
         <translation>Abrir archivo de imagen</translation>
     </message>
@@ -1957,12 +1957,12 @@ Vea la ayuda para mas detalles.</translation>
         <translation type="obsolete">Archivos de imagenes y ejecutables de Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Archivos de imagenes (*.png *.jpg *.gif *.bmp *.xpm);;Ejecutables de Win32 (*.exe);;Librerias de Win32 (*.dll);;Ejecutables y librerias de Win32 (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="-57"/>
+        <location line="-59"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+74"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1972,19 +1972,19 @@ Vea la ayuda para mas detalles.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+44"/>
-        <location line="+26"/>
+        <location line="+23"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Extrayendo icono de archivo ejecutable.&lt;br&gt;Esto puede tomar un tiempo...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>Extrayendo icono</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+40"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
@@ -2016,10 +2016,10 @@ Vea la ayuda para mas detalles.</translation>
         <translation>No se especifico el nombre del programa.</translation>
     </message>
     <message>
-        <location line="-338"/>
+        <location line="-311"/>
         <location line="+8"/>
-        <location line="+99"/>
-        <location line="+257"/>
+        <location line="+109"/>
+        <location line="+220"/>
         <source>Disabled</source>
         <translation>Deshabilitado</translation>
     </message>
@@ -2681,19 +2681,19 @@ Vea la ayuda para mas detalles.</translation>
         <translation type="obsolete">Ejecutables y librerias de Win32 (*.exe *.dll);;Ejecutables de Win32 (*.exe);;Librerias de Win32 (*.dll)</translation>
     </message>
     <message>
-        <location line="+39"/>
-        <location line="+26"/>
+        <location line="+16"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Extrayendo icono de archivo ejecutable.&lt;br&gt;Esto puede tomar un tiempo...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>Extrayendo icono</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+115"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Solo una entidad de %1 puede ejecutarse al mismo tiempo.</translation>
     </message>
@@ -2710,7 +2710,7 @@ Vea la ayuda para mas detalles.</translation>
         <translation>No se puede ejecutar el archivo</translation>
     </message>
     <message>
-        <location line="-727"/>
+        <location line="-685"/>
         <source>Description: %1</source>
         <translation>Descripción: %1</translation>
     </message>
@@ -3337,32 +3337,44 @@ Vea la ayuda para mas detalles.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+6"/>
+        <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+82"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>Archivos de prefijos (*.tbz)</translation>
     </message>
     <message>
-        <location line="-103"/>
         <source>Do you really wish to delete all old prefix files?</source>
-        <translation>Desea eliminar todos los archivos anteriores de los prefijos?</translation>
+        <translation type="vanished">Desea eliminar todos los archivos anteriores de los prefijos?</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
-        <translation>Removiendo disco virtual anterior. &lt;br&gt;Esto puede tomar un tiempo...</translation>
+        <translation type="vanished">Removiendo disco virtual anterior. &lt;br&gt;Esto puede tomar un tiempo...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-98"/>
         <source>Removing old fake drive</source>
         <translation>Removiendo disco virtual anterior</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
-        <translation>Importando prefijo. &lt;br&gt;Esto puede tomar un tiempo...</translation>
+        <translation type="vanished">Importando prefijo. &lt;br&gt;Esto puede tomar un tiempo...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+16"/>
         <source>Importing prefix</source>
         <translation>Importando prefijo</translation>
     </message>
@@ -5393,19 +5405,19 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+110"/>
-        <location line="+120"/>
+        <location line="+122"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-127"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation>No se encuentra el script de Winetricks. Instala el script de Winetricks primero. </translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+122"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

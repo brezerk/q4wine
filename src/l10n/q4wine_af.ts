@@ -1891,7 +1891,7 @@ Sien hulp vir verderre besonderhede.</translation>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+98"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+101"/>
         <source>Icon settings</source>
         <translation>Ikooninstellings</translation>
     </message>
@@ -1914,51 +1914,51 @@ Sien hulp vir verderre besonderhede.</translation>
         <location line="+54"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
-        <location line="+99"/>
-        <location line="+259"/>
+        <location line="+109"/>
+        <location line="+222"/>
         <source>Native</source>
         <translation>Oorspronklik</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-368"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-341"/>
         <location line="+11"/>
-        <location line="+99"/>
-        <location line="+262"/>
+        <location line="+109"/>
+        <location line="+225"/>
         <source>Built-in</source>
         <translation>Ingebou</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+10"/>
-        <location line="+99"/>
-        <location line="+263"/>
+        <location line="+109"/>
+        <location line="+226"/>
         <source>Native, Built-in</source>
         <translation>Oorspronklik, Ingebou</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+9"/>
-        <location line="+99"/>
-        <location line="+264"/>
+        <location line="+109"/>
+        <location line="+227"/>
         <source>Built-in, Native</source>
         <translation>Ingebou, Oorspronklik</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-512"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-485"/>
         <source>Adding new icon</source>
         <translation>Voeg nuwe ikoon in</translation>
     </message>
     <message>
-        <location line="+221"/>
+        <location line="+229"/>
         <source>Open Directory</source>
         <translation>Open Gids</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <location line="+318"/>
+        <location line="+53"/>
+        <location line="+281"/>
         <location line="+27"/>
         <source>Open Exe file</source>
         <translation>Open Exe Lêer</translation>
@@ -1968,7 +1968,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation type="obsolete">Exe lêers (*.exe)</translation>
     </message>
     <message>
-        <location line="-285"/>
+        <location line="-246"/>
         <source>Open image file</source>
         <translation>Open beeld lêers</translation>
     </message>
@@ -1977,12 +1977,12 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation type="obsolete">Beeld lêers (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location line="-57"/>
+        <location line="-59"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation>Exe, MSI, BAT lêers (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe lêers (*.exe *.EXE);;MSI lêers (*.msi *.MSI);;BAT lêers (*.bat *.BAT);;Alle lêers (*)</translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+74"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
         <translation>Grafiese lêers (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</translation>
     </message>
@@ -1992,7 +1992,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Grafiese en Win32 binêre lêers (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Grafiese lêers (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 Uitvoerkode lêers (*.exe *.EXE);;Win32 Gedeelded biblioteke (*.dll *.DLL);;Win32 Uitvoerbare lêers en Gedeelde biblioteke (*.exe *.EXE *.dll *.DLL);;All files (*)</translation>
     </message>
     <message>
-        <location line="+123"/>
+        <location line="+82"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
@@ -2028,23 +2028,23 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation type="obsolete">Beeld en Win32 binêre lêers (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Uitvoerbare lêers (*.exe);;Win32 Gedeelde biblioteek lêers (*.dll);;Win32 Uitvoerbare en Gedeelde biblioteke (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="-89"/>
-        <location line="+26"/>
+        <location line="-69"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translatorcomment>?</translatorcomment>
         <translation>Omttrek ikoon vanaf binêre lêer.&lt;br&gt;Dit kan &apos;n wyle duur...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>Onttrekking van ikoon</translation>
     </message>
     <message>
-        <location line="-275"/>
+        <location line="-261"/>
         <location line="+8"/>
-        <location line="+99"/>
-        <location line="+257"/>
+        <location line="+109"/>
+        <location line="+220"/>
         <source>Disabled</source>
         <translation>Ge-deaktiveer</translation>
     </message>
@@ -2648,24 +2648,24 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation type="obsolete">Win32 Uitvoerbare kode en Gedeelde biblioteke (*.exe *.dll);;Win32 Uitvoerbare kode (*.exe);;Win32 Gedeelde biblioteke (*.dll)</translation>
     </message>
     <message>
-        <location line="+39"/>
-        <location line="+26"/>
+        <location line="+16"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Trek ikoon uit lêer in.&lt;br&gt;Dit mag &apos;n wyle neem...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>Onttrekking van ikoon</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+115"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Slegs een instansie van %1 kan op &apos;n slag loop.</translation>
     </message>
     <message>
-        <location line="-720"/>
+        <location line="-678"/>
         <source>Description: %1</source>
         <translation>Beskrywing: %1</translation>
     </message>
@@ -2728,7 +2728,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Jammer, die installerings towenaar is nog nie geïmplementeer nie. Dit sal in &apos;n volgende weergawe beskikbaar wees.</translation>
     </message>
     <message>
-        <location line="+255"/>
+        <location line="+213"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
         <translation>Binêre lêer &quot;%1&quot; bestaan nie.</translation>
@@ -2757,7 +2757,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Wine-tuistes</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-716"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-674"/>
         <source>Default</source>
         <translation>Verstek</translation>
     </message>
@@ -3324,33 +3324,45 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Tuiste argief beeldlêers (*.tbz *.TBZ);;Alle lêers (*)</translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+6"/>
+        <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+82"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>Argiveer wine-tuiste beelde (*.tbz)</translation>
     </message>
     <message>
-        <location line="-103"/>
         <source>Do you really wish to delete all old prefix files?</source>
         <translatorcomment>??</translatorcomment>
-        <translation>Wil u regtig graag al die wine-tuiste leers verwyder?</translation>
+        <translation type="vanished">Wil u regtig graag al die wine-tuiste leers verwyder?</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
-        <translation>Verwydering van ou vals skyf.&lt;br&gt;Dit mag &apos;n wyle neem...</translation>
+        <translation type="vanished">Verwydering van ou vals skyf.&lt;br&gt;Dit mag &apos;n wyle neem...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-98"/>
         <source>Removing old fake drive</source>
         <translation>Verwydering van ou vals skyf</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
-        <translation>Trek Wine-tuistes in.&lt;br&gt;Dit mag &apos;n wyle neem...</translation>
+        <translation type="vanished">Trek Wine-tuistes in.&lt;br&gt;Dit mag &apos;n wyle neem...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+16"/>
         <source>Importing prefix</source>
         <translation>Trek Wine-tuiste in</translation>
     </message>
@@ -5279,18 +5291,18 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+110"/>
-        <location line="+120"/>
+        <location line="+122"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-127"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Kan nie Winetricks skrip vind nie. Installeer eers Winetricks skrip.</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+122"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation>Lêer &apos;%1&apos; is nie skryfbaar of leesbaar nie. Gaan die lêer se regte na.</translation>
     </message>

@@ -1885,7 +1885,7 @@ See help for details.</source>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+98"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+101"/>
         <source>Icon settings</source>
         <translation>Параметри піктограм</translation>
     </message>
@@ -1948,35 +1948,35 @@ See help for details.</source>
         <location line="-420"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
-        <location line="+99"/>
-        <location line="+259"/>
+        <location line="+109"/>
+        <location line="+222"/>
         <source>Native</source>
         <translation>Рідні</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-368"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-341"/>
         <location line="+11"/>
-        <location line="+99"/>
-        <location line="+262"/>
+        <location line="+109"/>
+        <location line="+225"/>
         <source>Built-in</source>
         <translation>Вбудовані</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+10"/>
-        <location line="+99"/>
-        <location line="+263"/>
+        <location line="+109"/>
+        <location line="+226"/>
         <source>Native, Built-in</source>
         <translation>Рідні, вбудовані</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
         <location line="+9"/>
-        <location line="+99"/>
-        <location line="+264"/>
+        <location line="+109"/>
+        <location line="+227"/>
         <source>Built-in, Native</source>
         <translation>Вбудовані, рідні</translation>
     </message>
@@ -2062,29 +2062,29 @@ See help for details.</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-512"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-485"/>
         <source>Adding new icon</source>
         <translation>Додавання нової піктограми</translation>
     </message>
     <message>
-        <location line="+221"/>
+        <location line="+229"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <location line="+318"/>
+        <location line="+53"/>
+        <location line="+281"/>
         <location line="+27"/>
         <source>Open Exe file</source>
         <translation>Відкрити файл exe</translation>
     </message>
     <message>
-        <location line="-342"/>
+        <location line="-305"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation>Файли Exe, MSI, BAT (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Виконувані файли (*.exe *.EXE);;Файли MSI (*.msi *.MSI);;Файли BAT (*.bat *.BAT);;Усі файли (*)</translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+74"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
         <translation>Файли зображень (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</translation>
     </message>
@@ -2094,7 +2094,7 @@ See help for details.</source>
         <translation>Файли зображень та бінарні файли Win32 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Файли зображень (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Виконувані файли Win32 (*.exe *.EXE);;Роздільні бібліотеки Win32 (*.dll *.DLL);;Бінарні файли Win32 (*.exe *.EXE *.dll *.DLL);;Усі файли (*)</translation>
     </message>
     <message>
-        <location line="+183"/>
+        <location line="+142"/>
         <source>Invalid virtual desktop size.</source>
         <translation>Неприпустимий розмір віртуального робочого столу.</translation>
     </message>
@@ -2103,7 +2103,7 @@ See help for details.</source>
         <translation type="obsolete">Файли exe (*.exe)</translation>
     </message>
     <message>
-        <location line="-198"/>
+        <location line="-159"/>
         <source>Open image file</source>
         <translation>Відкрити файл зображення</translation>
     </message>
@@ -2112,28 +2112,28 @@ See help for details.</source>
         <translation type="obsolete">Файли зображень (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location line="+59"/>
-        <location line="+26"/>
+        <location line="+40"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Експорт піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>Експорт піктограми</translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+57"/>
         <location line="+5"/>
         <source>Sorry, an icon named %1 already exists.</source>
         <translation>Вибачте, але піктограма з назвою %1 вже існує.</translation>
     </message>
     <message>
-        <location line="-350"/>
+        <location line="-323"/>
         <location line="+8"/>
-        <location line="+99"/>
-        <location line="+257"/>
+        <location line="+109"/>
+        <location line="+220"/>
         <source>Disabled</source>
         <translation>Вимкнено</translation>
     </message>
@@ -3029,19 +3029,19 @@ See help for details.</source>
         <translation type="obsolete">Виконувані файли та бібліотеки Win32 (*.exe *.dll);;Виконувані файли Win32 (*.exe);;Бібліотеки Win32 (*.dll)</translation>
     </message>
     <message>
-        <location line="+39"/>
-        <location line="+26"/>
+        <location line="+16"/>
+        <location line="+19"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Експорт піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <location line="+26"/>
+        <location line="-19"/>
+        <location line="+19"/>
         <source>Extracting icon</source>
         <translation>Експорт піктограми</translation>
     </message>
     <message>
-        <location line="+127"/>
+        <location line="+115"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Одночасно може бути запущена тільки одна копія %1.</translation>
     </message>
@@ -3069,7 +3069,7 @@ See help for details.</source>
         <translation type="obsolete">Про програму</translation>
     </message>
     <message>
-        <location line="-723"/>
+        <location line="-681"/>
         <source>Yes</source>
         <translation>Так</translation>
     </message>
@@ -3338,36 +3338,48 @@ See help for details.</source>
         <translation>Архівовані образи префіксів (*.tbz *.TBZ);;Усі файли (*)</translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+6"/>
+        <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+82"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>Архів образу префіксу (*.tbz)</translation>
     </message>
     <message>
-        <location line="-103"/>
         <source>Do you really wish to delete all old prefix files?</source>
-        <translation>Ви справді бажаєте вилучити всі старі файли префіксів?</translation>
+        <translation type="vanished">Ви справді бажаєте вилучити всі старі файли префіксів?</translation>
     </message>
     <message>
         <source>Prefix archive images (*.tbz);;All files (*)</source>
         <translation type="obsolete">Файли архівів префіксів (*.tbz);;Усі файли (*)</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
-        <translation>Знищуємо старий фіктивний диск.&lt;br&gt;Це може зайняти деякий час...</translation>
+        <translation type="vanished">Знищуємо старий фіктивний диск.&lt;br&gt;Це може зайняти деякий час...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-98"/>
         <source>Removing old fake drive</source>
         <translation>Знищуємо старий фіктивний диск</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
-        <translation>Імпорт префікса.&lt;br&gt;Будь ласка, зачекайте...</translation>
+        <translation type="vanished">Імпорт префікса.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+16"/>
         <source>Importing prefix</source>
         <translation>Імпорт префікса</translation>
     </message>
@@ -5300,18 +5312,18 @@ Note: leave it blank for default.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+110"/>
-        <location line="+120"/>
+        <location line="+122"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-127"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Не можу знайти виконуваний файл winetricks. Встановите Wintricks.</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+122"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation>Файл &apos;%1&apos; недоступний для запису або читання. Перевірте права доступу.</translation>
     </message>
