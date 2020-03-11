@@ -279,7 +279,7 @@ void PrefixControlWidget::prefixImport_Click(){
         return;
 
     QString prefixName = model->index(prefixTable->currentIndex().row(), 0, QModelIndex()).data().toString();
-    QString targetDir = model->index(prefixTable->currentIndex().row(), 2, QModelIndex()).data().toString();
+    QString targetDir = model->index(prefixTable->currentIndex().row(), 3, QModelIndex()).data().toString();
 
     if (prefixName.isEmpty())
         return;
@@ -305,12 +305,12 @@ void PrefixControlWidget::prefixImport_Click(){
         QDir dir;
 
         if (dir.exists(targetDir)){
-            if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete all old prefix files?"), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
+            if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete all prefix files at '%1'?").arg(targetDir), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
                 QStringList args;
                 args << "-rf";
                 args << targetDir;
 
-                Process exportProcess(args, CoreLib->getWhichOut("rm"), QDir::homePath(), tr("Removing old fake drive.<br>This can take a while..."), tr("Removing old fake drive"));
+                Process exportProcess(args, CoreLib->getWhichOut("rm"), QDir::homePath(), tr("Removing old fake drive at '%1'<br>This can take a while...").arg(targetDir), tr("Removing old fake drive"));
                 if (exportProcess.exec()!=QDialog::Accepted){
                     return;
                 }
@@ -326,7 +326,7 @@ void PrefixControlWidget::prefixImport_Click(){
         args << "-C" << targetDir;
 
         //Creating process dialog
-        Process exportProcess(args, CoreLib->getSetting("system", "tar").toString(), QDir::homePath(), tr("Importing prefix.<br>This can take a while..."), tr("Importing prefix"));
+        Process exportProcess(args, CoreLib->getSetting("system", "tar").toString(), QDir::homePath(), tr("Importing prefix to '%1'<br>This can take a while...").arg(targetDir), tr("Importing prefix"));
         exportProcess.exec();
     }
     return;
