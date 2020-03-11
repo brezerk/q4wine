@@ -1,6 +1,6 @@
 Version 1.3.13
  Fixed:
-  - Import feature is not working as expected [BUG-156];
+  - Prefix Import feature is not working as expected [BUG-156];
 
 Version 1.3.12
  Updated:
