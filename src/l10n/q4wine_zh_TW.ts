@@ -3332,17 +3332,17 @@ See help for details.</source>
     <message>
         <location line="+6"/>
         <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
-        <translation type="unfinished"></translation>
+        <translation>您真的想要刪除在「%1」中所有的前綴嗎？</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在移除位於「%1」舊的假磁碟&lt;br&gt;這可能需要一點時間……</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在匯入前綴到「%1」&lt;br&gt;這可能需要一點時間……</translation>
     </message>
     <message>
         <location line="+82"/>
