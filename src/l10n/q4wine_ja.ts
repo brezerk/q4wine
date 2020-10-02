@@ -3098,17 +3098,17 @@ See help for details.</source>
     <message>
         <location line="+6"/>
         <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
-        <translation type="unfinished"></translation>
+        <translation>本当に &apos;%1&apos; のすべての実行環境ファイルを削除しますか?</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; の古い仮想ドライブを削除しています&lt;br&gt;これにはしばらくかかるかもしれません...</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; に実行環境をインポートしています&lt;br&gt;これにはしばらくかかるかもしれません...</translation>
     </message>
     <message>
         <location line="+82"/>
