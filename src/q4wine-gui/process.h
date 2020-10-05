@@ -31,6 +31,7 @@
 #include <QLibrary>
 #include <QTextCodec>
 #include <QTextStream>
+#include <locale.h>
 
 #ifdef DEBUG
 #include <QDebug>
