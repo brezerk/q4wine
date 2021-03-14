@@ -141,11 +141,11 @@ int main(int argc, char *argv[])
         }
     }
 
-    if (!CoreLib->checkDirs(QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME))){
+    if (!CoreLib->checkDirs(corelib::getAppConfigLocation())){
         return -1;
     }
 
-    if (!CoreLib->checkDirs(QDir::homePath(), QStringList() << ".local/share/wineprefixes")){
+    if (!CoreLib->checkDirs(corelib::getGenericDataLocation(), QStringList() << "wineprefixes")){
         return -1;
     }
 

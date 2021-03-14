@@ -94,10 +94,7 @@ void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
 }
 
 bool HttpCore::getCacheFile(QString page){
-    QString cache_file = QDir::homePath();
-    cache_file.append("/.config/");
-    cache_file.append(APP_SHORT_NAME);
-    cache_file.append("/tmp/cache/");
+    QString cache_file = corelib::getAppCacheLocation();
     cache_file.append(QCryptographicHash::hash(page.toUtf8().constData(), QCryptographicHash::Md4).toHex());
 
     QFile file(cache_file);
@@ -117,10 +114,7 @@ bool HttpCore::getCacheFile(QString page){
 }
 
 QString HttpCore::getXMLReply(){
-    QString cache_file = QDir::homePath();
-    cache_file.append("/.config/");
-    cache_file.append(APP_SHORT_NAME);
-    cache_file.append("/tmp/cache/");
+    QString cache_file = corelib::getAppCacheLocation();
     cache_file.append(QCryptographicHash::hash(this->page.toUtf8().constData(), QCryptographicHash::Md4).toHex());
 
     QFile file(cache_file);

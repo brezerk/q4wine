@@ -46,6 +46,7 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QTranslator>
+#include <QStandardPaths>
 #include <locale.h>
 
 #include "process.h"
@@ -344,6 +345,13 @@ public:
      * \return true on success.
      */
     bool removeDirectory(const QString &dirPath);
+
+    static const QString getAppConfigLocation();
+    static const QString getGenericConfigLocation();
+    static const QString getAppDataLocation();
+    static const QString getGenericDataLocation();
+    static const QString getAppCacheLocation();
+    static const QString getGenericCacheLocation();
 
 private:
     /*! Define is library operate in CLI or GUI mode.

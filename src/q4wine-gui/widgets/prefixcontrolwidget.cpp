@@ -289,9 +289,7 @@ void PrefixControlWidget::prefixImport_Click(){
         targetDir.append("/.wine/");
     }
 
-    QString openpath = QDir::homePath();
-    openpath.append("/.config/");
-    openpath.append(APP_SHORT_NAME);
+    QString openpath = corelib::getAppConfigLocation();
     openpath.append("/prefixes/");
 
     QFileDialog::Options options;
@@ -389,9 +387,7 @@ void PrefixControlWidget::prefixExport_Click(){
         prefixPath.append("/.wine/");
     }
 
-    QString savepath = QDir::homePath();
-    savepath.append("/.config/");
-    savepath.append(APP_SHORT_NAME);
+    QString savepath = corelib::getAppConfigLocation();
     savepath.append("/prefixes/");
     savepath.append(prefixName);
     savepath.append("-");

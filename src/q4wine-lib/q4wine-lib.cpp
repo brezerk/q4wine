@@ -27,6 +27,30 @@ corelib* createCoreLib(const bool GUI_MODE){
     return new corelib(GUI_MODE);
 }
 
+const QString corelib::getGenericConfigLocation() {
+    return QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
+}
+
+const QString corelib::getAppConfigLocation() {
+    return QString("%1/%2").arg(getGenericConfigLocation()).arg(APP_SHORT_NAME);
+}
+
+const QString corelib::getGenericDataLocation() {
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
+}
+
+const QString corelib::getAppDataLocation() {
+    return QString("%1/%2").arg(getGenericDataLocation()).arg(APP_SHORT_NAME);
+}
+
+const QString corelib::getGenericCacheLocation() {
+    return QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation);
+}
+
+const QString corelib::getAppCacheLocation() {
+    return QString("%1/%2").arg(getGenericCacheLocation()).arg(APP_SHORT_NAME);
+}
+
 QList<QStringList> corelib::getWineProcessList(const QString &prefix_name){
     QList<QStringList> proclist;
     QStringList procline;
@@ -381,8 +405,8 @@ void corelib::checkSettings(){
     }
 
     if (this->getSetting("advanced", "prefixDefaultPath", false).toString().isEmpty()){
-        QString path = QDir::homePath();
-        path.append("/.local/share/wineprefixes");
+        QString path = this->getGenericDataLocation();
+        path.append("/wineprefixes");
 
         QSettings settings(APP_SHORT_NAME, "default");
         settings.beginGroup("advanced");
@@ -1085,7 +1109,7 @@ QString corelib::createDesktopFile(const QString &prefix_name, const QString &di
     QString fileName;
 
     //FIXME:
-    QString base_icon = QString("%1/.local/share/applications/").arg(QDir::homePath());
+    QString base_icon = QString("%1/applications/").arg(this->getGenericDataLocation());
 
 #ifdef _OS_DARWIN_
     QString embedded_icon_path = QString("%1/%2.app/Contents/Resources/icons/share/q4wine/icons/").arg(APP_PREF, APP_NAME);
@@ -1102,9 +1126,7 @@ QString corelib::createDesktopFile(const QString &prefix_name, const QString &di
         fileName.append(dir_name);
         fileName.append("/");
     } else {
-        fileName = QDir::homePath();
-        fileName.append("/.config/");
-        fileName.append(APP_SHORT_NAME);
+        fileName = this->getAppConfigLocation();
         fileName.append("/tmp/");
     }
 
@@ -1181,7 +1203,7 @@ bool corelib::deleteDesktopFile(const QString &prefix_name, const QString &dir_n
     QString fileName;
 
     //FIXME:
-    QString base_icon = QString("%1/.local/share/applications/").arg(QDir::homePath());
+    QString base_icon = QString("%1/applications/").arg(this->getGenericDataLocation());
 
     fileName = base_icon;
     fileName.append(APP_SHORT_NAME);
@@ -1957,14 +1979,13 @@ bool corelib::exportPrefixesConfiguration(void){
     QStringList list = db_prefix.getPrefixList();
     QDir dir;
     QFile file;
-    QString home_path = dir.homePath();
     for (int i = 0; i < list.size(); ++i){
-        QString path = home_path;
+        QString path = this->getGenericDataLocation();
         QString prefix_name = list.at(i);
         QHash<QString,QString> result = db_prefix.getByName(prefix_name);
         QString prefix_path=result.value("path");
 
-        path.append("/.local/share/wineprefixes/");
+        path.append("/wineprefixes/");
 
         if (!dir.mkpath(path))
             return false;
@@ -1997,8 +2018,8 @@ QStringList corelib::importPrefixesConfiguration(void){
     QStringList list = db_prefix.getPrefixList();
     QDir dir;
     QFile file;
-    QString path = dir.homePath();
-    path.append("/.local/share/wineprefixes/");
+    QString path = this->getGenericDataLocation();
+    path.append("/wineprefixes/");
 
 
     dir.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
