@@ -91,10 +91,7 @@ void IconsView::cmdOk_Click(){
 		sourceFile.append(lstIcons->currentItem()->text());
 
 		if (cbDefaultExport->checkState()==Qt::Checked){
-		saveFile.clear();
-		saveFile.append(corelib::getAppConfigLocation());
-		saveFile.append("/icons/");
-		saveFile.append(lstIcons->currentItem()->text());
+        saveFile = corelib::getAppConfigLocation(QStringList() << "icons" << lstIcons->currentItem()->text());
 
 		saveFileName=lstIcons->currentItem()->text();
 
@@ -114,20 +111,14 @@ void IconsView::cmdOk_Click(){
 																		tr("Replace existing file or rename current one?"), QLineEdit::Normal,
 																	saveFileName , &ok);
 						if ((!saveFileName.isEmpty()) && (ok)){
-							saveFile.clear();
-							saveFile.append(corelib::getAppConfigLocation());
-							saveFile.append("/icons/");
-							saveFile.append(saveFileName);
+                            saveFile = corelib::getAppConfigLocation(QStringList() << "icons" << saveFileName);
 						} else {
 							reject();
 							return;
 						}
 					break;
 					case 1:
-						saveFile.clear();
-						saveFile.append(corelib::getAppConfigLocation());
-						saveFile.append("/icons/");
-						saveFile.append(saveFileName);
+                        saveFile = corelib::getAppConfigLocation(QStringList() << "icons" << saveFileName);
 						selectedFile=saveFile;
 						accept();
 						return;
@@ -145,9 +136,7 @@ void IconsView::cmdOk_Click(){
 		}
 
 		} else {
-			saveFile.clear();
-			saveFile.append(corelib::getAppConfigLocation());
-			saveFile.append("/icons/");
+            saveFile = corelib::getAppConfigLocation(QStringList() << "icons");
 
         QFileDialog::Options options;
 

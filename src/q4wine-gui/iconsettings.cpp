@@ -393,8 +393,7 @@ void IconSettings::cmdGetProgram_Click(){
 }
 
 void IconSettings::getProgramIcon(QString name){
-    QString local_path = corelib::getGenericDataLocation();
-    local_path.append("/icons/");
+    QString local_path = corelib::getGenericDataLocation(QStringList() << "icons");
 
     QDir dir(local_path, QString("*_%1.*").arg(name));
     dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
@@ -637,8 +636,7 @@ void IconSettings::cmdGetPreRun_Click(){
     QString fileName;
     QString searchPath = "";
     if (txtPreRun->text().isEmpty()) {
-        searchPath = corelib::getAppConfigLocation();
-        searchPath.append("/scripts");
+        searchPath = corelib::getAppConfigLocation(QStringList() << "scripts");
     } else {
         searchPath = QFileInfo(txtPreRun->text()).absolutePath();
     }
@@ -664,8 +662,7 @@ void IconSettings::cmdGetPostRun_Click(){
     QString fileName;
     QString searchPath = "";
     if (txtPostRun->text().isEmpty()) {
-        searchPath = corelib::getAppConfigLocation();
-        searchPath.append("/scripts");
+        searchPath = corelib::getAppConfigLocation(QStringList() << "scripts");
     } else {
         searchPath = QFileInfo(txtPostRun->text()).absolutePath();
     }

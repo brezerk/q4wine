@@ -225,8 +225,7 @@ void MainWindow::setSearchFocus(){
 }
 
 void MainWindow::clearTmp(){
-    QString fileName = corelib::getAppConfigLocation();
-    fileName.append("/tmp");
+    QString fileName = corelib::getAppConfigLocation(QStringList() << "tmp");
 
     if (not CoreLib->removeDirectory(fileName)){
         qWarning()<<"[WW] Can't clear "<<fileName;
