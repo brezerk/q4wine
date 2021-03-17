@@ -39,6 +39,7 @@
 
 #include "config.h"
 #include "core/database/versions.h"
+#include "q4wine-lib.h"
 
 /*!
  * \class DataBase

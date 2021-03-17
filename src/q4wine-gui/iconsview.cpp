@@ -92,9 +92,7 @@ void IconsView::cmdOk_Click(){
 
 		if (cbDefaultExport->checkState()==Qt::Checked){
 		saveFile.clear();
-		saveFile.append(QDir::homePath());
-		saveFile.append("/.config/");
-		saveFile.append(APP_SHORT_NAME);
+		saveFile.append(corelib::getAppConfigLocation());
 		saveFile.append("/icons/");
 		saveFile.append(lstIcons->currentItem()->text());
 
@@ -117,9 +115,7 @@ void IconsView::cmdOk_Click(){
 																	saveFileName , &ok);
 						if ((!saveFileName.isEmpty()) && (ok)){
 							saveFile.clear();
-							saveFile.append(QDir::homePath());
-							saveFile.append("/.config/");
-							saveFile.append(APP_SHORT_NAME);
+							saveFile.append(corelib::getAppConfigLocation());
 							saveFile.append("/icons/");
 							saveFile.append(saveFileName);
 						} else {
@@ -129,9 +125,7 @@ void IconsView::cmdOk_Click(){
 					break;
 					case 1:
 						saveFile.clear();
-						saveFile.append(QDir::homePath());
-						saveFile.append("/.config/");
-						saveFile.append(APP_SHORT_NAME);
+						saveFile.append(corelib::getAppConfigLocation());
 						saveFile.append("/icons/");
 						saveFile.append(saveFileName);
 						selectedFile=saveFile;
@@ -152,9 +146,7 @@ void IconsView::cmdOk_Click(){
 
 		} else {
 			saveFile.clear();
-			saveFile.append(QDir::homePath());
-			saveFile.append("/.config/");
-			saveFile.append(APP_SHORT_NAME);
+			saveFile.append(corelib::getAppConfigLocation());
 			saveFile.append("/icons/");
 
         QFileDialog::Options options;

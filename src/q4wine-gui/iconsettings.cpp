@@ -393,8 +393,8 @@ void IconSettings::cmdGetProgram_Click(){
 }
 
 void IconSettings::getProgramIcon(QString name){
-    QString local_path = QDir::homePath();
-    local_path.append("/.local/share/icons/");
+    QString local_path = corelib::getGenericDataLocation();
+    local_path.append("/icons/");
 
     QDir dir(local_path, QString("*_%1.*").arg(name));
     dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
@@ -637,8 +637,8 @@ void IconSettings::cmdGetPreRun_Click(){
     QString fileName;
     QString searchPath = "";
     if (txtPreRun->text().isEmpty()) {
-        searchPath = QDir::homePath();
-        searchPath.append("/.config/q4wine/scripts");
+        searchPath = corelib::getAppConfigLocation();
+        searchPath.append("/scripts");
     } else {
         searchPath = QFileInfo(txtPreRun->text()).absolutePath();
     }
@@ -664,8 +664,8 @@ void IconSettings::cmdGetPostRun_Click(){
     QString fileName;
     QString searchPath = "";
     if (txtPostRun->text().isEmpty()) {
-        searchPath = QDir::homePath();
-        searchPath.append("/.config/q4wine/scripts");
+        searchPath = corelib::getAppConfigLocation();
+        searchPath.append("/scripts");
     } else {
         searchPath = QFileInfo(txtPostRun->text()).absolutePath();
     }

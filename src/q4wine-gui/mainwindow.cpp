@@ -42,7 +42,7 @@ MainWindow::MainWindow(const int startState, const QString &run_binary, QWidget 
         progress.exec();
     }
 
-    //  importIcons(QString("%1/.local/share/applications/wine/").arg(QDir::homePath()));
+    //  importIcons(QString("%1/applications/wine/").arg(corelib::getGenericDataLocation()));
 
     //exportProcess.close();
     // Base GUI setup
@@ -225,9 +225,7 @@ void MainWindow::setSearchFocus(){
 }
 
 void MainWindow::clearTmp(){
-    QString fileName = QDir::homePath();
-    fileName.append("/.config/");
-    fileName.append(APP_SHORT_NAME);
+    QString fileName = corelib::getAppConfigLocation();
     fileName.append("/tmp");
 
     if (not CoreLib->removeDirectory(fileName)){
@@ -235,7 +233,7 @@ void MainWindow::clearTmp(){
         return;
     }
 
-    if (!CoreLib->checkDirs(QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME), QStringList() << "tmp" << "tmp/cache")){
+    if (!CoreLib->checkDirs(corelib::getAppConfigLocation(), QStringList() << "tmp" << "tmp/cache")){
         return;
     }
 
