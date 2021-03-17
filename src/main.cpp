@@ -22,6 +22,7 @@
 #include <QTranslator>
 #include <QMessageBox>
 #include <QTextStream>
+#include <QStandardPaths>
 
 #ifdef DEBUG
 
@@ -141,7 +142,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    if (!CoreLib->checkDirs(QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME))){
+    if (!CoreLib->checkDirs(QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QDir::separator() + APP_SHORT_NAME))){
         return -1;
     }
 

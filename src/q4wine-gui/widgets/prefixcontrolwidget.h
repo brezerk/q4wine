@@ -34,6 +34,7 @@
 #endif
 
 //Qt includes
+#include <QStandardPaths>
 #include <QSqlQueryModel>
 #include <QTableView>
 #include <QCheckBox>

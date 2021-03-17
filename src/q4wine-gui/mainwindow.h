@@ -29,6 +29,7 @@
 #include <src/q4wine-gui/ui_MainWindow.h>
 
 //Qt includes
+#include <QStandardPaths>
 #include <QSystemTrayIcon>
 #include <QSplitter>
 #include <QLocalServer>

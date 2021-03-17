@@ -40,7 +40,7 @@ system_menu::system_menu()
 
     base_directory = QString("%1/.local/share/desktop-directories").arg(home_path);
     base_icon = QString("%1/.local/share/applications").arg(home_path);
-    base_menu = QString("%1/.config/menus/applications-merged/%2.menu").arg(home_path).arg(APP_SHORT_NAME);
+    base_menu = QString("%1/menus/applications-merged/%2.menu").arg(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation)).arg(APP_SHORT_NAME);
 }
 
 bool system_menu::add_dom_icons(QDomDocument &menu_xml, QDomElement &root, const QString &prefix_name, const QString &dir_name, const QStringList &iconsList){

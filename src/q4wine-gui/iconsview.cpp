@@ -91,12 +91,14 @@ void IconsView::cmdOk_Click(){
 		sourceFile.append(lstIcons->currentItem()->text());
 
 		if (cbDefaultExport->checkState()==Qt::Checked){
-		saveFile.clear();
-		saveFile.append(QDir::homePath());
-		saveFile.append("/.config/");
-		saveFile.append(APP_SHORT_NAME);
-		saveFile.append("/icons/");
-		saveFile.append(lstIcons->currentItem()->text());
+        saveFile = QDir::cleanPath(
+            QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+            QDir::separator() +
+            APP_SHORT_NAME +
+            QDir::separator() +
+            "icons" +
+            QDir::separator() +
+            lstIcons->currentItem()->text());
 
 		saveFileName=lstIcons->currentItem()->text();
 
@@ -116,24 +118,29 @@ void IconsView::cmdOk_Click(){
 																		tr("Replace existing file or rename current one?"), QLineEdit::Normal,
 																	saveFileName , &ok);
 						if ((!saveFileName.isEmpty()) && (ok)){
-							saveFile.clear();
-							saveFile.append(QDir::homePath());
-							saveFile.append("/.config/");
-							saveFile.append(APP_SHORT_NAME);
-							saveFile.append("/icons/");
-							saveFile.append(saveFileName);
+                            saveFile = QDir::cleanPath(
+                                QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+                                QDir::separator() +
+                                APP_SHORT_NAME +
+                                QDir::separator() +
+                                "icons" +
+                                QDir::separator() +
+                                saveFileName);
+
 						} else {
 							reject();
 							return;
 						}
 					break;
 					case 1:
-						saveFile.clear();
-						saveFile.append(QDir::homePath());
-						saveFile.append("/.config/");
-						saveFile.append(APP_SHORT_NAME);
-						saveFile.append("/icons/");
-						saveFile.append(saveFileName);
+                        saveFile = QDir::cleanPath(
+                            QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+                            QDir::separator() +
+                            APP_SHORT_NAME +
+                            QDir::separator() +
+                            "icons" +
+                            QDir::separator() +
+                            saveFileName);
 						selectedFile=saveFile;
 						accept();
 						return;
@@ -151,11 +158,12 @@ void IconsView::cmdOk_Click(){
 		}
 
 		} else {
-			saveFile.clear();
-			saveFile.append(QDir::homePath());
-			saveFile.append("/.config/");
-			saveFile.append(APP_SHORT_NAME);
-			saveFile.append("/icons/");
+            saveFile = QDir::cleanPath(
+                QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+                QDir::separator() +
+                APP_SHORT_NAME +
+                QDir::separator() +
+                "icons");
 
         QFileDialog::Options options;
 

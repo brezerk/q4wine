@@ -637,8 +637,12 @@ void IconSettings::cmdGetPreRun_Click(){
     QString fileName;
     QString searchPath = "";
     if (txtPreRun->text().isEmpty()) {
-        searchPath = QDir::homePath();
-        searchPath.append("/.config/q4wine/scripts");
+        searchPath = QDir::cleanPath(
+            QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+            QDir::separator() +
+            APP_SHORT_NAME +
+            QDir::separator() +
+            "scripts");
     } else {
         searchPath = QFileInfo(txtPreRun->text()).absolutePath();
     }
@@ -664,8 +668,12 @@ void IconSettings::cmdGetPostRun_Click(){
     QString fileName;
     QString searchPath = "";
     if (txtPostRun->text().isEmpty()) {
-        searchPath = QDir::homePath();
-        searchPath.append("/.config/q4wine/scripts");
+        searchPath = QDir::cleanPath(
+            QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+            QDir::separator() +
+            APP_SHORT_NAME +
+            QDir::separator() +
+            "scripts");
     } else {
         searchPath = QFileInfo(txtPostRun->text()).absolutePath();
     }

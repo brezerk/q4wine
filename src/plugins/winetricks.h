@@ -28,6 +28,7 @@
 #include <QProcess>
 #include <QMessageBox>
 #include <QLibrary>
+#include <QStandardPaths>
 #include <QProgressDialog>
 #include <QTextStream>
 #include <QFile>

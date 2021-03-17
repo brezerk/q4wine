@@ -42,6 +42,7 @@
 #include <QResizeEvent>
 #include <QKeyEvent>
 #include <QHeaderView>
+#include <QStandardPaths>
 #include <QTableWidgetItem>
 #include <QTemporaryDir>
 

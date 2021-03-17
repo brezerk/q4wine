@@ -29,7 +29,7 @@
 #include <QDomDocument>
 #include <QDomElement>
 #include <QDomText>
-
+#include <QStandardPaths>
 #include <QStringList>
 #include <QTextStream>
 #include <QString>

@@ -43,6 +43,7 @@
 #include <QRegExp>
 #include <QTextCodec>
 #include <QTextStream>
+#include <QStandardPaths>
 #include <QDesktopServices>
 #include <QUrl>
 #include <QTranslator>

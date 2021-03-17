@@ -225,17 +225,19 @@ void MainWindow::setSearchFocus(){
 }
 
 void MainWindow::clearTmp(){
-    QString fileName = QDir::homePath();
-    fileName.append("/.config/");
-    fileName.append(APP_SHORT_NAME);
-    fileName.append("/tmp");
+    QString fileName = QDir::cleanPath(
+        QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+        QDir::separator() +
+        APP_SHORT_NAME +
+        QDir::separator() +
+        "tmp");
 
     if (not CoreLib->removeDirectory(fileName)){
         qWarning()<<"[WW] Can't clear "<<fileName;
         return;
     }
 
-    if (!CoreLib->checkDirs(QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME), QStringList() << "tmp" << "tmp/cache")){
+    if (!CoreLib->checkDirs(QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QDir::separator() + APP_SHORT_NAME), QStringList() << "tmp" << "tmp/cache")){
         return;
     }
 

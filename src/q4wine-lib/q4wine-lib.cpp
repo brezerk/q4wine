@@ -1102,10 +1102,12 @@ QString corelib::createDesktopFile(const QString &prefix_name, const QString &di
         fileName.append(dir_name);
         fileName.append("/");
     } else {
-        fileName = QDir::homePath();
-        fileName.append("/.config/");
-        fileName.append(APP_SHORT_NAME);
-        fileName.append("/tmp/");
+        fileName = QDir::cleanPath(
+            QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+            QDir::separator() +
+            APP_SHORT_NAME +
+            QDir::separator() +
+            "tmp");
     }
 
     fileName.append(result.value("name"));

@@ -289,11 +289,12 @@ void PrefixControlWidget::prefixImport_Click(){
         targetDir.append("/.wine/");
     }
 
-    QString openpath = QDir::homePath();
-    openpath.append("/.config/");
-    openpath.append(APP_SHORT_NAME);
-    openpath.append("/prefixes/");
-
+    QString openpath = QDir::cleanPath(
+        QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+        QDir::separator() +
+        APP_SHORT_NAME +
+        QDir::separator() +
+        "prefixes");
     QFileDialog::Options options;
 
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
@@ -389,10 +390,13 @@ void PrefixControlWidget::prefixExport_Click(){
         prefixPath.append("/.wine/");
     }
 
-    QString savepath = QDir::homePath();
-    savepath.append("/.config/");
-    savepath.append(APP_SHORT_NAME);
-    savepath.append("/prefixes/");
+    QString savepath = QDir::cleanPath(
+        QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+        QDir::separator() +
+        APP_SHORT_NAME +
+        QDir::separator() +
+        "prefixes");
+    savepath.append(QDir::separator());
     savepath.append(prefixName);
     savepath.append("-");
     savepath.append(QDate::currentDate().toString(Qt::ISODate));

@@ -24,6 +24,7 @@
 #ifndef DB_H
 #define DB_H
 
+#include <QStandardPaths>
 #include <QSqlDatabase>
 #include <QSqlRecord>
 #include <QStringList>

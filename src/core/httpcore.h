@@ -28,7 +28,8 @@
 #include <QNetworkReply>
 #include <QNetworkProxy>
 #include <QMessageBox>
- #include <QCryptographicHash>
+#include <QStandardPaths>
+#include <QCryptographicHash>
 
 #ifdef DEBUG
 #include <QDebug>

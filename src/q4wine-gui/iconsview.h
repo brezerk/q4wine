@@ -28,6 +28,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QInputDialog>
+#include <QStandardPaths>
 #include <QAbstractItemView>
 #include <QDialog>
 
