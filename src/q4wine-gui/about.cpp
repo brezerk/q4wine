@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2020 by Oleksii Malakhov                            *
+ *   Copyright (C) 2008-2021 by Oleksii Malakhov                            *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
