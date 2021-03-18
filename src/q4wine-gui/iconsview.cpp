@@ -70,97 +70,97 @@ void IconsView::cmdCancel_Click(){
 }
 
 void IconsView::cmdOk_Click(){
-	//Getting selected icons
+    //Getting selected icons
 
-	//FIXME: For multiple icon export
-	//QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
+    //FIXME: For multiple icon export
+    //QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
 
-	//for (int i=0; i<icoList.count(); i++){
-	//		iconBuffer.names.append(icoList.at(i)->text());
-	//	}
+    //for (int i=0; i<icoList.count(); i++){
+    //		iconBuffer.names.append(icoList.at(i)->text());
+    //	}
 
-	if (lstIcons->currentItem()){
-		QFile file;
+    if (lstIcons->currentItem()){
+        QFile file;
 
-		QString sourceFile, saveFile, saveFileName;
-		bool ok=false;
+        QString sourceFile, saveFile, saveFileName;
+        bool ok=false;
 
-		sourceFile.clear();
-		sourceFile.append(tempDirectory);
-		sourceFile.append("/");
-		sourceFile.append(lstIcons->currentItem()->text());
+        sourceFile.clear();
+        sourceFile.append(tempDirectory);
+        sourceFile.append("/");
+        sourceFile.append(lstIcons->currentItem()->text());
 
-		if (cbDefaultExport->checkState()==Qt::Checked){
-        saveFile = corelib::getAppConfigLocation(QStringList() << "icons" << lstIcons->currentItem()->text());
+        if (cbDefaultExport->checkState()==Qt::Checked){
+            saveFile = corelib::getAppConfigLocation(QStringList() << "icons" << lstIcons->currentItem()->text());
 
-		saveFileName=lstIcons->currentItem()->text();
+            saveFileName=lstIcons->currentItem()->text();
 
-		QMessageBox message;
-			message.setText(tr("Sorry. It seems that the file already exists.<br>Replace existing file or rename current one?"));
-			message.setWindowTitle(tr("Exporting icon"));
-			message.setIcon(QMessageBox::Question);
-			message.addButton(tr("Rename"),QMessageBox::ResetRole);
-			message.addButton(tr("Use existing"), QMessageBox::ActionRole);
-			message.addButton(tr("Replace"), QMessageBox::DestructiveRole);
-			message.addButton(tr("Cancel"), QMessageBox::RejectRole);
+            QMessageBox message;
+            message.setText(tr("Sorry. It seems that the file already exists.<br>Replace existing file or rename current one?"));
+            message.setWindowTitle(tr("Exporting icon"));
+            message.setIcon(QMessageBox::Question);
+            message.addButton(tr("Rename"),QMessageBox::ResetRole);
+            message.addButton(tr("Use existing"), QMessageBox::ActionRole);
+            message.addButton(tr("Replace"), QMessageBox::DestructiveRole);
+            message.addButton(tr("Cancel"), QMessageBox::RejectRole);
 
-			while (QFile::exists (saveFile)){
-				switch (message.exec()){
-					case 0:
-						saveFileName = QInputDialog::getText(this, tr("Sorry. It seems that the file already exists."),
-																		tr("Replace existing file or rename current one?"), QLineEdit::Normal,
-																	saveFileName , &ok);
-						if ((!saveFileName.isEmpty()) && (ok)){
-                            saveFile = corelib::getAppConfigLocation(QStringList() << "icons" << saveFileName);
-						} else {
-							reject();
-							return;
-						}
-					break;
-					case 1:
+            while (QFile::exists (saveFile)){
+                switch (message.exec()){
+                case 0:
+                    saveFileName = QInputDialog::getText(this, tr("Sorry. It seems that the file already exists."),
+                                                         tr("Replace existing file or rename current one?"), QLineEdit::Normal,
+                                                         saveFileName , &ok);
+                    if ((!saveFileName.isEmpty()) && (ok)){
                         saveFile = corelib::getAppConfigLocation(QStringList() << "icons" << saveFileName);
-						selectedFile=saveFile;
-						accept();
-						return;
-					break;
-					case 2:
-						if (!file.remove(saveFile)){
-							QMessageBox::warning(this, tr("Error"), tr("Sorry, file cannot be removed:<br>%1.").arg(saveFile), QMessageBox::Ok);
-						}
-					break;
-					case 3:
-						reject();
-						return;
-					break;
-				}
-		}
+                    } else {
+                        reject();
+                        return;
+                    }
+                    break;
+                case 1:
+                    saveFile = corelib::getAppConfigLocation(QStringList() << "icons" << saveFileName);
+                    selectedFile=saveFile;
+                    accept();
+                    return;
+                    break;
+                case 2:
+                    if (!file.remove(saveFile)){
+                        QMessageBox::warning(this, tr("Error"), tr("Sorry, file cannot be removed:<br>%1.").arg(saveFile), QMessageBox::Ok);
+                    }
+                    break;
+                case 3:
+                    reject();
+                    return;
+                    break;
+                }
+            }
 
-		} else {
+        } else {
             saveFile = corelib::getAppConfigLocation(QStringList() << "icons");
 
-        QFileDialog::Options options;
+            QFileDialog::Options options;
 
-        if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
+            if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
-        saveFile = QFileDialog::getSaveFileName(this, tr("Select file to save"), saveFile , tr("Images (*.png)"), 0, options);
+            saveFile = QFileDialog::getSaveFileName(this, tr("Select file to save"), saveFile , tr("Images (*.png)"), 0, options);
 
-			if (saveFile.isEmpty()){
-				reject();
-				return;
-			}
-		}
+            if (saveFile.isEmpty()){
+                reject();
+                return;
+            }
+        }
 
-		if (!file.copy(sourceFile, saveFile)){
-			QMessageBox::warning(this, tr("Error"), tr("Sorry, file cannot be created:<br>%1.").arg(saveFile), QMessageBox::Ok);
-		}
+        if (!file.copy(sourceFile, saveFile)){
+            QMessageBox::warning(this, tr("Error"), tr("Sorry, file cannot be created:<br>%1.").arg(saveFile), QMessageBox::Ok);
+        }
 
-		selectedFile=saveFile;
-		accept();
-		return;
+        selectedFile=saveFile;
+        accept();
+        return;
 
-	} else {
-		reject();
-		return;
-	}
+    } else {
+        reject();
+        return;
+    }
 }
