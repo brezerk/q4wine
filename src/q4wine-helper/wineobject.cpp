@@ -180,7 +180,7 @@ QString WineObject::createEnvString(){
         env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList));
 
     if (!this->programLang.isEmpty())
-        env.append(QString(" LANG='%1' ").arg(this->programLang));
+        env.append(QString(" LC_ALL='%1' ").arg(this->programLang));
 
     return env;
 }

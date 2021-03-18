@@ -1048,7 +1048,7 @@
                    </size>
                   </property>
                   <property name="text">
-                   <string notr="true">LANG:</string>
+                   <string notr="true">LC_ALL:</string>
                   </property>
                  </widget>
                 </item>
