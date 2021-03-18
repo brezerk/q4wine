@@ -289,8 +289,7 @@ void PrefixControlWidget::prefixImport_Click(){
         targetDir.append("/.wine/");
     }
 
-    QString openpath = corelib::getAppConfigLocation();
-    openpath.append("/prefixes/");
+    QString openpath = corelib::getAppConfigLocation(QStringList() << "prefixes");
 
     QFileDialog::Options options;
 
@@ -387,12 +386,7 @@ void PrefixControlWidget::prefixExport_Click(){
         prefixPath.append("/.wine/");
     }
 
-    QString savepath = corelib::getAppConfigLocation();
-    savepath.append("/prefixes/");
-    savepath.append(prefixName);
-    savepath.append("-");
-    savepath.append(QDate::currentDate().toString(Qt::ISODate));
-    savepath.append(".tbz");
+    QString savepath = corelib::getAppConfigLocation(QStringList() << "prefixes" << QString("%1-%2.tbz").arg(prefixName).arg(QDate::currentDate().toString(Qt::ISODate)));
 
 #ifdef DEBUG
     qDebug()<<"[ii] Path: " << prefixPath << " Save Path: " << savepath;

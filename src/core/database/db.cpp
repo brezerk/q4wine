@@ -33,15 +33,15 @@ DataBase::DataBase(QObject * parent): QObject(parent){
     }
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
+    QString db_path = corelib::getAppConfigLocation(QStringList() << "db" << "generic.dat");
 #ifdef DEBUG
-    qDebug()<<"[ii] Loading database file: "<<QString("%1/db/generic.dat").arg(corelib::getAppConfigLocation());
+    qDebug()<<"[ii] Loading database file: "<<db_path;
 #endif
 
-    db.setDatabaseName(QString("%1/db/generic.dat").arg(corelib::getAppConfigLocation()));
+    db.setDatabaseName(db_path);
 
     if (!db.open()){
-        QErr<<"[EE] "<<"Critical error"<<" : "<<QString("Cannot open database file: %1/db/generic.dat ; Error is: %3").arg(corelib::getAppConfigLocation()).arg(db.lastError().text())<<endl;
+        QErr<<"[EE] "<<"Critical error"<<" : "<<QString("Cannot open database file: %1 ; Error is: %2").arg(db_path).arg(db.lastError().text())<<endl;
         return;
     }
 

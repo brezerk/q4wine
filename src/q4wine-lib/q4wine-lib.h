@@ -346,12 +346,13 @@ public:
      */
     bool removeDirectory(const QString &dirPath);
 
-    static const QString getAppConfigLocation();
-    static const QString getGenericConfigLocation();
-    static const QString getAppDataLocation();
-    static const QString getGenericDataLocation();
-    static const QString getAppCacheLocation();
-    static const QString getGenericCacheLocation();
+    static const QString formatLocation(const QStringList &path);
+    static const QString getAppConfigLocation(const QStringList &path = QStringList());
+    static const QString getGenericConfigLocation(const QStringList &path = QStringList());
+    static const QString getAppDataLocation(const QStringList &path = QStringList());
+    static const QString getGenericDataLocation(const QStringList &path = QStringList());
+    static const QString getAppCacheLocation(const QStringList &path = QStringList());
+    static const QString getGenericCacheLocation(const QStringList &path = QStringList());
 
 private:
     /*! Define is library operate in CLI or GUI mode.

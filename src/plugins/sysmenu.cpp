@@ -35,9 +35,9 @@ system_menu::system_menu()
     CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
-    base_directory = QString("%1/desktop-directories").arg(corelib::getGenericDataLocation());
-    base_icon = QString("%1/applications").arg(corelib::getGenericDataLocation());
-    base_menu = QString("%1/menus/applications-merged/%2.menu").arg(corelib::getGenericConfigLocation()).arg(APP_SHORT_NAME);
+    base_directory = corelib::getGenericDataLocation(QStringList() << "desktop-directories");
+    base_icon = corelib::getGenericDataLocation(QStringList() << "applications");
+    base_menu = corelib::getGenericConfigLocation(QStringList() << "menus" << "applications-merged" << QString("%1.menu").arg(APP_SHORT_NAME));
 }
 
 bool system_menu::add_dom_icons(QDomDocument &menu_xml, QDomElement &root, const QString &prefix_name, const QString &dir_name, const QStringList &iconsList){

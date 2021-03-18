@@ -27,28 +27,32 @@ corelib* createCoreLib(const bool GUI_MODE){
     return new corelib(GUI_MODE);
 }
 
-const QString corelib::getGenericConfigLocation() {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
+const QString corelib::formatLocation(const QStringList &path) {
+    return path.join(QDir::separator());
 }
 
-const QString corelib::getAppConfigLocation() {
-    return QString("%1/%2").arg(getGenericConfigLocation()).arg(APP_SHORT_NAME);
+const QString corelib::getGenericConfigLocation(const QStringList &path) {
+    return formatLocation(QStringList() << QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) << path);
 }
 
-const QString corelib::getGenericDataLocation() {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
+const QString corelib::getAppConfigLocation(const QStringList &path) {
+    return getGenericConfigLocation(QStringList() << APP_SHORT_NAME << path);
 }
 
-const QString corelib::getAppDataLocation() {
-    return QString("%1/%2").arg(getGenericDataLocation()).arg(APP_SHORT_NAME);
+const QString corelib::getGenericDataLocation(const QStringList &path) {
+    return formatLocation(QStringList() << QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) << path);
 }
 
-const QString corelib::getGenericCacheLocation() {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation);
+const QString corelib::getAppDataLocation(const QStringList &path) {
+    return getGenericDataLocation(QStringList() << APP_SHORT_NAME << path);
 }
 
-const QString corelib::getAppCacheLocation() {
-    return QString("%1/%2").arg(getGenericCacheLocation()).arg(APP_SHORT_NAME);
+const QString corelib::getGenericCacheLocation(const QStringList &path) {
+    return formatLocation(QStringList() << QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) << path);
+}
+
+const QString corelib::getAppCacheLocation(const QStringList &path) {
+    return getGenericCacheLocation(QStringList() << APP_SHORT_NAME << path);
 }
 
 QList<QStringList> corelib::getWineProcessList(const QString &prefix_name){

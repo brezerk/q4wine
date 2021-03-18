@@ -37,8 +37,7 @@ winetricks::winetricks(const QString &prefixName) : QWidget()
     CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
-    this->winetricks_bin = corelib::getAppConfigLocation();
-    this->winetricks_bin.append("/winetricks");
+    this->winetricks_bin = corelib::getAppConfigLocation(QStringList() << "winetricks");
 
     if (!check_script(false)){
         this->winetricks_bin = CoreLib->getWhichOut("winetricks", false);
@@ -218,8 +217,7 @@ void winetricks::downloadwinetricks () {
     /*
      * Downloading winetricks and installing it
      */
-    this->winetricks_bin = corelib::getAppConfigLocation();
-    this->winetricks_bin.append("/winetricks");
+    this->winetricks_bin = corelib::getAppConfigLocation(QStringList() << "winetricks");
 
     QFile file(this->winetricks_bin);
 

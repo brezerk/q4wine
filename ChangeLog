@@ -3,6 +3,7 @@ Version 1.3.13
   - Prefix Import feature is not working as expected [BUG-156];
   - Misspelled Color Theme Settings [BUG-155];
   - CMake warning [BUG-158];
+  - XDG Base Directory Specification support [BUG-178];
 
 Version 1.3.12
  Updated:
