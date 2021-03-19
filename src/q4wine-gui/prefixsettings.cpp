@@ -491,7 +491,7 @@ void PrefixSettings::txtRunString_Changed(){
     env.append(QString(" WINEARCH='%1' ").arg(comboArchList->currentText()));
     env.append(QString(" WINEDEBUG='%1' ").arg("-all"));
     env.append(QString(" WINEDLLOVERRIDES='' "));
-    env.append(QString(" LANG='' "));
+    env.append(QString(" LC_ALL='' "));
 
     run_string.replace("%ENV_BIN%", CoreLib->getWhichOut("env"));
     run_string.replace("%ENV_ARGS%", env);

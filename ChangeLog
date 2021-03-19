@@ -4,6 +4,7 @@ Version 1.3.13
   - Misspelled Color Theme Settings [BUG-155];
   - CMake warning [BUG-158];
   - XDG Base Directory Specification support [BUG-178];
+  - Use LC_ALL instead of LANG to force override applciation locale [BUG-165];
 
 Version 1.3.12
  Updated:
