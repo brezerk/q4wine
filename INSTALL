@@ -56,7 +56,7 @@ Installation
 
        LINGUAS                   : "af;cs;de;en;es;fa;fr;he;it;ja;pl;pt_BR;ru;uk;zh_TW"
 
-       Optional buils flags:     : Default | Possible
+       Optional build flags:     : Default | Possible
 
        DEBUG                     : OFF | ON
        RELEASE                   : ON  | OFF

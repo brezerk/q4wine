@@ -24,7 +24,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
      ** This functions is constructor for IconSettings dialog
      *
      * Args:
-     * @newIcon -- This define which type of dialog we'l use "New Icon" or "Edit Icon"
+     * @newIcon -- This define which type of dialog we'll use "New Icon" or "Edit Icon"
      * @p_id    -- PrefixId
      * @p_id    -- PrefixId
      */

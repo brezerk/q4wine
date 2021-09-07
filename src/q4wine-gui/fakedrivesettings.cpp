@@ -183,7 +183,7 @@ void FakeDriveSettings::cmdOk_Click(){
     QList<QListWidgetItem *> listItems = listJoystickAxesMappings->findItems(QString("*"), Qt::MatchWrap | Qt::MatchWildcard);
 
 #ifdef DEBUG
-    qDebug()<<"[ii] Check joystic axes mapping syntax";
+    qDebug()<<"[ii] Check joystick axes mapping syntax";
 #endif
 
     for (int i=0; i < listItems.count(); i++){
@@ -262,7 +262,7 @@ void FakeDriveSettings::cmdOk_Click(){
     }
 
 #ifdef DEBUG
-        qDebug()<<"[ii] Localizad folders path: "<<desktopFolder<<desktopDocuments<<desktopMusic<<desktopPictures<<desktopVideos;
+        qDebug()<<"[ii] Localized folders path: "<<desktopFolder<<desktopDocuments<<desktopMusic<<desktopPictures<<desktopVideos;
 #endif
 
     QString sh_cmd = "";
@@ -317,7 +317,7 @@ void FakeDriveSettings::cmdOk_Click(){
             }
         }
 
-        // Desktop foolder
+        // Desktop folder
         fileInfo.setFile(desktopFolder);
         if (fileInfo.isSymLink() || fileInfo.exists()){
             if (!dir.remove(desktopFolder)){

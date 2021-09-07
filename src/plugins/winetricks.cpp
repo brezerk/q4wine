@@ -237,7 +237,7 @@ void winetricks::downloadwinetricks () {
 
     QStringList args;
     if (!console_args.isEmpty()){
-        // If we have any conslope parametres, we gona preccess them one by one
+        // If we have any console parameters, we will process them one by one
         QStringList cons_args = console_args.split(" ");
         for (int i=0; i<cons_args.count(); i++){
             if (!cons_args.at(i).isEmpty())

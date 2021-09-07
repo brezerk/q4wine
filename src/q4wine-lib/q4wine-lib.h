@@ -134,7 +134,7 @@ public:
      * \param  key         Settings key.
      * \param  defaultVal  Default returned value.
      * \param  checkExist  If true - then we need to check exists file or dir by value or not.
-     * \return Return an a key value.
+     * \return Return a key value.
      */
     QVariant getSetting(const QString &group,
                         const QString &key,
@@ -298,19 +298,19 @@ public:
     QString getStrictEscapeString(QString string);
 
 
-    /*! \brief Gets mount string based on QuikMount type profile
+    /*! \brief Gets mount string based on QuickMount type profile
      *
      * \param profile	Profile type ID
      */
     QString getMountString(const int profile);
 
-    /*! \brief Gets mount image string based on QuikMount type profile
+    /*! \brief Gets mount image string based on QuickMount type profile
      *
      * \param profile	Profile type ID
      */
     QString getMountImageString(const int profile);
 
-    /*! \brief Gets umount string based on QuikMount type profile
+    /*! \brief Gets umount string based on QuickMount type profile
      *
      * \param profile	Profile type ID
      */
@@ -387,7 +387,7 @@ private:
  * \brief This function returns a class of corelib type.
  *
  * Here we create an instance of corelib class and returns its pointer.
- * \return Return an a pointer to core lib class instance.
+ * \return Return a pointer to core lib class instance.
  * \note This function is exported from shared library.
  */
 extern "C" corelib* createCoreLib(const bool GUI_MODE);

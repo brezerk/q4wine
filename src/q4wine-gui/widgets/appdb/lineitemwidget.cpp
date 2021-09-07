@@ -35,7 +35,7 @@ LineItemWidget::LineItemWidget(const short int action, QWidget *parent) : QWidge
 }
 
 LineItemWidget::~LineItemWidget(){
-    //nothig but...
+    //nothing but...
 }
 
 void LineItemWidget::addLabel(const QString text, const short int width, const short int alignment, const bool worldwarp){

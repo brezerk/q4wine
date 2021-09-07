@@ -567,7 +567,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         menu->addAction(entry.release());
 
         menu->addSeparator();
-        // -- Clipboad functions --
+        // -- Clipboard functions --
 
         subMenu.reset(new QMenu(tr("Copy to clipboard"), this));
 
@@ -589,7 +589,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         subMenu->addAction(entry.release());
 
         menu->addMenu(subMenu.release());
-        // End of clipboard meny
+        // End of clipboard menu
     } else {
         // Default menu
         std::unique_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
@@ -833,7 +833,7 @@ void IconListWidget::iconCut_Click(void){
     iconBuffer.prefix_name="";
     iconBuffer.move=true;
 
-    // Fiffing buffer with new items
+    // Filling buffer with new items
     for (int i=0; i<icoList.count(); i++){
         iconBuffer.names.append(icoList.at(i)->text());
         //icoList.at(i)->setFlags(Qt::ItemIsEnabled);
@@ -862,7 +862,7 @@ void IconListWidget::iconCopy_Click(void){
     iconBuffer.prefix_name="";
     iconBuffer.move=false;
 
-    // Fiffing buffer with new items
+    // Filling buffer with new items
     for (int i=0; i<icoList.count(); i++){
         iconBuffer.names.append(icoList.at(i)->text());
     }
@@ -879,7 +879,7 @@ void IconListWidget::iconPaste_Click(void){
 
     if (iconBuffer.names.count()>0){
         for (int i=0; i<iconBuffer.names.count(); i++){
-            // Checking for not unic names
+            // Checking for not uniq names
             newName = iconBuffer.names.at(i);
             //fexists=false;
             ok=false;
@@ -1071,7 +1071,7 @@ void IconListWidget::menuRunRecent_triggered(QAction* action){
     QStringList result = db_last_run_icon.getByExec(action->statusTip());
     if (result.count()<=0){
 #ifdef DEBUG
-        qDebug()<<"[ee] db_last_run_icon.getByExec return an enpty result";
+        qDebug()<<"[ee] db_last_run_icon.getByExec return an empty result";
 #endif
         return;
     }
@@ -1111,7 +1111,7 @@ void IconListWidget::menuMount_triggered(QAction* action){
         return;
     } else if (action->statusTip() == tr("Browse for media image.")) {
         /*
-            Request for unmounting cdrom drve described at wine prefix settings
+            Request for unmounting cdrom drive described at wine prefix settings
             */
         QString fileFilter;
 #ifdef _OS_LINUX_

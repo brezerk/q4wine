@@ -60,7 +60,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
     private:
         /*! \brief This is an event filter.
          *
-         * This event filter hendle button click events
+         * This event filter handle button click events
          * \param  prefix_name  Current prefix name.
          */
         bool eventFilter(QObject *obj, QEvent *event);
@@ -95,7 +95,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
 
     private slots:
         /*!
-         * \bref Cancle button click slot
+         * \bref Cancel button click slot
          */
         void cmdCancel_Click();
 

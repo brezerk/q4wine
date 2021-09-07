@@ -63,7 +63,7 @@ fi
 #Now it's time to umount device
 $1 $2
 if [ $? -gt 0 ]; then
-	echo "Error: \"$1 $2\" returns an a error."
+	echo "Error: \"$1 $2\" returns an error."
 	exit 255
 fi
 
@@ -71,7 +71,7 @@ fi
 if [ "$device_name" =~ md* ]; then
 	$mdconfig -d -u$device_name
 	if [ $? -gt 0 ]; then
-		echo "Error: \"mdconfig -d -u$device_name\" returns an a error."
+		echo "Error: \"mdconfig -d -u$device_name\" returns an error."
 		exit 255
 	fi
 fi

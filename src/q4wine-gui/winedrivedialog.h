@@ -33,7 +33,7 @@
 /*!
  * \class WineDriveDialog
  * \ingroup q4wine-gui
- * \brief This class provide wizar dialog functions.
+ * \brief This class provide wizard dialog functions.
  *
  */
 class WineDriveDialog : public QDialog, public Ui::WineDriveDialog

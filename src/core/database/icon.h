@@ -137,7 +137,7 @@ public:
                  const QString &dir_name,
                  const QString &icon_name) const;
 
-    /*! \brief This function check is reccord exists by icon_name or not.
+    /*! \brief This function check is record exists by icon_name or not.
      *
      * \param  prefix_name    A prefix name value.
      * \param  name    A name value.
@@ -146,7 +146,7 @@ public:
     bool isExistsByName(const QString &prefix_name,
                         const QString &icon_name) const;
 
-    /*! \brief This function check is reccord exists by icon_name or not.
+    /*! \brief This function check is record exists by icon_name or not.
      *
      * \param  prefix_name    A prefix name value.
      * \param  dir_name		 A dir name value.

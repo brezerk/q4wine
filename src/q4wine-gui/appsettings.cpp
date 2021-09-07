@@ -64,7 +64,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
 
     connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
 
-    //Installing event filters for get buttuns
+    //Installing event filters for get buttons
     cmdGetTarBin->installEventFilter(this);
     cmdGetMountBin->installEventFilter(this);
     cmdGetUmountBin->installEventFilter(this);

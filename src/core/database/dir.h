@@ -62,7 +62,7 @@ public:
      */
     bool addDir(const QString &prefix_name, const QString &dir_name) const;
 
-    /*! \brief This function check is reccord exists by dir_name or not.
+    /*! \brief This function check is record exists by dir_name or not.
      *
      * \param  prefix_name    A prefix name value.
      * \param  dir_name		 A dir name value.

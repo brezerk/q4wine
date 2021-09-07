@@ -26,7 +26,7 @@
 #
 #        - name: Person's Name
 #          nick: Person's nick                      (optional)
-#          info: Сontribution to the q4wine project
+#          info: Contribution to the q4wine project
 #          mail: Person's email                     (optional)
 #          web: Person's web page                   (optional)
 #          jid: Person's jabber account             (optional)
@@ -214,7 +214,7 @@ thanks:
           info: Thanks for patience, love and countenance =]
 
         - name: Sergey V. Dyatko
-          info: Suppot, assistance, testing and advice for FreeBSD port
+          info: Support, assistance, testing and advice for FreeBSD port
           mail: sergey.dyatko@gmail.com
           locatiopn: Minsk, Republic of Belarus
 

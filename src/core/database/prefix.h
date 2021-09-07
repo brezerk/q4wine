@@ -102,7 +102,7 @@ public:
                    const QString &run_string="",
                    const QString &version_id="") const;
 
-    /*! \brief This function check is reccord exists by prefix name or not.
+    /*! \brief This function check is record exists by prefix name or not.
       *
       * \param  name    A prefix name value.
       * \return Return true if exists.

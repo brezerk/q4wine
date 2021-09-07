@@ -278,7 +278,7 @@ int main(int argc, char *argv[])
             Qcout<<QObject::tr("Wine process list for \"%1\" prefix").arg(_PREFIX)<<endl;
             path = db_prefix.getPath(_PREFIX);
         }
-        // Preccess QList items one by one
+        // Process QList items one by one
         Qcout<<" "<<qSetFieldWidth(8)<<left<<QObject::tr("PID")<<qSetFieldWidth(6)<<left<<QObject::tr("Nice")<<qSetFieldWidth(20)<<left<<QObject::tr("Name")<<QObject::tr("Prefix path")<<qSetFieldWidth(0)<<endl;
         for (int i = 0; i < result.size(); ++i) {
             if (_PREFIX.isEmpty()){

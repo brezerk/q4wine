@@ -70,7 +70,7 @@ public:
                  const int nice=0,
                  const QString &lang="") const;
 
-    /*! \brief This function reurns list of recent launched icons.
+    /*! \brief This function returns list of recent launched icons.
      *
      * \return Return list of last launched icons.
      */
