@@ -82,4 +82,3 @@ private slots:
 };
 
 #endif // PROGRESS_H
-

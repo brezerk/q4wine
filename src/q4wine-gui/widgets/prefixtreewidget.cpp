@@ -826,4 +826,3 @@ void PrefixTreeWidget::expandTree(){
 void PrefixTreeWidget::collapseTree(){
     this->collapseAll();
 }
-

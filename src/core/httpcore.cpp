@@ -148,4 +148,3 @@ void HttpCore::readResponseHeader(QNetworkReply* reply)
 
     emit(pageReaded());
 }
-

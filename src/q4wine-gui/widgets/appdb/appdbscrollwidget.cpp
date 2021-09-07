@@ -107,5 +107,3 @@ void AppDBScrollWidget::addVersionFrame(QList<WineAppDBCategory> list, QString f
     contentLayout->addWidget(frame.release());
     return;
 }
-
-

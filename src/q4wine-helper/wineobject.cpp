@@ -485,4 +485,3 @@ void WineObject::sendMessage(const QString &message){
 void WineObject::setOverrideDll(const QString &dll_list){
     this->overrideDllList = dll_list;
 }
-

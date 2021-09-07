@@ -128,4 +128,3 @@ bool Dir::renameDir(const QString &dir_name, const QString &prefix_name, const Q
 
     return true;
 }
-

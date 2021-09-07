@@ -403,6 +403,3 @@ bool winetricks::parse() {
 
     return true;
 }
-
-
-
