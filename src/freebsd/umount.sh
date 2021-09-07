@@ -6,12 +6,12 @@
 UMOUNT="/sbin/umount"
 SUDO=`which sudo`
 MOUNT_POINT=$1
-DEVNAME=`mount | grep ${MOUNT_POINT} | awk '{print $1}')`
+DEVNAME=`mount | grep ${MOUNT_POINT} | awk '{print $1}'`
 MDCONFIG_BIN="$(which mdconfig 2>&1)"
 
 if [ $# -lt 1 ]; then
         echo "Usage: $0 MOUNT_POINT"
-        exit 255;
+        exit 255
 fi 
 
 if [ ! -d ${MOUNT_POINT} ]; then

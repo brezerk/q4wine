@@ -62,7 +62,7 @@ fi
 
 #Now it's time to umount device
 $1 $2
-if [ $? > 0 ]; then
+if [ $? -gt 0 ]; then
 	echo "Error: \"$1 $2\" returns an a error."
 	exit 255
 fi
@@ -70,7 +70,7 @@ fi
 #Now it's time to get: Is it md device or not? If yes -- use mdconfig to remove it.
 if [ "$device_name" =~ md* ]; then
 	$mdconfig -d -u$device_name
-	if [ $? > 0 ]; then
+	if [ $? -gt 0 ]; then
 		echo "Error: \"mdconfig -d -u$device_name\" returns an a error."
 		exit 255
 	fi
