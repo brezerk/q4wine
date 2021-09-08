@@ -1,6 +1,6 @@
 Qt GUI for Wine
 ***********************************************
- 
+
 Q4Wine is a Qt GUI for Wine that helps manage Wine prefixes and installed applications.
 
 This software is published under the terms of the GNU GPL V3 and comes
@@ -56,7 +56,7 @@ Installation
 
        LINGUAS                   : "af;cs;de;en;es;fa;fr;he;it;ja;pl;pt_BR;ru;uk;zh_TW"
 
-       Optional buils flags:     : Default | Possible
+       Optional build flags:     : Default | Possible
 
        DEBUG                     : OFF | ON
        RELEASE                   : ON  | OFF
@@ -69,7 +69,7 @@ Installation
 
        DEBUG                     : If ON, then q4wine will send debug messages to STDOUT.
                                  : Use it for development or bug reportint purposes;
-       RELEASE                   : If OFF, then force q4wine to use APP_BUILD as CMAKE_INSTALL_PREFIX. 
+       RELEASE                   : If OFF, then force q4wine to use APP_BUILD as CMAKE_INSTALL_PREFIX.
                                  : Use it for development purposes;
        QT5                       : If ON, then q4wine will be built with Qt 5.x.
        WITH_ICOUTILS             : If ON, then build q4wine with icoutils support;
@@ -88,7 +88,7 @@ Known Issues:
 ***********************************************
 1. Non-standard directories
 
-If you have installed q4wine in a non-standard directory, 
+If you have installed q4wine in a non-standard directory,
 and you get the following error message: "error while loading shared libraries: libq4wine-core.so",
 then you need to override LD_LIBRARY_PATH variable.
 

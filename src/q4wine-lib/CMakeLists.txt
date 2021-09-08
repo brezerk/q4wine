@@ -90,7 +90,7 @@ TARGET_LINK_LIBRARIES(q4wine-core Qt5::Core Qt5::DBus Qt5::Network Qt5::Sql Qt5:
 ADD_DEPENDENCIES( q4wine-core translations_build )
 
 IF( RELEASE )
-    INSTALL( TARGETS q4wine-core 
+    INSTALL( TARGETS q4wine-core
              RUNTIME DESTINATION ${LIBS_ENTRY_PATH}
              LIBRARY DESTINATION ${LIBS_ENTRY_PATH}
              NAMELINK_SKIP)

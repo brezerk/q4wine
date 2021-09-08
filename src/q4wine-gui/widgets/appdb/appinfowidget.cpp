@@ -46,7 +46,7 @@ AppInfoWidget::AppInfoWidget(QString name, QString desc, const int appid, QList<
 }
 
 AppInfoWidget::~AppInfoWidget(){
-    //nothig but...
+    //nothing but...
 }
 
 void AppInfoWidget::setAppName(QString name){

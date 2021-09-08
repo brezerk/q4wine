@@ -1,4 +1,4 @@
-#!/bin/sh 
+#!/bin/sh
 #
 # Script by Sergey V. Dyatko [ sergey.dyatko@gmail.com ]
 # License: GPL v3
@@ -6,13 +6,13 @@
 UMOUNT="/sbin/umount"
 SUDO=`which sudo`
 MOUNT_POINT=$1
-DEVNAME=`mount | grep ${MOUNT_POINT} | awk '{print $1}')`
+DEVNAME=`mount | grep ${MOUNT_POINT} | awk '{print $1}'`
 MDCONFIG_BIN="$(which mdconfig 2>&1)"
 
 if [ $# -lt 1 ]; then
-        echo "Usage: $0 MOUNT_POINT"
-        exit 255;
-fi 
+    echo "Usage: $0 MOUNT_POINT"
+    exit 255
+fi
 
 if [ ! -d ${MOUNT_POINT} ]; then
     echo "Error: Cannot get mount point directory."
@@ -45,7 +45,7 @@ case "${DEVNAME}" in
                 exit 255
             fi;;
      (*)        echo "${DEVNAME} does not match"
-    		exit 255;;
+            exit 255;;
 esac
- 
+
 exit 0

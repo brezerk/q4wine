@@ -242,4 +242,3 @@ void ImageManager::actionRefreshImageList(){
 void ImageManager::cmdHelp_Click(){
 	CoreLib->openHelpUrl("09-image-manager.html");
 }
-

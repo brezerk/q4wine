@@ -218,7 +218,7 @@ int WineObject::runSys(){
     if (this->useConsole){
         // Owerride " with \" in case of using console app.
         run_string.replace("\"", "\\\"");
-        // If we gona use console output, so exec program is program specified at CONSOLE global variable
+        // If we gonna use console output, so exec program is program specified at CONSOLE global variable
         QString console_bin = CoreLib->getSetting("console", "bin").toString();
         QString console_args = CoreLib->getSetting("console", "args", false).toString();
 
@@ -485,4 +485,3 @@ void WineObject::sendMessage(const QString &message){
 void WineObject::setOverrideDll(const QString &dll_list){
     this->overrideDllList = dll_list;
 }
-

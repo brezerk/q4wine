@@ -165,4 +165,3 @@ bool Last_Run_Icon::addIcon(const QString &cmdargs,
 
     return true;
 }
-

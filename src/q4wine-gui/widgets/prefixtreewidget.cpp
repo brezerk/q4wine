@@ -605,7 +605,7 @@ void PrefixTreeWidget::menuMount_triggered(QAction* action){
             return;
       } else if (action->statusTip()==tr("Browse for media image.")) {
             /*
-            Request for unmounting cdrom drve described at wine prefix settings
+            Request for unmounting cdrom drive described at wine prefix settings
             */
 
           QString fileFilter;
@@ -826,4 +826,3 @@ void PrefixTreeWidget::expandTree(){
 void PrefixTreeWidget::collapseTree(){
     this->collapseAll();
 }
-

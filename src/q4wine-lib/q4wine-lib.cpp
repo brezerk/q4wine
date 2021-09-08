@@ -101,7 +101,7 @@ QList<QStringList> corelib::getWineProcessList(const QString &prefix_name){
         if (info.isSymLink()) {
             QString fileName = info.symLinkTarget();
 #ifdef DEBUG
-            qDebug()<< "Traget for: " << info.filePath() << " is: " << fileName;
+            qDebug()<< "Target for: " << info.filePath() << " is: " << fileName;
 #endif
             if ((!fileName.contains("wine") && !fileName.contains(".exe")) || fileName.contains(APP_SHORT_NAME)){
                 continue;
@@ -1546,7 +1546,7 @@ bool corelib::killWineServer(const QString &prefix_path, const QString &pid){
         if (info.isSymLink()) {
             QString fileName = info.symLinkTarget();
 #ifdef DEBUG
-            qDebug()<< "Traget for: " << info.filePath() << " is: " << fileName;
+            qDebug()<< "Target for: " << info.filePath() << " is: " << fileName;
 #endif
             if ((!fileName.contains("wine") && !fileName.contains(".exe")) || fileName.contains(APP_SHORT_NAME)){
                 message = "Not an wine process.";

@@ -24,12 +24,12 @@
         <license>GPL v6</license>
         <app-ver>1.x</app-ver>
         <test-result id='312'>
-           <rating>4</rating>
-           <wine-ver>0.9.21</wine-ver>
-           <works>&lt;br /&g;;;;;;;wedw;;!;</works>;
-           <not-works>All tooo.</not-works>
-           <not-tested>Network play</not-tested>
-           <comment>Some more comments</comment>
+            <rating>4</rating>
+            <wine-ver>0.9.21</wine-ver>
+            <works>&lt;br /&g;;;;;;;wedw;;!;</works>;
+            <not-works>All tooo.</not-works>
+            <not-tested>Network play</not-tested>
+            <comment>Some more comments</comment>
         </test-result>
         <test-list>
             <test id="312">
@@ -59,7 +59,7 @@
                 <run>1</run>
                 <rating>1</rating>
             </test>
-        </test-list>  
+        </test-list>
         <bug-list>
             <bug id="3141">
                 <desc>Unhandled exception while trying to launch Starcraft from ICCup Launcher. Starcraft Battle.net and Window Manager</desc>

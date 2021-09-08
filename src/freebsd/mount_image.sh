@@ -15,7 +15,7 @@ fi
 
 $SUDO $MOUNT_BIN /dev/`$SUDO $MDCONFIG_BIN -f $MOUNT_IMAGE` $MOUNT_POINT
 
-if [ $? -ne 0 ]; then 
+if [ $? -ne 0 ]; then
 	echo "Some Errors occurred:( command: $SUDO $MOUNT_BIN /dev/`$SUDO $MDCONFIG_BIN -f $MOUNT_IMAGE` $MOUNT_POINT"
 	exit 255
 fi

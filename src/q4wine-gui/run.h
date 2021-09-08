@@ -81,7 +81,7 @@ class Run : public QDialog, public Ui::Run
         bool eventFilter (QObject *object, QEvent *event);
         //! \brief Get wine dll list.
         void getWineDlls (QString wine_dllpath);
-        //! \brief Get exesting prefixes list.
+        //! \brief Get existing prefixes list.
         void getPrefixes (void);
 
         //! \brief Load theme images.

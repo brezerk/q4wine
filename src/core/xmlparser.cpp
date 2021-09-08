@@ -449,6 +449,3 @@ void XmlParser::clear(){
 
 	return;
 }
-
-
-

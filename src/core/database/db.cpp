@@ -80,7 +80,7 @@ bool DataBase::checkDb(){
                 if(!query.exec("CREATE TABLE prefix (wine_dllpath TEXT, wine_loader TEXT, wine_server TEXT, wine_exec TEXT, cdrom_mount TEXT, id INTEGER PRIMARY KEY, name TEXT, path TEXT, version TEXT);"))
                     return false;
 
-                // Creating default prefix reccord
+                // Creating default prefix record
                 query.prepare("INSERT INTO prefix(id, name) VALUES(NULL, :name);");
                 query.bindValue(":name", "Default");
                 if (!query.exec())
@@ -159,7 +159,7 @@ bool DataBase::checkDb(){
                 if(!query.exec("CREATE TABLE versions (wine_dllpath32 TEXT, wine_dllpath64 TEXT, wine_loader TEXT, wine_server TEXT, wine_exec TEXT, id INTEGER PRIMARY KEY, name TEXT);"))
                     return false;
 
-                // Creating default version reccord
+                // Creating default version record
                 Version vers;
                 vers.name_ = "Default";
 

@@ -81,7 +81,7 @@ void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
         request.setHeader(QNetworkRequest::UserAgentHeader, user_agent);
         http->get(request);
 #ifdef DEBUG
-        qDebug()<<"[ii] Reuested page is: "<<QUrl(url);
+        qDebug()<<"[ii] Requested page is: "<<QUrl(url);
 #endif
 
         this->xmlreply="";
@@ -148,4 +148,3 @@ void HttpCore::readResponseHeader(QNetworkReply* reply)
 
     emit(pageReaded());
 }
-

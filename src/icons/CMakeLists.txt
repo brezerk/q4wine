@@ -16,4 +16,3 @@ ELSE( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
     install(FILES q4wine-ambiance.svg DESTINATION ${PIXMAPS_UNITY_ENTRY_PATH}/scalable/apps RENAME q4wine.svg)
     ENDIF( RELEASE )
 ENDIF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
-

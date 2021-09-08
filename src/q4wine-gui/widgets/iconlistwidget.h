@@ -50,7 +50,7 @@
 #include <QDebug>
 #endif
 
-//q4ine lib
+//q4wine lib
 #include "q4wine-lib.h"
 
 struct iconCopyBuffer {

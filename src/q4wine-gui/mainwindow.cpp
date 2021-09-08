@@ -253,7 +253,7 @@ void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
 void MainWindow::updateIconDesc(const QString &program, QString args, const QString &desc, const QString &console, const QString &desktop){
     /*
      * This is function for selection icons, and displaying
-     * icon informationm like path and description
+     * icon information like path and description
      */
 
     if (args.length()>45){

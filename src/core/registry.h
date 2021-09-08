@@ -56,7 +56,7 @@ public:
       */
     explicit Registry(const QString &prefixPath);
 
-    /*! \brief Creates heade information for  exported reg file.
+    /*! \brief Creates header information for exported reg file.
       *
       * \return true on success.
       */
@@ -70,7 +70,7 @@ public:
     /*! \brief Append set key to exported reg file.
       * \param path  Registry path
       * \param key   Registry key name
-      * \param value Keristry key value
+      * \param value Registry key value
       */
     void set(const QString &path,
              const QString &key,

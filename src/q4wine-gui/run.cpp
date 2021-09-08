@@ -437,4 +437,3 @@ void Run::cmdHelp_Click(){
 
     CoreLib->openHelpUrl(rawurl);
 }
-

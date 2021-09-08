@@ -36,7 +36,7 @@
 //q4wine lib
 #include "q4wine-lib.h"
 
-//Qt inicludes
+//Qt includes
 #ifdef DEBUG
 #include <QDebug>
 #endif

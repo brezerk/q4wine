@@ -45,7 +45,7 @@ public:
      */
     QList<QStringList> getFields(void) const;
 
-    /*! \brief Getting file path reccord by image name
+    /*! \brief Getting file path record by image name
      * \param  name   image name
      * \return Return QList on QStringList containing images.
      */
@@ -57,7 +57,7 @@ public:
      */
     bool isExistsByName(const QString &name) const;
 
-    /*! \brief Add image reccord
+    /*! \brief Add image record
      * \param  name   image name
      * \param  path   image file path
      * \return If image exists -- returns true.

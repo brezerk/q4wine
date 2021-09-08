@@ -68,4 +68,3 @@ class AppSettings : public QDialog, public Ui::AppSettings
 };
 
 #endif
-

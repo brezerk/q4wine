@@ -270,7 +270,7 @@ void PrefixControlWidget::prefixDelete_Click(){
 
 void PrefixControlWidget::prefixImport_Click(){
     /*
-        Function for importing preefix from file
+        Function for importing prefix from file
     */
     if (!prefixTable->currentIndex().isValid())
         return;
@@ -357,7 +357,7 @@ void PrefixControlWidget::updateDtabaseItems(){
 
 void PrefixControlWidget::prefixExport_Click(){
     /*
-     * Function for exporting preefix to file
+     * Function for exporting prefix to file
      */
 #ifdef DEBUG
     qDebug()<<"[ii] prefixExport_Click()";
