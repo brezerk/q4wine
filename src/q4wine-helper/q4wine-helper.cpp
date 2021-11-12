@@ -45,13 +45,13 @@ int main(int argc, char *argv[])
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(false)));
 
     if (!CoreLib.get()){
-        QErr<<"[EE] Cannot load shared library."<<endl;
+        QErr<<"[EE] Cannot load shared library."<<Qt::endl;
         return -1;
     }
 
     DataBase db;
     if (!db.checkDb()){
-        QErr<<"[EE] Cannot initialize database engine."<<endl;
+        QErr<<"[EE] Cannot initialize database engine."<<Qt::endl;
         return -1;
     }
 
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
     app.installTranslator(&qtt);
 
     if (!CoreLib->isConfigured()){
-       QErr<<"[EE] App is not configured! Rerun wizard, or delete Q4Wine broken config files."<<endl;
+       QErr<<"[EE] App is not configured! Rerun wizard, or delete Q4Wine broken config files."<<Qt::endl;
        return -1;
     }
 
@@ -86,13 +86,13 @@ int main(int argc, char *argv[])
     for (int i=1; i<argc; i++){
         qDebug()<<app.arguments().at(i);
         if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){
-            Qcout<<QString("%1-helper %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
-            Qcout<<QString("Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>")<<endl;
-            Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
-            Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
-            Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
+            Qcout<<QString("%1-helper %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<Qt::endl;
+            Qcout<<QString("Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>")<<Qt::endl;
+            Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<Qt::endl;
+            Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<Qt::endl;
+            Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<Qt::endl;
             CoreLib->getBuildFlags();
-            Qcout<<QObject::tr("Author: %1.").arg("Oleksii S. Malakhov")<<endl;
+            Qcout<<QObject::tr("Author: %1.").arg("Oleksii S. Malakhov")<<Qt::endl;
             return 0;
         } else if (app.arguments().at(i)=="--prefix"){
             i++;
@@ -147,27 +147,27 @@ int main(int argc, char *argv[])
             if (i<argc)
                 wineObject.setPostRun(app.arguments().at(i));
         } else {
-            Qcout<<QObject::tr("Usage:")<<endl;
-            Qcout<<QObject::tr("  %1-helper [KEYs]...").arg(APP_SHORT_NAME)<<endl;
-            Qcout<<QObject::tr("Console utility for Q4Wine which helps to handle Wine application exit status and its stdout/stderr output logging.")<<endl<<endl;
-            Qcout<<QObject::tr("KEYs list:")<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --prefix"<<QObject::tr("sets the current prefix name")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --wine-debug"<<QObject::tr("sets WINEDEBUG variable")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --console"<<QObject::tr("run with output in console")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --display"<<QObject::tr("sets DISPLAY variable")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --nice"<<QObject::tr("sets program niceness")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --desktop"<<QObject::tr("sets program virtual desktop resolution")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --program-bin"<<QObject::tr("sets program binary")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --program-args"<<QObject::tr("sets program args")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --wrkdir"<<QObject::tr("sets program working directory")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --program-lang"<<QObject::tr("sets program LANG variable")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --override"<<QObject::tr("sets WINEDLLOVERRIDES variable")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --prerun"<<QObject::tr("execute script before program run")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --postrun"<<QObject::tr("execute script after program run")<<qSetFieldWidth(0)<<endl;
-            Qcout<<endl;
-            Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
-            Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITE)<<endl;
-            Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
+            Qcout<<QObject::tr("Usage:")<<Qt::endl;
+            Qcout<<QObject::tr("  %1-helper [KEYs]...").arg(APP_SHORT_NAME)<<Qt::endl;
+            Qcout<<QObject::tr("Console utility for Q4Wine which helps to handle Wine application exit status and its stdout/stderr output logging.")<<Qt::endl<<Qt::endl;
+            Qcout<<QObject::tr("KEYs list:")<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --prefix"<<QObject::tr("sets the current prefix name")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --wine-debug"<<QObject::tr("sets WINEDEBUG variable")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --console"<<QObject::tr("run with output in console")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --display"<<QObject::tr("sets DISPLAY variable")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --nice"<<QObject::tr("sets program niceness")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --desktop"<<QObject::tr("sets program virtual desktop resolution")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --program-bin"<<QObject::tr("sets program binary")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --program-args"<<QObject::tr("sets program args")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --wrkdir"<<QObject::tr("sets program working directory")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --program-lang"<<QObject::tr("sets program LANG variable")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --override"<<QObject::tr("sets WINEDLLOVERRIDES variable")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --prerun"<<QObject::tr("execute script before program run")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  --postrun"<<QObject::tr("execute script after program run")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<Qt::endl;
+            Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<Qt::endl;
+            Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITE)<<Qt::endl;
+            Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<Qt::endl;
             return 0;
         }
     }

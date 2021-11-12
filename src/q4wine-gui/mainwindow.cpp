@@ -381,7 +381,7 @@ bool MainWindow::createSocket(){
 
     if (!serverSoket->listen(soketFile)){
         QTextStream QErr(stderr);
-        QErr<<"[EE] Cannot create Q4Wine socket: "<<serverSoket->errorString()<<endl;
+        QErr<<"[EE] Cannot create Q4Wine socket: "<<serverSoket->errorString()<<Qt::endl;
         exit(255);
     }
 

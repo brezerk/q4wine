@@ -571,39 +571,39 @@ bool corelib::checkDirs(const QString &rootPath, QStringList subDirs) const{
 
 void corelib::getBuildFlags(){
     QTextStream Qcout(stdout);
-    Qcout<<QObject::tr("Buildtime flags are:")<<endl<<endl;
-    Qcout<<qSetFieldWidth(25)<<left<<" CMAKE_INSTALL_PREFIX"<<QString::fromUtf8(APP_PREF)<<qSetFieldWidth(0)<<endl<<endl;
+    Qcout<<QObject::tr("Buildtime flags are:")<<Qt::endl<<Qt::endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" CMAKE_INSTALL_PREFIX"<<QString::fromUtf8(APP_PREF)<<qSetFieldWidth(0)<<Qt::endl<<Qt::endl;
 #ifdef RELEASE
-    Qcout<<qSetFieldWidth(25)<<left<<" RELEASE"<<"ON"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" RELEASE"<<"ON"<<qSetFieldWidth(0)<<Qt::endl;
 #else
-    Qcout<<qSetFieldWidth(25)<<left<<" RELEASE"<<"OFF"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" RELEASE"<<"OFF"<<qSetFieldWidth(0)<<Qt::endl;
 #endif
 #ifdef DEBUG
-    Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"ON"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" DEBUG"<<"ON"<<qSetFieldWidth(0)<<Qt::endl;
 #else
-    Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"OFF"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" DEBUG"<<"OFF"<<qSetFieldWidth(0)<<Qt::endl;
 #endif
 #ifdef WITH_ICOUTILS
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"ON"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" WITH_ICOUTILS"<<"ON"<<qSetFieldWidth(0)<<Qt::endl;
 #else
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"OFF"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" WITH_ICOUTILS"<<"OFF"<<qSetFieldWidth(0)<<Qt::endl;
 #endif
 #ifdef WITH_SYSTEM_SINGLEAPP
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_SYSTEM_SINGLEAPP"<<"ON"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" WITH_SYSTEM_SINGLEAPP"<<"ON"<<qSetFieldWidth(0)<<Qt::endl;
 #else
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_SYSTEM_SINGLEAPP"<<"OFF"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" WITH_SYSTEM_SINGLEAPP"<<"OFF"<<qSetFieldWidth(0)<<Qt::endl;
 #endif
 #ifdef WITH_WINEAPPDB
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"ON"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" WITH_WINEAPPDB "<<"ON"<<qSetFieldWidth(0)<<Qt::endl;
 #else
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"OFF"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" WITH_WINEAPPDB "<<"OFF"<<qSetFieldWidth(0)<<Qt::endl;
 #endif
 #ifdef WITH_DBUS
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_DBUS"<<"ON"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" WITH_DBUS"<<"ON"<<qSetFieldWidth(0)<<Qt::endl;
 #else
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_DBUS"<<"OFF"<<qSetFieldWidth(0)<<endl;
+    Qcout<<qSetFieldWidth(25)<<Qt::left<<" WITH_DBUS"<<"OFF"<<qSetFieldWidth(0)<<Qt::endl;
 #endif
-    Qcout<<endl;
+    Qcout<<Qt::endl;
 }
 
 QString corelib::getWhichOut(const QString &fileName, bool showErr){
@@ -981,7 +981,7 @@ bool corelib::checkFileExists(const QString &path){
     if (path.mid(0,1)=="/"){
         if (!QFile(path).exists()){
             if (m_GUI_MODE){
-                QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" does not exist.").arg(path));
+                QMessageBox::warning(nullptr, QObject::tr("Error"), QObject::tr("Binary file \"%1\" does not exist.").arg(path));
             } else {
                 qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
             }
@@ -1029,7 +1029,7 @@ bool corelib::runWineBinary(const ExecObject &execObj, const QString &prefix_nam
     args.append("--prefix");
     args.append(prefix_name);
 
-    if (execObj.nice>0){
+    if (execObj.nice.isEmpty()){
         args.append("--nice");
         args.append(execObj.nice);
     }
@@ -1097,7 +1097,7 @@ bool corelib::runWineBinary(const ExecObject &execObj, const QString &prefix_nam
 #endif
 
     if (detach){
-        QProcess proc(0);
+        QProcess proc(nullptr);
         return proc.startDetached(binary, args, QDir::currentPath());
     } else {
         Process proc(args, binary, QDir::currentPath(), QObject::tr("Running binary: \"%1\"").arg(execObj.execcmd), QObject::tr("Running binary..."), false);
@@ -1142,61 +1142,61 @@ QString corelib::createDesktopFile(const QString &prefix_name, const QString &di
         return "";
 
     QTextStream out(&file);
-    out<<"[Desktop Entry]"<<endl;
+    out<<"[Desktop Entry]"<<Qt::endl;
     out<<"Exec="<<QString::fromUtf8(APP_PREF)<<"/bin/q4wine-cli -p \""<<prefix_name<<"\" ";
     if (!dir_name.isEmpty())
         out<<" -d \""<<dir_name<<"\" ";
-    out<<" -i \""<<icon_name<<"\" "<<" %f"<<endl;
+    out<<" -i \""<<icon_name<<"\" "<<" %f"<<Qt::endl;
 
     QString icon_path = result.value("icon_path");
 
     if (icon_path.isEmpty()){
-        out<<"Icon=application-x-ms-dos-executable"<<endl;
+        out<<"Icon=application-x-ms-dos-executable"<<Qt::endl;
     } else {
         if (QFile(icon_path).exists()){
-            out<<"Icon="<<icon_path<<endl;
+            out<<"Icon="<<icon_path<<Qt::endl;
         } else {
             if (icon_name == "eject"){
-                out<<"Icon="<<embedded_icon_path<<"cdrom"<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<"cdrom"<<".svg"<<Qt::endl;
             } else if (icon_name == "explorer"){
-                out<<"Icon="<<embedded_icon_path<<"winefile"<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<"winefile"<<".svg"<<Qt::endl;
             } else if (icon_name == "winecfg"){
-                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<Qt::endl;
             } else if (icon_name == "iexplore"){
-                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<Qt::endl;
             } else if (icon_name == "oleview"){
-                out<<"Icon="<<embedded_icon_path<<"oic_winlogo"<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<"oic_winlogo"<<".svg"<<Qt::endl;
             } else if (icon_name == "taskmgr"){
-                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<Qt::endl;
             } else if (icon_name == "control"){
-                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<Qt::endl;
             } else if (icon_name == "notepad"){
-                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<Qt::endl;
             } else if (icon_name == "regedit"){
-                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<Qt::endl;
             } else if (icon_name == "uninstaller"){
-                out<<"Icon="<<embedded_icon_path<<"trash_file"<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<"trash_file"<<".svg"<<Qt::endl;
             } else if (icon_name == "winemine"){
-                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<Qt::endl;
             } else if (icon_name == "wordpad"){
-                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<Qt::endl;
             } else if (icon_name == "wineconsole"){
-                out<<"Icon="<<embedded_icon_path<<"wcmd"<<".svg"<<endl;
+                out<<"Icon="<<embedded_icon_path<<"wcmd"<<".svg"<<Qt::endl;
             } else {
-                out<<"Icon=application-x-ms-dos-executable"<<endl;
+                out<<"Icon=application-x-ms-dos-executable"<<Qt::endl;
             }
         }
     }
-    out<<"Type=Application"<<endl;
-    out<<"StartupNotify=true"<<endl;
-    out<<"GenericName="<<icon_name<<endl;
+    out<<"Type=Application"<<Qt::endl;
+    out<<"StartupNotify=true"<<Qt::endl;
+    out<<"GenericName="<<icon_name<<Qt::endl;
     QString desc = result.value("desc");
     if (!desc.isEmpty()) {
-        out<<"Comment="<<desc<<endl;
+        out<<"Comment="<<desc<<Qt::endl;
     }
-    out<<"Name="<<icon_name<<endl;
-    out<<"Path="<<result.value("wrkdir")<<endl;
-    out<<"StartupWMClass="<<result.value("exec").split('/').last().split('\\').last()<<endl;
+    out<<"Name="<<icon_name<<Qt::endl;
+    out<<"Path="<<result.value("wrkdir")<<Qt::endl;
+    out<<"StartupWMClass="<<result.value("exec").split('/').last().split('\\').last()<<Qt::endl;
 
     file.close();
 
@@ -1510,7 +1510,7 @@ int corelib::showError(const QString &message, const bool info) const{
         }
     } else {
         QTextStream stdErr(stderr);
-        stdErr<<"[ee] "<<message<<endl; // message.toLatin1();
+        stdErr<<"[ee] "<<message<<Qt::endl; // message.toLatin1();
     }
     return 0;
 }
@@ -1520,7 +1520,7 @@ void corelib::showError(const QString &message) const{
     if (m_GUI_MODE){
         QMessageBox::warning(0, QObject::tr("Error"), message);
     } else {
-        Qcout<<QObject::tr("Error")<<endl<<message<<endl;
+        Qcout<<QObject::tr("Error")<<Qt::endl<<message<<Qt::endl;
     }
     return;
 }

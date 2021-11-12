@@ -31,7 +31,7 @@
 #include <QLibrary>
 #include <QTextCodec>
 #include <QTextStream>
-#include <locale.h>
+#include <clocale>
 
 #ifdef DEBUG
 #include <QDebug>
@@ -41,11 +41,11 @@ class Process : public QDialog, public Ui::Process
 {
 	Q_OBJECT
 	public:
-		Process(QStringList args, QString exec, QString dir, QString info, QString caption, bool showErr = true, QStringList env = QProcess::systemEnvironment(), QWidget * parent = 0, Qt::WindowFlags f = 0);
+		Process(QStringList args, QString exec, QString dir, QString info, QString caption, bool showErr = true, QStringList env = QProcess::systemEnvironment(), QWidget * parent = nullptr, Qt::WindowFlags f = Qt::Widget);
 
 	private slots:
 		void slotFinished(int, QProcess::ExitStatus);
-		void cmdCancel_clicked(void);
+		void cmdCancel_clicked();
 		void slotError(QProcess::ProcessError);
 
 	private:

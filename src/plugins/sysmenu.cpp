@@ -284,7 +284,7 @@ bool system_menu::writeXMLSystemMenu(){
         return false;
 
     QTextStream out(&file);
-    out<<menu_xml.toString()<<endl;
+    out<<menu_xml.toString()<<Qt::endl;
 
     file.close();
 
