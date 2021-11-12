@@ -50,7 +50,7 @@ class LineItemWidget : public QWidget
 Q_OBJECT
 public:
 	//! Class constructor
-	LineItemWidget(const short int action, QWidget *parent = 0);
+	LineItemWidget(const short int action, QWidget *parent = nullptr);
 
 	//! Class destructor
 	~LineItemWidget();

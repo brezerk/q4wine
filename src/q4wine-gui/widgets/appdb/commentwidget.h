@@ -43,7 +43,7 @@ class CommentWidget : public QFrame, public Ui::CommentWidget
 {
 	Q_OBJECT
 public:
-	CommentWidget(const WineAppDBComment comment, QWidget * parent = 0);
+	CommentWidget(const WineAppDBComment comment, QWidget * parent = nullptr);
 	void setId(int id);
 	void setParentId(int id);
 	bool isId(int id);

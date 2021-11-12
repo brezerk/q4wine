@@ -30,7 +30,7 @@ class LinkItemWidget : public QLabel
 {
 	Q_OBJECT
 public:
-	LinkItemWidget(QString text, short int action = 0, QWidget *parent = 0);
+	LinkItemWidget(QString text, short int action = 0, QWidget *parent = nullptr);
 	~LinkItemWidget();
 
 	void setEnabled(bool enable);

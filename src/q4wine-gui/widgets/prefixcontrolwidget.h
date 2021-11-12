@@ -57,7 +57,7 @@ class PrefixControlWidget : public QWidget
 {
 Q_OBJECT
 public:
-	explicit PrefixControlWidget(QWidget *parent = 0);
+	explicit PrefixControlWidget(QWidget *parent = nullptr);
 
 signals:
 

@@ -701,7 +701,7 @@ void MainWindow::mainImageManager_Click(){
      * Disc Image Manager
      */
 
-    ImageManager manager(0);
+    ImageManager manager(nullptr);
     manager.exec();
 
     return;

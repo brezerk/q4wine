@@ -30,7 +30,7 @@ class About : public QDialog, public Ui::About
 {
 	Q_OBJECT
 public:
-    About(QWidget * parent = 0, Qt::WindowFlags f = 0);
+    About(QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
 
 private:
     //! This is need for libq4wine-core.so import.

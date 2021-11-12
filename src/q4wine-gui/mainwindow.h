@@ -95,8 +95,8 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 public:
     MainWindow(const int startState,
                const QString &run_binary,
-               QWidget * parent = 0,
-               const Qt::WindowFlags f = 0);
+               QWidget * parent = nullptr,
+               const Qt::WindowFlags f = Qt::WindowFlags());
 
 public slots:
     void messageReceived(const QString &message);

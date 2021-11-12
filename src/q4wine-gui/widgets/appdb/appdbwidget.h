@@ -48,7 +48,7 @@ class AppDBWidget : public QWidget
 {
 Q_OBJECT
 public:
-	explicit AppDBWidget(QWidget *parent = 0);
+	explicit AppDBWidget(QWidget *parent = nullptr);
 
 public slots:
 	void itemTrigged(short int action, QString search="", int val1=0, int val2=0, int val3=0);

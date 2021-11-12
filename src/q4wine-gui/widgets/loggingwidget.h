@@ -55,7 +55,7 @@ class LoggingWidget : public QWidget
 {
 Q_OBJECT
 public:
-    explicit LoggingWidget(QWidget *parent = 0);
+    explicit LoggingWidget(QWidget *parent = nullptr);
     ~LoggingWidget();
 
 
