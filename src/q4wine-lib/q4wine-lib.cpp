@@ -1029,7 +1029,7 @@ bool corelib::runWineBinary(const ExecObject &execObj, const QString &prefix_nam
     args.append("--prefix");
     args.append(prefix_name);
 
-    if (execObj.nice.isEmpty()){
+    if (!execObj.nice.isEmpty()){
         args.append("--nice");
         args.append(execObj.nice);
     }
