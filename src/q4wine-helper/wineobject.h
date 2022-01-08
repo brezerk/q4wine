@@ -50,7 +50,7 @@ class WineObject : public QObject
 {
     Q_OBJECT
 public:
-    explicit WineObject(QObject *parent = 0);
+    explicit WineObject(QObject *parent = nullptr);
 
     bool setPrefix(const QString &prefix);
 

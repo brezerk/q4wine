@@ -64,7 +64,7 @@ class IconListWidget : public QListWidget
 {
       Q_OBJECT
 public:
-      explicit IconListWidget(QWidget *parent = 0);
+      explicit IconListWidget(QWidget *parent = nullptr);
       ~IconListWidget();
 
 public slots:

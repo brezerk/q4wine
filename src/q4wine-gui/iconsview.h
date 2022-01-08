@@ -38,7 +38,7 @@ class IconsView : public QDialog, public Ui::IconsView
 {
 	Q_OBJECT
 	public:
-		IconsView(QString tmpDir, QWidget * parent = 0, Qt::WindowFlags f = 0);
+		IconsView(QString tmpDir, QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
 		QString selectedFile;
 
 	private slots:

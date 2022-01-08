@@ -32,7 +32,7 @@ class DriveListWidgetItem : public QObject, public QListWidgetItem
 {
 Q_OBJECT
 public:
-	DriveListWidgetItem(QListWidget * parent = 0, int type = QListWidgetItem::UserType);
+	DriveListWidgetItem(QListWidget * parent = nullptr, int type = QListWidgetItem::UserType);
 
 	void setDrive(QString letter, QString path, QString type);
 	QString getLetter();

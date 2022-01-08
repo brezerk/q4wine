@@ -57,8 +57,8 @@ void Process::slotError(QProcess::ProcessError err){
 
 		QTextCodec *codec = QTextCodec::codecForName(lang.toLatin1());
 		if (!codec){
-			stdErr<<"[ee] Cannot setup codec for \""<<lang<<"\""<<endl;
-			stdErr<<"[ee] Aborting current operation!"<<endl;
+			stdErr<<"[ee] Cannot setup codec for \""<<lang<<"\""<<Qt::endl;
+			stdErr<<"[ee] Aborting current operation!"<<Qt::endl;
 			reject();
 			return;
 		}
@@ -130,8 +130,8 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 		// Read STDERR with locale support
 		QTextCodec *codec = QTextCodec::codecForName(lang.toLatin1());
 		if (!codec){
-			stdErr<<"[ee] Cannot setup codec for \""<<lang<<"\""<<endl;
-			stdErr<<"[ee] Aborting current operation!"<<endl;
+			stdErr<<"[ee] Cannot setup codec for \""<<lang<<"\""<<Qt::endl;
+			stdErr<<"[ee] Aborting current operation!"<<Qt::endl;
 			reject();
 			return;
 		}

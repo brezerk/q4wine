@@ -55,7 +55,7 @@ class DataBase : public QObject
     Q_OBJECT
 public:
     //! Constructor
-    explicit DataBase(QObject * parent = 0);
+    explicit DataBase(QObject * parent = nullptr);
 
     /*! \brief This function tries to check database structure.
 	*

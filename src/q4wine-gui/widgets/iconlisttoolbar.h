@@ -37,7 +37,7 @@ class IconListToolbar : public QWidget
 {
 Q_OBJECT
 public:
-    explicit IconListToolbar(QWidget *parent = 0);
+    explicit IconListToolbar(QWidget *parent = nullptr);
 
 signals:
     void searchFilterChange(QString filter);

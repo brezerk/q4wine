@@ -59,7 +59,7 @@ public:
     * \param  url	       Application url to open.
     */
 
-    AppInfoWidget(QString name, QString desc, const int appid, QList<WineAppDBVersionInfo> versions, QWidget *parent = 0);
+    AppInfoWidget(QString name, QString desc, const int appid, QList<WineAppDBVersionInfo> versions, QWidget *parent = nullptr);
 
     //! \brief class destructor;
     ~AppInfoWidget();

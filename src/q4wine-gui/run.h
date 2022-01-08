@@ -54,7 +54,7 @@ class Run : public QDialog, public Ui::Run
          *
          * \param  prefix_name  Current user selected prefix name.
          */
-        Run(QWidget * parent = 0, Qt::WindowFlags f = 0);
+        Run(QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
         void prepare(QString prefix_name, QString wrkdir="", QString override="", QString winedebug="", QString useconsole="", QString display="", QString cmdargs="", QString desktop="", int nice = 0, QString exec = "", QString lang = "");
         ExecObject execObj;
     private slots:

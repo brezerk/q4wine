@@ -55,7 +55,7 @@ class PrefixConfigWidget : public QWidget
 {
 Q_OBJECT
 public:
-    explicit PrefixConfigWidget(QWidget *parent = 0);
+    explicit PrefixConfigWidget(QWidget *parent = nullptr);
     ~PrefixConfigWidget();
 
 

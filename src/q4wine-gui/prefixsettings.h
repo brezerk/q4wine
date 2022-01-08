@@ -53,8 +53,8 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
          *
          * \param  prefix_name  Current prefix name.
          */
-        PrefixSettings(QString prefix_name, QWidget * parent = 0, Qt::WindowFlags f = 0);
-        PrefixSettings(QWidget * parent = 0, Qt::WindowFlags f = 0);
+        PrefixSettings(QString prefix_name, QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+        PrefixSettings(QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
         QString getPrefixName();
 
     private:
@@ -63,7 +63,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
          * This event filter handle button click events
          * \param  prefix_name  Current prefix name.
          */
-        bool eventFilter(QObject *obj, QEvent *event);
+        bool eventFilter(QObject *obj, QEvent *event) override;
 
         /*! \brief This function loads theme images to widgets.
          *
@@ -127,7 +127,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
         void cmdAddVersion_Click();
 
         void comboVersionList_Change(const QString & text);
-        void comboTemplatesList_Change(const int id);
+        void comboTemplatesList_Change(int id);
 
         void txtRunString_Changed();
 };

@@ -52,7 +52,7 @@ class FakeDriveSettings : public QDialog, public Ui::FakeDriveSettings
 {
     Q_OBJECT
 public:
-    explicit FakeDriveSettings(QString prefixName, QWidget * parent = 0, Qt::WindowFlags f = 0);
+    explicit FakeDriveSettings(QString prefixName, QWidget * parent = nullptr, Qt::WindowFlags f =  Qt::WindowFlags());
     void loadPrefixSettings();
     void loadDefaultPrefixSettings();
 

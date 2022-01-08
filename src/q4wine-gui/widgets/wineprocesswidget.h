@@ -49,7 +49,7 @@ class WineProcessWidget : public QWidget
 {
 Q_OBJECT
 public:
-	explicit WineProcessWidget(QWidget *parent = 0);
+	explicit WineProcessWidget(QWidget *parent = nullptr);
 
 signals:
 	void changeStatusText(QString);

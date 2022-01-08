@@ -124,7 +124,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::Window
     connect(cmdClnWineLibs, SIGNAL(clicked()), this, SLOT(cmdClnWineLibs_Click()));
 
     connect(comboVersionList, SIGNAL(currentIndexChanged(const QString)), this, SLOT(comboVersionList_Change(const QString)));
-    connect(comboTemplatesList, SIGNAL(currentIndexChanged(const int)), this, SLOT(comboTemplatesList_Change(const int)));
+    connect(comboTemplatesList, SIGNAL(currentIndexChanged(const int)), this, SLOT(comboTemplatesList_Change(int)));
     connect(cmdAddVersion, SIGNAL(clicked()), this, SLOT(cmdAddVersion_Click()));
 
     getVersionsList();
@@ -185,7 +185,7 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
     connect(txtPrefixName, SIGNAL(textChanged(QString)), this, SLOT(setDefPath(QString)));
 
     connect(comboVersionList, SIGNAL(currentIndexChanged(const QString)), this, SLOT(comboVersionList_Change(const QString)));
-    connect(comboTemplatesList, SIGNAL(currentIndexChanged(const int)), this, SLOT(comboTemplatesList_Change(const int)));
+    connect(comboTemplatesList, SIGNAL(currentIndexChanged(const int)), this, SLOT(comboTemplatesList_Change(int)));
     connect(cmdAddVersion, SIGNAL(clicked()), this, SLOT(cmdAddVersion_Click()));
 
     getVersionsList();
@@ -430,7 +430,7 @@ void PrefixSettings::comboVersionList_Change(const QString & text){
     //version_name = text;
 }
 
-void PrefixSettings::comboTemplatesList_Change(const int id){
+void PrefixSettings::comboTemplatesList_Change(int id){
     if (id == 1){
         txtRunString->setText(RUN_STRING_TEMPLATE_DEFAULT);
     } else if (id == 2){

@@ -28,7 +28,7 @@ DataBase::DataBase(QObject * parent): QObject(parent){
 #endif
 
     if (!QSqlDatabase::drivers().contains("QSQLITE")){
-        QErr<<"[EE] "<<"Critical error"<<" : "<<"Unable to load SQLite database driver. You need to compile qt-sql with SQLite database support"<<endl;
+        QErr<<"[EE] "<<"Critical error"<<" : "<<"Unable to load SQLite database driver. You need to compile qt-sql with SQLite database support"<<Qt::endl;
         return;
     }
 
@@ -41,7 +41,7 @@ DataBase::DataBase(QObject * parent): QObject(parent){
     db.setDatabaseName(db_path);
 
     if (!db.open()){
-        QErr<<"[EE] "<<"Critical error"<<" : "<<QString("Cannot open database file: %1 ; Error is: %2").arg(db_path).arg(db.lastError().text())<<endl;
+        QErr<<"[EE] "<<"Critical error"<<" : "<<QString("Cannot open database file: %1 ; Error is: %2").arg(db_path).arg(db.lastError().text())<<Qt::endl;
         return;
     }
 

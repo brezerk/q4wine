@@ -58,7 +58,7 @@ class PrefixTreeWidget : public QTreeWidget
 {
 Q_OBJECT
 public:
-      explicit PrefixTreeWidget(QWidget *parent = 0);
+      explicit PrefixTreeWidget(QWidget *parent = nullptr);
       ~PrefixTreeWidget();
 
 private:

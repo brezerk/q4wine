@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     if (!CoreLib.get()){
-        QErr<<"[EE] Cannot load shared library."<<endl;
+        QErr<<"[EE] Cannot load shared library."<<Qt::endl;
         return -1;
     }
 
@@ -111,32 +111,32 @@ int main(int argc, char *argv[])
 
     if (app.arguments().count()>1){
         if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){
-            Qcout<<QString("%1 %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
-            Qcout<<QString("Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>")<<endl;
-            Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
-            Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
-            Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
+            Qcout<<QString("%1 %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<Qt::endl;
+            Qcout<<QString("Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>")<<Qt::endl;
+            Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<Qt::endl;
+            Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<Qt::endl;
+            Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<Qt::endl;
             CoreLib->getBuildFlags();
-            Qcout<<QObject::tr("Author: %1.").arg("Oleksii S. Malakhov")<<endl;
+            Qcout<<QObject::tr("Author: %1.").arg("Oleksii S. Malakhov")<<Qt::endl;
             return 0;
         } else if ((app.arguments().at(1)=="--minimize") or (app.arguments().at(1)=="-m")) {
             startState = 1;
         } else if ((app.arguments().at(1)=="--binary") or (app.arguments().at(1)=="-b")) {
             //startState = 1;
         } else {
-            Qcout<<QObject::tr("Usage:")<<endl;
-            Qcout<<QString("  %1 -b <unix_path_to_windown_binary>").arg(APP_SHORT_NAME)<<endl;
-            Qcout<<QObject::tr("  %1 [KEY]...").arg(APP_SHORT_NAME)<<endl;
-            Qcout<<QObject::tr("GUI utility for Wine applications and prefixes management.")<<endl<<endl;
-            Qcout<<QObject::tr("KEYs list:")<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  -b,  --binary"<<QObject::tr("open Q4Wine run dialog for Windows binary")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize %1 main window on startup").arg(APP_SHORT_NAME)<<qSetFieldWidth(0)<<endl;
-            Qcout<<endl;
-            Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
-            Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITE)<<endl;
-            Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
+            Qcout<<QObject::tr("Usage:")<<Qt::endl;
+            Qcout<<QString("  %1 -b <unix_path_to_windown_binary>").arg(APP_SHORT_NAME)<<Qt::endl;
+            Qcout<<QObject::tr("  %1 [KEY]...").arg(APP_SHORT_NAME)<<Qt::endl;
+            Qcout<<QObject::tr("GUI utility for Wine applications and prefixes management.")<<Qt::endl<<Qt::endl;
+            Qcout<<QObject::tr("KEYs list:")<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  -b,  --binary"<<QObject::tr("open Q4Wine run dialog for Windows binary")<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<qSetFieldWidth(25)<<Qt::left<<"  -m,  --minimize"<<QObject::tr("minimize %1 main window on startup").arg(APP_SHORT_NAME)<<qSetFieldWidth(0)<<Qt::endl;
+            Qcout<<Qt::endl;
+            Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<Qt::endl;
+            Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITE)<<Qt::endl;
+            Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<Qt::endl;
             return 0;
         }
     }
@@ -152,14 +152,14 @@ int main(int argc, char *argv[])
     DataBase db;
 
     if (!db.checkDb()){
-        QErr<<"[EE] Cannot initialize database engine."<<endl;
+        QErr<<"[EE] Cannot initialize database engine."<<Qt::endl;
         return -1;
     }
 
     if (!CoreLib->isConfigured()){
         Wizard firstSetupWizard(1);
         if (firstSetupWizard.exec()==QDialog::Rejected){
-            QErr<<"[EE] Application not configured! Rerun the setup wizard or delete broken Q4Wine configuration files."<<endl;
+            QErr<<"[EE] Application not configured! Rerun the setup wizard or delete broken Q4Wine configuration files."<<Qt::endl;
             return -1;
         }
     }

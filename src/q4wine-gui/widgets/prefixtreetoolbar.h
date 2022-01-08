@@ -42,7 +42,7 @@ class PrefixTreeToolbar : public QWidget
 {
 Q_OBJECT
 public:
-    explicit PrefixTreeToolbar(QWidget *parent = 0);
+    explicit PrefixTreeToolbar(QWidget *parent = nullptr);
     ~PrefixTreeToolbar();
 
 signals:

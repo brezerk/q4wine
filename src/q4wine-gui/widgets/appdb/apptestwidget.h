@@ -41,7 +41,7 @@ class AppTestWidget : public QWidget, public Ui::AppTestWidget
 {
 Q_OBJECT
 public:
-	AppTestWidget(const WineAppDBInfo appinfo, QWidget *parent = 0);
+	AppTestWidget(const WineAppDBInfo appinfo, QWidget *parent = nullptr);
 
 public slots:
 	void requestParentComment(int id);
