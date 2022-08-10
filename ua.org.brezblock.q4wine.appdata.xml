@@ -20,7 +20,7 @@
 
   <description>
     <p>
-      Q4Wine is a Qt GUI for W.I.N.E. It will help you manage wine prefixes and installed applications.
+      Q4Wine is a Qt GUI for Wine. It will help you manage Wine prefixes and installed applications.
     </p>
   </description>
 
