@@ -5,7 +5,7 @@
 
   <name>q4wine</name>
   <summary>Utility for Wine applications and prefixes management</summary>
-  <summary xml:lang="cz">užitečný program pro programy wine a správu předpon</summary>
+  <summary xml:lang="cs">Užitečný program pro správu Wine aplikací a prefixů</summary>
   <summary xml:lang="de">Werkzeug zur Verwaltung der Wine-Anwendungen und -Präfixe</summary>
   <summary xml:lang="en">Utility for Wine applications and prefixes management</summary>
   <summary xml:lang="es">Utilidad para el manejo de aplicaciones y prefijos de wine</summary>
