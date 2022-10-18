@@ -1,13 +1,19 @@
 latex/
 build*/
+.cache/
+.cmake/
+.qtc_clangd/
+src/q4wine-gui/__/
 qt-creator/
 qtcreator-build/
 *~
 CMakeFiles/
 CMakeCache.txt
+CMakeCache.txt.*
 CMakeLists.txt.*
 Makefile
 cmake_install.cmake
+qtcsettings.cmake
 install_manifest.txt
 *.qm
 *.o
@@ -17,14 +23,16 @@ install_manifest.txt
 *.cxx
 ui_*.h
 config.h
-q4wine-mount
-q4wine-cli
-q4wine
-q4wine-helper
+# q4wine-mount
+# q4wine-cli
+# q4wine
+# q4wine-helper
 *.cbp
 *.user
 *.gz
 *.bz2
 *.autosave
+*.log
+*.patch
 doc/
 src/version.h
