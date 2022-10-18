@@ -202,16 +202,24 @@ void FakeDriveSettings::cmdOk_Click(){
 
     //Getting versions
     QString version;
-    if (comboFakeVersion->currentText()=="Windows XP"){
-        version = "winxp";
-    } else if (comboFakeVersion->currentText()=="Windows 2008"){
-        version = "win2008";
+    if (comboFakeVersion->currentText()=="Windows 10"){
+        version = "win10";
+    } else if (comboFakeVersion->currentText()=="Windows 8.1"){
+        version = "win81";
+    } else if (comboFakeVersion->currentText()=="Windows 8"){
+        version = "win8";
+    } else if (comboFakeVersion->currentText()=="Windows 2008 R2"){
+        version = "win2008r2";
     } else if (comboFakeVersion->currentText()=="Windows 7"){
         version = "win7";
+    } else if (comboFakeVersion->currentText()=="Windows 2008"){
+        version = "win2008";
     } else  if (comboFakeVersion->currentText()=="Windows Vista"){
         version = "vista";
     } else if (comboFakeVersion->currentText()=="Windows 2003"){
         version = "win2003";
+    } else if (comboFakeVersion->currentText()=="Windows XP"){
+        version = "winxp";
     } else if (comboFakeVersion->currentText()=="Windows 2000"){
         version = "win2k";
     } else if (comboFakeVersion->currentText()=="Windows ME"){
@@ -231,7 +239,7 @@ void FakeDriveSettings::cmdOk_Click(){
     } else if (comboFakeVersion->currentText()=="Windows 2.0"){
         version = "win20";
     } else {
-        version = "winxp";
+        version = "win7";
     }
 
     Registry reg(db_prefix.getPath(prefixName));
@@ -250,11 +258,11 @@ void FakeDriveSettings::cmdOk_Click(){
     userDir.append(QString::fromUtf8(getenv("USER")));
 
     if (list.count()==5){
-        desktopFolder = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(0).split("\\\\").last()));
-        desktopMusic = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(1).split("\\\\").last()));
-        desktopPictures = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(2).split("\\\\").last()));
-        desktopDocuments = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(4).split("\\\\").last()));
-        desktopVideos = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(3).split("\\\\").last()));
+        desktopFolder = QString("%1/%2").arg(userDir, CoreLib->decodeRegString(list.at(0).split("\\\\").last()));
+        desktopMusic = QString("%1/%2").arg(userDir, CoreLib->decodeRegString(list.at(1).split("\\\\").last()));
+        desktopPictures = QString("%1/%2").arg(userDir, CoreLib->decodeRegString(list.at(2).split("\\\\").last()));
+        desktopDocuments = QString("%1/%2").arg(userDir, CoreLib->decodeRegString(list.at(4).split("\\\\").last()));
+        desktopVideos = QString("%1/%2").arg(userDir, CoreLib->decodeRegString(list.at(3).split("\\\\").last()));
     } else {
         QMessageBox::warning(this, tr("Error"), tr("Cannot read desktop paths!"));
         this->reject();
@@ -1051,16 +1059,24 @@ void FakeDriveSettings::loadSettings(){
     list = reg.readKeys("user", "Software\\Wine", list);
     if (list.count()>0){
         QString version = list.at(0);
-        if (version == "win7"){
+        if (version == "win10"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 10"));
+        } else if (version == "win81"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 8.1"));
+        } else if (version == "win8"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 8"));
+        } else if (version == "win2008r2"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 2008 R2"));
+        } else if (version == "win7"){
             comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 7"));
-        } else if (version == "winxp"){
-            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows XP"));
         } else if (version == "win2008"){
             comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 2008"));
         } else if (version == "vista"){
             comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows Vista"));
         } else if (version == "win2003"){
             comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 2003"));
+        } else if (version == "winxp"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows XP"));
         } else if (version == "win2k"){
             comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 2000"));
         } else if (version == "winme"){

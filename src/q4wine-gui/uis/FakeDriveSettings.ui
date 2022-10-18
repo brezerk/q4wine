@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>696</width>
-    <height>436</height>
+    <width>740</width>
+    <height>545</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -198,9 +198,6 @@
         </property>
         <item>
          <widget class="QTabWidget" name="tabwGeneral">
-          <property name="currentIndex">
-           <number>3</number>
-          </property>
           <widget class="QWidget" name="tab">
            <attribute name="title">
             <string>General</string>
@@ -405,7 +402,22 @@
                    <widget class="QComboBox" name="comboFakeVersion">
                     <item>
                      <property name="text">
-                      <string notr="true">Windows XP</string>
+                      <string notr="true">Windows 10</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">Windows 8.1</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">Windows 8</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">Windows 2008 R2</string>
                      </property>
                     </item>
                     <item>
@@ -426,6 +438,11 @@
                     <item>
                      <property name="text">
                       <string notr="true">Windows 2003</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">Windows XP</string>
                      </property>
                     </item>
                     <item>
