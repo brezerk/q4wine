@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.11)
+cmake_minimum_required(VERSION 2.8.11...3.24)
 
 PROJECT(q4wine)
 
@@ -31,6 +31,7 @@ message(STATUS "Q4Wine build environment -- \n")
 
 set(QT_MIN_VERSION "5.2.1")
 find_package(Qt5Core REQUIRED)
+find_package(Qt5DBus REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
 find_package(Qt5Network REQUIRED)
 find_package(Qt5Sql REQUIRED)

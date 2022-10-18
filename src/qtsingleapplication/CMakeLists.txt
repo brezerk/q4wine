@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.0)
+cmake_minimum_required(VERSION 2.8.0...3.24)
 
 SET( QSINGLEAPP_LIB_SOURCES
     ${CMAKE_SOURCE_DIR}/src/qtsingleapplication/qtsingleapplication.cpp

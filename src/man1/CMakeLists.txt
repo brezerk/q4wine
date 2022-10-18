@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.0)
+cmake_minimum_required(VERSION 2.8.0...3.24)
 
 SET ( MAN_PAGES
     ${CMAKE_SOURCE_DIR}/src/man1/q4wine.1
