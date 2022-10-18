@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.11...3.24)
 
-PROJECT(q4wine)
+PROJECT(Q4Wine)
 
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
@@ -20,8 +20,8 @@ option(WITH_WINEAPPDB "If ON, then build q4wine with Wine AppDB browser support.
 option(USE_BZIP2 "Use bzip2 to compress man pages." "OFF")
 option(USE_GZIP "Use gzip to compress man pages." "OFF")
 option(WITH_DBUS "If ON, then build q4wine with QtDBus notification support." "ON")
-option(LINGUAS "Language list" "af;cs;de;en;es;fa;fr;he;it;ja;pl;pt_BR;ru;uk;zh_TW;zh_CN")
 option(LIBS_ENTRY_PATH "Destination directory for q4wine-core library")
+set(LINGUAS af cs de en es fa fr he it ja pl pt_BR ru uk zh_TW zh_CN CACHE STRING "Language list" FORCE)
 
 message(STATUS "\n * Utility for Wine applications and prefixes management.")
 message(STATUS " * Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>")
@@ -43,12 +43,12 @@ if (Qt5Core_FOUND)
 else (Qt5Core_FOUND)
     message(FATAL_ERROR "Qt Core libs not found. Please install Qt ${QT_MIN_VERSION}.")
 endif (Qt5Core_FOUND)
-if (WITH_DBUS MATCHES ON)
+if (WITH_DBUS)
     find_package(Qt5DBus REQUIRED)
     if (NOT Qt5DBus_FOUND)
         message(FATAL_ERROR "Qt DBus libraries missing. Please install Qt DBus ${QT_MIN_VERSION} or set WITH_DBUS to OFF")
     endif (NOT Qt5DBus_FOUND)
-endif (WITH_DBUS MATCHES ON)
+endif (WITH_DBUS)
 
 MESSAGE(STATUS "Build realm is   : ${CMAKE_SYSTEM_NAME} ${CMAKE_HOST_SYSTEM_PROCESSOR}\n")
 
@@ -208,7 +208,7 @@ IF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
     ENDIF (${FUSEISO_BIN} MATCHES FUSEISO_BIN-NOTFOUND)
 ENDIF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 
-IF (WITH_ICOUTILS MATCHES ON)
+IF (WITH_ICOUTILS)
     find_program( WRESTOOL NAMES wrestool )
     find_program( ICOTOOL NAMES icotool )
     MESSAGE(STATUS "Searching for icoutils binaries (WITH_ICOUTILS=ON) --\n")
@@ -225,13 +225,13 @@ IF (WITH_ICOUTILS MATCHES ON)
     ELSE (${ICOTOOL} MATCHES ICOTOOL-NOTFOUND)
         MESSAGE(STATUS "    icotool  : ${ICOTOOL}\n")
     ENDIF (${ICOTOOL} MATCHES ICOTOOL-NOTFOUND)
-ENDIF (WITH_ICOUTILS MATCHES ON)
+ENDIF (WITH_ICOUTILS)
 
-IF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
+IF (${WITH_EMBEDDED_FUSEISO})
     MESSAGE(FATAL_ERROR "    ERROR: Embedded fuseiso is not supported any more, plese remove WITH_EMBEDDED_FUSEISO flag")
     MESSAGE(FATAL_ERROR "    ERROR: and use native fuseiso instead!\n")
     MESSAGE(FATAL_ERROR "    ERROR: fuseiso package available here: https://sourceforge.net/projects/fuseiso/ \n")
-ENDIF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
+ENDIF (${WITH_EMBEDDED_FUSEISO})
 
 SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}
@@ -246,7 +246,7 @@ SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}/src/plugins
 )
 
-IF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
+IF (${WITH_SYSTEM_SINGLEAPP})
     MESSAGE(STATUS "Searching for QtSingleApplication package (WITH_SYSTEM_SINGLEAPP=ON) --\n")
 
     SET(QT_INCLUDE_DIR "/usr/include/qt5")
@@ -276,14 +276,14 @@ IF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
         MESSAGE(FATAL_ERROR "Please install SingleApplication Library or disable system qtsingleapp support by adding -DWITH_SYSTEM_SINGLEAPP=\"OFF\" option to cmake")
     ENDIF (QTSINGLEAPPLIB_INCLUDE_DIR AND QTSINGLEAPPLIB )
     MESSAGE(STATUS "\n")
-ELSE (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
+ELSE (${WITH_SYSTEM_SINGLEAPP})
     SET ( Q4WINE_HEADERS_DIR
         ${Q4WINE_HEADERS_DIR}
         ${CMAKE_SOURCE_DIR}/src/qtsingleapplication
     )
     add_subdirectory(qtsingleapplication)
     SET (QTSINGLEAPPLIB "qtsingleapp")
-ENDIF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
+ENDIF (${WITH_SYSTEM_SINGLEAPP})
 
 INCLUDE_DIRECTORIES( ${Q4WINE_HEADERS_DIR} ${CMAKE_BINARY_DIR} ${PROJECT_BINARY_DIR} )
 
