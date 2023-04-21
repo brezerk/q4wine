@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.0)
+cmake_minimum_required(VERSION 2.8.0...3.24)
 
 SET( DESKTOP_GUI_ENTRY
     ${CMAKE_SOURCE_DIR}/q4wine.desktop
@@ -136,7 +136,7 @@ SET ( Q4WINE_GUI_UI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/VersionManager.ui
 )
 
-IF (${WITH_WINEAPPDB} MATCHES ON )
+IF (${WITH_WINEAPPDB})
     SET( Q4WINE_GUI_SOURCES
         ${Q4WINE_GUI_SOURCES}
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbwidget.cpp
@@ -186,7 +186,7 @@ IF (${WITH_WINEAPPDB} MATCHES ON )
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppTestWidget.ui
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/CommentWidget.ui
     )
-ENDIF (${WITH_WINEAPPDB} MATCHES ON )
+ENDIF (${WITH_WINEAPPDB})
 
 add_custom_target (
     authors

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.0)
+cmake_minimum_required(VERSION 2.8.0...3.24)
 
 SET ( MAN_PAGES
     ${CMAKE_SOURCE_DIR}/src/man1/q4wine.1
@@ -8,15 +8,15 @@ SET ( MAN_PAGES
 
 MESSAGE(STATUS "Process man pages --")
 
-IF (USE_GZIP MATCHES ON)
+IF (USE_GZIP)
    SET ( ARC gzip )
    SET ( ARC_SUFF gz )
-ENDIF (USE_GZIP MATCHES ON)
+ENDIF (USE_GZIP)
 
-IF (USE_BZIP2 MATCHES ON)
+IF (USE_BZIP2)
    SET ( ARC bzip2 )
    SET ( ARC_SUFF bz2 )
-ENDIF (USE_BZIP2 MATCHES ON)
+ENDIF (USE_BZIP2)
 
 IF (ARC)
     find_program( ARC_BIN NAMES ${ARC} )

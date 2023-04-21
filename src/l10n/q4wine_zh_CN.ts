@@ -258,7 +258,7 @@
     <message>
         <location line="+136"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>无效的虚拟机桌面大小。</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -608,7 +608,7 @@
     <message>
         <location line="+7"/>
         <source>Export &apos;system&apos; folder</source>
-        <translation type="unfinished"></translation>
+        <translation>导出 &apos;系统&apos; 文件夹</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -641,7 +641,7 @@
     <message>
         <location line="+10"/>
         <source>Hide program arguments in the icon info display.</source>
-        <translation type="unfinished"></translation>
+        <translation>在图标信息中隐藏程序参数。</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -656,7 +656,7 @@
     <message>
         <location line="+13"/>
         <source>Default directory for new wine prefixes</source>
-        <translation>新 Wine 前缀的默认路径</translation>
+        <translation>新前缀的默认路径</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -664,37 +664,37 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
         <location line="+438"/>
         <source>Desktop Integration</source>
-        <translation type="unfinished"></translation>
+        <translation>桌面集成</translation>
     </message>
     <message>
         <location line="-553"/>
         <source>Default Wine Desktop Paths for new prefixes.</source>
-        <translation type="unfinished"></translation>
+        <translation>新前缀默认的 Wine 桌面路径。</translation>
     </message>
     <message>
         <location line="+45"/>
         <source>Desktop:</source>
-        <translation type="unfinished">桌面：</translation>
+        <translation>桌面：</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>My Documents:</source>
-        <translation type="unfinished">我的文档：</translation>
+        <translation>我的文档：</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>My Pictures:</source>
-        <translation type="unfinished">我的图片：</translation>
+        <translation>我的图片：</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>My Music:</source>
-        <translation type="unfinished">我的音乐：</translation>
+        <translation>我的音乐：</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>My Videos:</source>
-        <translation type="unfinished">我的视频：</translation>
+        <translation>我的视频：</translation>
     </message>
     <message>
         <location line="+43"/>
@@ -831,21 +831,21 @@
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="+52"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location line="+131"/>
+        <location line="+128"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+11"/>
         <location line="+31"/>
-        <location line="+741"/>
+        <location line="+749"/>
         <source>General</source>
         <translation>常规</translation>
     </message>
     <message>
-        <location line="-95"/>
+        <location line="-92"/>
         <location line="+4"/>
-        <location line="+807"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-729"/>
+        <location line="+824"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-737"/>
         <location line="+3"/>
         <location line="+6"/>
-        <location line="+728"/>
+        <location line="+736"/>
         <location line="+2"/>
         <location line="+4"/>
         <source>Video</source>
@@ -858,25 +858,25 @@
         <translation>OpenGL</translation>
     </message>
     <message>
-        <location line="-1715"/>
-        <location line="+2772"/>
+        <location line="-1732"/>
+        <location line="+2789"/>
         <location line="+21"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-728"/>
-        <location line="+732"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-736"/>
+        <location line="+740"/>
         <source>Wine Drives</source>
         <translation>Wine 驱动器</translation>
     </message>
     <message>
-        <location line="-2803"/>
-        <location line="+689"/>
+        <location line="-2820"/>
+        <location line="+706"/>
         <location line="+18"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-750"/>
-        <location line="+738"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-758"/>
+        <location line="+746"/>
         <source>Scripts</source>
-        <translation type="unfinished">脚本</translation>
+        <translation>脚本</translation>
     </message>
     <message>
-        <location line="-570"/>
+        <location line="-590"/>
         <source>General Settings</source>
         <translation>常规设置</translation>
     </message>
@@ -901,7 +901,7 @@
         <translation>版本：</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+107"/>
         <source>Misc:</source>
         <translation>杂项：</translation>
     </message>
@@ -955,70 +955,70 @@
         <translation>是</translation>
     </message>
     <message>
-        <location line="-3668"/>
-        <location line="+534"/>
+        <location line="-3685"/>
+        <location line="+551"/>
         <location line="+31"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-741"/>
-        <location line="+739"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-749"/>
+        <location line="+747"/>
         <source>Wine Browsers</source>
         <translation>Wine 浏览器</translation>
     </message>
     <message>
-        <location line="-570"/>
-        <location line="+452"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
-        <location line="+740"/>
+        <location line="-587"/>
+        <location line="+469"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-750"/>
+        <location line="+748"/>
         <source>Color Theme</source>
         <translation>颜色主题</translation>
     </message>
     <message>
-        <location line="-377"/>
-        <location line="+2068"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-707"/>
-        <location line="+729"/>
+        <location line="-394"/>
+        <location line="+2085"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-715"/>
+        <location line="+737"/>
         <source>Sound Driver</source>
         <translation>音频驱动程序</translation>
     </message>
     <message>
-        <location line="-2063"/>
-        <location line="+2220"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-726"/>
-        <location line="+728"/>
+        <location line="-2080"/>
+        <location line="+2237"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-734"/>
+        <location line="+736"/>
         <source>ALSA Driver</source>
         <translation>ALSA 驱动程序</translation>
     </message>
     <message>
-        <location line="-2215"/>
-        <location line="+2573"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-725"/>
-        <location line="+727"/>
+        <location line="-2232"/>
+        <location line="+2590"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-733"/>
+        <location line="+735"/>
         <source>Misc Audio</source>
         <translation>杂项音频</translation>
     </message>
     <message>
-        <location line="-2642"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-745"/>
-        <location line="+733"/>
+        <location line="-2659"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-753"/>
+        <location line="+741"/>
         <source>File System</source>
         <translation>文件系统</translation>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+2886"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-727"/>
-        <location line="+731"/>
+        <location line="+2903"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-735"/>
+        <location line="+739"/>
         <source>Desktop Paths</source>
         <translation>桌面路径</translation>
     </message>
     <message>
         <location line="-2403"/>
         <source>&amp;Reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>重置为默认 (&amp;R)</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>&amp;Use current Qt colors</source>
-        <translation type="unfinished"></translation>
+        <translation>使用当前的 Qt 配色 (&amp;U)</translation>
     </message>
     <message>
         <location line="+100"/>
@@ -1033,12 +1033,12 @@
     <message>
         <location line="+73"/>
         <source>Post run script will be executed after the Prefix update. Wine environment settings will be exported as well.</source>
-        <translation type="unfinished"></translation>
+        <translation>后运行脚本将在前缀更新后执行。Wine 的环境设置也将被导出。</translation>
     </message>
     <message>
         <location line="+37"/>
         <source>Post run:</source>
-        <translation type="unfinished">运行后：</translation>
+        <translation>运行后：</translation>
     </message>
     <message>
         <location line="+101"/>
@@ -1090,11 +1090,11 @@
         <translation>已禁用的扩展：</translation>
     </message>
     <message>
-        <location line="-1697"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-716"/>
+        <location line="-1714"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-724"/>
         <location line="+3"/>
         <location line="+3"/>
-        <location line="+720"/>
+        <location line="+728"/>
         <location line="+2"/>
         <location line="+2"/>
         <source>Input</source>
@@ -1102,30 +1102,30 @@
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
-        <location line="+730"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-750"/>
+        <location line="+738"/>
         <source>Audio</source>
         <translation>音频</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+201"/>
         <source>Fake Drive Version:</source>
         <translation>虚拟驱动器版本：</translation>
     </message>
     <message>
-        <location line="+150"/>
+        <location line="+170"/>
         <source>Disable graphical crash dialog</source>
         <translation>停用图形崩溃对话框</translation>
     </message>
     <message>
-        <location line="-375"/>
+        <location line="-392"/>
         <location line="+15"/>
-        <location line="+1715"/>
+        <location line="+1732"/>
         <location line="+31"/>
         <location line="+1681"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-750"/>
         <location line="+30"/>
-        <location line="+704"/>
+        <location line="+712"/>
         <location line="+20"/>
         <source>X11 Driver</source>
         <translation>X11 驱动程序</translation>
@@ -1226,8 +1226,8 @@
         <translation type="obsolete">用于前缀“%1”的虚拟驱动器设置</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-684"/>
-        <location line="+68"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-692"/>
+        <location line="+76"/>
         <location line="+26"/>
         <location line="+15"/>
         <location line="+13"/>
@@ -1243,13 +1243,13 @@
         <location line="+8"/>
         <location line="+560"/>
         <location line="+33"/>
-        <location line="+378"/>
+        <location line="+386"/>
         <location line="+8"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location line="-1210"/>
+        <location line="-1226"/>
         <source>Error in string:
 
 %1
@@ -1274,7 +1274,7 @@ See help for details.</source>
 参阅帮助以获取更多信息。</translation>
     </message>
     <message>
-        <location line="+1251"/>
+        <location line="+1267"/>
         <source>Open File</source>
         <translation>打开文件</translation>
     </message>
@@ -1284,7 +1284,7 @@ See help for details.</source>
         <translation>打开目录</translation>
     </message>
     <message>
-        <location line="-535"/>
+        <location line="-543"/>
         <location line="+10"/>
         <source>Joystick Axes Mappings</source>
         <translation>手柄轴映射</translation>
@@ -1312,13 +1312,13 @@ See help for details.</source>
     </message>
     <message>
         <location line="-109"/>
-        <location line="+1080"/>
+        <location line="+1088"/>
         <location line="+8"/>
         <source>Cannot create dir: %1</source>
         <translation>无法创建目录：%1</translation>
     </message>
     <message>
-        <location line="-1077"/>
+        <location line="-1085"/>
         <location line="+30"/>
         <location line="+20"/>
         <location line="+20"/>
@@ -1743,17 +1743,17 @@ See help for details.</source>
     <message>
         <location line="-446"/>
         <source>New icon</source>
-        <translation type="unfinished"></translation>
+        <translation>新建图标</translation>
     </message>
     <message>
         <location line="+501"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>光盘镜像文件 (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;全部文件 (*)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 镜像文件 (*.iso *.ISO);;全部文件 (*)</translation>
     </message>
     <message>
         <location line="+42"/>
@@ -1900,39 +1900,39 @@ See help for details.</source>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
         <location line="+109"/>
-        <location line="+222"/>
+        <location line="+221"/>
         <source>Native</source>
         <translation>原生</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-341"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-340"/>
         <location line="+11"/>
         <location line="+109"/>
-        <location line="+225"/>
+        <location line="+224"/>
         <source>Built-in</source>
         <translation>内置</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-342"/>
         <location line="+10"/>
         <location line="+109"/>
-        <location line="+226"/>
+        <location line="+225"/>
         <source>Native, Built-in</source>
         <translation>原生，内置</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-342"/>
         <location line="+9"/>
         <location line="+109"/>
-        <location line="+227"/>
+        <location line="+226"/>
         <source>Built-in, Native</source>
         <translation>内置，原生</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-485"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-484"/>
         <source>Adding new icon</source>
         <translation>正在新增图标</translation>
     </message>
@@ -1943,8 +1943,8 @@ See help for details.</source>
     </message>
     <message>
         <location line="+53"/>
-        <location line="+281"/>
-        <location line="+27"/>
+        <location line="+279"/>
+        <location line="+26"/>
         <source>Open Exe file</source>
         <translation>打开可执行文件</translation>
     </message>
@@ -1953,7 +1953,7 @@ See help for details.</source>
         <translation type="obsolete">可执行文件 (*.exe)</translation>
     </message>
     <message>
-        <location line="-246"/>
+        <location line="-244"/>
         <source>Open image file</source>
         <translation>打开图像文件</translation>
     </message>
@@ -1962,19 +1962,19 @@ See help for details.</source>
         <translation type="obsolete">图像文件 (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location line="-59"/>
+        <location line="-58"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Exe, MSI, BAT 文件 (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe 文件 (*.exe *.EXE);;MSI 文件 (*.msi *.MSI);;BAT 文件 (*.bat *.BAT);;全部文件 (*)</translation>
     </message>
     <message>
-        <location line="+74"/>
+        <location line="+73"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
-        <translation type="unfinished"></translation>
+        <translation>图像文件 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>图像和 Win32 库文件 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;图像文件 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 可执行文件 (*.exe *.EXE);;Win32 共享库文件 (*.dll *.DLL);;Win32 可执行文件和共享库文件 (*.exe *.EXE *.dll *.DLL);;全部文件 (*)</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2005,7 +2005,7 @@ See help for details.</source>
     <message>
         <location line="+38"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>无效的虚拟桌面大小。</translation>
     </message>
     <message>
         <location line="-50"/>
@@ -2029,10 +2029,10 @@ See help for details.</source>
         <translation>正在提取图标</translation>
     </message>
     <message>
-        <location line="-261"/>
+        <location line="-260"/>
         <location line="+8"/>
         <location line="+109"/>
-        <location line="+220"/>
+        <location line="+219"/>
         <source>Disabled</source>
         <translation>已禁用</translation>
     </message>
@@ -2045,14 +2045,14 @@ See help for details.</source>
         <translation type="obsolete">图像与 Win32 二进制文件 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;图像文件 (*.png *.jpg *.gif *.bmp *.xpm);;Win32 可执行文件 (*.exe);;Win32 共享库 (*.dll);;Win32 可执行文件及共享库 (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="+87"/>
-        <location line="+27"/>
+        <location line="+86"/>
+        <location line="+26"/>
         <source>Shell script (*.sh)</source>
         <translation>Shell 脚本 (*.sh)</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="-270"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-95"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-93"/>
         <source>No virtual desktop</source>
         <translation>无虚拟桌面</translation>
     </message>
@@ -2207,7 +2207,7 @@ See help for details.</source>
     <name>IconsView</name>
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="+121"/>
-        <location filename="../q4wine-gui/iconsview.cpp" line="+110"/>
+        <location filename="../q4wine-gui/iconsview.cpp" line="+105"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -2232,18 +2232,18 @@ See help for details.</source>
         <translation>替换</translation>
     </message>
     <message>
-        <location line="+34"/>
-        <location line="+31"/>
+        <location line="+24"/>
+        <location line="+27"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location line="-31"/>
+        <location line="-27"/>
         <source>Sorry, file cannot be removed:&lt;br&gt;%1.</source>
         <translation>抱歉，无法移除文件：&lt;br&gt;%1。</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+27"/>
         <source>Sorry, file cannot be created:&lt;br&gt;%1.</source>
         <translation>抱歉，无法创建文件：&lt;br&gt;%1。</translation>
     </message>
@@ -2253,7 +2253,7 @@ See help for details.</source>
         <translation>选择文件以保存</translation>
     </message>
     <message>
-        <location line="-61"/>
+        <location line="-47"/>
         <source>Sorry. It seems that the file already exists.&lt;br&gt;Replace existing file or rename current one?</source>
         <translation>抱歉。该文件似乎已存在。&lt;br&gt;替换已有文件或重命名当前文件？</translation>
     </message>
@@ -2268,7 +2268,7 @@ See help for details.</source>
         <translation>替换已有文件或重命名当前文件？</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+35"/>
         <source>Images (*.png)</source>
         <translation>图像 (*.png)</translation>
     </message>
@@ -2329,12 +2329,12 @@ See help for details.</source>
     <message>
         <location line="+24"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>光盘镜像文件 (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;全部文件 (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 镜像文件 (*.iso *.ISO);;全部文件 (*)</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -2585,7 +2585,7 @@ See help for details.</source>
         <translation type="vanished">程序：%1&lt;br&gt; 参数：%2 </translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+315"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="+312"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
         <translation>套接字文件“%1”已存在！</translation>
     </message>
@@ -2630,7 +2630,7 @@ See help for details.</source>
     <message>
         <location line="+0"/>
         <source>Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Win32 可执行文件和共享库文件 (*.exe *.EXE *.dll *.DLL);;Win32 可执行文件 (*.exe *.EXE);;Win32 共享库文件 (*.dll *.DLL);;全部文件 (*)</translation>
     </message>
     <message>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
@@ -2661,19 +2661,19 @@ See help for details.</source>
     <message>
         <location line="-12"/>
         <source>Program: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>程序: %1</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+3"/>
         <location line="+2"/>
         <source>Args: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>参数: %1</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>隐藏</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -3101,13 +3101,13 @@ See help for details.</source>
         <location line="-286"/>
         <location line="+1"/>
         <source>Zoom In</source>
-        <translation type="unfinished">放大</translation>
+        <translation>放大</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+1"/>
         <source>Zoom Out</source>
-        <translation type="unfinished">缩小</translation>
+        <translation>缩小</translation>
     </message>
     <message>
         <location line="+94"/>
@@ -3135,12 +3135,12 @@ See help for details.</source>
         <location line="+5"/>
         <location line="+135"/>
         <source>Install or update Winetricks script</source>
-        <translation>安装或更新 Winetricks 指令稿</translation>
+        <translation>安装或更新 Winetricks 脚本</translation>
     </message>
     <message>
         <location line="-134"/>
         <source>Install new or update installed Winetricks script.</source>
-        <translation>安装新的或更新已安装的 Winetricks 指令稿。</translation>
+        <translation>安装新的或更新已安装的 Winetricks 脚本。</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3157,12 +3157,12 @@ See help for details.</source>
         <location line="+3"/>
         <location line="+129"/>
         <source>Goto Winetricks homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>打开 Winetricks 主页</translation>
     </message>
     <message>
         <location line="-128"/>
         <source>Read news, report bugs and join the Winetricks community at https://github.com/Winetricks/winetricks</source>
-        <translation type="unfinished"></translation>
+        <translation>获取新闻，提交问题，或加入 Winetricks 社区 (https://github.com/Winetricks/winetricks )</translation>
     </message>
     <message>
         <location line="+97"/>
@@ -3288,43 +3288,43 @@ See help for details.</source>
     </message>
     <message>
         <location line="-1"/>
-        <location line="+67"/>
+        <location line="+64"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location line="-176"/>
+        <location line="-173"/>
         <location line="+1"/>
         <source>Configure wine versions</source>
         <translation>设置 wine 版本</translation>
     </message>
     <message>
-        <location line="+169"/>
+        <location line="+166"/>
         <source>Select file to import</source>
         <translation>选取要导入的文件</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Prefix archive images (*.tbz *.TBZ);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>前缀存档镜像 (*.tbz *.TBZ);;全部文件 (*)</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
-        <translation type="unfinished"></translation>
+        <translation>您确定要删除前缀 &apos;%1&apos; 中的所有文件吗?</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在从 &apos;%1&apos; 中删除旧的虚拟驱动器&lt;br&gt;这可能需要一段时间...</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>正将前缀导入 &apos;%1%&lt;br&gt;这可能需要一段时间...</translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+75"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>前缀封存映像文件 (*.tbz)</translation>
     </message>
@@ -3337,7 +3337,7 @@ See help for details.</source>
         <translation type="vanished">正在移除旧的虚拟磁盘。&lt;br&gt;这会花费一点时间...</translation>
     </message>
     <message>
-        <location line="-98"/>
+        <location line="-91"/>
         <source>Removing old fake drive</source>
         <translation>正在移除旧的虚拟磁盘</translation>
     </message>
@@ -3351,14 +3351,14 @@ See help for details.</source>
         <translation>正在导入前缀</translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+75"/>
         <source>Select file to export</source>
         <translation>选取要导出的文件</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
-        <translation>正在导出 %1 前缀。&lt;br&gt;这会花费一点时间...</translation>
+        <translation>正在导出前缀 %1。&lt;br&gt;这会花费一点时间...</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -3700,12 +3700,12 @@ See help for details.</source>
         <location line="+1"/>
         <location line="+237"/>
         <source>Browse for wine binary</source>
-        <translation type="unfinished"></translation>
+        <translation>浏览 Wine 二进制文件</translation>
     </message>
     <message>
         <location line="-217"/>
         <source>New directory</source>
-        <translation type="unfinished"></translation>
+        <translation>新建文件夹</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3829,12 +3829,12 @@ See help for details.</source>
     <message>
         <location line="+94"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>光盘镜像文件 (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;全部文件 (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 镜像文件 (*.iso *.ISO);;全部文件 (*)</translation>
     </message>
     <message>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
@@ -4489,7 +4489,7 @@ See help for details.</source>
         <translation>在程序运行后运行指令稿</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-185"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-175"/>
         <source>Remove prefix directory</source>
         <translation>移除前缀目录</translation>
     </message>
@@ -4554,12 +4554,12 @@ See help for details.</source>
     <message>
         <location line="+41"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>无效的虚拟桌面大小。</translation>
     </message>
     <message>
         <location line="+131"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Exe, MSI, BAT 文件 (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe 文件 (*.exe *.EXE);;MSI 文件 (*.msi *.MSI);;BAT 文件 (*.bat *.BAT);;全部文件 (*)</translation>
     </message>
     <message>
         <location line="-189"/>
@@ -4739,7 +4739,7 @@ See help for details.</source>
     <message>
         <location line="+29"/>
         <source>Optional</source>
-        <translation type="unfinished"></translation>
+        <translation>可选</translation>
     </message>
     <message>
         <location line="+33"/>
@@ -5247,51 +5247,51 @@ See help for details.</source>
 <context>
     <name>winetricks</name>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="+110"/>
-        <location line="+122"/>
+        <location filename="../plugins/winetricks.cpp" line="+107"/>
+        <location line="+119"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location line="-127"/>
+        <location line="-124"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>无法定位 Winetricks 脚本。请先安装 Winetricks 脚本。</translation>
     </message>
     <message>
-        <location line="+122"/>
+        <location line="+119"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法进行读写文件 &apos;%1&apos;，请检查文件权限。</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法创建文件 &apos;%1&apos;。请检查文件夹权限。</translation>
     </message>
     <message>
         <location line="+65"/>
         <source>Refreshing Winetricks application list.</source>
-        <translation type="unfinished"></translation>
+        <translation>刷新 Winetricks 应用列表。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Winetricks plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Winetricks 插件</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Dropping stale items...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在删除过期项目...</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Getting list of installed items...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在获取已安装项目列表...</translation>
     </message>
     <message>
         <location line="+73"/>
         <source>Adding verb: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>正在添加 verb: %1</translation>
     </message>
     <message>
         <source>Refreshing winetricks application list.</source>

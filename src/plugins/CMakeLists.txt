@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.0)
+cmake_minimum_required(VERSION 2.8.0...3.24)
 
 SET( PLUGINS_GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/plugins/winetricks.cpp
