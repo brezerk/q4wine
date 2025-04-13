@@ -12,7 +12,7 @@ Initial Qt6 release
 
 Updated:
 
-- CMake minimum version requrement set to 3.24;
+- CMake minimum version requirement set to 3.24;
 - SingleApplication is used instead of obsolete QtSingleApplication;
 - Wine AppDB browser is marked as obsolete and disabled by default;
 - Cleanup legacy code and files;
