@@ -16,6 +16,7 @@ Updated:
 - SingleApplication is used instead of obsolete QtSingleApplication;
 - Wine AppDB browser is marked as obsolete and disabled by default;
 - Cleanup legacy code and files;
+- PrefixSetupWizzard: Added missing win8, win8.1, win10, win11 options versions;
 
 ## Version 1.3.13
 
