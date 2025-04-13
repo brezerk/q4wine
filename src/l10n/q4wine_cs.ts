@@ -20,9 +20,13 @@
         <translation>Užitečný program pro programy wine a správu předpon.</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+65"/>
+        <source>Translation authors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Authors</source>
-        <translation>Autoři</translation>
+        <translation type="vanished">Autoři</translation>
     </message>
     <message>
         <source>Packages Authors</source>
@@ -167,46 +171,46 @@
     <name>AppSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+55"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+56"/>
         <source>%1 settings</source>
         <translation>%1 nastavení</translation>
     </message>
     <message>
         <location line="+1283"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+373"/>
-        <location line="+116"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+388"/>
+        <location line="+104"/>
         <location line="+98"/>
         <source>No Proxy</source>
         <translation>Žádné proxy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-434"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-428"/>
         <source>generic</source>
         <translation>Obecné</translation>
     </message>
     <message>
-        <location line="+198"/>
+        <location line="+204"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <location line="+138"/>
+        <location line="+125"/>
         <location line="+4"/>
         <location line="+137"/>
-        <location line="+64"/>
-        <location line="+2"/>
-        <location line="+6"/>
-        <location line="+2"/>
+        <location line="+65"/>
+        <location line="+3"/>
+        <location line="+8"/>
+        <location line="+4"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-215"/>
+        <location line="-221"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Promiňte, zadejte hostitele proxy.</translation>
     </message>
@@ -216,34 +220,34 @@
         <translation>Promiňte, zadejte přípojku proxy.</translation>
     </message>
     <message>
-        <location line="+137"/>
+        <location line="+138"/>
         <source>Invalid virtual desktop size.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+64"/>
+        <location line="+65"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Promiňte, zadejte adresář %1.</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Promiňte, zadejte spustitelný soubor %1.</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+8"/>
         <source>Sorry, specified %1 directory does not exist.</source>
         <translation>Promiňte, zadaný adresář %1 není.</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+4"/>
         <source>Sorry, specified %1 binary does not exist.</source>
         <translation>Promiňte, zadaný spustitelný soubor %1 není.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+587"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-625"/>
-        <location line="+463"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-629"/>
+        <location line="+460"/>
         <source>System Default</source>
         <translation>Výchozí nastavení systému</translation>
     </message>
@@ -252,9 +256,9 @@
         <location line="+2986"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-292"/>
-        <location line="+20"/>
-        <location line="+454"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-280"/>
+        <location line="+19"/>
+        <location line="+450"/>
         <source>General</source>
         <translation>Obecné</translation>
     </message>
@@ -265,15 +269,15 @@
     </message>
     <message>
         <location line="+106"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-681"/>
-        <location line="+467"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-685"/>
+        <location line="+464"/>
         <source>Ambient Light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+9"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-465"/>
-        <location line="+467"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-462"/>
+        <location line="+464"/>
         <source>Ambient Dark</source>
         <translation type="unfinished"></translation>
     </message>
@@ -303,8 +307,8 @@
     <message>
         <location line="+34"/>
         <location line="+2753"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-239"/>
-        <location line="+453"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-228"/>
+        <location line="+449"/>
         <source>System</source>
         <translation>Systém</translation>
     </message>
@@ -348,8 +352,8 @@
     <message>
         <location line="+563"/>
         <location line="+2177"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-450"/>
-        <location line="+452"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-446"/>
+        <location line="+448"/>
         <source>Utils</source>
         <translation>Užitečné programy</translation>
     </message>
@@ -366,16 +370,16 @@
     <message>
         <location line="+511"/>
         <location line="+1547"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-446"/>
-        <location line="+450"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-442"/>
+        <location line="+446"/>
         <source>Quick Mount</source>
         <translation>Rychlé připojení</translation>
     </message>
     <message>
         <location line="-1150"/>
         <location line="+1170"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-435"/>
-        <location line="+445"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-431"/>
+        <location line="+441"/>
         <source>Logging</source>
         <translation>Zapisování</translation>
     </message>
@@ -421,22 +425,22 @@
         <location line="-1402"/>
         <location line="+18"/>
         <location line="+1273"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-454"/>
-        <location line="+448"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-450"/>
+        <location line="+444"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-445"/>
-        <location line="+447"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-441"/>
+        <location line="+443"/>
         <source>Themes</source>
         <translation>Témata</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1878"/>
         <location line="+1863"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-459"/>
-        <location line="+451"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-455"/>
+        <location line="+447"/>
         <source>Network</source>
         <translation>Síť</translation>
     </message>
@@ -538,8 +542,8 @@
     <message>
         <location line="+279"/>
         <location line="+1093"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-430"/>
-        <location line="+444"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-426"/>
+        <location line="+440"/>
         <source>AppDB browser</source>
         <translation>Prohlížeč AppDB</translation>
     </message>
@@ -556,8 +560,8 @@
     <message>
         <location line="+44"/>
         <location line="+1035"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
-        <location line="+442"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-434"/>
+        <location line="+438"/>
         <source>Desktop Menu</source>
         <translation>Nabídka plochy</translation>
     </message>
@@ -589,8 +593,8 @@
     <message>
         <location line="+47"/>
         <location line="+958"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
-        <location line="+440"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-432"/>
+        <location line="+436"/>
         <source>Defaults</source>
         <translation>Výchozí</translation>
     </message>
@@ -627,8 +631,8 @@
     <message>
         <location line="+82"/>
         <location line="+559"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
-        <location line="+439"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
+        <location line="+435"/>
         <source>Desktop Integration</source>
         <translation type="unfinished"></translation>
     </message>
@@ -665,8 +669,8 @@
     <message>
         <location line="+43"/>
         <location line="+258"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
-        <location line="+438"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-432"/>
+        <location line="+434"/>
         <source>Run dialog</source>
         <translation>Spouštěcí dialog</translation>
     </message>
@@ -674,8 +678,8 @@
         <location line="-189"/>
         <location line="+18"/>
         <location line="+176"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-435"/>
-        <location line="+437"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-431"/>
+        <location line="+433"/>
         <source>Wine desktop import</source>
         <translation>Zavedení plochy wine</translation>
     </message>
@@ -686,29 +690,29 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-473"/>
-        <location line="+449"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-469"/>
+        <location line="+445"/>
         <source>Interface</source>
         <translation>Rozhraní</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-440"/>
-        <location line="+446"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
+        <location line="+442"/>
         <source>Subsystems</source>
         <translation>Podsystémy</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
-        <location line="+443"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
+        <location line="+439"/>
         <source>Plugins</source>
         <translation>Přídavné moduly</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
-        <location line="+441"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
+        <location line="+437"/>
         <source>Advanced</source>
         <translation>Rozšířené volby</translation>
     </message>
@@ -739,7 +743,7 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-703"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-707"/>
         <source>Default</source>
         <translation type="unfinished">Výchozí</translation>
     </message>
@@ -755,7 +759,7 @@
     </message>
     <message>
         <location line="+11"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+577"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+574"/>
         <source>No virtual desktop</source>
         <translation>Žádná virtuální plocha</translation>
     </message>
@@ -778,7 +782,7 @@
 <context>
     <name>DataBase</name>
     <message>
-        <location filename="../core/database/db.cpp" line="+65"/>
+        <location filename="../core/database/db.cpp" line="+73"/>
         <source>No database loaded. Aborting...</source>
         <translation>Nenahrána žádná databáze. Přerušuje se...</translation>
     </message>
@@ -791,7 +795,7 @@
         <translation>Dialog</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+60"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+62"/>
         <source>Fake drive settings</source>
         <translation>Nastavení nepravé diskové jednotky</translation>
     </message>
@@ -800,22 +804,22 @@
         <location line="+5"/>
         <location line="+4"/>
         <location line="+131"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+11"/>
-        <location line="+31"/>
-        <location line="+742"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+14"/>
+        <location line="+29"/>
+        <location line="+932"/>
         <source>General</source>
         <translation>Obecné</translation>
     </message>
     <message>
         <location line="-95"/>
         <location line="+4"/>
-        <location line="+807"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-730"/>
+        <location line="+832"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-920"/>
         <location line="+3"/>
-        <location line="+6"/>
-        <location line="+729"/>
+        <location line="+7"/>
+        <location line="+918"/>
         <location line="+2"/>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
@@ -826,25 +830,25 @@
         <translation>OpenGL</translation>
     </message>
     <message>
-        <location line="-1715"/>
-        <location line="+2772"/>
+        <location line="-1740"/>
+        <location line="+2797"/>
         <location line="+21"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-729"/>
-        <location line="+733"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-919"/>
+        <location line="+923"/>
         <source>Wine Drives</source>
         <translation>Diskové jednotky wine</translation>
     </message>
     <message>
-        <location line="-2803"/>
-        <location line="+689"/>
+        <location line="-2828"/>
+        <location line="+714"/>
         <location line="+18"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-751"/>
-        <location line="+739"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-942"/>
+        <location line="+929"/>
         <source>Scripts</source>
         <translation type="unfinished">Skripty</translation>
     </message>
     <message>
-        <location line="-570"/>
+        <location line="-595"/>
         <source>General Settings</source>
         <translation>Obecná nastavení</translation>
     </message>
@@ -869,7 +873,7 @@
         <translation>Verze:</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+112"/>
         <source>Misc:</source>
         <translation>Různé:</translation>
     </message>
@@ -923,58 +927,58 @@
         <translation>OK</translation>
     </message>
     <message>
-        <location line="-3668"/>
-        <location line="+534"/>
+        <location line="-3693"/>
+        <location line="+559"/>
         <location line="+31"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
-        <location line="+740"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-932"/>
+        <location line="+930"/>
         <source>Wine Browsers</source>
         <translation>Prohlížeče wine</translation>
     </message>
     <message>
-        <location line="-570"/>
-        <location line="+452"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-743"/>
-        <location line="+741"/>
+        <location line="-595"/>
+        <location line="+477"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-933"/>
+        <location line="+931"/>
         <source>Color Theme</source>
         <translation>Barevný námět</translation>
     </message>
     <message>
-        <location line="-377"/>
-        <location line="+2068"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-708"/>
-        <location line="+730"/>
+        <location line="-402"/>
+        <location line="+2093"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-897"/>
+        <location line="+920"/>
         <source>Sound Driver</source>
         <translation>Ovladač zvuku</translation>
     </message>
     <message>
-        <location line="-2063"/>
-        <location line="+2220"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-727"/>
-        <location line="+729"/>
+        <location line="-2088"/>
+        <location line="+2245"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-917"/>
+        <location line="+919"/>
         <source>ALSA Driver</source>
         <translation>Ovladač ALSA</translation>
     </message>
     <message>
-        <location line="-2215"/>
-        <location line="+2573"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-726"/>
-        <location line="+728"/>
+        <location line="-2240"/>
+        <location line="+2598"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-916"/>
+        <location line="+918"/>
         <source>Misc Audio</source>
         <translation>Různé okolo zvuku</translation>
     </message>
     <message>
-        <location line="-2642"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-746"/>
-        <location line="+734"/>
+        <location line="-2667"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-936"/>
+        <location line="+924"/>
         <source>File System</source>
         <translation>Souborový systém</translation>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+2886"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-728"/>
-        <location line="+732"/>
+        <location line="+2911"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-918"/>
+        <location line="+922"/>
         <source>Desktop Paths</source>
         <translation>Cesty k ploše</translation>
     </message>
@@ -984,12 +988,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>&amp;Use current Qt colors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+100"/>
+        <location line="+107"/>
         <source>Browsers:</source>
         <translation>Prohlížeče:</translation>
     </message>
@@ -1058,20 +1057,20 @@
         <translation>Zakázaná rozšíření:</translation>
     </message>
     <message>
-        <location line="-1697"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-717"/>
+        <location line="-1722"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-907"/>
+        <location line="+3"/>
+        <location line="+4"/>
+        <location line="+910"/>
         <location line="+3"/>
         <location line="+3"/>
-        <location line="+721"/>
-        <location line="+2"/>
-        <location line="+2"/>
         <source>Input</source>
         <translation>Vstup</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-743"/>
-        <location line="+731"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-935"/>
+        <location line="+921"/>
         <source>Audio</source>
         <translation>Poslech</translation>
     </message>
@@ -1081,27 +1080,27 @@
         <translation>Verze diskové jednotky:</translation>
     </message>
     <message>
-        <location line="+150"/>
+        <location line="+175"/>
         <source>Disable graphical crash dialog</source>
         <translation>Zakázat grafický dialog pro pády</translation>
     </message>
     <message>
-        <location line="-375"/>
+        <location line="-400"/>
         <location line="+15"/>
-        <location line="+1715"/>
+        <location line="+1740"/>
         <location line="+31"/>
         <location line="+1681"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-743"/>
-        <location line="+30"/>
-        <location line="+705"/>
-        <location line="+20"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-934"/>
+        <location line="+31"/>
+        <location line="+894"/>
+        <location line="+22"/>
         <source>X11 Driver</source>
         <translation>Ovladač X11</translation>
     </message>
     <message>
         <location line="-2251"/>
         <location line="+2011"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-2"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-3"/>
         <source>Direct3D</source>
         <translation>Direct 3D</translation>
     </message>
@@ -1111,7 +1110,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+467"/>
+        <location line="+17"/>
+        <source>Use current &amp;Qt colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+450"/>
         <source>Memory (MB):</source>
         <translation>Paměť (MB):</translation>
     </message>
@@ -1190,30 +1194,30 @@
         <translation type="obsolete">Nastavení nepravé diskové jednotky pro předponu &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-684"/>
-        <location line="+68"/>
-        <location line="+26"/>
-        <location line="+15"/>
-        <location line="+13"/>
-        <location line="+11"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-872"/>
+        <location line="+92"/>
+        <location line="+27"/>
         <location line="+18"/>
+        <location line="+16"/>
         <location line="+12"/>
-        <location line="+8"/>
-        <location line="+12"/>
-        <location line="+8"/>
-        <location line="+12"/>
-        <location line="+8"/>
-        <location line="+12"/>
-        <location line="+8"/>
-        <location line="+560"/>
-        <location line="+33"/>
-        <location line="+378"/>
-        <location line="+8"/>
+        <location line="+18"/>
+        <location line="+15"/>
+        <location line="+9"/>
+        <location line="+15"/>
+        <location line="+9"/>
+        <location line="+15"/>
+        <location line="+9"/>
+        <location line="+15"/>
+        <location line="+9"/>
+        <location line="+720"/>
+        <location line="+40"/>
+        <location line="+462"/>
+        <location line="+9"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-1210"/>
+        <location line="-1509"/>
         <source>Error in string:
 
 %1
@@ -1238,61 +1242,61 @@ Například:
 Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
-        <location line="+1251"/>
+        <location line="+1553"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <location line="-535"/>
-        <location line="+10"/>
+        <location line="-643"/>
+        <location line="+14"/>
         <source>Joystick Axes Mappings</source>
         <translation>Přiřazení os pákového ovladače</translation>
     </message>
     <message>
-        <location line="-660"/>
-        <location line="+756"/>
+        <location line="-836"/>
+        <location line="+947"/>
         <source>Cannot read desktop paths!</source>
         <translation>Nelze číst cesty k ploše!</translation>
     </message>
     <message>
-        <location line="-730"/>
+        <location line="-919"/>
         <source>Cannot remove symlink: %1</source>
         <translation>Nelze odstranit symbolický odkaz: %1</translation>
     </message>
     <message>
-        <location line="+15"/>
-        <location line="+42"/>
-        <location line="+20"/>
-        <location line="+20"/>
-        <location line="+20"/>
-        <location line="+20"/>
+        <location line="+18"/>
+        <location line="+46"/>
+        <location line="+24"/>
+        <location line="+24"/>
+        <location line="+24"/>
+        <location line="+24"/>
         <source>Cannot symlink &quot;%1&quot; to &quot;%2&quot;</source>
         <translation>Nelze symbolicky odkázat &quot;%1&quot; na &quot;%2&quot;</translation>
     </message>
     <message>
-        <location line="-109"/>
-        <location line="+1080"/>
-        <location line="+8"/>
+        <location line="-126"/>
+        <location line="+1348"/>
+        <location line="+9"/>
         <source>Cannot create dir: %1</source>
         <translation>Nelze vytvořit adresář: %1</translation>
     </message>
     <message>
-        <location line="-1077"/>
-        <location line="+30"/>
-        <location line="+20"/>
-        <location line="+20"/>
-        <location line="+20"/>
+        <location line="-1345"/>
+        <location line="+33"/>
+        <location line="+24"/>
+        <location line="+24"/>
+        <location line="+24"/>
         <source>Cannot remove dir: %1</source>
         <translation>Nelze odstranit adresář: %1</translation>
     </message>
     <message>
-        <location line="+495"/>
-        <location line="+10"/>
+        <location line="+644"/>
+        <location line="+14"/>
         <source>Joystick axes mappings might be defined as:
 &quot;Joystick name&quot;=&quot;axes mapping&quot;
 
@@ -1309,7 +1313,7 @@ Například:
 Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+71"/>
         <source>Sorry, You cannot delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
         <translation>Promiňte, ale nemůžete smazat nebo upravit diskovou jednotku wine C:.&lt;br&gt;Ale můžete to změnit v dialogu nastavení předpon.</translation>
     </message>
@@ -1324,13 +1328,13 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>IconListToolbar</name>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="+74"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="+79"/>
         <location line="+1"/>
         <source>Clear search field</source>
         <translation>Smazat vyhledávací pole</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <location line="+1"/>
         <location line="+54"/>
         <location line="+1"/>
@@ -1352,7 +1356,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Přiblížit</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <location line="+1"/>
         <source>Zoom Out</source>
         <translation>Oddálit</translation>
@@ -1360,7 +1364,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="+12"/>
         <location line="+1"/>
-        <location line="+52"/>
+        <location line="+47"/>
         <location line="+1"/>
         <location line="+26"/>
         <location line="+1"/>
@@ -1368,9 +1372,9 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Vzestupné abecední řazení</translation>
     </message>
     <message>
-        <location line="-68"/>
+        <location line="-62"/>
         <location line="+1"/>
-        <location line="+48"/>
+        <location line="+42"/>
         <location line="+1"/>
         <location line="+8"/>
         <location line="+1"/>
@@ -1378,17 +1382,17 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Seřadit vzestupně podle pořadí vytvoření</translation>
     </message>
     <message>
-        <location line="-76"/>
+        <location line="-71"/>
         <location line="+1"/>
-        <location line="+61"/>
+        <location line="+56"/>
         <location line="+1"/>
         <source>Alphabetic sort descending</source>
         <translation>Sestupné abecední řazení</translation>
     </message>
     <message>
-        <location line="-50"/>
+        <location line="-44"/>
         <location line="+1"/>
-        <location line="+66"/>
+        <location line="+60"/>
         <location line="+1"/>
         <source>Sort descending by create order</source>
         <translation>Seřadit sestupně podle pořadí vytvoření</translation>
@@ -1397,8 +1401,8 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>IconListWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+241"/>
-        <location line="+895"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+271"/>
+        <location line="+981"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 úspěšně připojen.</translation>
@@ -1422,18 +1426,18 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Nepodařilo se připojit %1.</translation>
     </message>
     <message>
-        <location line="-749"/>
+        <location line="-826"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>V nastavení předpony nebyl nastaven žádný připojovací bod.</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Mount [%1]</source>
         <translation>Připojit [%1]</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <location line="+707"/>
+        <location line="+14"/>
+        <location line="+775"/>
         <source>[none]</source>
         <translation>[žádné]</translation>
     </message>
@@ -1442,19 +1446,19 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="obsolete">Připojit diskovou jednotku s médiem.</translation>
     </message>
     <message>
-        <location line="-892"/>
-        <location line="+537"/>
-        <location line="+134"/>
+        <location line="-990"/>
+        <location line="+610"/>
+        <location line="+146"/>
         <source>Sorry. It seems that the icon already exists.</source>
         <translation>Promiňte, ale zdá se, že ikona již existuje.</translation>
     </message>
     <message>
-        <location line="-671"/>
+        <location line="-755"/>
         <source>Sorry. It seems that icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
         <translation>Promiňte, ale zdá se, že ikona již existuje.&lt;br&gt;Vyberte, prosím, jiný název, nebo operaci zrušte.</translation>
     </message>
     <message>
-        <location line="+186"/>
+        <location line="+215"/>
         <source>No media drives detected.</source>
         <translation>Nezjištěny žádné diskové jednotky.</translation>
     </message>
@@ -1464,19 +1468,19 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Připojit obraz s médiem.</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <location line="+173"/>
+        <location line="+12"/>
+        <location line="+200"/>
         <source>Browse...</source>
         <translation>Procházet...</translation>
     </message>
     <message>
-        <location line="-172"/>
-        <location line="+687"/>
+        <location line="-199"/>
+        <location line="+755"/>
         <source>Browse for media image.</source>
         <translation>Procházet kvůli obrazu s médiem.</translation>
     </message>
     <message>
-        <location line="-669"/>
+        <location line="-734"/>
         <source>Unmount [%1]</source>
         <translation>Odpojit [%1]</translation>
     </message>
@@ -1486,7 +1490,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Odpojit médium.</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+6"/>
         <source>Run</source>
         <translation>Spustit</translation>
     </message>
@@ -1507,42 +1511,42 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <location line="+158"/>
+        <location line="+184"/>
         <source>Cut</source>
         <translation>Vyjmout</translation>
     </message>
     <message>
-        <location line="-157"/>
-        <location line="+158"/>
+        <location line="-183"/>
+        <location line="+184"/>
         <source>Cut selected icons to buffer</source>
         <translation>Vyjmout vybrané ikony do vyrovnávací paměti</translation>
     </message>
     <message>
-        <location line="-154"/>
-        <location line="+159"/>
+        <location line="-180"/>
+        <location line="+185"/>
         <source>Copy</source>
         <translation>Kopírovat</translation>
     </message>
     <message>
-        <location line="-158"/>
-        <location line="+159"/>
+        <location line="-184"/>
+        <location line="+185"/>
         <source>Copy selected icons to buffer</source>
         <translation>Kopírovat vybrané ikony do vyrovnávací paměti</translation>
     </message>
     <message>
-        <location line="-155"/>
-        <location line="+160"/>
+        <location line="-181"/>
+        <location line="+186"/>
         <source>Paste</source>
         <translation>Vložit</translation>
     </message>
     <message>
-        <location line="-159"/>
-        <location line="+160"/>
+        <location line="-184"/>
+        <location line="+186"/>
         <source>Paste selected icons from buffer to selected folder</source>
         <translation>Vložit vybrané ikony z vyrovnávací paměti do vybrané složky</translation>
     </message>
     <message>
-        <location line="-151"/>
+        <location line="-177"/>
         <source>Rename</source>
         <translation>Přejmenovat</translation>
     </message>
@@ -1553,92 +1557,92 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+155"/>
+        <location line="+181"/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
     <message>
-        <location line="-154"/>
-        <location line="+155"/>
+        <location line="-180"/>
+        <location line="+181"/>
         <source>Delete current icon</source>
         <translation>Smazat nynější ikonu</translation>
     </message>
     <message>
-        <location line="-151"/>
-        <location line="+159"/>
+        <location line="-177"/>
+        <location line="+185"/>
         <source>Browser</source>
         <translation>Prohlížeč</translation>
     </message>
     <message>
-        <location line="-157"/>
-        <location line="+22"/>
+        <location line="-182"/>
+        <location line="+29"/>
         <source>Open application directory</source>
         <translation>Otevřít adresář s programem</translation>
     </message>
     <message>
-        <location line="-21"/>
+        <location line="-27"/>
         <source>Open application directory in system file browser</source>
         <translation>Otevřít adresář s programem v systémovém prohlížeči souborů</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+22"/>
-        <location line="+131"/>
-        <location line="+16"/>
+        <location line="+6"/>
+        <location line="+28"/>
+        <location line="+148"/>
+        <location line="+20"/>
         <source>Open prefix directory</source>
         <translation>Otevřít adresář s předponou</translation>
     </message>
     <message>
-        <location line="-168"/>
-        <location line="+153"/>
+        <location line="-195"/>
+        <location line="+176"/>
         <source>Open prefix directory in system file browser</source>
         <translation>Otevřít adresář s předponou v systémovém prohlížeči souborů</translation>
     </message>
     <message>
-        <location line="-149"/>
-        <location line="+22"/>
-        <location line="+131"/>
-        <location line="+16"/>
+        <location line="-170"/>
+        <location line="+28"/>
+        <location line="+148"/>
+        <location line="+20"/>
         <source>Open mount point directory</source>
         <translation>Otevřít adresář s připojovacím bodem</translation>
     </message>
     <message>
-        <location line="-168"/>
-        <location line="+153"/>
+        <location line="-194"/>
+        <location line="+176"/>
         <source>Open mount point directory in system file browser</source>
         <translation>Otevřít adresář s připojovacím bodem v systémovém prohlížeči souborů</translation>
     </message>
     <message>
-        <location line="-144"/>
-        <location line="+153"/>
+        <location line="-167"/>
+        <location line="+176"/>
         <source>Wine Browser</source>
         <translation>Prohlížeč wine</translation>
     </message>
     <message>
-        <location line="-150"/>
+        <location line="-172"/>
         <source>Open application directory in wine file browser</source>
         <translation>Otevřít adresář s programem v prohlížeči souborů wine</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <location line="+147"/>
+        <location line="+7"/>
+        <location line="+168"/>
         <source>Open prefix directory in wine file browser</source>
         <translation>Otevřít adresář s předponou v prohlížeči souborů wine</translation>
     </message>
     <message>
-        <location line="-142"/>
-        <location line="+147"/>
+        <location line="-161"/>
+        <location line="+168"/>
         <source>Open mount point directory in wine file browser</source>
         <translation>Otevřít adresář s připojovacím bodem v prohlížeči souborů wine</translation>
     </message>
     <message>
-        <location line="-139"/>
-        <location line="+147"/>
+        <location line="-160"/>
+        <location line="+168"/>
         <source>Console</source>
         <translation>Konzole</translation>
     </message>
     <message>
-        <location line="-145"/>
+        <location line="-165"/>
         <source>Open console in application directory</source>
         <translation>Otevřít konzoli v adresáři s programem</translation>
     </message>
@@ -1648,31 +1652,31 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Otevřít systémovou konzoli v adresáři s programem</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+142"/>
+        <location line="+6"/>
+        <location line="+161"/>
         <source>Open console in prefix directory</source>
         <translation>Otevřít konzoli v adresáři s předponou</translation>
     </message>
     <message>
-        <location line="-141"/>
-        <location line="+142"/>
+        <location line="-160"/>
+        <location line="+161"/>
         <source>Open system console in prefix directory</source>
         <translation>Otevřít systémovou konzoli v adresáři s předponou</translation>
     </message>
     <message>
-        <location line="-138"/>
-        <location line="+142"/>
+        <location line="-155"/>
+        <location line="+161"/>
         <source>Open console in mount point directory</source>
         <translation>Otevřít konzoli v adresáři s přípojným bodem</translation>
     </message>
     <message>
-        <location line="-141"/>
-        <location line="+142"/>
+        <location line="-160"/>
+        <location line="+161"/>
         <source>Open system console in mount point directory</source>
         <translation>Otevřít systémovou konzoli v adresáři s přípojným bodem</translation>
     </message>
     <message>
-        <location line="-133"/>
+        <location line="-152"/>
         <source>Search in Wine AppDB</source>
         <translation>Hledat ve Wine Appdb</translation>
     </message>
@@ -1682,7 +1686,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Hledat název programu ve Wine Appdb</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+12"/>
         <source>Copy to clipboard</source>
         <translation>Kopírovat do schránky</translation>
     </message>
@@ -1692,28 +1696,28 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Cesta k adresáři</translation>
     </message>
     <message>
-        <location line="+24"/>
-        <location line="+465"/>
+        <location line="+30"/>
+        <location line="+499"/>
         <source>Browse for application</source>
         <translation>Procházet programy</translation>
     </message>
     <message>
-        <location line="-446"/>
+        <location line="-479"/>
         <source>New icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+501"/>
+        <location line="+542"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+43"/>
         <source>Drive successfully unmounted.</source>
         <translation>Disková jednotka byla úspěšně odpojena.</translation>
     </message>
@@ -1723,38 +1727,38 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Diskovou jednotku se nepodařilo odpojit.</translation>
     </message>
     <message>
-        <location line="-585"/>
+        <location line="-633"/>
         <source>Application path</source>
         <translation>Cesta k programu</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+9"/>
         <source>q4wine-cli cmd</source>
         <translation>Příkaz q4wine-cli</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>Run...</source>
         <translation>Spustit...</translation>
     </message>
     <message>
-        <location line="+188"/>
+        <location line="+211"/>
         <source>Do you wish to delete all of the selected icons?</source>
         <translation>Chcete smazat všechny vybrané ikony?</translation>
     </message>
     <message>
-        <location line="-540"/>
-        <location line="+912"/>
+        <location line="-603"/>
+        <location line="+997"/>
         <source>Failed to mount %1.</source>
         <translation>Nepodařilo se připojit %1.</translation>
     </message>
     <message>
-        <location line="-880"/>
+        <location line="-963"/>
         <source>Preparing to run the Wine binary...</source>
         <translation>Připravuje se spuštění spustitelného souboru wine...</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>Trying to run &quot;%1&quot;...</source>
         <translation>Snaží se spustit &quot;%1&quot;...</translation>
     </message>
@@ -1764,27 +1768,27 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>&quot;%1&quot; se nepodařil spustit.</translation>
     </message>
     <message>
-        <location line="+103"/>
+        <location line="+108"/>
         <source>Mount ISO...</source>
         <translation>Připojit ISO...</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+42"/>
         <source>Mount...</source>
         <translation>Připojit...</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="+176"/>
         <source>Copy application directory path to system&apos;s clipboard</source>
         <translation>Kopírovat cestu k adresáři s programem do schránky systému</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>Copy full application path to system&apos;s clipboard</source>
         <translation>Kopírovat celou cestu k programu do schránky systému</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+9"/>
         <source>Copy q4wine-cli command for current application</source>
         <translation>Kopírovat řádek s příkazem q4wine-cli pro nynější program</translation>
     </message>
@@ -1797,12 +1801,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="obsolete">Nový</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+34"/>
         <source>Create new icon</source>
         <translation>Vytvořit novou ikonu</translation>
     </message>
     <message>
-        <location line="+133"/>
+        <location line="+144"/>
         <source>Enter new icon name</source>
         <translation>Zadat název nové ikony</translation>
     </message>
@@ -1812,23 +1816,23 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Název ikony:</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <location line="+134"/>
+        <location line="+6"/>
+        <location line="+146"/>
         <source>Sorry. It seems that the icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
         <translation>Promiňte, ale zdá se, že ikona již existuje.&lt;br&gt;Vyberte, prosím, jiný název, nebo operaci zrušte.</translation>
     </message>
     <message>
-        <location line="-105"/>
+        <location line="-111"/>
         <source>Delete Icon</source>
         <translation>Smazat ikonu</translation>
     </message>
     <message>
-        <location line="+327"/>
+        <location line="+345"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>No device drive specified in prefix settings.</source>
         <translation>V nastavení předpony není zadána žádná disková jednotka zařízení.</translation>
     </message>
@@ -1837,7 +1841,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+101"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+104"/>
         <source>Icon settings</source>
         <translation>Nastavení ikon</translation>
     </message>
@@ -1858,53 +1862,53 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="+54"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+121"/>
         <location line="+12"/>
-        <location line="+109"/>
-        <location line="+221"/>
+        <location line="+110"/>
+        <location line="+251"/>
         <source>Native</source>
         <translation>Původní</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-340"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-371"/>
         <location line="+11"/>
-        <location line="+109"/>
-        <location line="+224"/>
+        <location line="+110"/>
+        <location line="+252"/>
         <source>Built-in</source>
         <translation>Vestavěná</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-342"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-371"/>
         <location line="+10"/>
-        <location line="+109"/>
-        <location line="+225"/>
+        <location line="+110"/>
+        <location line="+252"/>
         <source>Native, Built-in</source>
         <translation>Původní, Vestavěná</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-342"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
         <location line="+9"/>
-        <location line="+109"/>
-        <location line="+226"/>
+        <location line="+110"/>
+        <location line="+252"/>
         <source>Built-in, Native</source>
         <translation>Vestavěná, Původní</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-484"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-516"/>
         <source>Adding new icon</source>
         <translation>Přidává se nová ikona</translation>
     </message>
     <message>
-        <location line="+229"/>
+        <location line="+234"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <location line="+53"/>
-        <location line="+280"/>
+        <location line="+55"/>
+        <location line="+320"/>
         <location line="+26"/>
         <source>Open Exe file</source>
         <translation>Otevřít soubor exe</translation>
@@ -1914,7 +1918,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="obsolete">Soubory exe (*.exe)</translation>
     </message>
     <message>
-        <location line="-245"/>
+        <location line="-281"/>
         <source>Open image file</source>
         <translation>Otevřít soubor s obrazem</translation>
     </message>
@@ -1927,85 +1931,85 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="obsolete">Soubory s obrázky a spustitelné soubory Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Soubory s obrázky (*.png *.jpg *.gif *.bmp *.xpm);;Spustitelné soubory Win32 (*.exe);;Sdílené knihovny Win32 (*.dll);;Spustitelné soubory Win32 a sdílené knihovny (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="-58"/>
+        <location line="-61"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+73"/>
+        <location line="+77"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+4"/>
         <source>Image and Win32 binary files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
-        <location line="+19"/>
+        <location line="+30"/>
+        <location line="+27"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Vytahuje se ikona ze spustitelného souboru.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
     <message>
-        <location line="-19"/>
-        <location line="+19"/>
+        <location line="-26"/>
+        <location line="+28"/>
         <source>Extracting icon</source>
         <translation>Vytahuje se ikona</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+38"/>
         <location line="+5"/>
-        <location line="+5"/>
-        <location line="+7"/>
-        <location line="+5"/>
-        <location line="+39"/>
+        <location line="+6"/>
+        <location line="+8"/>
+        <location line="+8"/>
+        <location line="+36"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-61"/>
+        <location line="-63"/>
         <source>No program selected.</source>
         <translation>Nebyl vybrán žádný program.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>Selected working directory does not exist.</source>
         <translation>Vybraný pracovní adresář neexistuje.</translation>
     </message>
     <message>
-        <location line="+12"/>
-        <location line="+5"/>
+        <location line="+14"/>
+        <location line="+8"/>
         <source>Sorry, an icon named %1 already exists.</source>
         <translation>Promiňte, ale ikona s názvem %1 již existuje.</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-17"/>
         <source>No program name specified.</source>
         <translation>Není zadán žádný název programu.</translation>
     </message>
     <message>
-        <location line="-310"/>
+        <location line="-335"/>
         <location line="+8"/>
-        <location line="+109"/>
-        <location line="+219"/>
+        <location line="+110"/>
+        <location line="+248"/>
         <source>Disabled</source>
         <translation>Zakázáno</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+22"/>
         <source>Invalid virtual desktop size.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="+77"/>
         <location line="+26"/>
         <source>Shell script (*.sh)</source>
         <translation>Shellový skript (*.sh)</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="-270"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-94"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-110"/>
         <source>No virtual desktop</source>
         <translation>Žádná virtuální plocha</translation>
     </message>
@@ -2160,17 +2164,17 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <name>IconsView</name>
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="+121"/>
-        <location filename="../q4wine-gui/iconsview.cpp" line="+105"/>
+        <location filename="../q4wine-gui/iconsview.cpp" line="+111"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsview.cpp" line="-6"/>
+        <location filename="../q4wine-gui/iconsview.cpp" line="-7"/>
         <source>Sorry. It seems that the file already exists.&lt;br&gt;Replace existing file or rename current one?</source>
         <translation>Promiňte, ale zdá se, že soubor již existuje.&lt;br&gt;Nahradit stávající, nebo přejmenovat nynější?</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Exporting icon</source>
         <translation>Vyvádí se ikona</translation>
     </message>
@@ -2190,7 +2194,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Nahradit</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
         <source>Sorry. It seems that the file already exists.</source>
         <translation>Promiňte, ale zdá se, že ikona již existuje.</translation>
     </message>
@@ -2200,28 +2204,28 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Nahradit stávající, nebo přejmenovat nynější?</translation>
     </message>
     <message>
-        <location line="+17"/>
-        <location line="+27"/>
+        <location line="+20"/>
+        <location line="+32"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-27"/>
+        <location line="-31"/>
         <source>Sorry, file cannot be removed:&lt;br&gt;%1.</source>
         <translation>Promiňte, ale nelze odstranit soubor: &lt;br&gt;%1.</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+32"/>
         <source>Sorry, file cannot be created:&lt;br&gt;%1.</source>
         <translation>Promiňte, ale nelze vytvořit soubor: &lt;br&gt;%1.</translation>
     </message>
     <message>
-        <location line="-9"/>
+        <location line="-13"/>
         <source>Select file to save</source>
         <translation>Vyberte soubor, který se má uložit</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Images (*.png)</source>
         <translation>Obrázky (*.png)</translation>
     </message>
@@ -2249,13 +2253,13 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>ImageManager</name>
     <message>
-        <location filename="../q4wine-gui/imagemanager.cpp" line="+57"/>
+        <location filename="../q4wine-gui/imagemanager.cpp" line="+60"/>
         <source>File path: %1</source>
         <translation>Cesta k souboru: %1</translation>
     </message>
     <message>
-        <location line="+47"/>
-        <location line="+15"/>
+        <location line="+48"/>
+        <location line="+17"/>
         <source>%1 Mb</source>
         <translation>%1 Mb</translation>
     </message>
@@ -2265,53 +2269,53 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Přidat obraz</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+4"/>
         <source>Rename image</source>
         <translation>Přejmenovat obraz</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+7"/>
         <source>Remove image</source>
         <translation>Odstranit obraz</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+7"/>
         <source>Refresh image list</source>
         <translation>Obnovit seznam s obrazy</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+4"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
-        <location line="+25"/>
+        <location line="+16"/>
+        <location line="+33"/>
         <source>Sorry. It seems that the CD image already exists.</source>
         <translation>Promiňte, ale zdá se, že soubor s obrazem CD již existuje.</translation>
     </message>
     <message>
-        <location line="-25"/>
+        <location line="-32"/>
         <source>Sorry. It seems that the CD image file already exists.&lt;br&gt;Please rename it, or cancel add image operation.</source>
         <translation>Promiňte, ale zdá se, že soubor s obrazem CD již existuje.&lt;br&gt;Přejmenujte jej, prosím, nebo zrušte operaci přejmenování obrazu.</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+26"/>
         <source>Sorry. CD image name cannot be empty.</source>
         <translation>Promiňte, ale název obrazu CD nemůže být prázdný.</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Sorry. CD image name cannot be empty.&lt;br&gt;Please enter new name, or cancel rename image operation.</source>
         <translation>Promiňte, ale název obrazu CD nemůže být prázdný.&lt;br&gt;Zadejte, prosím, nový název, nebo zrušte operaci přejmenování obrazu.</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+6"/>
         <source>Sorry. It seems that the CD image file already exists.&lt;br&gt;Please rename it, or cancel rename image operation.</source>
         <translation>Promiňte, ale zdá se, že soubor s obrazem CD již existuje.&lt;br&gt;Přejmenujte jej, prosím, nebo zrušte operaci přejmenování obrazu.</translation>
     </message>
@@ -2324,12 +2328,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="obsolete">Soubory s obrazy ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="-30"/>
+        <location line="-41"/>
         <source>Open ISO image file</source>
         <translation>Otevřít soubor s obrazem ISO</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+26"/>
         <source>Enter new name</source>
         <translation>Zadejte nový název</translation>
     </message>
@@ -2404,7 +2408,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Seznam zápisů</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+56"/>
         <source>Clear logs</source>
         <translation>Smazat zápisy</translation>
     </message>
@@ -2414,7 +2418,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Smazat databázi se zápisy</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Delete log</source>
         <translation>Smazat zápis</translation>
     </message>
@@ -2424,7 +2428,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Smazat nynější zápis</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Export log</source>
         <translation>Vyvést zápis</translation>
     </message>
@@ -2444,7 +2448,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Vybrat všechny řádky zápisu</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Copy selected</source>
         <translation>Kopírovat vybrané</translation>
     </message>
@@ -2454,43 +2458,43 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Kopírovat výběr do vyrovnávací paměti pro kopírování</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <location line="+5"/>
-        <location line="+220"/>
+        <location line="+11"/>
         <location line="+6"/>
+        <location line="+221"/>
+        <location line="+7"/>
         <source>Status</source>
         <translation>Stav</translation>
     </message>
     <message>
-        <location line="-231"/>
-        <location line="+231"/>
+        <location line="-234"/>
+        <location line="+234"/>
         <source>Logging enabled</source>
         <translation>Zápis povolen</translation>
     </message>
     <message>
-        <location line="-230"/>
+        <location line="-233"/>
         <location line="+1"/>
-        <location line="+230"/>
+        <location line="+233"/>
         <location line="+1"/>
         <source>Disable logging</source>
         <translation>Zakázat vedení zápisů</translation>
     </message>
     <message>
-        <location line="-228"/>
-        <location line="+220"/>
+        <location line="-230"/>
+        <location line="+221"/>
         <source>Logging disabled</source>
         <translation>Zápis zakázán</translation>
     </message>
     <message>
-        <location line="-219"/>
+        <location line="-220"/>
         <location line="+1"/>
-        <location line="+219"/>
+        <location line="+220"/>
         <location line="+1"/>
         <source>Enable logging</source>
         <translation>Povolit vedení zápisů</translation>
     </message>
     <message>
-        <location line="-168"/>
+        <location line="-170"/>
         <source>Exec string:</source>
         <translation>Spouštěcí řetězec:</translation>
     </message>
@@ -2520,7 +2524,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Vybrat soubor pro uložení</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Log Files (*.log)</source>
         <translation>Soubory se zápisy (*.log)</translation>
     </message>
@@ -2529,7 +2533,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+59"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="+61"/>
         <source>%1 :. Qt GUI for Wine v%2</source>
         <translation>%1 :. Qt GUI pro wine v%2</translation>
     </message>
@@ -2538,50 +2542,50 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="vanished">Program: %1&lt;br&gt; Argumenty: %2 </translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+312"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="+370"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
         <translation>Soubor zásuvky (socket) &quot;%1&quot; již existuje!</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <location line="+4"/>
-        <location line="+14"/>
+        <location line="+53"/>
+        <location line="+10"/>
+        <location line="+23"/>
         <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
         <translation>Program: &quot;%1&quot; se spustil dobře pro předponu: &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location line="-4"/>
+        <location line="-11"/>
         <source>Console started fine for Application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
         <translation>Konzole se spustila dobře pro program: &quot;%1&quot; v předponě: &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location line="+14"/>
-        <location line="+3"/>
+        <location line="+23"/>
+        <location line="+11"/>
         <source>Application: &quot;%1&quot; finished for prefix: &quot;%2&quot;. Exit code is: &quot;%3&quot;.</source>
         <translation>Program: &quot;%1&quot; ukončen pro předponu: &quot;%2&quot;. Kód ukončení je: &quot;%3&quot;.</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+66"/>
         <source>Unexpected socket message received.</source>
         <translation>Přijata neočekávaná zpráva od zásuvky (socket).</translation>
     </message>
     <message>
-        <location line="+250"/>
+        <location line="+239"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+60"/>
         <source>Open image file</source>
         <translation>Otevřít soubor s obrazem</translation>
     </message>
     <message>
-        <location line="+160"/>
+        <location line="+182"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Pouze jedna instance %1 může běžet v tu samou dobu.</translation>
     </message>
     <message>
-        <location line="-688"/>
+        <location line="-757"/>
         <source>Description: %1</source>
         <translation>Popis: %1</translation>
     </message>
@@ -2601,7 +2605,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Spustit v konzoli: %1&lt;br&gt; Velikost plochy: %2</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+87"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
         <translation>Zdá se, že již běží jiná instance Q4Wine, nebo byl Q4Wine ukončen nesprávně. Chcete odstranit soubor zásuvky (socket)?</translation>
     </message>
@@ -2610,28 +2614,28 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="obsolete">Spustitelný soubor a sdílené knihovny Win32 (*.exe *.dll);;Spustitelný soubor Win32 (*.exe);;Sdílené knihovny Win32 (*.dll)</translation>
     </message>
     <message>
-        <location line="+450"/>
-        <location line="+19"/>
+        <location line="+494"/>
+        <location line="+27"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Vytahuje se ikona ze spustitelného souboru.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
     <message>
-        <location line="-19"/>
-        <location line="+19"/>
+        <location line="-26"/>
+        <location line="+27"/>
         <source>Extracting icon</source>
         <translation>Vytahuje se ikona</translation>
     </message>
     <message>
-        <location line="-415"/>
-        <location line="+14"/>
-        <location line="+13"/>
-        <location line="+12"/>
-        <location line="+10"/>
+        <location line="-462"/>
+        <location line="+23"/>
+        <location line="+23"/>
+        <location line="+23"/>
+        <location line="+19"/>
         <source>helper notification</source>
         <translation>Oznámení nápovědy</translation>
     </message>
     <message>
-        <location line="-209"/>
+        <location line="-263"/>
         <source>Program: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2648,35 +2652,35 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+190"/>
-        <location line="+3"/>
+        <location line="+230"/>
+        <location line="+9"/>
         <source>Cannot start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
         <translation>Nelze spustit program: &quot;%1&quot; pro předponu: &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <location line="+3"/>
+        <location line="+9"/>
+        <location line="+10"/>
         <source>Cannot start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
         <translation>Nelze spustit konzoli: &quot;%1&quot; v předponě: &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location line="+272"/>
+        <location line="+264"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
         <translation>Promiňte, ale průvodce instalací ještě nebyl udělán. Bude dostupný v budoucí verzi.</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+60"/>
         <source>Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+164"/>
-        <location line="+3"/>
+        <location line="+187"/>
+        <location line="+6"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
         <translation>Spustitelný soubor %1 neexistuje.</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-1"/>
         <source>Cannot run binary</source>
         <translation>Nelze spustit spustitelný soubor</translation>
     </message>
@@ -2699,7 +2703,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-684"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-757"/>
         <source>Default</source>
         <translation>Výchozí</translation>
     </message>
@@ -3015,145 +3019,145 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>PrefixConfigWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="+121"/>
-        <location line="+227"/>
+        <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="+136"/>
+        <location line="+243"/>
         <source>Name</source>
         <translation>Název</translation>
     </message>
     <message>
-        <location line="-227"/>
-        <location line="+227"/>
+        <location line="-243"/>
+        <location line="+245"/>
         <source>Description</source>
         <translation>Popis</translation>
     </message>
     <message>
-        <location line="-173"/>
+        <location line="-186"/>
         <location line="+1"/>
         <source>Manage prefixes</source>
         <translation>Spravovat předpony</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+5"/>
         <location line="+1"/>
         <source>Clear search field</source>
         <translation>Smazat vyhledávací pole</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+8"/>
         <location line="+1"/>
-        <location line="+298"/>
+        <location line="+320"/>
         <location line="+1"/>
         <source>Alphabetic sort descending</source>
         <translation>Sestupné abecední řazení</translation>
     </message>
     <message>
-        <location line="-296"/>
+        <location line="-318"/>
         <location line="+1"/>
-        <location line="+289"/>
+        <location line="+311"/>
         <location line="+1"/>
         <source>Alphabetic sort ascending</source>
         <translation>Vzestupné abecední řazení</translation>
     </message>
     <message>
-        <location line="-286"/>
+        <location line="-308"/>
         <location line="+1"/>
         <source>Zoom In</source>
         <translation type="unfinished">Přiblížit</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <location line="+1"/>
         <source>Zoom Out</source>
         <translation type="unfinished">Oddálit</translation>
     </message>
     <message>
-        <location line="+94"/>
-        <location line="+93"/>
+        <location line="+96"/>
+        <location line="+100"/>
         <source>Create Fake Drive</source>
         <translation>Vytvořit nepravou diskovou jednotku</translation>
     </message>
     <message>
-        <location line="-92"/>
+        <location line="-98"/>
         <source>Create new Fake Drive configuration. Old Fake Drive will be removed.</source>
         <translation>Vytvořit nastavení nové nepravé diskové jednotky. Stará nepravá disková jednotka bude odstraněna.</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <location line="+124"/>
+        <location line="+4"/>
+        <location line="+138"/>
         <source>Update Fake Drive</source>
         <translation>Obnovit nepravou diskovou jednotku</translation>
     </message>
     <message>
-        <location line="-123"/>
+        <location line="-137"/>
         <source>Update Fake Drive configuration.</source>
         <translation>Obnovit nastavení nepravé diskové jednotky.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location line="+135"/>
+        <location line="+153"/>
         <source>Install or update Winetricks script</source>
         <translation>Nainstalovat nebo aktualizovat Winetricks (Kouzla wine)</translation>
     </message>
     <message>
-        <location line="-134"/>
+        <location line="-152"/>
         <source>Install new or update installed Winetricks script.</source>
         <translation>Nainstalovat nový nebo aktualizovat nainstalovaný skript Winetricks (Kouzla wine).</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+128"/>
+        <location line="+146"/>
         <source>Refresh Winetricks application list</source>
         <translation>Obnovit seznam programů Winetricks (Kouzla wine)</translation>
     </message>
     <message>
-        <location line="-127"/>
+        <location line="-144"/>
         <source>Create or update Q4Wine&apos;s cache of Winetricks applications.</source>
         <translation>Vytvořit nebo aktualizovat vyrovnávací paměť Q4Wine programů Winetricks (Kouzla wine).</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+129"/>
+        <location line="+146"/>
         <source>Goto Winetricks homepage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-128"/>
+        <location line="-144"/>
         <source>Read news, report bugs and join the Winetricks community at https://github.com/Winetricks/winetricks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+97"/>
+        <location line="+109"/>
         <source>Fail to remove %1</source>
         <translation>Nepodařilo se odstranit %1</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+16"/>
         <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before attempting to update it.</source>
         <translation>Promiňte, ale nebylo nalezeno žádné nastavení nepravé diskové jednotky.&lt;br&gt;Vytvořte nastavení nepravé diskové jednotky předtím, než ji budete obnovovat.</translation>
     </message>
     <message>
-        <location line="-28"/>
+        <location line="-38"/>
         <source>Warning</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>A fake drive already exists within &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Do you wish to remove &lt;b&gt;all&lt;/b&gt; files from this prefix?</source>
         <translation>Nepravá disková jednotka již existuje v &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Chcete odstranit &lt;b&gt;všechny&lt;/b&gt; soubory z této předpony?</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+10"/>
         <source>Removing old fake drive</source>
         <translation>Odstraňuje se stará nepravá disková jednotka</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-1"/>
         <source>Removing old fake drive.&lt;br&gt;This may take a while...</source>
         <translation>Odstraňuje se stará nepravá disková jednotka.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <location line="+14"/>
+        <location line="+11"/>
+        <location line="+16"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
@@ -3171,31 +3175,31 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Vytvořit novou předponu</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+4"/>
         <location line="+1"/>
         <source>Import prefix</source>
         <translation>Zavést předponu</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <location line="+1"/>
         <source>Export prefix</source>
         <translation>Vyvést předponu</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <location line="+1"/>
         <source>Delete prefix</source>
         <translation>Smazat předponu</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <location line="+1"/>
         <source>Edit prefix settings</source>
         <translation>Upravit nastavení předpony</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Set up prefix fake drive</source>
         <translation>Nastavení předpony nepravé diskové jednotky</translation>
     </message>
@@ -3205,7 +3209,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Nastavení nepravé diskové jednotky a programů pro předponu</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+84"/>
         <source>Name</source>
         <translation>Název</translation>
     </message>
@@ -3229,59 +3233,59 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Cesta</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+25"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
         <translation>Promiňte, ale nelze smazat výchozí předponu.</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+11"/>
         <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
         <translation>Opravdu chcete smazat předponu s názvem &quot;%1&quot; a všechny přiřazené ikony?</translation>
     </message>
     <message>
         <location line="-1"/>
-        <location line="+64"/>
+        <location line="+74"/>
         <source>Warning</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <location line="-173"/>
+        <location line="-191"/>
         <location line="+1"/>
         <source>Configure wine versions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+166"/>
+        <location line="+182"/>
         <source>Select file to import</source>
         <translation>Vybrat soubor pro zavedení</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Prefix archive images (*.tbz *.TBZ);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+8"/>
         <source>Do you really wish to delete all prefix files at &apos;%1&apos;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+9"/>
         <source>Removing old fake drive at &apos;%1&apos;&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+20"/>
         <source>Importing prefix to &apos;%1&apos;&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+84"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>Obrázky archvu předpon (*.tbz)</translation>
     </message>
@@ -3294,7 +3298,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="vanished">Odstraňuje se stará nepravá disková jednotka.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
     <message>
-        <location line="-91"/>
+        <location line="-102"/>
         <source>Removing old fake drive</source>
         <translation>Odstraňuje se stará nepravá disková jednotka</translation>
     </message>
@@ -3303,22 +3307,22 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="vanished">Zavádí se předpona.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+20"/>
         <source>Importing prefix</source>
         <translation>Zavádí se předpona</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+81"/>
         <source>Select file to export</source>
         <translation>Vybrat soubor pro vyvedení</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+14"/>
         <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
         <translation>Vyvádí se %1 předpona.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Exporting prefix</source>
         <translation>Vyvádí se předpona</translation>
     </message>
@@ -3326,58 +3330,58 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>PrefixSettings</name>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="+149"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="+160"/>
         <source>Add new Prefix</source>
         <translation>Přidat novou předponu</translation>
     </message>
     <message>
-        <location line="-89"/>
-        <location line="+166"/>
+        <location line="-97"/>
+        <location line="+178"/>
         <location line="+6"/>
-        <location line="+14"/>
-        <location line="+15"/>
-        <location line="+215"/>
+        <location line="+17"/>
+        <location line="+21"/>
+        <location line="+224"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-230"/>
+        <location line="-244"/>
         <source>Fail to load version by name: %1</source>
         <translation>Nepodařilo se nahrát verzi podle názvu: %1</translation>
     </message>
     <message>
-        <location line="-20"/>
+        <location line="-24"/>
         <source>Enter a prefix name</source>
         <translation>Zadejte, prosím, název předpony</translation>
     </message>
     <message>
-        <location line="-166"/>
-        <location line="+416"/>
+        <location line="-177"/>
+        <location line="+446"/>
         <source>Unable to load version by name: %1</source>
         <translation>Nelze nahrát verzi podle názvu: %1</translation>
     </message>
     <message>
-        <location line="-244"/>
+        <location line="-262"/>
         <source>Sorry, but prefix named %1 already exists.</source>
         <translation>Promiňte, ale předpona s názvem %1 již existuje.</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+24"/>
         <source>Warning</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Directory &quot;%1&quot; already exists. Do you wish to use it anyway?</source>
         <translation>Adresář &quot;%1&quot; již existuje. Přesto jej chcete použít?</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+13"/>
         <source>The directory &quot;%1&quot; could not be created.</source>
         <translation>Adresář neexistuje &quot;%1&quot; se nepodařilo vytvořit.</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+65"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
@@ -3529,36 +3533,36 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="+69"/>
         <location line="+1"/>
-        <location line="+27"/>
+        <location line="+33"/>
         <location line="+1"/>
         <source>Expand prefix tree</source>
         <translation>Rozbalit strom předpon</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-30"/>
         <location line="+1"/>
-        <location line="+28"/>
+        <location line="+34"/>
         <location line="+1"/>
         <source>Collapse prefix tree</source>
         <translation>Složit strom předpon</translation>
     </message>
     <message>
-        <location line="-23"/>
+        <location line="-28"/>
         <source>Import prefixes</source>
         <translation>Zavést předpony</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Import prefixes from ~/.local/share/wineprefixes/</source>
         <translation>Zavést předpony z ~/.local/share/wineprefixes/</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+5"/>
         <source>Export prefixes</source>
         <translation>Vyvést předpony</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Export prefixes to ~/.local/share/wineprefixes/</source>
         <translation>Vyvést předpony do ~/.local/share/wineprefixes/</translation>
     </message>
@@ -3571,8 +3575,8 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Zadejte nový název adresáře</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <location line="+62"/>
+        <location line="+1"/>
+        <location line="+67"/>
         <source>Directory name:</source>
         <translation>Název adresáře:</translation>
     </message>
@@ -3582,18 +3586,18 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Zadejte nový název adresáře</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+38"/>
         <source>Q4Wine</source>
         <translation>Q4Wine</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+72"/>
         <source>Mount [%1]</source>
         <translation>Připojit [%1]</translation>
     </message>
     <message>
-        <location line="+12"/>
-        <location line="+330"/>
+        <location line="+14"/>
+        <location line="+361"/>
         <source>[none]</source>
         <translation>[žádné]</translation>
     </message>
@@ -3602,20 +3606,20 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation type="obsolete">Připojit diskovou jednotku s médiem.</translation>
     </message>
     <message>
-        <location line="-494"/>
-        <location line="+56"/>
+        <location line="-541"/>
+        <location line="+62"/>
         <source>Sorry. It seems that the directory already exists.</source>
         <translation>Promiňte, ale zdá se, že adresář již existuje.</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+33"/>
         <source>Do you really wish to delete the folder named &quot;%1&quot; and all associated icons?
 </source>
         <translation>Opravdu chcete smazat složku s názvem &quot;%1&quot; a všechny přiřazené ikony?
 </translation>
     </message>
     <message>
-        <location line="+80"/>
+        <location line="+86"/>
         <source>No media drives detected.</source>
         <translation>Nezjištěny žádné diskové jednotky.</translation>
     </message>
@@ -3625,23 +3629,23 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Připojit obraz s médiem.</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Mount ...</source>
         <translation>Připojit...</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Browse...</source>
         <translation>Procházet...</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+310"/>
+        <location line="+341"/>
         <source>Browse for media image.</source>
         <translation>Procházet kvůli obrazu s médiem.</translation>
     </message>
     <message>
-        <location line="-292"/>
+        <location line="-320"/>
         <source>Unmount [%1]</source>
         <translation>Odpojit [%1]</translation>
     </message>
@@ -3651,12 +3655,12 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Odpojit médium.</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+6"/>
         <source>Run...</source>
         <translation>Spustit...</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Browse ...</source>
         <translation>Procházet...</translation>
     </message>
@@ -3666,12 +3670,12 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+1"/>
-        <location line="+237"/>
+        <location line="+258"/>
         <source>Browse for wine binary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-217"/>
+        <location line="-237"/>
         <source>New directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3706,24 +3710,24 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Prohlížeč</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <location line="+16"/>
+        <location line="+2"/>
+        <location line="+19"/>
         <source>Open prefix directory</source>
         <translation>Otevřít adresář s předponou</translation>
     </message>
     <message>
-        <location line="-15"/>
+        <location line="-18"/>
         <source>Open prefix directory in system file browser</source>
         <translation>Otevřít adresář s předponou v systémovém prohlížeči souborů</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+16"/>
+        <location line="+6"/>
+        <location line="+19"/>
         <source>Open mount point directory</source>
         <translation>Otevřít adresář s připojovacím bodem</translation>
     </message>
     <message>
-        <location line="-15"/>
+        <location line="-18"/>
         <source>Open mount point directory in system file browser</source>
         <translation>Otevřít adresář s připojovacím bodem v systémovém prohlížeči souborů</translation>
     </message>
@@ -3733,12 +3737,12 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Prohlížeč wine</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Open prefix directory in wine file browser</source>
         <translation>Otevřít adresář s předponou v prohlížeči souborů wine</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+7"/>
         <source>Open mount point directory in wine file browser</source>
         <translation>Otevřít adresář s připojovacím bodem v prohlížeči souborů wine</translation>
     </message>
@@ -3748,7 +3752,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Konzole</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Open console in prefix directory</source>
         <translation>Otevřít konzoli v adresáři s předponou</translation>
     </message>
@@ -3758,7 +3762,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Otevřít systémovou konzoli v adresáři s předponou</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Open console in mount point directory</source>
         <translation>Otevřít konzoli v adresáři s přípojným bodem</translation>
     </message>
@@ -3774,33 +3778,33 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Vytvořit novou předponu</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+14"/>
         <source>Set up prefix fake drive and applications</source>
         <translation>Nastavení nepravé diskové jednotky a programů pro předponu</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+8"/>
         <location line="+1"/>
         <source>Delete prefix</source>
         <translation>Smazat předponu</translation>
     </message>
     <message>
-        <location line="+84"/>
+        <location line="+85"/>
         <source>Sorry. It seems that the icon already exists.</source>
         <translation>Promiňte, ale zdá se, že ikona již existuje.</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Sorry. It seems that the icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
         <translation>Promiňte, ale zdá se, že ikona již existuje.&lt;br&gt;Vyberte, prosím, jiný název, nebo operaci zrušte.</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+105"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+4"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3813,12 +3817,12 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation type="obsolete">Soubory s obrazy ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Open Disc Image Files</source>
         <translation>Otevřít soubory s obrazy disků</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+27"/>
         <source>Failed to mount %1.</source>
         <translation>Nepodařilo se připojit %1.</translation>
     </message>
@@ -3833,33 +3837,33 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Diskovou jednotku se nepodařilo odpojit.</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+48"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
         <translation>Promiňte, ale nelze smazat výchozí předponu.</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
         <translation>Opravdu chcete smazat předponu s názvem &quot;%1&quot; a všechny přiřazené ikony?</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-1"/>
         <source>Warning</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <location line="-287"/>
+        <location line="-309"/>
         <source>Edit prefix settings</source>
         <translation>Upravit nastavení předpony</translation>
     </message>
     <message>
-        <location line="-167"/>
+        <location line="-187"/>
         <source>Mount ISO...</source>
         <translation>Připojit ISO...</translation>
     </message>
     <message>
-        <location line="-147"/>
-        <location line="+56"/>
+        <location line="-159"/>
+        <location line="+62"/>
         <source>Sorry. It seems that the directory already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
         <translation>Promiňte, ale zdá se, že adresář již existuje.&lt;br&gt;Vyberte, prosím, jiný název, nebo operaci zrušte.</translation>
     </message>
@@ -3868,28 +3872,28 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation type="obsolete">Procházet kvůli dalšímu obrazu</translation>
     </message>
     <message>
-        <location line="+257"/>
+        <location line="+283"/>
         <source>Configure prefix settings</source>
         <translation>Upravit nastavení předpony</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+7"/>
         <source>Configure fake drive settings</source>
         <translation>Nastavení nepravé diskové jednotky pro předponu</translation>
     </message>
     <message>
-        <location line="+177"/>
-        <location line="+102"/>
+        <location line="+189"/>
+        <location line="+108"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-102"/>
+        <location line="-107"/>
         <source>No device drive specified in prefix settings.</source>
         <translation>V nastavení předpony není zadána žádná disková jednotka zařízení.</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+32"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 úspěšně připojen.</translation>
@@ -3903,76 +3907,76 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 <context>
     <name>Process</name>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="+70"/>
-        <location line="+4"/>
-        <location line="+3"/>
-        <location line="+3"/>
-        <location line="+3"/>
-        <location line="+3"/>
-        <location line="+3"/>
-        <location line="+8"/>
-        <location line="+3"/>
-        <location line="+3"/>
-        <location line="+3"/>
-        <location line="+3"/>
-        <location line="+3"/>
+        <location filename="../q4wine-gui/process.cpp" line="+73"/>
+        <location line="+7"/>
+        <location line="+6"/>
+        <location line="+6"/>
+        <location line="+5"/>
+        <location line="+6"/>
+        <location line="+6"/>
+        <location line="+11"/>
+        <location line="+6"/>
+        <location line="+6"/>
+        <location line="+5"/>
+        <location line="+6"/>
+        <location line="+6"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-42"/>
+        <location line="-75"/>
         <source>It seems that the process failed.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
         <translation>Zdá se, že proces spadl.&lt;br&gt;&lt;br&gt;Zápis o chybě:&lt;br&gt;%1</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+23"/>
+        <location line="+7"/>
+        <location line="+40"/>
         <source>Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program.</source>
         <translation>Proces: Spuštění procesu se nezdařilo. Buď chybí volaný program, nebo možná nemáte dostatečná oprávnění pro spuštění programu.</translation>
     </message>
     <message>
-        <location line="-20"/>
-        <location line="+23"/>
+        <location line="-34"/>
+        <location line="+40"/>
         <source>Process: The process crashed some time after starting successfully.</source>
         <translation>Proces: Proces spadl nějaký čas poté, co byl úspěšně spuštěn.</translation>
     </message>
     <message>
-        <location line="-17"/>
-        <location line="+23"/>
+        <location line="-29"/>
+        <location line="+40"/>
         <source>Process: An error occurred when attempting to read from the process. For example, the process may not be running.</source>
         <translation>Proces: Při pokusu o čtení z procesu se vyskytla chyba. Možná proces nemůže být spuštěn.</translation>
     </message>
     <message>
-        <location line="-20"/>
-        <location line="+23"/>
+        <location line="-34"/>
+        <location line="+40"/>
         <source>Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel.</source>
         <translation>Proces: Při pokusu o zápis do procesu se vyskytla chyba. Možná proces nemůže být spuštěn, nebo má zavřen svůj vstupní kanál.</translation>
     </message>
     <message>
-        <location line="-20"/>
-        <location line="+23"/>
+        <location line="-34"/>
+        <location line="+40"/>
         <source>Process: An unknown error occurred. This is the default return value of error().</source>
         <translation>Proces: Vyskytla se neznámá chyba. Toto je výchozí návratová hodnota error().</translation>
     </message>
     <message>
-        <location line="+41"/>
-        <location line="+5"/>
+        <location line="+45"/>
+        <location line="+9"/>
         <source>Output</source>
         <translation>Výstup</translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="-8"/>
         <source>It seems that the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
         <translation>Zdá se, že proces byl ukončen obvyklým způsobem.&lt;br&gt;&lt;br&gt;Zápis STDERR:&lt;br&gt;%1</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+9"/>
         <source>It seems that the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
         <translation>Zdá se, že proces spadl.&lt;br&gt;&lt;br&gt;Zápis STDERR:&lt;br&gt;%1</translation>
     </message>
     <message>
-        <location line="-78"/>
-        <location line="+23"/>
+        <location line="-112"/>
+        <location line="+40"/>
         <source>Process: The last waitFor...() function timed out.</source>
         <translation>Proces: Poslední funkce waitFor...() byla přerušena.</translation>
     </message>
@@ -3990,41 +3994,41 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 <context>
     <name>Progress</name>
     <message>
-        <location filename="../q4wine-gui/progress.cpp" line="+51"/>
+        <location filename="../q4wine-gui/progress.cpp" line="+54"/>
         <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
         <translation>Zavádí se ikony plochy Wine z:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Může to chvíli trvat...&lt;br&gt;&lt;br&gt;&lt;b&gt;Poznámka:&lt;/b&gt; Pro odstranění zpracovaných souborů se podívejte na dialog s volbami Q4Wine.</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+5"/>
         <source>Importing Wine desktop icons: %1 of %2</source>
         <translation>Zavádí se ikony plochy wine: %1 z %2</translation>
     </message>
     <message>
-        <location line="+8"/>
-        <location line="+49"/>
+        <location line="+10"/>
+        <location line="+56"/>
         <source>Waiting for Wine process to finish...</source>
         <translation>Čeká se na dokončení procesu Wine...</translation>
     </message>
     <message>
-        <location line="-49"/>
-        <location line="+49"/>
+        <location line="-55"/>
+        <location line="+56"/>
         <source>There are %1 processes running for prefix %2.</source>
         <translation>Pro předponu %2 běží %1 procesů.</translation>
     </message>
     <message>
-        <location line="-49"/>
-        <location line="+49"/>
+        <location line="-53"/>
+        <location line="+56"/>
         <source>If the processes keep running -- end them manually.</source>
         <translation>Pokud proces dále běží -- ukončete je ručně.</translation>
     </message>
     <message>
-        <location line="-48"/>
-        <location line="+49"/>
+        <location line="-55"/>
+        <location line="+56"/>
         <source>Running process: %1</source>
         <translation>Běžící proces: %1</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-18"/>
         <source>Importing desktop icons: %1 of %2</source>
         <translation>Zavádí se ikony plochy: %1 z %2</translation>
     </message>
@@ -4032,29 +4036,29 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/database/prefix.cpp" line="+292"/>
-        <location line="+75"/>
+        <location filename="../core/database/prefix.cpp" line="+305"/>
+        <location line="+87"/>
         <source>Default</source>
         <translation>Výchozí</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+251"/>
-        <location line="+43"/>
-        <location line="+13"/>
-        <location line="+31"/>
-        <location line="+14"/>
-        <location line="+29"/>
-        <location line="+43"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+352"/>
+        <location line="+64"/>
+        <location line="+18"/>
+        <location line="+53"/>
+        <location line="+18"/>
+        <location line="+38"/>
+        <location line="+60"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Není nastavena žádná nynější předpona. Nastavte předponu pomocí klíče &quot;-p &lt;prefix_name&gt;&quot;.</translation>
     </message>
     <message>
-        <location line="-168"/>
+        <location line="-242"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>Není nastavena žádná nynější sada s ikonami. Nastavte ikonu pomocí klíče &quot;-p &lt;prefix_name&gt;&quot;.</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+27"/>
         <source>Wine process list</source>
         <translation>Seznam procesů wine</translation>
     </message>
@@ -4064,114 +4068,114 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Seznam procesů wine pro předponu &quot;%1&quot;</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>PID</source>
         <translation>PID</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Nice</source>
         <translation>Nice</translation>
     </message>
     <message>
-        <location line="-52"/>
-        <location line="+52"/>
-        <location line="+17"/>
-        <location line="+22"/>
-        <location line="+10"/>
+        <location line="-68"/>
+        <location line="+69"/>
+        <location line="+29"/>
+        <location line="+37"/>
+        <location line="+15"/>
         <source>Name</source>
         <translation>Název</translation>
     </message>
     <message>
-        <location line="-49"/>
+        <location line="-80"/>
         <source>Prefix path</source>
         <translation>Cesta k předponě</translation>
     </message>
     <message>
-        <location line="-53"/>
+        <location line="-71"/>
         <source>Prefix list</source>
         <translation>Seznam předpon</translation>
     </message>
     <message>
-        <location line="-85"/>
+        <location line="-96"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>Neexistuje předpona s názvem &quot;%1&quot;. Spusťte &quot;%2-cli -pl&quot; pro seznam předpon.</translation>
     </message>
     <message>
-        <location line="+86"/>
-        <location line="+101"/>
+        <location line="+98"/>
+        <location line="+150"/>
         <source>Path</source>
         <translation>Cesta</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-111"/>
         <source>Icon named &quot;%1&quot; does not exist.  Run &quot;%2-cli -il&quot; for icon list.</source>
         <translation>Neexistuje ikona s názvem &quot;%1&quot;. Spusťte &quot;%2-cli -il&quot; pro seznam ikon.</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+56"/>
         <source>Prefix &quot;%1&quot; has following dir list</source>
         <translation>Předpona &quot;%1&quot; má následující seznam adresářů</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+18"/>
         <source>Dir named &quot;%1&quot; does not exist. Run &quot;%2-cli -dl&quot; for dir list.</source>
         <translation>Neexistuje adresář s názvem &quot;%1&quot;. Spusťte &quot;%2-cli -dl&quot; pro seznam adresářů.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+10"/>
         <source>Prefix &quot;%1&quot; has following icon list</source>
         <translation>Předpona &quot;%1&quot; má následující seznam ikon</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+4"/>
         <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
         <translation>Předpona &quot;%1&quot; má následující seznam ikon v adresáři &quot;%2&quot;</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+8"/>
         <source>Description</source>
         <translation>Popis</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+11"/>
         <source>%1 has the following disc images in the database</source>
         <translation>&quot;%1&quot; má v databázi následující obrazy disků</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+18"/>
         <source>Killing prefix &quot;%1&quot; wineserver.</source>
         <translation>Zabíjí se wineserver předpony &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location line="+17"/>
-        <location line="+29"/>
-        <location line="+26"/>
+        <location line="+21"/>
+        <location line="+38"/>
+        <location line="+33"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>V nastavení předpony nebyl nastaven žádný připojovací bod.</translation>
     </message>
     <message>
-        <location line="-48"/>
+        <location line="-63"/>
         <source>Disc image named &quot;%1&quot; does not exist. Run &quot;%2-cli -cl&quot; for disc image list.</source>
         <translation>Neexistuje žádný obraz disku &quot;%1&quot;. Spusťte &quot;%2-cli -cl&quot; pro seznam diskových obrazů.</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+35"/>
         <source>Unmounting mount point &quot;%1&quot;.</source>
         <translation>Odpojuje se přípojný bod &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+56"/>
         <source>File &quot;%1&quot; does not exist.</source>
         <translation>Spustitelný soubor %1 neexistuje.</translation>
     </message>
     <message>
-        <location line="-349"/>
+        <location line="-504"/>
         <source>sets the current directory name</source>
         <translation>Nastaví název nynějšího adresáře</translation>
     </message>
     <message>
-        <location line="+321"/>
+        <location line="+461"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Seznam připojených médií pro všechny předpony</translation>
     </message>
@@ -4181,52 +4185,52 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Předpona</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <location line="+14"/>
+        <location line="+1"/>
+        <location line="+22"/>
         <source>Mount point</source>
         <translation>Přípojný bod</translation>
     </message>
     <message>
-        <location line="-14"/>
-        <location line="+14"/>
+        <location line="-21"/>
+        <location line="+21"/>
         <source>Media</source>
         <translation>Média</translation>
     </message>
     <message>
-        <location line="-1"/>
+        <location line="-3"/>
         <source>Mounted media list for prefix &quot;%1&quot;</source>
         <translation>Seznam připojených médií pro předponu &quot;%1&quot;</translation>
     </message>
     <message>
-        <location line="-309"/>
-        <location filename="../main.cpp" line="+117"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
+        <location line="-405"/>
+        <location filename="../main.cpp" line="+123"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+107"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Toto je svobodný program: Máte volnost při jeho úpravě a dalším šíření.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <location filename="../main.cpp" line="+1"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+1"/>
+        <location line="+4"/>
+        <location filename="../main.cpp" line="+4"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+4"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
         <translation>Není zde ŽÁDNÁ ZÁRUKA, v rozsahu povoleném zákonem.</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <location filename="../main.cpp" line="+2"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+2"/>
+        <location line="+4"/>
+        <location filename="../main.cpp" line="+4"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+4"/>
         <source>Author: %1.</source>
         <translation>Autor: %1.</translation>
     </message>
     <message>
-        <location line="-12"/>
-        <location filename="../main.cpp" line="+17"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+73"/>
+        <location line="-34"/>
+        <location filename="../main.cpp" line="+34"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+93"/>
         <source>Report %1 bugs to %2</source>
         <translation>Hlásit %1 chyby %2</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="-8"/>
+        <location filename="../main.cpp" line="-20"/>
         <source>  %1 [KEY]...</source>
         <translation>  %1 [KLÍČ]...</translation>
     </message>
@@ -4236,109 +4240,109 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Užitečný program s grafickým uživatelským rozhraním pro programy Wine a správu předpon.</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+12"/>
         <source>open Q4Wine run dialog for Windows binary</source>
         <translation>Otevřít spouštěcí dialog Q4Wine pro spustitelné soubory Windows</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>minimize %1 main window on startup</source>
         <translation>Zmenšit hlavní okno %1 při spuštění</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-27"/>
-        <location filename="../main.cpp" line="-8"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="-18"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-82"/>
+        <location filename="../main.cpp" line="-20"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="-50"/>
         <source>Usage:</source>
         <translation>Použití:</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+10"/>
         <source>Console utility for wine applications and prefixes management.</source>
         <translation>Užitečný program s konzolovým rozhraním pro programy wine a správu předpon.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <location filename="../main.cpp" line="+4"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+3"/>
+        <location line="+5"/>
+        <location filename="../main.cpp" line="+9"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+9"/>
         <source>KEYs list:</source>
         <translation>Seznam KLÁVES:</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <location filename="../main.cpp" line="+1"/>
+        <location line="+2"/>
+        <location filename="../main.cpp" line="+2"/>
         <source>display this help and exit</source>
         <translation>Zobrazit tuto nápovědu a ukončit</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <location filename="../main.cpp" line="+1"/>
+        <location line="+3"/>
+        <location filename="../main.cpp" line="+3"/>
         <source>output version information and exit</source>
         <translation>Provést výstup informace o verzi a ukončit</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
         <translation>Provést výstup seznamu s procesy wine pro nynější předponu nebo pro všechny předpony a ukončit </translation>
     </message>
     <message>
-        <location line="+1"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+1"/>
+        <location line="+5"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+2"/>
         <source>sets the current prefix name</source>
         <translation>Nastaví název nynější předpony</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+6"/>
         <source>sets the current icon name</source>
         <translation>Nastaví název nynější ikony</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>sets the cd image name</source>
         <translation>Nastaví název obrazu cd</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>sets the path to windows binary for execute with current prefix settings</source>
         <translation>Nastaví cestu k spustitelnému souboru Windows programu pro jeho spuštění s nynějším nastavením předpony</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+5"/>
         <source>sends -9 term signal to current prefix process or for all prefixes processes</source>
         <translation>Pošle signál -9 term procesu nynější předpony nebo procesům všech předpon</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+5"/>
         <source>output all existing prefixes names and exit</source>
         <translation>Provést výstup názvů všech existujících předpon a ukončit</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>output all existing dir names for current prefix and exit</source>
         <translation>Provést výstup názvů všech existujících adresářů pro nynější předponu a ukončit</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+4"/>
         <source>output all existing icon names for current prefix/directory and exit</source>
         <translation>Provést výstup názvů všech existujících ikon pro nynější předponu/adresář a ukončit</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+13"/>
         <source>mount a cd image or drive for current prefix and exit</source>
         <translation>Připojit obraz CD nebo diskovou jednotku pro nynější předponu a ukončit</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+4"/>
         <source>unmount a cd image or drive for current prefix and exit</source>
         <translation>Odpojit obraz CD nebo diskovou jednotku pro nynější předponu a ukončit</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source> -1 if serious troubles</source>
         <translation> -1 v případě vážným potíží</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-79"/>
         <source>  %1-cli [KEY]...</source>
         <translation>  %1-cli [KLÍČ]...</translation>
     </message>
@@ -4348,22 +4352,22 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>  %1-cli -p &lt;název_předpony&gt; [-d &lt;název_adresáře&gt;] -i &lt;název_ikony&gt;</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+4"/>
         <source>  %1-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
         <translation>  %1-cli -p &lt;název_předpony&gt; -b &lt;cesta_k_spustitelnému_souboru_windows&gt; [argumenty]</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+56"/>
         <source>output all cd images list and exit</source>
         <translation>Provést výstup seznamu všech obrazů CD a ukončit</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>output all mounted media for current prefix or all prefixes and exit</source>
         <translation>Provést výstup všech připojených médií pro nynější předponu nebo všechny předpony a ukončit</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+13"/>
         <source>Exit status:</source>
         <translation>Stav ukončení:</translation>
     </message>
@@ -4373,184 +4377,184 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>  0 je-li OK,</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location filename="../main.cpp" line="+5"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+15"/>
+        <location line="+7"/>
+        <location filename="../main.cpp" line="+14"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+43"/>
         <source>%1 homepage: &lt;%2&gt;</source>
         <translation>%1 domovské stránky: &lt;%2&gt;</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <location filename="../main.cpp" line="+1"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+1"/>
+        <location line="+4"/>
+        <location filename="../main.cpp" line="+4"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+4"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation>Obecná nápověda za použití programů GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="-19"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="-57"/>
         <source>  %1-helper [KEYs]...</source>
         <translation>  %1-helper [KLÍČE]...</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Console utility for Q4Wine which helps to handle Wine application exit status and its stdout/stderr output logging.</source>
         <translation>Užitečný konzolový program pro Q4Wine, který vám pomůže ovládat stav ukončení programu Wine a jeho zápis výstupu stdout\stderr.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+11"/>
         <source>sets WINEDEBUG variable</source>
         <translation>Nastaví proměnnou WINEDEBUG</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>run with output in console</source>
         <translation>Spustit s výstupem do konzole</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>sets DISPLAY variable</source>
         <translation>Nastaví proměnnou DISPLAY</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>sets program niceness</source>
         <translation>Nastaví přednost programu</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>sets program virtual desktop resolution</source>
         <translation>Nastaví rozlišení virtuální pracovní plochy programu</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>sets program binary</source>
         <translation>Nastaví spustitelný soubor programu</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>sets program args</source>
         <translation>Nastaví argumenty programu</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>sets program working directory</source>
         <translation>Nastaví pracovní adresář programu</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>sets program LANG variable</source>
         <translation>Nastaví proměnnou LANG programu</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>sets WINEDLLOVERRIDES variable</source>
         <translation>Nastaví proměnnou WINEDLLOVERRIDES</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>execute script before program run</source>
         <translation>Provést skript před spuštěním programu</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>execute script after program run</source>
         <translation>Provést skript po spuštění programu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-175"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-206"/>
         <source>Remove prefix directory</source>
         <translation>Odstranit adresář předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="+200"/>
+        <location filename="../q4wine-lib/q4wine-lib.cpp" line="+218"/>
         <source>&lt;p&gt;It seems that Q4Wine cannot run kvm_openfiles.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+12"/>
         <source>&lt;p&gt;It seems that Q4Wine cannot run kvm_getprocs.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+51"/>
         <source>Cannot read process info from /proc or API is changed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+84"/>
+        <location line="+88"/>
         <source>&lt;p&gt;Error while loading application settings by key: &apos;%1&apos;. File or path does not exist: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Please, go to the %3 options dialog and set it.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+225"/>
+        <location line="+238"/>
         <source>Buildtime flags are:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+84"/>
+        <location line="+91"/>
         <source>Cannot find or execute the &apos;%1&apos; binary. Make sure that this binary is available by search PATH variable and see also INSTALL file for application depends.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+321"/>
-        <location line="+10"/>
-        <location line="+8"/>
-        <location line="+505"/>
-        <location line="+3"/>
+        <location line="+334"/>
         <location line="+12"/>
+        <location line="+10"/>
+        <location line="+572"/>
+        <location line="+3"/>
+        <location line="+13"/>
         <location line="+2"/>
         <source>Error</source>
         <translation type="unfinished">Chyba</translation>
     </message>
     <message>
-        <location line="-540"/>
-        <location line="+18"/>
+        <location line="-611"/>
+        <location line="+22"/>
         <source>Binary file &quot;%1&quot; does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-8"/>
+        <location line="-10"/>
         <source>Cannot get unix path for &quot;%1&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+118"/>
         <source>Running binary: &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Running binary...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+151"/>
+        <location line="+172"/>
         <source>Failed to unmount previously mounted image.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+11"/>
-        <location line="+144"/>
+        <location line="+12"/>
+        <location line="+174"/>
         <source>It seems that no mount point was set in prefix options.&lt;br&gt;You might need to set it manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-55"/>
+        <location line="-67"/>
         <source>Mounting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Mounting %1 into %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+94"/>
         <source>Umounting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Umounting point: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4564,15 +4568,15 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <name>Run</name>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="+568"/>
-        <location filename="../q4wine-gui/run.cpp" line="+122"/>
-        <location line="+38"/>
-        <location line="+30"/>
+        <location filename="../q4wine-gui/run.cpp" line="+121"/>
+        <location line="+37"/>
+        <location line="+32"/>
         <source>Native</source>
         <translation>Původní</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-66"/>
+        <location filename="../q4wine-gui/run.cpp" line="-68"/>
         <location line="+37"/>
         <location line="+33"/>
         <source>Built-in</source>
@@ -4580,56 +4584,56 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-68"/>
-        <location line="+36"/>
-        <location line="+34"/>
+        <location filename="../q4wine-gui/run.cpp" line="-69"/>
+        <location line="+37"/>
+        <location line="+33"/>
         <source>Native, Built-in</source>
         <translation>Původní, Vestavěná</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-68"/>
-        <location line="+35"/>
-        <location line="+35"/>
+        <location filename="../q4wine-gui/run.cpp" line="-69"/>
+        <location line="+37"/>
+        <location line="+33"/>
         <source>Built-in, Native</source>
         <translation>Vestavěná, Původní</translation>
     </message>
     <message>
         <location line="-245"/>
-        <location filename="../q4wine-gui/run.cpp" line="+19"/>
+        <location filename="../q4wine-gui/run.cpp" line="+18"/>
         <source>No virtual desktop</source>
         <translation>Žádná virtuální plocha</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/run.cpp" line="-41"/>
+        <location filename="../q4wine-gui/run.cpp" line="-38"/>
         <location line="+5"/>
-        <location line="+42"/>
+        <location line="+39"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-47"/>
+        <location line="-44"/>
         <source>No program name specified.</source>
         <translation>Není zadán žádný název programu.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>Selected working directory does not exist.</source>
         <translation>Vybraný pracovní adresář neexistuje.</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+39"/>
         <source>Invalid virtual desktop size.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+131"/>
+        <location line="+135"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-190"/>
-        <location line="+28"/>
+        <location line="-192"/>
+        <location line="+29"/>
         <source>Disabled</source>
         <translation>Zakázáno</translation>
     </message>
@@ -4783,7 +4787,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <name>VersionManager</name>
     <message>
         <location filename="../q4wine-gui/uis/VersionManager.ui" line="+23"/>
-        <location filename="../q4wine-gui/versions.cpp" line="+39"/>
+        <location filename="../q4wine-gui/versions.cpp" line="+40"/>
         <source>Wine Version Manager</source>
         <translation>Správce verzí Wine</translation>
     </message>
@@ -4828,39 +4832,39 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/versions.cpp" line="+168"/>
+        <location filename="../q4wine-gui/versions.cpp" line="+170"/>
         <source>The Version settings has been modified.</source>
         <translation>Nastavení verze bylo změněno.</translation>
     </message>
     <message>
         <location line="+32"/>
         <location line="+6"/>
-        <location line="+107"/>
+        <location line="+99"/>
         <location line="+1"/>
         <source>Add version</source>
         <translation>Přidat verzi</translation>
     </message>
     <message>
-        <location line="-113"/>
+        <location line="-106"/>
         <source>Version name:</source>
         <translation>Název verze:</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
         <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>Promiňte, ale zdá se, že název verze již existuje.&lt;br&gt;Vyberte, prosím, jiný název verze.</translation>
     </message>
     <message>
         <location line="+25"/>
-        <location line="+42"/>
-        <location line="+9"/>
+        <location line="+34"/>
+        <location line="+8"/>
         <location line="+6"/>
         <location line="+6"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-62"/>
+        <location line="-53"/>
         <source>Default version can not be removed.</source>
         <translation>Výchozí verzi nelze odstranit.</translation>
     </message>
@@ -4869,7 +4873,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation type="obsolete">Je požadována cesta ke knihovně wine 32 nebo 64.</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+33"/>
         <source>Can&apos;t save changes...</source>
         <translation>Nelze uložit změny...</translation>
     </message>
@@ -4889,32 +4893,32 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Cesta &apos;%1&apos; není soubor.</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+23"/>
         <location line="+1"/>
         <source>Remove version</source>
         <translation>Odstranit verzi</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+4"/>
         <location line="+1"/>
         <source>Save changes</source>
         <translation>Uložit změny</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+4"/>
         <location line="+1"/>
         <source>Clear search field</source>
         <translation>Smazat vyhledávací pole</translation>
     </message>
     <message>
-        <location line="+105"/>
+        <location line="+96"/>
         <location line="+2"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <location line="+2"/>
+        <location line="+10"/>
+        <location line="+4"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
@@ -4958,22 +4962,22 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location filename="../q4wine-gui/winedrivedialog.cpp" line="+136"/>
-        <location line="+5"/>
+        <location line="+7"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="-6"/>
         <source>Sorry, you need to set existing drive directory.</source>
         <translation>Promiňte, ale musíte nastavit existující adresář s diskovou jednotkou.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+7"/>
         <source>Sorry, drive directory does not exist.</source>
         <translation>Promiňte, ale tento adresář s diskovou jednotkou neexistuje.</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+20"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
@@ -5001,14 +5005,14 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Cesta k předponě</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <location line="+71"/>
-        <location line="+13"/>
+        <location line="+23"/>
+        <location line="+77"/>
+        <location line="+17"/>
         <source>Total process count: %1</source>
         <translation>Celkový počet procesů: %1</translation>
     </message>
     <message>
-        <location line="-51"/>
+        <location line="-61"/>
         <source>Stop current</source>
         <translation>Zastavit nynější</translation>
     </message>
@@ -5018,7 +5022,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Poslat signál TERM vybranému procesu</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Stop wine</source>
         <translation>Zastavit wine</translation>
     </message>
@@ -5028,7 +5032,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Poslat signál TERM hlavnímu procesu wine</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Refresh List</source>
         <translation>Obnovit seznam</translation>
     </message>
@@ -5038,7 +5042,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Obnovit seznam s procesy</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+4"/>
         <source>Renice</source>
         <translation>Renice</translation>
     </message>
@@ -5048,48 +5052,48 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Nastavit přednost procesů</translation>
     </message>
     <message>
-        <location line="+80"/>
-        <location line="+37"/>
+        <location line="+86"/>
+        <location line="+46"/>
         <source>Warning</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <location line="-37"/>
+        <location line="-45"/>
         <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really wish to proceed?</source>
         <translation>Tento krok pošle signál KILL(-9) vybraným procesům&lt;br&gt;&lt;br&gt;Jedná se o VELKOU hrozbu, která může poškodit obvyklý stav wine.&lt;br&gt;&lt;br&gt;Opravdu chcete pokračovat?</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+25"/>
         <source>Cannot run: %1</source>
         <translation>Nelze spustit: %1</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+7"/>
         <source>It seems that the process %1 has been killed successfully.</source>
         <translation>Zdá se, že proces %1 byl ukončen úspěšně.</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+14"/>
         <source>This action will send a KILL(-9) signal to all wine processes of the selected prefixes&lt;br&gt;&lt;br&gt;Do you really wish to proceed?</source>
         <translation>Tento krok pošle signál KILL(-9) všem procesům wine pro vybrané předpony&lt;br&gt;&lt;br&gt;Opravdu chcete pokračovat?</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+49"/>
         <source>It seems that the process %1 has been reniced to %2 successfully.</source>
         <translation>Zdá se, že proces %1 byl upřednostněn na %2 úspěšně.</translation>
     </message>
     <message>
-        <location line="-58"/>
+        <location line="-71"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+49"/>
         <source>Select process priority</source>
         <translation>Vybrat přednost procesu</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Hodnota přednosti může být v&lt;br&gt;rozsahu od PRIO_MIN (-20)&lt;br&gt;do PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Kvůli podrobnostem se podívejte na &quot;man renice&quot;.&lt;/p&gt;</translation>
     </message>
@@ -5098,15 +5102,15 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <name>Wizard</name>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="+1595"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="+205"/>
-        <location line="+161"/>
-        <location line="+45"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="+211"/>
+        <location line="+155"/>
+        <location line="+47"/>
         <source>No Proxy</source>
         <translation>Žádné proxy</translation>
     </message>
     <message>
         <location line="+604"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="+137"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="+171"/>
         <location line="+5"/>
         <source>Next &gt;</source>
         <translation>Další &gt;</translation>
@@ -5116,7 +5120,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation type="obsolete">&lt;b&gt;Krok %1 z %2&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="-466"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="-498"/>
         <source>First startup wizard</source>
         <translation>Průvodce prvním spuštěním</translation>
     </message>
@@ -5125,7 +5129,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation type="obsolete">&lt;b&gt;Průvodce prvním spuštěním&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+107"/>
+        <location line="+109"/>
         <source>generic</source>
         <translation>Obecné</translation>
     </message>
@@ -5135,67 +5139,67 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <location line="+31"/>
-        <location line="+2"/>
-        <location line="+6"/>
-        <location line="+2"/>
-        <location line="+56"/>
+        <location line="+32"/>
+        <location line="+3"/>
+        <location line="+8"/>
         <location line="+4"/>
+        <location line="+43"/>
+        <location line="+5"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-62"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Promiňte, zadejte adresář %1.</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Promiňte, zadejte spustitelný soubor %1.</translation>
     </message>
     <message>
-        <location line="+64"/>
+        <location line="+55"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Promiňte, zadejte hostitele proxy.</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Promiňte, zadejte přípojku proxy.</translation>
     </message>
     <message>
-        <location line="+159"/>
+        <location line="+165"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Oleksii S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; byl původně napsán Oleksiiem S. Malakhovem neboli Johnem Brezerkem  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Celková myšlenka má svůj původ ve skriptech &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt;, které byly původně napsány Frankem Hendriksenem [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Povolení je vydáno pod &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Poznámky, hlášení chyb atd. posílejte na adresu[&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Poznámka&lt;/span&gt;&lt;/b&gt;: Tento program je poskytován bez záruky jakéhokoli druhu. Od autora &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NEDOSTANETE&lt;/span&gt;&lt;/b&gt; žádnou podporu nebo nápovědu k WineTools, Wine, instalacím programů, v Linuxu nebo na Microsoft Windows.&lt;/p&gt;&lt;p&gt;Jestliže budete &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;potřebovat pomoc&lt;/span&gt;, zeptejte se na poštovním seznamu &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;A jestliže &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;chcete podporu&lt;/span&gt;, kupte si obchodovanou verzi wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) pro programy provozované na stolním počítači&lt;/p&gt;</translation>
     </message>
     <message>
-        <location line="-6"/>
+        <location line="-12"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Vítejte v průvodci prvním spuštěním.&lt;/p&gt;&lt;p&gt;Tento průvodce vám pomůže provést všechny kroky potřebné pro nastavení %1.&lt;/p&gt;&lt;p&gt;Stiskněte, prosím, tlačítko &lt;b&gt;Další&lt;/b&gt;, abyste přešel na další stránku tohoto průvodce. Nebo stiskněte tlačítko &lt;b&gt;Zpět&lt;/b&gt;, chcete-li se vrátit.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location line="-215"/>
+        <location line="-205"/>
         <source>Sorry, specified %1 directory does not exist.</source>
         <translation>Promiňte, zadaný adresář %1 není.</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+4"/>
         <source>Sorry, specified %1 binary does not exist.</source>
         <translation>Promiňte, zadaný spustitelný soubor %1 není.</translation>
     </message>
     <message>
-        <location line="+246"/>
+        <location line="+269"/>
         <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
         <translation>&lt;p&gt;Vše je připraveno k dokončení nastavení %1. &lt;/p&gt;&lt;p&gt;Stiskněte, prosím, tlačítko &lt;b&gt;Dokončit&lt;/b&gt; k dokončení postupu nastavení. Nebo stiskněte tlačítko &lt;b&gt;Zpět&lt;/b&gt; pro návrat zpět.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Poznámka:&lt;/b&gt; Kdykoli můžete přistoupit k dokumentaci umístěné na internetu stisknutím klávesy &lt;b&gt;F1&lt;/b&gt; nebo klepnutím na tlačítko Nápověda.&lt;/p&gt;&lt;/p&gt;Pokud jste v %1 nový, podívejte se, prosím, do našeho internetového průvodce:&lt;/p&gt;</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+9"/>
         <source>Finish</source>
         <translation>Dokončit</translation>
     </message>
@@ -5317,29 +5321,29 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 <context>
     <name>winetricks</name>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="+108"/>
-        <location line="+119"/>
-        <location line="+5"/>
+        <location filename="../q4wine-gui/widgets/winetricks.cpp" line="+110"/>
+        <location line="+140"/>
+        <location line="+9"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-124"/>
+        <location line="-148"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Nelze najít skript Winetricks (Kouzla wine). Nejprve skript nainstalujte.</translation>
     </message>
     <message>
-        <location line="+119"/>
+        <location line="+140"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+9"/>
         <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+65"/>
+        <location line="+74"/>
         <source>Refreshing Winetricks application list.</source>
         <translation>Obnovuji seznam aplikací Winetricks.</translation>
     </message>
@@ -5359,13 +5363,43 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+73"/>
+        <location line="+66"/>
         <source>Adding verb: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Refreshing winetricks application list.</source>
         <translation type="obsolete">Obnovení seznamu programů Winetricks (Kouzla wine).</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/Winetricks.ui" line="+14"/>
+        <source>winetricks plugin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Click on item to show help here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Install Winetricks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <source>Install</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Refresh List</source>
+        <translation type="unfinished">Obnovit seznam</translation>
     </message>
 </context>
 </TS>
