@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii Malakhov                            *
+ *   Copyright (C) 2008-2025 by Oleksii Malakhov                            *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -18,43 +18,43 @@
 
 #include "about.h"
 
-About::About(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
-{
-    // Loading libq4wine-core.so
+About::About(QWidget *parent, Qt::WindowFlags f) : QDialog(parent, f) {
+  // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName(_CORELIB_PATH_);
+  libq4wine.setFileName(_CORELIB_PATH_);
 #else
-    libq4wine.setFileName("../q4wine-lib/libq4wine-core");
+  libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
 
-    if (!libq4wine.load()){
-        libq4wine.load();
-    }
+  if (!libq4wine.load()) {
+    libq4wine.load();
+  }
 
-    // Getting corelib class pointer
-    CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
-    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
+  // Getting corelib class pointer
+  CoreLibClassPointer =
+      reinterpret_cast<CoreLibPrototype *>(libq4wine.resolve("createCoreLib"));
+  CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
-    setupUi(this);
-    setWindowTitle(tr("About %1").arg(APP_NAME));
-    setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
-    connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+  setupUi(this);
+  setWindowTitle(tr("About %1").arg(APP_NAME));
+  setWindowIcon(CoreLib->loadIcon(
+      CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
+  connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 
-    lblLogo->setPixmap(CoreLib->loadPixmap("q4wine"));
-    lblVersion->setText(QString("<span style=\"font-size:14pt; font-weight:600;\">%1 %2</span>").arg(APP_NAME).arg(APP_VERS));
+  lblLogo->setPixmap(CoreLib->loadPixmap("q4wine"));
+  lblVersion->setText(
+      QString("<span style=\"font-size:14pt; font-weight:600;\">%1 %2</span>")
+          .arg(APP_NAME)
+          .arg(APP_VERS));
 
-    txtAuthors->setHtml(T_DEVELOPERS);
-    txtPAuthors->setHtml(T_PKG_MAINTAINERS);
-    txtTranslation->setHtml(T_TRANSLATIONS);
-    txtThanks->setHtml(T_THANKS);
+  txtTranslation->setHtml(T_TRANSLATIONS);
 
-    cmdOk->setFocus(Qt::ActiveWindowFocusReason);
+  cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 
-    return;
+  return;
 }
 
-void About::cmdOk_Click()
-{
-    accept();
-    return;
+void About::cmdOk_Click() {
+  accept();
+  return;
 }

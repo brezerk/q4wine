@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,81 +19,78 @@
 #ifndef VERSION_MANAGER_H
 #define VERSION_MANAGER_H
 
-#include <QWidget>
-#include <QToolBar>
 #include <QAction>
-#include <QListWidget>
-#include <QSplitter>
-#include <QLineEdit>
-#include <QMenu>
-#include <QKeyEvent>
 #include <QDebug>
-#include <QTimer>
 #include <QInputDialog>
+#include <QKeyEvent>
+#include <QLineEdit>
+#include <QListWidget>
+#include <QMenu>
+#include <QSplitter>
+#include <QTimer>
+#include <QToolBar>
+#include <QWidget>
 
-//q4wine lib
-#include "q4wine-lib.h"
-
+// q4wine lib
 #include "config.h"
-
 #include "core/database/versions.h"
 #include "q4wine-gui/widgets/versionlistwidget.h"
-
+#include "q4wine-lib.h"
 #include "src/q4wine-gui/ui_VersionManager.h"
 
-class VersionManager : public QDialog, public Ui::VersionManager
-{
-    Q_OBJECT
-public:
-    VersionManager(QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
-    ~VersionManager();
-    void setVersionFocus(QString version);
-signals:
-    void setVersion(QString version_name);
+class VersionManager : public QDialog, public Ui::VersionManager {
+  Q_OBJECT
+ public:
+  VersionManager(QWidget *parent = nullptr,
+                 Qt::WindowFlags f = Qt::WindowFlags());
+  ~VersionManager();
+  void setVersionFocus(QString version);
+ signals:
+  void setVersion(QString version_name);
 
-private slots:
-    void cmdOk_Click();
-    void cmdHelp_Click();
-    void keyPressEvent (QKeyEvent * event);
-    void itemClicked (QListWidgetItem *item);
-    void currentItemChanged (QListWidgetItem *item, QListWidgetItem *old_item);
-    void searchFilterChange(QString);
-    void searchClear_Click();
+ private slots:
+  void cmdOk_Click();
+  void cmdHelp_Click();
+  void keyPressEvent(QKeyEvent *event);
+  void itemClicked(QListWidgetItem *item);
+  void currentItemChanged(QListWidgetItem *item, QListWidgetItem *old_item);
+  void searchFilterChange(QString);
+  void searchClear_Click();
 
-    void addVersion_Click();
-    void delVersion_Click();
-    void saveVersion_Click();
+  void addVersion_Click();
+  void delVersion_Click();
+  void saveVersion_Click();
 
-    void versionSettingsChanged(QString);
-    void restoreItemSelection();
+  void versionSettingsChanged(QString);
+  void restoreItemSelection();
 
-private:
-    //! This is need for libq4wine-core.so import.
-    QLibrary libq4wine;
-    typedef void *CoreLibPrototype (bool);
-    CoreLibPrototype *CoreLibClassPointer;
-    std::unique_ptr<corelib> CoreLib;
+ private:
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
 
-    void createActions();
-    void loadThemeIcons();
-    void getVersions();
-    bool askSaveChangeds();
-    bool saveChanges();
-    bool fileExists(QString path, bool check_dir = false);
+  void createActions();
+  void loadThemeIcons();
+  void getVersions();
+  bool askSaveChangeds();
+  bool saveChanges();
+  bool fileExists(QString path, bool check_dir = false);
 
-    //std::unique_ptr<VersionListWidget> listPrefix;
-    std::unique_ptr<Version> currentVersion;
-    bool currentVersionChanged_;
+  // std::unique_ptr<VersionListWidget> listPrefix;
+  std::unique_ptr<Version> currentVersion;
+  bool currentVersionChanged_;
 
-    std::unique_ptr<QSplitter> splitter;
-    std::unique_ptr<QAction> addVersion;
-    std::unique_ptr<QAction> delVersion;
-    std::unique_ptr<QAction> saveVersion;
-    std::unique_ptr<QLineEdit> searchField;
-    std::unique_ptr<QAction> searchClear;
+  std::unique_ptr<QSplitter> splitter;
+  std::unique_ptr<QAction> addVersion;
+  std::unique_ptr<QAction> delVersion;
+  std::unique_ptr<QAction> saveVersion;
+  std::unique_ptr<QLineEdit> searchField;
+  std::unique_ptr<QAction> searchClear;
 
-protected:
-    bool eventFilter(QObject *obj, QEvent *ev);
+ protected:
+  bool eventFilter(QObject *obj, QEvent *ev);
 };
 
-#endif //VERSION_MANAGER
+#endif  // VERSION_MANAGER

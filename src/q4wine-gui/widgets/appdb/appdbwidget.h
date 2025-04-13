@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,93 +19,91 @@
 #ifndef APPDBWIDGET_H
 #define APPDBWIDGET_H
 
-//System
+// System
 #include <memory>
 
-//Global config
+// Global config
 #include "config.h"
 
-//Core classes
+// Core classes
 #include "httpcore.h"
 #include "xmlparser.h"
 
-//Widgets
+// Widgets
 #include "appdbheaderwidget.h"
 #include "appdbscrollwidget.h"
 
-//Qt includes
-#include <QToolBar>
-#include <QTimer>
-#include <QLineEdit>
+// Qt includes
 #include <QDesktopServices>
+#include <QLineEdit>
+#include <QTimer>
+#include <QToolBar>
 
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
+class AppDBWidget : public QWidget {
+  Q_OBJECT
+ public:
+  explicit AppDBWidget(QWidget *parent = nullptr);
 
-class AppDBWidget : public QWidget
-{
-Q_OBJECT
-public:
-	explicit AppDBWidget(QWidget *parent = nullptr);
+ public slots:
+  void itemTrigged(short int action, QString search = "", int val1 = 0,
+                   int val2 = 0, int val3 = 0);
+  void httpcore_pageDownloaded();
+  void requestError(QString error);
+  void updateDataReadProgress(int bytesRead, int totalBytes);
+  void stateChanged(int state);
+  void setFocus(void);
 
-public slots:
-	void itemTrigged(short int action, QString search="", int val1=0, int val2=0, int val3=0);
-	void httpcore_pageDownloaded();
-	void requestError(QString error);
-	void updateDataReadProgress(int bytesRead, int totalBytes);
-	void stateChanged(int state);
-    void setFocus(void);
+ private:
+  //! Functions
+  void showXmlError(int id);
+  void createActions(void);
 
-private:
-	//! Functions
-	void showXmlError(int id);
-	void createActions(void);
+  //! AppDB core clases
+  std::unique_ptr<XmlParser> xmlparser;
+  std::unique_ptr<HttpCore> httpcore;
 
-	//! AppDB core clases
-	std::unique_ptr<XmlParser> xmlparser;
-	std::unique_ptr<HttpCore> httpcore;
+  //! AppDB custom widgets
+  std::unique_ptr<AppDBScrollWidget> appdbScrollArea;
+  std::unique_ptr<AppDBHeaderWidget> appdbHeader;
 
-	//! AppDB custom widgets
-	std::unique_ptr<AppDBScrollWidget> appdbScrollArea;
-	std::unique_ptr<AppDBHeaderWidget> appdbHeader;
+  //! Delay timer
+  std::unique_ptr<QTimer> timer;
+  std::unique_ptr<QAction> appdbOpen;
+  std::unique_ptr<QAction> appdbAppPage;
+  std::unique_ptr<QAction> appdbCat;
+  std::unique_ptr<QAction> appdbClear;
+  std::unique_ptr<QAction> appdbClearSearch;
+  std::unique_ptr<QAction> appdbSearch;
 
-	//! Delay timer
-	std::unique_ptr<QTimer> timer;
-	std::unique_ptr<QAction> appdbOpen;
-	std::unique_ptr<QAction> appdbAppPage;
-	std::unique_ptr<QAction> appdbCat;
-	std::unique_ptr<QAction> appdbClear;
-	std::unique_ptr<QAction> appdbClearSearch;
-	std::unique_ptr<QAction> appdbSearch;
+  std::unique_ptr<QLineEdit> searchField;
 
-	std::unique_ptr<QLineEdit> searchField;
+  //! State variables
+  QString search;
+  short int action;
+  int appid;
+  int catid;
+  int verid;
+  int testid;
+  int page;
 
-	//! State variables
-	QString search;
-	short int action;
-	int appid;
-	int catid;
-	int verid;
-	int testid;
-	int page;
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
 
-	//! This is need for libq4wine-core.so import.
-	QLibrary libq4wine;
-	typedef void *CoreLibPrototype (bool);
-	CoreLibPrototype *CoreLibClassPointer;
-	std::unique_ptr<corelib> CoreLib;
-
-private slots:
-	void timer_timeout(void);
-	void appdbOpen_Click(void);
-	void appdbAppPage_Click(void);
-	void appdbClear_Click(void);
-	void appdbClearSearch_Click(void);
-	void appdbSearch_Click(void);
-	void appdbCat_Click(void);
-
+ private slots:
+  void timer_timeout(void);
+  void appdbOpen_Click(void);
+  void appdbAppPage_Click(void);
+  void appdbClear_Click(void);
+  void appdbClearSearch_Click(void);
+  void appdbSearch_Click(void);
+  void appdbCat_Click(void);
 };
 
-#endif // APPDBWIDGET_H
+#endif  // APPDBWIDGET_H

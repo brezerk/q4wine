@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.0)
+cmake_minimum_required(VERSION 3.24)
 
 SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}
@@ -27,14 +27,14 @@ SET( Q4WINE_HELPER_SOURCES
 )
 
 SET( Q4WINE_HELPER_HEADERS
-    ${CMAKE_SOURCE_DIR}/src/q4wine-helper/q4wine-helper.h
-    ${PROJECT_BINARY_DIR}/config.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
     ${CMAKE_SOURCE_DIR}/src/core/database/table.h
     ${CMAKE_SOURCE_DIR}/src/core/database/versions.h
     ${CMAKE_SOURCE_DIR}/src/core/database/logging.h
     ${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-helper/wineobject.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-helper/q4wine-helper.h
+    ${PROJECT_BINARY_DIR}/config.h
 )
 
 SET ( Q4WINE_HELPER_MOC_HEADERS
@@ -42,21 +42,22 @@ SET ( Q4WINE_HELPER_MOC_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
 )
 
-QT5_WRAP_CPP( Q4WINE_HELPER_LIB_MOC_SOURCES ${Q4WINE_HELPER_MOC_HEADERS} )
+SET ( CMAKE_AUTOUIC_SEARCH_PATHS
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis
+)
+
+QT6_WRAP_CPP( Q4WINE_HELPER_LIB_MOC_SOURCES ${Q4WINE_HELPER_MOC_HEADERS} )
 
 ADD_EXECUTABLE( q4wine-helper ${Q4WINE_HELPER_SOURCES}
     ${Q4WINE_HELPER_UI_HEADERS} ${Q4WINE_LIB_UI_HEADERS}
     ${Q4WINE_LIB_LIB_MOC_SOURCES} ${Q4WINE_HELPER_LIB_MOC_SOURCES}
     ${Q4WINE_HELPER_HEADERS} ${QM_L10N} )
 
-add_dependencies( q4wine-helper translations_build )
-
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     SET(BSD_LIBS -lkvm)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
-target_link_libraries(q4wine-helper Qt5::Core Qt5::DBus Qt5::Network Qt5::Sql Qt5::Widgets Qt5::Xml)
-target_link_libraries(q4wine-helper q4wine-core ${BSD_LIBS})
+target_link_libraries(q4wine-helper PRIVATE q4wine-core Qt6::Core Qt6::DBus Qt6::Network Qt6::Sql Qt6::Widgets Qt6::Xml )
 
 IF( RELEASE )
     install(TARGETS q4wine-helper DESTINATION ${APPS_ENTRY_PATH})

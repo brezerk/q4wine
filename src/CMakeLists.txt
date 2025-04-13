@@ -1,26 +1,26 @@
-cmake_minimum_required(VERSION 2.8.11)
+cmake_minimum_required(VERSION 3.28)
 
 PROJECT(q4wine)
 
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
-SET(APP_VERSION "1.3.13")
+SET(APP_VERSION "1.4.0")
 SET(APP_NAME_GLOBAL "q4wine")
 
 if(POLICY CMP0011)
     cmake_policy(SET CMP0011 NEW)
 endif(POLICY CMP0011)
 
-option(QT5 "If ON, then q4wine will be built with Qt 5.x. (OBSOLETE)" "ON")
+option(QT6 "If ON, then q4wine will be built with Qt 6.x." "ON")
 option(DEBUG "If ON, then q4wine will send debug messages to STDOUT. Use it for development or bug reportint purposes." "OFF")
 option(RELEASE "If OFF, then force q4wine to use APP_BUILD as CMAKE_INSTALL_PREFIX. Use it for development purposes." "ON")
 option(WITH_ICOUTILS "If ON, then build q4wine with icoutils support." "ON")
-option(WITH_SYSTEM_SINGLEAPP "If ON, then use system QtSingleApplication library instead building one." "OFF")
-option(WITH_WINEAPPDB "If ON, then build q4wine with Wine AppDB browser support." "ON")
+option(WITH_SYSTEM_SINGLEAPP "If ON, then use system SingleApplication library instead building one." "OFF")
+option(WITH_WINEAPPDB "If ON, then build q4wine with Wine AppDB browser support (OBSOLETE)." "OFF")
 option(USE_BZIP2 "Use bzip2 to compress man pages." "OFF")
 option(USE_GZIP "Use gzip to compress man pages." "OFF")
 option(WITH_DBUS "If ON, then build q4wine with QtDBus notification support." "ON")
-option(LINGUAS "Language list" "af;cs;de;en;es;fa;fr;he;it;ja;pl;pt_BR;ru;uk;zh_TW;zh_CN")
+set(LINGUAS "" CACHE STRING "af cs de en es fa fr he it ja pl pt_BR uk zh_TW zh_CN")
 option(LIBS_ENTRY_PATH "Destination directory for q4wine-core library")
 
 message(STATUS "\n * Utility for Wine applications and prefixes management.")
@@ -29,42 +29,45 @@ message(STATUS " * https://brezblock.org.ua/\n")
 
 message(STATUS "Q4Wine build environment -- \n")
 
-set(QT_MIN_VERSION "5.2.1")
-find_package(Qt5Core REQUIRED)
-find_package(Qt5LinguistTools REQUIRED)
-find_package(Qt5Network REQUIRED)
-find_package(Qt5Sql REQUIRED)
-find_package(Qt5Widgets REQUIRED)
-find_package(Qt5Xml REQUIRED)
-find_package(Qt5Svg REQUIRED)
-if (Qt5Core_FOUND)
-    message(STATUS "\n-- Found Qt Core version : ${Qt5Core_VERSION}")
-else (Qt5Core_FOUND)
+set(QT_MIN_VERSION "6.2.1")
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS LinguistTools)
+find_package(Qt6 REQUIRED COMPONENTS Network)
+find_package(Qt6 REQUIRED COMPONENTS Sql)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Xml)
+find_package(Qt6 REQUIRED COMPONENTS Svg)
+
+if (Qt6Core_FOUND)
+    message(STATUS "\n-- Found Qt Core version : ${Qt6Core_VERSION}")
+else (Qt6Core_FOUND)
     message(FATAL_ERROR "Qt Core libs not found. Please install Qt ${QT_MIN_VERSION}.")
-endif (Qt5Core_FOUND)
+endif (Qt6Core_FOUND)
 if (WITH_DBUS MATCHES ON)
-    find_package(Qt5DBus REQUIRED)
-    if (NOT Qt5DBus_FOUND)
+    find_package(Qt6DBus REQUIRED)
+    if (NOT Qt6DBus_FOUND)
         message(FATAL_ERROR "Qt DBus libraries missing. Please install Qt DBus ${QT_MIN_VERSION} or set WITH_DBUS to OFF")
-    endif (NOT Qt5DBus_FOUND)
+    endif (NOT Qt6DBus_FOUND)
 endif (WITH_DBUS MATCHES ON)
 
 MESSAGE(STATUS "Build realm is   : ${CMAKE_SYSTEM_NAME} ${CMAKE_HOST_SYSTEM_PROCESSOR}\n")
 
+qt_standard_project_setup()
+
 IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
     SET(_OS_LINUX_ 1)
-    ADD_DEFINITIONS(-Wall -g -std=c++11)
+    ADD_DEFINITIONS(-Wall -g -std=c++17)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     SET(_OS_FREEBSD_ 1)
-    ADD_DEFINITIONS(-Wall -g -DKERNEL -std=c++11)
+    ADD_DEFINITIONS(-Wall -g -DKERNEL -std=c++17)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
 IF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
     link_directories(/usr/lib)
     SET(_OS_DARWIN_ 1)
-    ADD_DEFINITIONS(-Wall -g -DKERNEL -std=c++11)
+    ADD_DEFINITIONS(-Wall -g -DKERNEL -std=c++17)
     SET( PROGNAME q4wine )
     SET( MACOSX_BUNDLE_ICON_FILE "q4wine-128x128.icns" )
     SET( MACOSX_BUNDLE_INFO_STRING "Qt utility for Wine applications and prefixes management" )
@@ -149,8 +152,11 @@ IF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 ENDIF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 
 IF( NOT LINGUAS )
-    SET ( LINGUAS af cs de en es fa he it ja pl pt_BR ru uk zh_TW zh_CN fr )
+    SET ( LINGUAS en af cs de es fa fr he it ja pl pt_BR uk zh_TW zh_CN nl )
 ENDIF( NOT LINGUAS )
+
+SET (TS_FILE_DIR "${CMAKE_SOURCE_DIR}/l10n")
+SET (TS_FILE_BASE "q4wine")
 
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${PROJECT_BINARY_DIR}/config.h )
 
@@ -246,62 +252,34 @@ SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb
-    ${CMAKE_SOURCE_DIR}/src/plugins
 )
 
 IF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
-    MESSAGE(STATUS "Searching for QtSingleApplication package (WITH_SYSTEM_SINGLEAPP=ON) --\n")
-
-    SET(QT_INCLUDE_DIR "/usr/include/qt5")
-
-    find_path(QTSINGLEAPPLIB_INCLUDE_DIR NAMES QtSingleApplication
-              PATH_SUFFIXES QtSolutions
-              PATHS
-              /usr/include
-              ${QT_INCLUDE_DIR}
-              ${FRAMEWORK_INCLUDE_DIR})
-    find_library(QTSINGLEAPPLIB Qt5Solutions_SingleApplication-2.6
-                                libQt5Solutions_SingleApplication-2.6)
-    IF (NOT QTSINGLEAPPLIB_INCLUDE_DIR OR NOT QTSINGLEAPPLIB)
-        find_library(QTSINGLEAPPLIB Qt5Solutions_SingleApplication-head
-                                    libQt5Solutions_SingleApplication-head)
-    ENDIF (NOT QTSINGLEAPPLIB_INCLUDE_DIR OR NOT QTSINGLEAPPLIB)
-
-    IF (QTSINGLEAPPLIB_INCLUDE_DIR AND QTSINGLEAPPLIB )
-        MESSAGE(STATUS "     library : ${QTSINGLEAPPLIB}")
-        MESSAGE(STATUS " include dir : ${QTSINGLEAPPLIB_INCLUDE_DIR}")
-        SET ( Q4WINE_HEADERS_DIR
-            ${Q4WINE_HEADERS_DIR}
-            ${QTSINGLEAPPLIB_INCLUDE_DIR}
-        )
-    ELSE (QTSINGLEAPPLIB_INCLUDE_DIR AND QTSINGLEAPPLIB )
-        MESSAGE(STATUS "     library : NOT FOUND!\n")
-        MESSAGE(FATAL_ERROR "Please install SingleApplication Library or disable system qtsingleapp support by adding -DWITH_SYSTEM_SINGLEAPP=\"OFF\" option to cmake")
-    ENDIF (QTSINGLEAPPLIB_INCLUDE_DIR AND QTSINGLEAPPLIB )
-    MESSAGE(STATUS "\n")
+    MESSAGE(STATUS "Searching for SingleApplication package (WITH_SYSTEM_SINGLEAPP=ON) --\n")
+    find_package(SingleApplication REQUIRED)
 ELSE (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
+    MESSAGE(STATUS "Building embedded third-party SingleApplication package (WITH_SYSTEM_SINGLEAPP=OFF) --\n")
+    SET(QAPPLICATION_CLASS QApplication CACHE STRING "Inheritance class for SingleApplication")
+    add_subdirectory(third-party/SingleApplication-3.5.2)
     SET ( Q4WINE_HEADERS_DIR
         ${Q4WINE_HEADERS_DIR}
-        ${CMAKE_SOURCE_DIR}/src/qtsingleapplication
+        ${CMAKE_SOURCE_DIR}/src/third-party/SingleApplication-3.5.2
     )
-    add_subdirectory(qtsingleapplication)
-    SET (QTSINGLEAPPLIB "qtsingleapp")
 ENDIF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
 
 INCLUDE_DIRECTORIES( ${Q4WINE_HEADERS_DIR} ${CMAKE_BINARY_DIR} ${PROJECT_BINARY_DIR} )
 
+
 add_subdirectory(q4wine-lib)
 add_subdirectory(q4wine-cli)
-
-include(plugins/CMakeLists.txt)
-
 add_subdirectory(q4wine-gui)
 add_subdirectory(q4wine-helper)
+add_subdirectory(l10n)
 add_subdirectory(data)
 add_subdirectory(theme)
 add_subdirectory(icons)
 add_subdirectory(man1)
-add_subdirectory(l10n)
+
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     add_subdirectory(freebsd)

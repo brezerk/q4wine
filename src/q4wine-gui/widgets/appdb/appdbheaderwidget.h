@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,49 +19,48 @@
 #ifndef APPDBHEADERWIDGET_H
 #define APPDBHEADERWIDGET_H
 
-//System
+// System
 #include <memory>
 
-//Global config
+// Global config
 #include "config.h"
 
-//Qt inc
-#include <QFrame>
+// Qt inc
 #include <QBoxLayout>
+#include <QFrame>
 #include <QVariant>
 
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
-//Structs
+// Structs
 #include "appdbstructs.h"
 
-//Widgets
+// Widgets
 #include "linkitemwidget.h"
 
-class AppDBHeaderWidget : public QFrame
-{
-    Q_OBJECT
-public:
-    explicit AppDBHeaderWidget(QWidget * parent = nullptr);
-    void addLabel(QString info);
-    void addLink(QString text, bool enabled = true, short int action = 0, QString search = "", int value = 0);
-    void setLayout(short int direction);
-    void insertStretch(void);
-    void createPagesList(short int count, short int current, QString search);
-    void createCategoryList(const QList<WineAppDBCategory> category);
-    void clear(void);
-    void hideAll(void);
-    void updateFirstLabelText(QString text);
+class AppDBHeaderWidget : public QFrame {
+  Q_OBJECT
+ public:
+  explicit AppDBHeaderWidget(QWidget* parent = nullptr);
+  void addLabel(QString info);
+  void addLink(QString text, bool enabled = true, short int action = 0,
+               QString search = "", int value = 0);
+  void setLayout(short int direction);
+  void insertStretch(void);
+  void createPagesList(short int count, short int current, QString search);
+  void createCategoryList(const QList<WineAppDBCategory> category);
+  void clear(void);
+  void hideAll(void);
+  void updateFirstLabelText(QString text);
 
-signals:
-    void itemTrigged(short int, QString, int, int, int);
+ signals:
+  void itemTrigged(short int, QString, int, int, int);
 
-private:
-    std::unique_ptr<QBoxLayout> contentLayout;
-    short int pages_len;
-
+ private:
+  std::unique_ptr<QBoxLayout> contentLayout;
+  short int pages_len;
 };
 
-#endif // APPDBHEADERWIDGET_H
+#endif  // APPDBHEADERWIDGET_H

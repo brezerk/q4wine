@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -20,36 +20,36 @@
 #define VERSIONS_H
 
 #include <config.h>
-#include "core/database/table.h"
 
-#include <memory>
-
-#include <QList>
-#include <QString>
-#include <QStringList>
-#include <QSqlQuery>
-#include <QSqlError>
 #include <QDebug>
 #include <QDir>
-#include <QVariant>
+#include <QList>
 #include <QSettings>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QString>
+#include <QStringList>
+#include <QVariant>
+#include <memory>
+
+#include "core/database/table.h"
 
 class Version : public Table {
-public:
-    Version();
-    QString id_;
-    QString name_;
-    QString wine_exec_;
-    QString wine_server_;
-    QString wine_loader_;
-    QString wine_dllpath32_;
-    QString wine_dllpath64_;
+ public:
+  Version();
+  QString id_;
+  QString name_;
+  QString wine_exec_;
+  QString wine_server_;
+  QString wine_loader_;
+  QString wine_dllpath32_;
+  QString wine_dllpath64_;
 
-    bool load();
-    bool save();
-    bool remove();
-    void clear();
-    QList<Version> load_all(QString filter = "");
+  bool load();
+  bool save();
+  bool remove();
+  void clear();
+  QList<Version> load_all(QString filter = "");
 };
 
-#endif // VERSIONS_H
+#endif  // VERSIONS_H

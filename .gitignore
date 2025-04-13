@@ -1,11 +1,7 @@
 latex/
-build*/
 qt-creator/
 qtcreator-build/
 *~
-CMakeFiles/
-CMakeCache.txt
-CMakeLists.txt.*
 Makefile
 cmake_install.cmake
 install_manifest.txt
@@ -28,3 +24,7 @@ q4wine-helper
 *.autosave
 doc/
 src/version.h
+*build*/
+CMakeFiles/
+CMakeCache.txt
+CMakeLists.txt.*

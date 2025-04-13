@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.0)
+cmake_minimum_required(VERSION 3.24)
 
 SET( DESKTOP_GUI_ENTRY
     ${CMAKE_SOURCE_DIR}/q4wine.desktop
@@ -48,6 +48,7 @@ SET( Q4WINE_GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/loggingwidget.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixconfigwidget.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/winetricks.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/fakedrivesettings.cpp
 )
 
@@ -88,6 +89,7 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/loggingwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixconfigwidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/winetricks.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/fakedrivesettings.h
 )
 
@@ -117,6 +119,7 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixconfigwidget.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/fakedrivesettings.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/winetricks.h
 )
 
 SET ( Q4WINE_GUI_UI_SOURCES
@@ -134,6 +137,7 @@ SET ( Q4WINE_GUI_UI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/ImageManager.ui
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/WineDriveDialog.ui
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/VersionManager.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/Winetricks.ui
 )
 
 IF (${WITH_WINEAPPDB} MATCHES ON )
@@ -188,25 +192,38 @@ IF (${WITH_WINEAPPDB} MATCHES ON )
     )
 ENDIF (${WITH_WINEAPPDB} MATCHES ON )
 
+IF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
+    SET ( Q4WINE_GUI_SOURCES
+        ${Q4WINE_GUI_SOURCES}
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/sysmenu.cpp
+    )
+    SET ( Q4WINE_GUI_HEADERS
+        ${Q4WINE_GUI_HEADERS}
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/sysmenu.h
+    )
+ENDIF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
+
 add_custom_target (
     authors
     COMMAND ${CMAKE_SOURCE_DIR}/tools/gen_authors.py --generate
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-QT5_ADD_RESOURCES( RCC_SRCS ${Q4WINE_RESOURCE_SOURCES} )
+QT6_ADD_RESOURCES( RCC_SRCS ${Q4WINE_RESOURCE_SOURCES} )
 
-QT5_WRAP_UI( Q4WINE_GUI_UI_HEADERS ${Q4WINE_GUI_UI_SOURCES} ${PLUGINS_GUI_UI_SOURCES} )
-QT5_WRAP_CPP( Q4WINE_GUI_MOC_SOURCES ${Q4WINE_GUI_MOC_HEADEDRS}	${PLUGINS_GUI_MOC_HEADERS} )
-ADD_EXECUTABLE( q4wine ${Q4WINE_GUI_SOURCES} ${Q4WINE_GUI_HEADERS} ${Q4WINE_GUI_UI_HEADERS} ${Q4WINE_GUI_MOC_SOURCES} ${RCC_SRCS} ${QM_L10N} ${PLUGINS_GUI_SOURCES} ${PLUGINS_GUI_HEADERS} ${PLUGINS_GUI_UI_HEADERS} ${PLUGINS_GUI_MOC_SOURCES})
-add_dependencies( q4wine translations_build )
+SET ( CMAKE_AUTOUIC_SEARCH_PATHS
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis
+)
+
+QT6_WRAP_UI( Q4WINE_GUI_UI_HEADERS ${Q4WINE_GUI_UI_SOURCES} )
+QT6_WRAP_CPP( Q4WINE_GUI_MOC_SOURCES ${Q4WINE_GUI_MOC_HEADEDRS} )
+ADD_EXECUTABLE( q4wine ${Q4WINE_GUI_SOURCES} ${Q4WINE_GUI_HEADERS} ${Q4WINE_GUI_UI_HEADERS} ${Q4WINE_GUI_MOC_SOURCES} ${RCC_SRCS} ${QM_L10N} )
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     SET(BSD_LIBS -lkvm)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
-target_link_libraries(q4wine Qt5::Core Qt5::DBus Qt5::Network Qt5::Sql Qt5::Widgets Qt5::Xml)
-target_link_libraries(q4wine q4wine-core ${BSD_LIBS} ${QTSINGLEAPPLIB})
+target_link_libraries(q4wine PRIVATE q4wine-core Qt6::Core Qt6::DBus Qt6::Network Qt6::Sql Qt6::Widgets Qt6::Xml SingleApplication::SingleApplication ${BSD_LIBS})
 
 IF( RELEASE )
     #install(TARGETS q4wine RUNTIME DESTINATION ${APPS_ENTRY_PATH} BUNDLE DESTINATION ${CMAKE_INSTALL_PREFIX})

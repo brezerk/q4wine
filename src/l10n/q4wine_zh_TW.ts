@@ -20,41 +20,35 @@
         <translation>Wine 應用程式與前綴管理的實用工具。</translation>
     </message>
     <message>
-        <location line="+37"/>
-        <location line="+18"/>
-        <location line="+57"/>
-        <location line="+50"/>
+        <location line="+55"/>
         <source>Authors</source>
         <translation>作者</translation>
     </message>
     <message>
-        <location line="-68"/>
         <source>Packages Authors</source>
-        <translation>打包者</translation>
+        <translation type="vanished">打包者</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="-18"/>
         <source>Translation</source>
         <translation>翻譯</translation>
     </message>
     <message>
-        <location line="+57"/>
         <source>Thanks</source>
-        <translation>感謝</translation>
+        <translation type="vanished">感謝</translation>
     </message>
     <message>
-        <location line="+18"/>
         <source>Special Thanks</source>
-        <translation>特別感謝</translation>
+        <translation type="vanished">特別感謝</translation>
     </message>
     <message>
-        <location line="+39"/>
+        <location line="+60"/>
         <location line="+18"/>
         <source>License agreement</source>
         <translation>授權條款</translation>
     </message>
     <message>
-        <location line="+242"/>
+        <location line="+245"/>
         <source>OK</source>
         <translation>是</translation>
     </message>
@@ -62,145 +56,111 @@
 <context>
     <name>AppDBHeaderWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbheaderwidget.cpp" line="+106"/>
         <source>Page %1 of %2</source>
-        <translation>頁 %1 之 %2</translation>
+        <translation type="vanished">頁 %1 之 %2</translation>
     </message>
 </context>
 <context>
     <name>AppDBWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="+85"/>
-        <location line="+314"/>
         <source>Status: Ready</source>
-        <translation>狀態：準備好了</translation>
+        <translation type="vanished">狀態：準備好了</translation>
     </message>
     <message>
-        <location line="-294"/>
-        <location line="+19"/>
-        <location line="+15"/>
-        <location line="+18"/>
-        <location line="+16"/>
-        <location line="+181"/>
         <source>Status: Connecting to %1</source>
-        <translation>狀態：連線到 %1</translation>
+        <translation type="vanished">狀態：連線到 %1</translation>
     </message>
     <message>
-        <location line="-100"/>
         <source>Applications</source>
-        <translation>應用程式</translation>
+        <translation type="vanished">應用程式</translation>
     </message>
     <message>
-        <location line="-1"/>
         <source>Subcategories</source>
-        <translation>子分類</translation>
+        <translation type="vanished">子分類</translation>
     </message>
     <message>
-        <location line="+26"/>
         <source>Error: unexpected error.</source>
-        <translation>錯誤：未預期的錯誤。</translation>
+        <translation type="vanished">錯誤：未預期的錯誤。</translation>
     </message>
     <message>
-        <location line="-12"/>
         <source>Error: cannot read data from %1.</source>
-        <translation>錯誤：無法從 %1 讀取資料。</translation>
+        <translation type="vanished">錯誤：無法從 %1 讀取資料。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Error: wrong or broken XML data. Try again later.</source>
-        <translation>錯誤：錯誤或壞掉的 XML 資料。稍後再試。</translation>
+        <translation type="vanished">錯誤：錯誤或壞掉的 XML 資料。稍後再試。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Error: wrong or broken AppDB XML version. This might be caused by an outdated application version.</source>
-        <translation>錯誤：錯誤或壞掉的 AppDB XML 版本。這可能是因為過期的應用程式版本導致。</translation>
+        <translation type="vanished">錯誤：錯誤或壞掉的 AppDB XML 版本。這可能是因為過期的應用程式版本導致。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Error: XML parse error.</source>
-        <translation>錯誤：XML 分析錯誤。</translation>
+        <translation type="vanished">錯誤：XML 分析錯誤。</translation>
     </message>
     <message>
-        <location line="+6"/>
         <source>Search: No matches found.</source>
-        <translation>搜尋：找不到符合的。</translation>
+        <translation type="vanished">搜尋：找不到符合的。</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>Open AppDB</source>
-        <translation>開啟 AppDB</translation>
+        <translation type="vanished">開啟 AppDB</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Open Wine AppDB web site</source>
-        <translation>開啟 Wine AppDB 網頁</translation>
+        <translation type="vanished">開啟 Wine AppDB 網頁</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Open App page</source>
-        <translation>開啟應用程式頁面</translation>
+        <translation type="vanished">開啟應用程式頁面</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Open current application page at Wine AppDB web site</source>
-        <translation>開啟目前的應用程式在 Wine AppDB 網頁上的頁面</translation>
+        <translation type="vanished">開啟目前的應用程式在 Wine AppDB 網頁上的頁面</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+1"/>
         <source>Clear results</source>
-        <translation>清除結果</translation>
+        <translation type="vanished">清除結果</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+1"/>
         <source>Clear search field</source>
-        <translation>清除搜尋欄</translation>
+        <translation type="vanished">清除搜尋欄</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Search in AppDB</source>
-        <translation>在 AppDB 中搜尋</translation>
+        <translation type="vanished">在 AppDB 中搜尋</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Search in Wine AppDB</source>
-        <translation>在 Wine AppDB 中搜尋</translation>
+        <translation type="vanished">在 Wine AppDB 中搜尋</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>AppDB categories list</source>
-        <translation>AppDB 分類清單</translation>
+        <translation type="vanished">AppDB 分類清單</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>View Wine AppDB categories list</source>
-        <translation>檢視 Wine AppDB 分類清單</translation>
+        <translation type="vanished">檢視 Wine AppDB 分類清單</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>Error: %1</source>
-        <translation>錯誤：%1</translation>
+        <translation type="vanished">錯誤：%1</translation>
     </message>
     <message>
-        <location line="+36"/>
         <source>Status: Sending request to the server.</source>
-        <translation>狀態：正在傳送請求給伺服器。</translation>
+        <translation type="vanished">狀態：正在傳送請求給伺服器。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Status: Reading server&apos;s response.</source>
-        <translation>狀態：正在讀取伺服器的回應。</translation>
+        <translation type="vanished">狀態：正在讀取伺服器的回應。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Status: Closing down connection.</source>
-        <translation>狀態：正在關閉連線。</translation>
+        <translation type="vanished">狀態：正在關閉連線。</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Status: Not connected.</source>
-        <translation>狀態：未連線。</translation>
+        <translation type="vanished">狀態：未連線。</translation>
     </message>
 </context>
 <context>
@@ -237,7 +197,7 @@
     <message>
         <location line="+138"/>
         <location line="+4"/>
-        <location line="+136"/>
+        <location line="+137"/>
         <location line="+64"/>
         <location line="+2"/>
         <location line="+6"/>
@@ -246,7 +206,7 @@
         <translation>錯誤</translation>
     </message>
     <message>
-        <location line="-214"/>
+        <location line="-215"/>
         <source>Sorry, specify proxy host.</source>
         <translation>抱歉，指定代理伺服器主機。</translation>
     </message>
@@ -256,7 +216,7 @@
         <translation>抱歉，指定代理伺服器埠。</translation>
     </message>
     <message>
-        <location line="+136"/>
+        <location line="+137"/>
         <source>Invalid virtual desktop size.</source>
         <translation>無效的虛擬桌面大小。</translation>
     </message>
@@ -282,7 +242,7 @@
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+587"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-624"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-625"/>
         <location line="+463"/>
         <source>System Default</source>
         <translation>系統預設</translation>
@@ -294,7 +254,7 @@
         <location line="+4"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-292"/>
         <location line="+20"/>
-        <location line="+453"/>
+        <location line="+454"/>
         <source>General</source>
         <translation>一般</translation>
     </message>
@@ -329,8 +289,8 @@
     <message>
         <location line="+34"/>
         <location line="+2753"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-450"/>
-        <location line="+452"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-451"/>
+        <location line="+453"/>
         <source>System</source>
         <translation>系統</translation>
     </message>
@@ -374,8 +334,8 @@
     <message>
         <location line="+563"/>
         <location line="+2177"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-449"/>
-        <location line="+451"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-450"/>
+        <location line="+452"/>
         <source>Utils</source>
         <translation>實用工具</translation>
     </message>
@@ -392,16 +352,16 @@
     <message>
         <location line="+511"/>
         <location line="+1547"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-445"/>
-        <location line="+449"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-446"/>
+        <location line="+450"/>
         <source>Quick Mount</source>
         <translation>快速掛載</translation>
     </message>
     <message>
         <location line="-1150"/>
         <location line="+1170"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-434"/>
-        <location line="+444"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-435"/>
+        <location line="+445"/>
         <source>Logging</source>
         <translation>紀錄</translation>
     </message>
@@ -442,22 +402,22 @@
         <location line="-1402"/>
         <location line="+18"/>
         <location line="+1273"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-453"/>
-        <location line="+447"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-454"/>
+        <location line="+448"/>
         <source>Language</source>
         <translation>語言</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-444"/>
-        <location line="+446"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-445"/>
+        <location line="+447"/>
         <source>Themes</source>
         <translation>主題</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1878"/>
         <location line="+1863"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-458"/>
-        <location line="+450"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-459"/>
+        <location line="+451"/>
         <source>Network</source>
         <translation>網路</translation>
     </message>
@@ -506,7 +466,7 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-682"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-683"/>
         <source>Default</source>
         <translation>預設值</translation>
     </message>
@@ -573,7 +533,7 @@
         <location line="+27"/>
         <location line="+1093"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="+253"/>
-        <location line="+443"/>
+        <location line="+444"/>
         <source>AppDB browser</source>
         <translation>AppDB 瀏覽器</translation>
     </message>
@@ -590,8 +550,8 @@
     <message>
         <location line="+44"/>
         <location line="+1035"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
-        <location line="+441"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
+        <location line="+442"/>
         <source>Desktop Menu</source>
         <translation>桌面選單</translation>
     </message>
@@ -623,8 +583,8 @@
     <message>
         <location line="+47"/>
         <location line="+958"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-435"/>
-        <location line="+439"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
+        <location line="+440"/>
         <source>Defaults</source>
         <translation>預設值</translation>
     </message>
@@ -661,8 +621,8 @@
     <message>
         <location line="+82"/>
         <location line="+559"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
-        <location line="+438"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
+        <location line="+439"/>
         <source>Desktop Integration</source>
         <translation>桌面整合</translation>
     </message>
@@ -699,8 +659,8 @@
     <message>
         <location line="+43"/>
         <location line="+258"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-435"/>
-        <location line="+437"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
+        <location line="+438"/>
         <source>Run dialog</source>
         <translation>執行對話框</translation>
     </message>
@@ -708,8 +668,8 @@
         <location line="-189"/>
         <location line="+18"/>
         <location line="+176"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-434"/>
-        <location line="+436"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-435"/>
+        <location line="+437"/>
         <source>Wine desktop import</source>
         <translation>Wine 桌面匯入</translation>
     </message>
@@ -720,29 +680,29 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-472"/>
-        <location line="+448"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-473"/>
+        <location line="+449"/>
         <source>Interface</source>
         <translation>介面</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-439"/>
-        <location line="+445"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-440"/>
+        <location line="+446"/>
         <source>Subsystems</source>
         <translation>子系統</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
-        <location line="+442"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
+        <location line="+443"/>
         <source>Plugins</source>
         <translation>外掛程式</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
-        <location line="+440"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
+        <location line="+441"/>
         <source>Advanced</source>
         <translation>進階</translation>
     </message>
@@ -763,7 +723,7 @@
     </message>
     <message>
         <location line="+78"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-706"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-707"/>
         <location line="+467"/>
         <source>Ambient Light</source>
         <translation>Ambient Light</translation>
@@ -834,7 +794,7 @@
         <location line="+131"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+11"/>
         <location line="+31"/>
-        <location line="+741"/>
+        <location line="+742"/>
         <source>General</source>
         <translation>一般</translation>
     </message>
@@ -842,10 +802,10 @@
         <location line="-95"/>
         <location line="+4"/>
         <location line="+807"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-729"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-730"/>
         <location line="+3"/>
         <location line="+6"/>
-        <location line="+728"/>
+        <location line="+729"/>
         <location line="+2"/>
         <location line="+4"/>
         <source>Video</source>
@@ -861,8 +821,8 @@
         <location line="-1715"/>
         <location line="+2772"/>
         <location line="+21"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-728"/>
-        <location line="+732"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-729"/>
+        <location line="+733"/>
         <source>Wine Drives</source>
         <translation>Wine 磁碟</translation>
     </message>
@@ -870,8 +830,8 @@
         <location line="-2803"/>
         <location line="+689"/>
         <location line="+18"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-750"/>
-        <location line="+738"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-751"/>
+        <location line="+739"/>
         <source>Scripts</source>
         <translation>指令稿</translation>
     </message>
@@ -958,55 +918,55 @@
         <location line="-3668"/>
         <location line="+534"/>
         <location line="+31"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-741"/>
-        <location line="+739"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
+        <location line="+740"/>
         <source>Wine Browsers</source>
         <translation>Wine 瀏覽器</translation>
     </message>
     <message>
         <location line="-570"/>
         <location line="+452"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
-        <location line="+740"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-743"/>
+        <location line="+741"/>
         <source>Color Theme</source>
         <translation>色彩主題</translation>
     </message>
     <message>
         <location line="-377"/>
         <location line="+2068"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-707"/>
-        <location line="+729"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-708"/>
+        <location line="+730"/>
         <source>Sound Driver</source>
         <translation>音效驅動程式</translation>
     </message>
     <message>
         <location line="-2063"/>
         <location line="+2220"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-726"/>
-        <location line="+728"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-727"/>
+        <location line="+729"/>
         <source>ALSA Driver</source>
         <translation>ALSA 驅動程式</translation>
     </message>
     <message>
         <location line="-2215"/>
         <location line="+2573"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-725"/>
-        <location line="+727"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-726"/>
+        <location line="+728"/>
         <source>Misc Audio</source>
         <translation>混合音訊</translation>
     </message>
     <message>
         <location line="-2642"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-745"/>
-        <location line="+733"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-746"/>
+        <location line="+734"/>
         <source>File System</source>
         <translation>檔案系統</translation>
     </message>
     <message>
         <location line="+9"/>
         <location line="+2886"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-727"/>
-        <location line="+731"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-728"/>
+        <location line="+732"/>
         <source>Desktop Paths</source>
         <translation>桌面路徑</translation>
     </message>
@@ -1091,10 +1051,10 @@
     </message>
     <message>
         <location line="-1697"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-716"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-717"/>
         <location line="+3"/>
         <location line="+3"/>
-        <location line="+720"/>
+        <location line="+721"/>
         <location line="+2"/>
         <location line="+2"/>
         <source>Input</source>
@@ -1102,8 +1062,8 @@
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
-        <location line="+730"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-743"/>
+        <location line="+731"/>
         <source>Audio</source>
         <translation>音訊</translation>
     </message>
@@ -1123,9 +1083,9 @@
         <location line="+1715"/>
         <location line="+31"/>
         <location line="+1681"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-743"/>
         <location line="+30"/>
-        <location line="+704"/>
+        <location line="+705"/>
         <location line="+20"/>
         <source>X11 Driver</source>
         <translation>X11 驅動程式</translation>
@@ -1901,39 +1861,39 @@ See help for details.</source>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
         <location line="+109"/>
-        <location line="+222"/>
+        <location line="+221"/>
         <source>Native</source>
         <translation>原生</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-341"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-340"/>
         <location line="+11"/>
         <location line="+109"/>
-        <location line="+225"/>
+        <location line="+224"/>
         <source>Built-in</source>
         <translation>內建</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-342"/>
         <location line="+10"/>
         <location line="+109"/>
-        <location line="+226"/>
+        <location line="+225"/>
         <source>Native, Built-in</source>
         <translation>原生、內建</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-343"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-342"/>
         <location line="+9"/>
         <location line="+109"/>
-        <location line="+227"/>
+        <location line="+226"/>
         <source>Built-in, Native</source>
         <translation>內建、原生</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-485"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-484"/>
         <source>Adding new icon</source>
         <translation>新增新圖示</translation>
     </message>
@@ -1944,8 +1904,8 @@ See help for details.</source>
     </message>
     <message>
         <location line="+53"/>
-        <location line="+281"/>
-        <location line="+27"/>
+        <location line="+280"/>
+        <location line="+26"/>
         <source>Open Exe file</source>
         <translation>開啟可執行檔案</translation>
     </message>
@@ -1954,7 +1914,7 @@ See help for details.</source>
         <translation type="obsolete">可執行檔案 (*.exe)</translation>
     </message>
     <message>
-        <location line="-246"/>
+        <location line="-245"/>
         <source>Open image file</source>
         <translation>開啟映像檔</translation>
     </message>
@@ -1971,12 +1931,12 @@ See help for details.</source>
         <translation type="obsolete">圖片與 Win32 二進位檔 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;圖片檔 (*.png *.jpg *.gif *.bmp *.xpm);;Win32 可執行檔 (*.exe);;Win32 共享函式庫 (*.dll);;Win32 可執行檔及共享函式庫 (*.exe *.dll);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="-59"/>
+        <location line="-58"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation>Exe, MSI, BAT 檔案 (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe 檔案 (*.exe *.EXE);;MSI 檔案 (*.msi *.MSI);;BAT 檔案 (*.bat *.BAT);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="+74"/>
+        <location line="+73"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
         <translation>圖片檔 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</translation>
     </message>
@@ -1991,12 +1951,12 @@ See help for details.</source>
         <location line="+5"/>
         <location line="+7"/>
         <location line="+5"/>
-        <location line="+38"/>
+        <location line="+39"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location line="-60"/>
+        <location line="-61"/>
         <source>No program selected.</source>
         <translation>沒有選定的程式。</translation>
     </message>
@@ -2012,12 +1972,12 @@ See help for details.</source>
         <translation>抱歉，名為 %1 的圖示已存在。</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+39"/>
         <source>Invalid virtual desktop size.</source>
         <translation>無效的虛擬桌面大小。</translation>
     </message>
     <message>
-        <location line="-50"/>
+        <location line="-51"/>
         <source>No program name specified.</source>
         <translation>沒有指定程式名稱。</translation>
     </message>
@@ -2038,10 +1998,10 @@ See help for details.</source>
         <translation>正在解壓縮圖示</translation>
     </message>
     <message>
-        <location line="-261"/>
+        <location line="-260"/>
         <location line="+8"/>
         <location line="+109"/>
-        <location line="+220"/>
+        <location line="+219"/>
         <source>Disabled</source>
         <translation>已停用</translation>
     </message>
@@ -2055,13 +2015,13 @@ See help for details.</source>
     </message>
     <message>
         <location line="+87"/>
-        <location line="+27"/>
+        <location line="+26"/>
         <source>Shell script (*.sh)</source>
         <translation>殼層指令稿 (*.sh)</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="-270"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-95"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-94"/>
         <source>No virtual desktop</source>
         <translation>無虛擬桌面</translation>
     </message>
@@ -2216,7 +2176,7 @@ See help for details.</source>
     <name>IconsView</name>
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="+121"/>
-        <location filename="../q4wine-gui/iconsview.cpp" line="+110"/>
+        <location filename="../q4wine-gui/iconsview.cpp" line="+105"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -2241,18 +2201,18 @@ See help for details.</source>
         <translation>取代</translation>
     </message>
     <message>
-        <location line="+34"/>
-        <location line="+31"/>
+        <location line="+24"/>
+        <location line="+27"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location line="-31"/>
+        <location line="-27"/>
         <source>Sorry, file cannot be removed:&lt;br&gt;%1.</source>
         <translation>抱歉，檔案無法被移除：&lt;br&gt;%1。</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+27"/>
         <source>Sorry, file cannot be created:&lt;br&gt;%1.</source>
         <translation>錯誤，檔案無法被建立：&lt;br&gt;%1。</translation>
     </message>
@@ -2262,7 +2222,7 @@ See help for details.</source>
         <translation>選取檔案以儲存</translation>
     </message>
     <message>
-        <location line="-61"/>
+        <location line="-47"/>
         <source>Sorry. It seems that the file already exists.&lt;br&gt;Replace existing file or rename current one?</source>
         <translation>抱歉。該檔案似乎已存在。&lt;br&gt;取代已存在的檔案或重新命名目前的這一個？</translation>
     </message>
@@ -2277,7 +2237,7 @@ See help for details.</source>
         <translation>取代已有的檔案或是重新命名目前的？</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+35"/>
         <source>Images (*.png)</source>
         <translation>圖片 (*.png)</translation>
     </message>
@@ -2520,35 +2480,35 @@ See help for details.</source>
     <message>
         <location line="+10"/>
         <location line="+5"/>
-        <location line="+219"/>
+        <location line="+220"/>
         <location line="+6"/>
         <source>Status</source>
         <translation>狀態</translation>
     </message>
     <message>
-        <location line="-230"/>
-        <location line="+230"/>
+        <location line="-231"/>
+        <location line="+231"/>
         <source>Logging enabled</source>
         <translation>日誌已啟用</translation>
     </message>
     <message>
-        <location line="-229"/>
+        <location line="-230"/>
         <location line="+1"/>
-        <location line="+229"/>
+        <location line="+230"/>
         <location line="+1"/>
         <source>Disable logging</source>
         <translation>停用日誌</translation>
     </message>
     <message>
-        <location line="-227"/>
-        <location line="+219"/>
+        <location line="-228"/>
+        <location line="+220"/>
         <source>Logging disabled</source>
         <translation>日誌已停用</translation>
     </message>
     <message>
-        <location line="-218"/>
+        <location line="-219"/>
         <location line="+1"/>
-        <location line="+218"/>
+        <location line="+219"/>
         <location line="+1"/>
         <source>Enable logging</source>
         <translation>啟用日誌</translation>
@@ -2602,7 +2562,7 @@ See help for details.</source>
         <translation type="vanished">程式：%1&lt;br&gt; 參數： %2 </translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+315"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="+312"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
         <translation>Socket 檔案「%1」已存在！</translation>
     </message>
@@ -2666,12 +2626,12 @@ See help for details.</source>
         <translation>正在解壓縮圖示</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+125"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>同一時間只能有一個 %1 的實體可以執行。</translation>
     </message>
     <message>
-        <location line="-678"/>
+        <location line="-688"/>
         <source>Description: %1</source>
         <translation>描述：%1</translation>
     </message>
@@ -2738,7 +2698,7 @@ See help for details.</source>
         <translation type="obsolete">Win32 可執行檔與共享函式庫 (*.exe *.dll);;Win32 可執行檔 (*.exe);;Win32 共享函式庫 (*.dll);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+223"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
         <translation>二進位檔「%1」不存在。</translation>
@@ -2767,7 +2727,7 @@ See help for details.</source>
         <translation>前綴</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-674"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-684"/>
         <source>Default</source>
         <translation>預設</translation>
     </message>
@@ -3309,18 +3269,18 @@ See help for details.</source>
     </message>
     <message>
         <location line="-1"/>
-        <location line="+67"/>
+        <location line="+64"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location line="-176"/>
+        <location line="-173"/>
         <location line="+1"/>
         <source>Configure wine versions</source>
         <translation>設定 wine 版本</translation>
     </message>
     <message>
-        <location line="+169"/>
+        <location line="+166"/>
         <source>Select file to import</source>
         <translation>選取要匯入的檔案</translation>
     </message>
@@ -3345,7 +3305,7 @@ See help for details.</source>
         <translation>正在匯入前綴到「%1」&lt;br&gt;這可能需要一點時間……</translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+75"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>前綴封存映像檔 (*.tbz)</translation>
     </message>
@@ -3362,7 +3322,7 @@ See help for details.</source>
         <translation type="vanished">正在移除舊的虛擬磁碟。&lt;br&gt;這會花費一點時間...</translation>
     </message>
     <message>
-        <location line="-98"/>
+        <location line="-91"/>
         <source>Removing old fake drive</source>
         <translation>正在移除舊的虛擬磁碟</translation>
     </message>
@@ -3376,7 +3336,7 @@ See help for details.</source>
         <translation>正在匯入前綴</translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+75"/>
         <source>Select file to export</source>
         <translation>選取要匯出的檔案</translation>
     </message>
@@ -3968,7 +3928,7 @@ See help for details.</source>
 <context>
     <name>Process</name>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="+69"/>
+        <location filename="../q4wine-gui/process.cpp" line="+70"/>
         <location line="+4"/>
         <location line="+3"/>
         <location line="+3"/>
@@ -4020,7 +3980,7 @@ See help for details.</source>
         <translation>處理程式：遇到未知的錯誤。這是預設的 error() 的回傳值。</translation>
     </message>
     <message>
-        <location line="+39"/>
+        <location line="+41"/>
         <location line="+5"/>
         <source>Output</source>
         <translation>輸出</translation>
@@ -4036,7 +3996,7 @@ See help for details.</source>
         <translation>這個處理程式似乎當掉了。&lt;br&gt;&lt;br&gt;STDERR 紀錄：&lt;br&gt;%1</translation>
     </message>
     <message>
-        <location line="-76"/>
+        <location line="-78"/>
         <location line="+23"/>
         <source>Process: The last waitFor...() function timed out.</source>
         <translation>處理程式：最後的 waitFor...() 函數逾時。</translation>
@@ -4258,35 +4218,35 @@ See help for details.</source>
         <translation>前綴「%1」的已掛載媒體清單</translation>
     </message>
     <message>
+        <location line="-309"/>
         <location filename="../main.cpp" line="+117"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-309"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>這是自由軟體：您可以自由再散佈它。</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+1"/>
+        <location filename="../main.cpp" line="+1"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+1"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
         <translation>在法律許可的範圍內沒有任何擔保。</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+2"/>
+        <location filename="../main.cpp" line="+2"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+2"/>
         <source>Author: %1.</source>
         <translation>作者：%1。</translation>
     </message>
     <message>
-        <location line="+17"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-12"/>
+        <location line="-12"/>
+        <location filename="../main.cpp" line="+17"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+73"/>
         <source>Report %1 bugs to %2</source>
         <translation>回報 %1 臭蟲給 %2</translation>
     </message>
     <message>
-        <location line="-8"/>
+        <location filename="../main.cpp" line="-8"/>
         <source>  %1 [KEY]...</source>
         <translation> %1 [KEY]...</translation>
     </message>
@@ -4306,38 +4266,38 @@ See help for details.</source>
         <translation>在啟動時最小化 %1 主視窗</translation>
     </message>
     <message>
-        <location line="-8"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="-27"/>
+        <location filename="../main.cpp" line="-8"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="-18"/>
         <source>Usage:</source>
         <translation>使用方法：</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+4"/>
+        <location line="+4"/>
         <source>Console utility for wine applications and prefixes management.</source>
         <translation>Wine 應用程式與前綴管理的終端機實用工具。</translation>
     </message>
     <message>
+        <location line="+1"/>
         <location filename="../main.cpp" line="+4"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+1"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+3"/>
         <source>KEYs list:</source>
         <translation>KEY 清單：</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+1"/>
+        <location filename="../main.cpp" line="+1"/>
         <source>display this help and exit</source>
         <translation>顯示這個說明並離開</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+1"/>
+        <location filename="../main.cpp" line="+1"/>
         <source>output version information and exit</source>
         <translation>輸出版本資訊並離開</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+1"/>
+        <location line="+1"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
         <translation>輸出目前前綴或所有前綴的 wine 處理程序清單並離開</translation>
     </message>
@@ -4438,15 +4398,15 @@ See help for details.</source>
         <translation>若 OK 則為 0，</translation>
     </message>
     <message>
+        <location line="+4"/>
         <location filename="../main.cpp" line="+5"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+4"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+15"/>
         <source>%1 homepage: &lt;%2&gt;</source>
         <translation>%1 首頁： &lt;%2&gt;</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+1"/>
+        <location filename="../main.cpp" line="+1"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+1"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation>GNU 軟體的一般說明：&lt;http://www.gnu.org/gethelp/&gt;</translation>
@@ -4522,9 +4482,107 @@ See help for details.</source>
         <translation>在程式執行後執行指令稿</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-185"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-175"/>
         <source>Remove prefix directory</source>
         <translation>移除前綴目錄</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-lib/q4wine-lib.cpp" line="+200"/>
+        <source>&lt;p&gt;It seems that Q4Wine cannot run kvm_openfiles.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>&lt;p&gt;It seems that Q4Wine cannot run kvm_getprocs.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+49"/>
+        <source>Cannot read process info from /proc or API is changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+84"/>
+        <source>&lt;p&gt;Error while loading application settings by key: &apos;%1&apos;. File or path does not exist: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Please, go to the %3 options dialog and set it.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+225"/>
+        <source>Buildtime flags are:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+84"/>
+        <source>Cannot find or execute the &apos;%1&apos; binary. Make sure that this binary is available by search PATH variable and see also INSTALL file for application depends.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+321"/>
+        <location line="+10"/>
+        <location line="+8"/>
+        <location line="+505"/>
+        <location line="+3"/>
+        <location line="+12"/>
+        <location line="+2"/>
+        <source>Error</source>
+        <translation type="unfinished">錯誤</translation>
+    </message>
+    <message>
+        <location line="-540"/>
+        <location line="+18"/>
+        <source>Binary file &quot;%1&quot; does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-8"/>
+        <source>Cannot get unix path for &quot;%1&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+109"/>
+        <source>Running binary: &quot;%1&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Running binary...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+151"/>
+        <source>Failed to unmount previously mounted image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <location line="+144"/>
+        <source>It seems that no mount point was set in prefix options.&lt;br&gt;You might need to set it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-55"/>
+        <source>Mounting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Mounting %1 into %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+79"/>
+        <source>Umounting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Umounting point: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+64"/>
+        <source>It seems that the process crashed. STDERR log: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4570,12 +4628,12 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="-41"/>
         <location line="+5"/>
-        <location line="+41"/>
+        <location line="+42"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location line="-46"/>
+        <location line="-47"/>
         <source>No program name specified.</source>
         <translation>未指定程式名稱。</translation>
     </message>
@@ -4585,7 +4643,7 @@ See help for details.</source>
         <translation>選定的工作目錄不存在。</translation>
     </message>
     <message>
-        <location line="+41"/>
+        <location line="+42"/>
         <source>Invalid virtual desktop size.</source>
         <translation>無效的虛擬桌面大小。</translation>
     </message>
@@ -4599,13 +4657,13 @@ See help for details.</source>
         <translation type="obsolete">Exe, MSI, BAT 檔案 (*.exe *.msi *.bat);;Exe 檔案 (*.exe);;MSI 檔案 (*.msi);;BAT 檔案 (*.bat);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="-189"/>
+        <location line="-190"/>
         <location line="+28"/>
         <source>Disabled</source>
         <translation>已停用</translation>
     </message>
     <message>
-        <location line="+158"/>
+        <location line="+159"/>
         <source>Open Exe file</source>
         <translation>開啟可執行檔案</translation>
     </message>
@@ -4972,14 +5030,14 @@ See help for details.</source>
         <translation>前綴路徑</translation>
     </message>
     <message>
-        <location line="+14"/>
-        <location line="+74"/>
+        <location line="+18"/>
+        <location line="+71"/>
         <location line="+13"/>
         <source>Total process count: %1</source>
         <translation>總處理程式數量：%1</translation>
     </message>
     <message>
-        <location line="-54"/>
+        <location line="-51"/>
         <source>Stop current</source>
         <translation>停止目前的</translation>
     </message>
@@ -5019,7 +5077,7 @@ See help for details.</source>
         <translation>設定處理程序優先權</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+80"/>
         <location line="+37"/>
         <source>Warning</source>
         <translation>警告</translation>
@@ -5284,19 +5342,19 @@ See help for details.</source>
 <context>
     <name>winetricks</name>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="+110"/>
-        <location line="+122"/>
+        <location filename="../plugins/winetricks.cpp" line="+108"/>
+        <location line="+119"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location line="-127"/>
+        <location line="-124"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>無法定位 Winetricks 指令稿。請先安裝 Winetricks 指令稿。</translation>
     </message>
     <message>
-        <location line="+122"/>
+        <location line="+119"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation>檔案「%1」不可寫入或讀取。請檢查檔案權限。</translation>
     </message>

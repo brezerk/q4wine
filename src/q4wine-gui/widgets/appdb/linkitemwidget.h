@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,46 +19,45 @@
 #ifndef LINKITEMWIDGET_H
 #define LINKITEMWIDGET_H
 
-//Global config
+// Global config
 #include "config.h"
 
-//Qt inc
-#include <QLabel>
+// Qt inc
 #include <QEvent>
+#include <QLabel>
 
-class LinkItemWidget : public QLabel
-{
-	Q_OBJECT
-public:
-	LinkItemWidget(QString text, short int action = 0, QWidget *parent = nullptr);
-	~LinkItemWidget();
+class LinkItemWidget : public QLabel {
+  Q_OBJECT
+ public:
+  LinkItemWidget(QString text, short int action = 0, QWidget *parent = nullptr);
+  ~LinkItemWidget();
 
-	void setEnabled(bool enable);
-	void setBold(bool enable);
-	void setAction(short int action);
-	void setSearchUrl(QString url);
-	void setAppId(int id);
-	void setVerId(int id);
-	void setCatId(int id);
-	void setPage(short int id);
-	void setParentId(int id);
+  void setEnabled(bool enable);
+  void setBold(bool enable);
+  void setAction(short int action);
+  void setSearchUrl(QString url);
+  void setAppId(int id);
+  void setVerId(int id);
+  void setCatId(int id);
+  void setPage(short int id);
+  void setParentId(int id);
 
-private:
-	short int action;
-	int appid;
-	int verid;
-	int catid;
-	int page;
-	int parentid;
-	QString search;
+ private:
+  short int action;
+  int appid;
+  int verid;
+  int catid;
+  int page;
+  int parentid;
+  QString search;
 
-signals:
-	void itemTrigged(short int, QString, int, int, int);
-	void requestParentComment(int id);
+ signals:
+  void itemTrigged(short int, QString, int, int, int);
+  void requestParentComment(int id);
 
-private:
-	//! \brief Event filter.
-	bool eventFilter(QObject *obj, QEvent *event);
+ private:
+  //! \brief Event filter.
+  bool eventFilter(QObject *obj, QEvent *event);
 };
 
-#endif // LINKITEMWIDGET_H
+#endif  // LINKITEMWIDGET_H

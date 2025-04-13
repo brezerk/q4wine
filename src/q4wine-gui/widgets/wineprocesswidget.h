@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,74 +19,73 @@
 #ifndef WINEPROCESSWIDGET_H
 #define WINEPROCESSWIDGET_H
 
-//System
+// System
 #include <memory>
 
-//Global config
+// Global config
 #include "config.h"
 
-//Windows
+// Windows
 #include "wizard.h"
 
-//Qt includes
-#include <QStandardItemModel>
-#include <QTableWidgetItem>
-#include <QTableView>
-#include <QToolBar>
-#include <QTimer>
-#include <QMenu>
+// Qt includes
 #include <QHeaderView>
 #include <QInputDialog>
+#include <QMenu>
+#include <QStandardItemModel>
+#include <QTableView>
+#include <QTableWidgetItem>
+#include <QTimer>
+#include <QToolBar>
 
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
-//q4wine lib
+// q4wine lib
 #include "q4wine-lib.h"
 
-class WineProcessWidget : public QWidget
-{
-Q_OBJECT
-public:
-	explicit WineProcessWidget(QWidget *parent = nullptr);
+class WineProcessWidget : public QWidget {
+  Q_OBJECT
+ public:
+  explicit WineProcessWidget(QWidget *parent = nullptr);
 
-signals:
-	void changeStatusText(QString);
+ signals:
+  void changeStatusText(QString);
 
-public slots:
-	void stopTimer(void);
-	void startTimer(void);
+ public slots:
+  void stopTimer(void);
+  void startTimer(void);
 
-private:
-	std::unique_ptr<QTimer> timer;
-	std::unique_ptr<QStandardItemModel> model;
+ private:
+  std::unique_ptr<QTimer> timer;
+  std::unique_ptr<QStandardItemModel> model;
 
-	//! This is need for libq4wine-core.so import.
-	QLibrary libq4wine;
-	typedef void *CoreLibPrototype (bool);
-	CoreLibPrototype *CoreLibClassPointer;
-	std::unique_ptr<corelib> CoreLib;
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
 
-	void createActions();
+  void createActions();
 
-	std::unique_ptr<QTableView> procTable;
-	std::unique_ptr<QLabel> lblInfo;
+  std::unique_ptr<QTableView> procTable;
+  std::unique_ptr<QLabel> lblInfo;
 
-	std::unique_ptr<QMenu> menu;
-	std::unique_ptr<QAction> procKillSelected;
-	std::unique_ptr<QAction> procKillWine;
-	std::unique_ptr<QAction> procRefresh;
-	std::unique_ptr<QAction> procRenice;
+  std::unique_ptr<QMenu> menu;
+  std::unique_ptr<QAction> procKillSelected;
+  std::unique_ptr<QAction> procKillWine;
+  std::unique_ptr<QAction> procRefresh;
+  std::unique_ptr<QAction> procRenice;
 
-private slots:
-	void getWineProcesssInfo(void);
-	void customContextMenuRequested(const QPoint &pos);
-	void itemClicked(const QModelIndex &);
+ private slots:
+  void getWineProcesssInfo(void);
+  void customContextMenuRequested(const QPoint &pos);
+  void itemClicked(const QModelIndex &);
 
-	void procKillSelected_Click(void);
-	void procKillWine_Click(void);
-	void procRenice_Click(void);
+  void procKillSelected_Click(void);
+  void procKillWine_Click(void);
+  void procRenice_Click(void);
 };
 
-#endif // WINEPROCESSVIEW_H
+#endif  // WINEPROCESSVIEW_H

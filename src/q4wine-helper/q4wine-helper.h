@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -16,19 +16,17 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "memory"
-
-#include <QtCore>
-#include <QTextStream>
 #include <QList>
 #include <QStringList>
+#include <QTextStream>
+#include <QtCore>
+
 #include "config.h"
-
-#include "q4wine-lib.h"
-#include "wineobject.h"
-
 #include "db.h"
-#include "prefix.h"
 #include "dir.h"
 #include "icon.h"
 #include "image.h"
+#include "memory"
+#include "prefix.h"
+#include "q4wine-lib.h"
+#include "wineobject.h"

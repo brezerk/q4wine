@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -16,20 +16,20 @@
  *                                                                         *
  ***************************************************************************/
 
-
 #ifndef TABLE_H
 #define TABLE_H
 
 #include <QString>
 
 class Table {
-public:
-    Table();
-    bool save();
-    bool remove();
-    bool load();
-protected:
-    QString table_;
+ public:
+  Table();
+  bool save();
+  bool remove();
+  bool load();
+
+ protected:
+  QString table_;
 };
 
-#endif // TABLE_H
+#endif  // TABLE_H

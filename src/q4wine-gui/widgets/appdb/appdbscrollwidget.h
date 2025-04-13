@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,47 +19,46 @@
 #ifndef APPDBSCROLLWIDGET_H
 #define APPDBSCROLLWIDGET_H
 
-//System
+// System
 #include <memory>
 
-//Global config
+// Global config
 #include "config.h"
 
-//Structs
+// Structs
 #include "appdbstructs.h"
 
-//Widgets
+// Widgets
 #include "appinfowidget.h"
 #include "apptestwidget.h"
 #include "lineitemwidget.h"
 
-//Qt inc
+// Qt inc
 #include <QScrollArea>
 
-class AppDBScrollWidget : public QScrollArea
-{
-	Q_OBJECT
-public:
-    explicit AppDBScrollWidget(QWidget * parent = nullptr);
-	void addSearchWidget(const WineAppDBInfo appinfo);
-	void addTestWidget(const WineAppDBInfo appinfo);
-	void addVersionFrame(QList<WineAppDBCategory> list, QString frame_caption, short int action);
-	void insertStretch(void);
-	void clear(void);
+class AppDBScrollWidget : public QScrollArea {
+  Q_OBJECT
+ public:
+  explicit AppDBScrollWidget(QWidget* parent = nullptr);
+  void addSearchWidget(const WineAppDBInfo appinfo);
+  void addTestWidget(const WineAppDBInfo appinfo);
+  void addVersionFrame(QList<WineAppDBCategory> list, QString frame_caption,
+                       short int action);
+  void insertStretch(void);
+  void clear(void);
 
-public slots:
-	void scrollToPos(int id);
+ public slots:
+  void scrollToPos(int id);
 
-signals:
-	void itemTrigged(short int, QString, int, int, int);
+ signals:
+  void itemTrigged(short int, QString, int, int, int);
 
-private:
-	void gotoCommentId(int id);
-	void hideAll(void);
+ private:
+  void gotoCommentId(int id);
+  void hideAll(void);
 
-	std::unique_ptr<QWidget> contentWidget;
-	std::unique_ptr<QVBoxLayout> contentLayout;
-
+  std::unique_ptr<QWidget> contentWidget;
+  std::unique_ptr<QVBoxLayout> contentLayout;
 };
 
-#endif // APPDBSCROLLWIDGET_H
+#endif  // APPDBSCROLLWIDGET_H

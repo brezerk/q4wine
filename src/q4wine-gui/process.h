@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,40 +19,40 @@
 #ifndef PROCESS_H
 #define PROCESS_H
 
+#include <QFileDialog>
+#include <QLibrary>
+#include <QMessageBox>
+#include <QProcess>
+#include <QStringDecoder>
+#include <QTextStream>
+#include <clocale>
 #include <memory>
 
 #include "config.h"
-
 #include "src/q4wine-lib/ui_Process.h"
-
-#include <QProcess>
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QLibrary>
-#include <QTextCodec>
-#include <QTextStream>
-#include <clocale>
 
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
-class Process : public QDialog, public Ui::Process
-{
-	Q_OBJECT
-	public:
-		Process(QStringList args, QString exec, QString dir, QString info, QString caption, bool showErr = true, QStringList env = QProcess::systemEnvironment(), QWidget * parent = nullptr, Qt::WindowFlags f = Qt::Widget);
+class Process : public QDialog, public Ui::Process {
+  Q_OBJECT
+ public:
+  Process(QStringList args, QString exec, QString dir, QString info,
+          QString caption, bool showErr = true,
+          QStringList env = QProcess::systemEnvironment(),
+          QWidget* parent = nullptr, Qt::WindowFlags f = Qt::Widget);
 
-	private slots:
-		void slotFinished(int, QProcess::ExitStatus);
-		void cmdCancel_clicked();
-		void slotError(QProcess::ProcessError);
+ private slots:
+  void slotFinished(int, QProcess::ExitStatus);
+  void cmdCancel_clicked();
+  void slotError(QProcess::ProcessError);
 
-	private:
-		bool showErr;
-		std::unique_ptr<QProcess> myProcess;
+ private:
+  bool showErr;
+  std::unique_ptr<QProcess> myProcess;
 
-		QString getLocale();
+  QString getLocale();
 };
 
 #endif

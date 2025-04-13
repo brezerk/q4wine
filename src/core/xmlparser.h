@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,13 +19,13 @@
 #ifndef XMLPARSER_H
 #define XMLPARSER_H
 
-#include "config.h"
-
-#include <QObject>
-#include <QRegExp>
 #include <QDomDocument>
 #include <QDomElement>
 #include <QDomNode>
+#include <QObject>
+#include <QRegularExpression>
+
+#include "config.h"
 
 #ifdef DEBUG
 #include <QDebug>
@@ -43,54 +43,51 @@
  *
  */
 
-class XmlParser : public QObject
-{
-Q_OBJECT
-public:
-	XmlParser(void);
-	int parseIOSream(QString file);
+class XmlParser : public QObject {
+  Q_OBJECT
+ public:
+  XmlParser(void);
+  int parseIOSream(QString file);
 
-	QList<WineAppDBInfo> getAppSearchInfoList();
-	WineAppDBInfo getAppSearchInfo();
+  QList<WineAppDBInfo> getAppSearchInfoList();
+  WineAppDBInfo getAppSearchInfo();
 
-	short int getPageCount(void);
-	short int getPageCurrent(void);
+  short int getPageCount(void);
+  short int getPageCurrent(void);
 
-	QList<WineAppDBCategory> getSubCategorysList(void);
-	QList<WineAppDBCategory> getCategorysList(void);
-	QList<WineAppDBCategory> getAppsList(void);
+  QList<WineAppDBCategory> getSubCategorysList(void);
+  QList<WineAppDBCategory> getCategorysList(void);
+  QList<WineAppDBCategory> getAppsList(void);
 
-private:
-	short int page_current;
-	short int page_count;
-	QString action;
+ private:
+  short int page_current;
+  short int page_count;
+  QString action;
 
-	QList<WineAppDBInfo> _APPDB_SEARCH_INFO;
-	WineAppDBInfo appdb_appinfo;
+  QList<WineAppDBInfo> _APPDB_SEARCH_INFO;
+  WineAppDBInfo appdb_appinfo;
 
-	QList<WineAppDBCategory> appdb_subcategorys;
-	QList<WineAppDBCategory> appdb_categorys;
-	QList<WineAppDBCategory> appdb_apps;
+  QList<WineAppDBCategory> appdb_subcategorys;
+  QList<WineAppDBCategory> appdb_categorys;
+  QList<WineAppDBCategory> appdb_apps;
 
-	void parseAppSearchEntry(const QDomElement &element);
-	void parseAppCategoryEntry(const QDomElement &element);
-	int parseMessageEntry(const QDomElement &element);
-	void parsePages(const QDomElement &element);
+  void parseAppSearchEntry(const QDomElement &element);
+  void parseAppCategoryEntry(const QDomElement &element);
+  int parseMessageEntry(const QDomElement &element);
+  void parsePages(const QDomElement &element);
 
-	void parseApp(const QDomElement &element);
-	void parseAppVersion(const QDomElement &element, WineAppDBInfo &appinfo);
+  void parseApp(const QDomElement &element);
+  void parseAppVersion(const QDomElement &element, WineAppDBInfo &appinfo);
 
-	WineAppDBCategory parseCategory(const QDomElement &element);
-	void parseTestResults(const QDomElement &element, WineAppDBInfo &appinfo);
-	void parseBug(const QDomElement &element, WineAppDBInfo &appinfo);
-	void parseTest(const QDomElement &element, WineAppDBInfo &appinfo);
-	void parseComment(const QDomElement &element, WineAppDBInfo &appinfo);
+  WineAppDBCategory parseCategory(const QDomElement &element);
+  void parseTestResults(const QDomElement &element, WineAppDBInfo &appinfo);
+  void parseBug(const QDomElement &element, WineAppDBInfo &appinfo);
+  void parseTest(const QDomElement &element, WineAppDBInfo &appinfo);
+  void parseComment(const QDomElement &element, WineAppDBInfo &appinfo);
 
+  QString getChildNodeData(const QDomNode &childNode);
 
-
-	QString getChildNodeData(const QDomNode &childNode);
-
-	void clear();
+  void clear();
 };
 
-#endif // XMLPARSER_H
+#endif  // XMLPARSER_H

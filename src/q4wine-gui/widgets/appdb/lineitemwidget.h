@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,23 +19,23 @@
 #ifndef LINEITEMWIDGET_H
 #define LINEITEMWIDGET_H
 
-//System
+// System
 #include <memory>
 
-//Global config
+// Global config
 #include "config.h"
 
-//Qt inc
-#include <QWidget>
+// Qt inc
 #include <QBoxLayout>
-#include <QLabel>
 #include <QEvent>
+#include <QLabel>
+#include <QWidget>
 
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
-//Structs
+// Structs
 #include "appdbstructs.h"
 
 /*!
@@ -45,40 +45,39 @@
  *
  */
 
-class LineItemWidget : public QWidget
-{
-Q_OBJECT
-public:
-	//! Class constructor
-	LineItemWidget(const short int action, QWidget *parent = nullptr);
+class LineItemWidget : public QWidget {
+  Q_OBJECT
+ public:
+  //! Class constructor
+  LineItemWidget(const short int action, QWidget *parent = nullptr);
 
-	//! Class destructor
-	~LineItemWidget();
+  //! Class destructor
+  ~LineItemWidget();
 
-	void addLabel(const QString text, const short int width=-1, const short int alignment=0, const bool worldwarp=false);
-	void insertStretch(void);
-	void setBold(void);
+  void addLabel(const QString text, const short int width = -1,
+                const short int alignment = 0, const bool worldwarp = false);
+  void insertStretch(void);
+  void setBold(void);
 
-	void setAction(short int action);
-	void setAppId(int id);
-	void setAppVerId(int id);
-	void setTestId(int id);
-	void setEnabled(bool enable);
+  void setAction(short int action);
+  void setAppId(int id);
+  void setAppVerId(int id);
+  void setTestId(int id);
+  void setEnabled(bool enable);
 
-private:
-	std::unique_ptr<QBoxLayout> contentLayout;
-	int appid;
-	int verid;
-	int testid;
-	short int action;
+ private:
+  std::unique_ptr<QBoxLayout> contentLayout;
+  int appid;
+  int verid;
+  int testid;
+  short int action;
 
-signals:
-	void itemTrigged(short int, QString, int, int, int);
+ signals:
+  void itemTrigged(short int, QString, int, int, int);
 
-protected:
-	//! \brief Event filter.
-	bool eventFilter(QObject *obj, QEvent *event);
-
+ protected:
+  //! \brief Event filter.
+  bool eventFilter(QObject *obj, QEvent *event);
 };
 
-#endif // LINEITEMWIDGET_H
+#endif  // LINEITEMWIDGET_H

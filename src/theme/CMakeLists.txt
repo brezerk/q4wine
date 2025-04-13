@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.0)
+cmake_minimum_required(VERSION 3.24)
 
 IF( RELEASE )
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/theme DESTINATION

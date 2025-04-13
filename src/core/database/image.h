@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,15 +19,15 @@
 #ifndef IMAGE_H
 #define IMAGE_H
 
-#include "config.h"
-
+#include <QDebug>
 #include <QList>
+#include <QSqlError>
+#include <QSqlQuery>
 #include <QString>
 #include <QStringList>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QDebug>
 #include <QVariant>
+
+#include "config.h"
 
 /*!
  * \class Image
@@ -35,36 +35,35 @@
  * \brief This class provide database functions for Image table.
  *
  */
-class Image
-{
-public:
-    //! Class constructor
-    Image();
-    /*! \brief Getting images list.
-     * \return Return QList on QStringList containing images.
-     */
-    QList<QStringList> getFields(void) const;
+class Image {
+ public:
+  //! Class constructor
+  Image();
+  /*! \brief Getting images list.
+   * \return Return QList on QStringList containing images.
+   */
+  QList<QStringList> getFields(void) const;
 
-    /*! \brief Getting file path record by image name
-     * \param  name   image name
-     * \return Return QList on QStringList containing images.
-     */
-    QString getPath(const QString &name) const;\
+  /*! \brief Getting file path record by image name
+   * \param  name   image name
+   * \return Return QList on QStringList containing images.
+   */
+  QString getPath(const QString &name) const;
 
-    /*! \brief Check for image existence by name
-     * \param  name   image name
-     * \return If image exists -- returns true.
-     */
-    bool isExistsByName(const QString &name) const;
+  /*! \brief Check for image existence by name
+   * \param  name   image name
+   * \return If image exists -- returns true.
+   */
+  bool isExistsByName(const QString &name) const;
 
-    /*! \brief Add image record
-     * \param  name   image name
-     * \param  path   image file path
-     * \return If image exists -- returns true.
-     */
-    bool addImage(const QString &name, const QString &path) const;
-    bool delImage(const QString &name) const;
-    bool renameImage(const QString &name, const QString &old_name) const;
+  /*! \brief Add image record
+   * \param  name   image name
+   * \param  path   image file path
+   * \return If image exists -- returns true.
+   */
+  bool addImage(const QString &name, const QString &path) const;
+  bool delImage(const QString &name) const;
+  bool renameImage(const QString &name, const QString &old_name) const;
 };
 
-#endif // IMAGE_H
+#endif  // IMAGE_H

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -18,66 +18,62 @@
 
 #include "drivelistwidgetitem.h"
 
-DriveListWidgetItem::DriveListWidgetItem(QListWidget *parent, int type): QObject( parent), QListWidgetItem(parent, type)
-{
-	// Loading libq4wine-core.so
+DriveListWidgetItem::DriveListWidgetItem(QListWidget *parent, int type)
+    : QObject(parent), QListWidgetItem(parent, type) {
+  // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName(_CORELIB_PATH_);
+  libq4wine.setFileName(_CORELIB_PATH_);
 #else
-    libq4wine.setFileName("../q4wine-lib/libq4wine-core");
+  libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
 
-	if (!libq4wine.load()){
-		  libq4wine.load();
-	}
+  if (!libq4wine.load()) {
+    libq4wine.load();
+  }
 
-	// Getting corelib class pointer
-	CoreLibClassPointer = reinterpret_cast<CoreLibPrototype*>(libq4wine.resolve("createCoreLib"));
-    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
-	return;
+  // Getting corelib class pointer
+  CoreLibClassPointer =
+      reinterpret_cast<CoreLibPrototype *>(libq4wine.resolve("createCoreLib"));
+  CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
+  return;
 }
 
-void DriveListWidgetItem::setDrive(QString letter, QString path, QString type){
-	this->letter=letter;
-	this->path=path;
-	if (type.isEmpty()){
-		this->type="auto";
-	} else {
-		this->type=type;
-	}
-	this->setText(QString("%1 %2\nType: %3").arg(letter).arg(path).arg(this->type));
-	this->setIcon(CoreLib->loadIcon(this->getDrivePic(type)));
-	return;
+void DriveListWidgetItem::setDrive(QString letter, QString path, QString type) {
+  this->letter = letter;
+  this->path = path;
+  if (type.isEmpty()) {
+    this->type = "auto";
+  } else {
+    this->type = type;
+  }
+  this->setText(
+      QString("%1 %2\nType: %3").arg(letter).arg(path).arg(this->type));
+  this->setIcon(CoreLib->loadIcon(this->getDrivePic(type)));
+  return;
 }
 
-QString DriveListWidgetItem::getLetter(){
-	return this->letter;
-}
+QString DriveListWidgetItem::getLetter() { return this->letter; }
 
-QString DriveListWidgetItem::getPath(){
-	return this->path;
-}
+QString DriveListWidgetItem::getPath() { return this->path; }
 
-QString DriveListWidgetItem::getType(){
-	return this->type;
-}
+QString DriveListWidgetItem::getType() { return this->type; }
 
-QString DriveListWidgetItem::getDrivePic(QString driveType){
-	QString pic;
-	if (driveType.isEmpty()){
-        pic = "drive-harddisk";
-	} else {
-		if (driveType=="hd"){
-            pic = "drive-harddisk";
-		} else if (driveType=="network"){
-            pic = "folder-network";
-		} else if (driveType=="floppy"){
-            pic = "media-floppy";
-		} else if (driveType=="cdrom"){
-            pic = "media-optical";
-		} else {
-            pic = "drive-harddisk";
-		}
-	}
-	return pic;
+QString DriveListWidgetItem::getDrivePic(QString driveType) {
+  QString pic;
+  if (driveType.isEmpty()) {
+    pic = "drive-harddisk";
+  } else {
+    if (driveType == "hd") {
+      pic = "drive-harddisk";
+    } else if (driveType == "network") {
+      pic = "folder-network";
+    } else if (driveType == "floppy") {
+      pic = "media-floppy";
+    } else if (driveType == "cdrom") {
+      pic = "media-optical";
+    } else {
+      pic = "drive-harddisk";
+    }
+  }
+  return pic;
 }

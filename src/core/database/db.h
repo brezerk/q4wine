@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -24,18 +24,18 @@
 #ifndef DB_H
 #define DB_H
 
-#include <QSqlDatabase>
-#include <QSqlRecord>
-#include <QStringList>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QTextStream>
-#include <QString>
-#include <QVariant>
 #include <QDebug>
 #include <QDir>
 #include <QObject>
 #include <QSettings>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QSqlRecord>
+#include <QString>
+#include <QStringList>
+#include <QTextStream>
+#include <QVariant>
 
 #include "config.h"
 #include "core/database/versions.h"
@@ -50,26 +50,25 @@
  * and provides basic database check.
  *
  */
-class DataBase : public QObject
-{
-    Q_OBJECT
-public:
-    //! Constructor
-    explicit DataBase(QObject * parent = nullptr);
+class DataBase : public QObject {
+  Q_OBJECT
+ public:
+  //! Constructor
+  explicit DataBase(QObject* parent = nullptr);
 
-    /*! \brief This function tries to check database structure.
-	*
-	* It gets process values: pid, name, nice priority and WINEPREFIX environment variable.
-	* \param  tables  List of tables name.
-	* \return Return true on success otherwise false.
-	*/
-    bool checkDb();
+  /*! \brief This function tries to check database structure.
+   *
+   * It gets process values: pid, name, nice priority and WINEPREFIX environment
+   * variable.
+   * \param  tables  List of tables name.
+   * \return Return true on success otherwise false.
+   */
+  bool checkDb();
 
-    /*! \brief This function close database connection.
-	*/
-    void close();
-    bool fixup();
-
+  /*! \brief This function close database connection.
+   */
+  void close();
+  bool fixup();
 };
 
-#endif // DB_H
+#endif  // DB_H

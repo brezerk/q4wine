@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,66 +19,63 @@
 #ifndef PROGRESS_H
 #define PROGRESS_H
 
-#include <memory>
-
-#include "config.h"
-
-#include "src/q4wine-lib/ui_Process.h"
-
 #include <QDialog>
-#include <QWidget>
 #include <QDir>
 #include <QString>
 #include <QStringList>
 #include <QTimer>
+#include <QWidget>
+#include <memory>
+
+#include "config.h"
+#include "src/q4wine-lib/ui_Process.h"
 
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
-#include "prefix.h"
-#include "icon.h"
 #include "dir.h"
+#include "icon.h"
+#include "prefix.h"
 
-//q4wine lib
+// q4wine lib
 #include "q4wine-lib.h"
 
-class Progress : public QDialog, public Ui::Process
-{
-Q_OBJECT
-public:
-    explicit Progress(int action, QString path = "", QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+class Progress : public QDialog, public Ui::Process {
+  Q_OBJECT
+ public:
+  explicit Progress(int action, QString path = "", QWidget *parent = nullptr,
+                    Qt::WindowFlags f = Qt::WindowFlags());
 
-signals:
+ signals:
 
-public slots:
+ public slots:
 
-private:
-    int action, max, current;
+ private:
+  int action, max, current;
 
-    QLibrary libq4wine;
-    typedef void *CoreLibPrototype (bool);
-    CoreLibPrototype *CoreLibClassPointer;
-    std::unique_ptr<corelib> CoreLib;
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
 
-    Dir db_dir;
-    Icon db_icon;
-    Prefix db_prefix;
+  Dir db_dir;
+  Icon db_icon;
+  Prefix db_prefix;
 
-    QString path;
+  QString path;
 
-    int importIcons(QString folder);
-    //void removeEmptyFolders(QString folder);
-    void parseDesktopFile(QString file, QString dirName);
-    QStringList iconDirs;
-    QStringList iconFiles;
+  int importIcons(QString folder);
+  // void removeEmptyFolders(QString folder);
+  void parseDesktopFile(QString file, QString dirName);
+  QStringList iconDirs;
+  QStringList iconFiles;
 
-    std::unique_ptr<QTimer> t;
+  std::unique_ptr<QTimer> t;
 
-private slots:
-    void runAction();
-    void cmdCancel_Click();
-
+ private slots:
+  void runAction();
+  void cmdCancel_Click();
 };
 
-#endif // PROGRESS_H
+#endif  // PROGRESS_H

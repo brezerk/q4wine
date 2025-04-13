@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -21,56 +21,55 @@
 
 #include <src/q4wine-gui/ui_AppTestWidget.h>
 
-//Global config
+// Global config
 #include "config.h"
 
-//structs
+// structs
 #include "appdbstructs.h"
 
-//widgets
-#include "linkitemwidget.h"
+// widgets
 #include "commentwidget.h"
 #include "lineitemwidget.h"
+#include "linkitemwidget.h"
 
-//Qt inc
+// Qt inc
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
-class AppTestWidget : public QWidget, public Ui::AppTestWidget
-{
-Q_OBJECT
-public:
-	AppTestWidget(const WineAppDBInfo appinfo, QWidget *parent = nullptr);
+class AppTestWidget : public QWidget, public Ui::AppTestWidget {
+  Q_OBJECT
+ public:
+  AppTestWidget(const WineAppDBInfo appinfo, QWidget *parent = nullptr);
 
-public slots:
-	void requestParentComment(int id);
+ public slots:
+  void requestParentComment(int id);
 
-signals:
-	void itemTrigged(short int, QString, int, int, int);
-	void scrollToPos(int);
+ signals:
+  void itemTrigged(short int, QString, int, int, int);
+  void scrollToPos(int);
 
-private:
-	/*! \brief sets general application Name
-	*
-	* \param  name         General application name.
-	* \return Nothing.
-	*/
-	void setAppName(QString name);
+ private:
+  /*! \brief sets general application Name
+   *
+   * \param  name         General application name.
+   * \return Nothing.
+   */
+  void setAppName(QString name);
 
-	/*! \brief sets general application description and trim it to 255 chars
-	*
-	* \param  desc  Short Application description.
-	* \return Nothing.
-	*/
-	void setAppDesc(QString desc);
+  /*! \brief sets general application description and trim it to 255 chars
+   *
+   * \param  desc  Short Application description.
+   * \return Nothing.
+   */
+  void setAppDesc(QString desc);
 
-	void addTestResults(QList<WineAppDBTestResult> tests);
-	void addBugs(QList<WineAppDBBug> bugs);
-	void addComments(QList<WineAppDBComment> comments);
-	int appid;
-	int verid;
-	int testid;
+  void addTestResults(QList<WineAppDBTestResult> tests);
+  void addBugs(QList<WineAppDBBug> bugs);
+  void addComments(QList<WineAppDBComment> comments);
+  int appid;
+  int verid;
+  int testid;
 };
 
-#endif // APPTESTWIDGET_H
+#endif  // APPTESTWIDGET_H

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,107 +19,100 @@
 #ifndef WINEOBJECT_H
 #define WINEOBJECT_H
 
-#include <memory>
-#include "config.h"
-
-#include <QObject>
-#include <QLocalSocket>
-#include <QTime>
-
-#include "prefix.h"
-#include "logging.h"
-#include "core/database/versions.h"
-
-#include "q4wine-lib.h"
-
-#include <unistd.h>
-#include <sys/wait.h>
-#include <stdio.h>
-#include <sys/types.h>
-#include <fcntl.h>
-
-// Fix for GNU/Hurd, see:
-// https://www.gnu.org/software/hurd/community/gsoc/project_ideas/maxpath.html
-// http://insanecoding.blogspot.com/2007/11/pathmax-simply-isnt.html
-// The same limitation as in Linux is used here (see <linux/limits.h>):
 #ifdef __GNU__
 #define PATH_MAX 4096
 #endif
 
-class WineObject : public QObject
-{
-    Q_OBJECT
-public:
-    explicit WineObject(QObject *parent = nullptr);
+#include <fcntl.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
 
-    bool setPrefix(const QString &prefix);
+#include <QLocalSocket>
+#include <QObject>
+#include <QProcess>
+#include <QTime>
+#include <memory>
 
-    void setProgramBinary(const QString &binary);
-    void setProgramArgs(const QString &args);
-    void setProgramDisplay(const QString &display);
-    void setProgramDebug(const QString &debug);
-    void setProgramNice(const int nice);
-    void setProgramDesktop(const QString &desktop);
-    void setProgramOverride(const QString &override);
-    void setProgramWrkdir(const QString &wrkdir);
-    void setProgramLang(const QString &lang);
-    void setPreRun(const QString &path);
-    void setPostRun(const QString &path);
+#include "config.h"
+#include "core/database/versions.h"
+#include "logging.h"
+#include "prefix.h"
+#include "q4wine-lib.h"
 
-    void setUseConsole(const int console);
-    void setOverrideDll(const QString &dll_list);
-    int run();
+class WineObject : public QObject {
+  Q_OBJECT
+ public:
+  explicit WineObject(QObject *parent = nullptr);
 
-private:
-    int runSys();
-    int runScript(const QString &script_path, const bool pre_run=true);
-    void logStdout(const int status);
+  bool setPrefix(const QString &prefix);
 
-    //! This is need for libq4wine-core.so import;
-    typedef void *CoreLibPrototype (bool);
-    CoreLibPrototype *CoreLibClassPointer;
-    std::unique_ptr<corelib> CoreLib;
-    QLibrary libq4wine;
+  void setProgramBinary(const QString &binary);
+  void setProgramArgs(const QString &args);
+  void setProgramDisplay(const QString &display);
+  void setProgramDebug(const QString &debug);
+  void setProgramNice(const int nice);
+  void setProgramDesktop(const QString &desktop);
+  void setProgramOverride(const QString &override);
+  void setProgramWrkdir(const QString &wrkdir);
+  void setProgramLang(const QString &lang);
+  void setPreRun(const QString &path);
+  void setPostRun(const QString &path);
 
-    QString createEnvString(void);
-    void sendMessage(const QString &message);
+  void setUseConsole(const int console);
+  void setOverrideDll(const QString &dll_list);
+  int run();
 
-    Prefix db_prefix;
-    Logging db_logging;
+ private:
+  int runSys();
+  int runScript(const QString &script_path, const bool pre_run = true);
+  void logStdout(const int status);
 
-    QString stdout;
-    QString prefixName;
-    QString prefixPath;
-    QString prefixArch;
-    QString prefixDllPath;
-    int prefixId;
-    QString versionId;
-    QString prefixLoader;
-    QString prefixServer;
-    QString prefixBinary;
-    QString prefixRunString;
+  //! This is need for libq4wine-core.so import;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
+  QLibrary libq4wine;
 
-    QString programBinary;
-    QString programBinaryName;
-    QString programArgs;
-    QString programDisplay;
-    QString programDebug;
-    QString programWrkDir;
-    int programNice;
-    QString programDesktop;
-    QString overrideDllList;
+  QString createEnvString(void);
+  void sendMessage(const QString &message);
 
-    QString programLang;
+  Prefix db_prefix;
+  Logging db_logging;
 
-    QString prerun_script;
-    QString postrun_script;
+  QString stdout;
+  QString prefixName;
+  QString prefixPath;
+  QString prefixArch;
+  QString prefixDllPath;
+  int prefixId;
+  QString versionId;
+  QString prefixLoader;
+  QString prefixServer;
+  QString prefixBinary;
+  QString prefixRunString;
 
-    bool useConsole, logEnabled;
+  QString programBinary;
+  QString programBinaryName;
+  QString programArgs;
+  QString programDisplay;
+  QString programDebug;
+  QString programWrkDir;
+  int programNice;
+  QString programDesktop;
+  QString overrideDllList;
 
-signals:
+  QString programLang;
 
-public slots:
+  QString prerun_script;
+  QString postrun_script;
 
+  bool useConsole, logEnabled;
+
+ signals:
+
+ public slots:
 };
 
-#endif // WINEOBJECT_H
+#endif  // WINEOBJECT_H

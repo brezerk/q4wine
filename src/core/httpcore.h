@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,16 +19,15 @@
 #ifndef HTTPCORE_H
 #define HTTPCORE_H
 
-#include "config.h"
-
+#include <QCryptographicHash>
+#include <QMessageBox>
+#include <QNetworkAccessManager>
+#include <QNetworkProxy>
+#include <QNetworkReply>
+#include <QUrl>
 #include <memory>
 
-#include <QUrl>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QNetworkProxy>
-#include <QMessageBox>
- #include <QCryptographicHash>
+#include "config.h"
 
 #ifdef DEBUG
 #include <QDebug>
@@ -36,40 +35,38 @@
 
 #include "q4wine-lib.h"
 
-class HttpCore : public QObject
-{
-Q_OBJECT
-public:
-	HttpCore();
-	~HttpCore();
+class HttpCore : public QObject {
+  Q_OBJECT
+ public:
+  HttpCore();
+  ~HttpCore();
 
-	void getAppDBXMLPage(QString host, short int port, QString page);
-	QString getXMLReply();
-signals:
-	void pageReaded();
-	void requestError(QString);
-	void updateDataReadProgress(int, int);
-	void stateChanged (int);
+  void getAppDBXMLPage(QString host, short int port, QString page);
+  QString getXMLReply();
+ signals:
+  void pageReaded();
+  void requestError(QString);
+  void updateDataReadProgress(int, int);
+  void stateChanged(int);
 
-  private slots:
-  void readResponseHeader(QNetworkReply* reply);
+ private slots:
+  void readResponseHeader(QNetworkReply *reply);
 
-private:
+ private:
   std::unique_ptr<QNetworkAccessManager> http;
-	QString user_agent;
-	QString xmlreply;
-    QString page;
+  QString user_agent;
+  QString xmlreply;
+  QString page;
 
-	int getId;
-	bool aborted;
-    bool getCacheFile(QString page);
+  int getId;
+  bool aborted;
+  bool getCacheFile(QString page);
 
-    //! This is need for libq4wine-core.so import;
-    typedef void *CoreLibPrototype (bool);
-    CoreLibPrototype *CoreLibClassPointer;
-    std::unique_ptr<corelib> CoreLib;
-    QLibrary libq4wine;
-
+  //! This is need for libq4wine-core.so import;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
+  QLibrary libq4wine;
 };
 
-#endif // HTTPCORE_H
+#endif  // HTTPCORE_H

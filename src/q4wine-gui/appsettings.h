@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,12 +19,13 @@
 #ifndef APPSETTINGS_H
 #define APPSETTINGS_H
 
-#include <memory>
 #include <src/q4wine-gui/ui_AppSettings.h>
 
+#include <memory>
+
 #include "config.h"
-#include "versions.h"
 #include "q4wine-lib.h"
+#include "versions.h"
 
 #ifndef _OS_DARWIN_
 #include "sysmenu.h"
@@ -32,39 +33,38 @@
 
 #include <QSplitter>
 
-class AppSettings : public QDialog, public Ui::AppSettings
-{
-    Q_OBJECT
-    public:
-        AppSettings(QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+class AppSettings : public QDialog, public Ui::AppSettings {
+  Q_OBJECT
+ public:
+  AppSettings(QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
 
-    private slots:
-        void cmdCancel_Click();
-        void cmdOk_Click();
-        void cmdVersionManager_Click();
-        void comboProxyType_indexChanged(QString text);
-        //! \brief cmdHelo click slot.
-        void cmdHelp_Click();
-        void comboMountProfiles_currentIndexChanged(int index);
-        void cbShowTray_stateChanged ( int state );
-        void optionsTree_itemClicked ( QTreeWidgetItem *item, int);
-        void cmdDesktopMenu_Regen_Click();
-        void cmdDesktopMenu_Remove_Click();
+ private slots:
+  void cmdCancel_Click();
+  void cmdOk_Click();
+  void cmdVersionManager_Click();
+  void comboProxyType_indexChanged(QString text);
+  //! \brief cmdHelo click slot.
+  void cmdHelp_Click();
+  void comboMountProfiles_currentIndexChanged(int index);
+  void cbShowTray_stateChanged(int state);
+  void optionsTree_itemClicked(QTreeWidgetItem *item, int);
+  void cmdDesktopMenu_Regen_Click();
+  void cmdDesktopMenu_Remove_Click();
 
-    private:
-        bool eventFilter (QObject *object, QEvent *event);
-        void getLangs();
-        bool checkEntry(QString fileName, QString info, bool isFile = true);
-        void loadThemeIcons();
+ private:
+  bool eventFilter(QObject *object, QEvent *event);
+  void getLangs();
+  bool checkEntry(QString fileName, QString info, bool isFile = true);
+  void loadThemeIcons();
 
-        std::unique_ptr<QSplitter> splitter;
+  std::unique_ptr<QSplitter> splitter;
 
-        //! This is need for libq4wine-core.so import.
-        QLibrary libq4wine;
-        typedef void *CoreLibPrototype (bool);
-        CoreLibPrototype *CoreLibClassPointer;
-        std::unique_ptr<corelib> CoreLib;
-        QHash<QString, QString> lng_hash;
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
+  QHash<QString, QString> lng_hash;
 };
 
 #endif

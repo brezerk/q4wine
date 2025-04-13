@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,31 +19,31 @@
 #ifndef ICONSETTINGS_H
 #define ICONSETTINGS_H
 
-#include <memory>
-
 #include <src/q4wine-gui/ui_IconSettings.h>
 
-//Global config
+#include <memory>
+
+// Global config
 #include "config.h"
 
-//Windows
+// Windows
 #include "iconsview.h"
 #include "process.h"
 
-//Db
-#include "prefix.h"
+// Db
 #include "icon.h"
+#include "prefix.h"
 #include "src/core/database/versions.h"
 
-//Qt inc
+// Qt inc
 
-#include <QUrl>
 #include <QEvent>
-#include <QResizeEvent>
-#include <QKeyEvent>
 #include <QHeaderView>
+#include <QKeyEvent>
+#include <QResizeEvent>
 #include <QTableWidgetItem>
 #include <QTemporaryDir>
+#include <QUrl>
 
 #include "q4wine-lib.h"
 
@@ -53,86 +53,87 @@
  * \brief This class provide icon settings dialog functions.
  *
  */
-class IconSettings : public QDialog, public Ui::IconSettings
-{
-    Q_OBJECT
-    public:
-        /*! \brief This is class constructor.
-         *
-         * \param  prefix_name  Current prefix name.
-         * \param  dir_name		Current directory name.
-         * \param  icon_name	Current directory name.
-         */
-        IconSettings(QString prefix_name, QString dir_name, QString icon_name = "", QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+class IconSettings : public QDialog, public Ui::IconSettings {
+  Q_OBJECT
+ public:
+  /*! \brief This is class constructor.
+   *
+   * \param  prefix_name  Current prefix name.
+   * \param  dir_name		Current directory name.
+   * \param  icon_name	Current directory name.
+   */
+  IconSettings(QString prefix_name, QString dir_name, QString icon_name = "",
+               QWidget *parent = nullptr,
+               Qt::WindowFlags f = Qt::WindowFlags());
 
-    private slots:
-        /*! \brief This slot function adds selected dll to override list.
-         */
-        void cmdAdd_Click();
+ private slots:
+  /*! \brief This slot function adds selected dll to override list.
+   */
+  void cmdAdd_Click();
 
-        /*! \brief This slot function gets path to executable win32 binary.
-         */
-        void cmdGetProgram_Click();
+  /*! \brief This slot function gets path to executable win32 binary.
+   */
+  void cmdGetProgram_Click();
 
-        /*! \brief This slot function gets and\or extract icons.
-         */
-        void cmdGetIcon_Click();
+  /*! \brief This slot function gets and\or extract icons.
+   */
+  void cmdGetIcon_Click();
 
-        /*! \brief This slot function gets work directory.
-         */
-        void cmdGetWorkDir_Click();
+  /*! \brief This slot function gets work directory.
+   */
+  void cmdGetWorkDir_Click();
 
-        /*! \brief This slot function trigger use console state.
-         */
-        void cbUseConsole_stateChanged(int);
+  /*! \brief This slot function trigger use console state.
+   */
+  void cbUseConsole_stateChanged(int);
 
-        /*! \brief This slot for cancel button.
-         */
-        void cmdCancel_Click();
+  /*! \brief This slot for cancel button.
+   */
+  void cmdCancel_Click();
 
-        /*! \brief This slot for ok button.
-         */
-        void cmdOk_Click();
+  /*! \brief This slot for ok button.
+   */
+  void cmdOk_Click();
 
-        /*! \brief This slot for help button.
-         */
-        void cmdHelp_Click();
+  /*! \brief This slot for help button.
+   */
+  void cmdHelp_Click();
 
-        /*! \brief This slot function gets program icon.
-         */
-        void getProgramIcon(QString name);
+  /*! \brief This slot function gets program icon.
+   */
+  void getProgramIcon(QString name);
 
-        /*! \brief This slot function gets path to Pre Run scrip or binary.
-         */
-        void cmdGetPreRun_Click();
+  /*! \brief This slot function gets path to Pre Run scrip or binary.
+   */
+  void cmdGetPreRun_Click();
 
-        /*! \brief This slot function gets path to Post Run scrip or binary.
-         */
-        void cmdGetPostRun_Click();
+  /*! \brief This slot function gets path to Post Run scrip or binary.
+   */
+  void cmdGetPostRun_Click();
 
-    private:
-        QString prefix_name, dir_name, icon_name, prefix_path, iconPath;
+ private:
+  QString prefix_name, dir_name, icon_name, prefix_path, iconPath;
 
-        /*! \brief This function gets icon parms from database.
-         */
-        void getIconReccord();
-        bool eventFilter (QObject *object, QEvent *event);
+  /*! \brief This function gets icon parms from database.
+   */
+  void getIconReccord();
+  bool eventFilter(QObject *object, QEvent *event);
 
-        void loadThemeIcons();
+  void loadThemeIcons();
 
-        //! Side bar URLs list.
-        QList<QUrl> prefix_urls;
-        void updateSidebarUrls(QFileDialog *dialog);
+  //! Side bar URLs list.
+  QList<QUrl> prefix_urls;
+  void updateSidebarUrls(QFileDialog *dialog);
 
-        //! Database prefix class definition.
-        Prefix db_prefix;
-        Icon db_icon;
+  //! Database prefix class definition.
+  Prefix db_prefix;
+  Icon db_icon;
 
-        //! This is need for libq4wine-core.so import.
-        QLibrary libq4wine;
-        typedef void *CoreLibPrototype (bool);
-        CoreLibPrototype *CoreLibClassPointer;
-        std::unique_ptr<corelib> CoreLib;
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
 };
 
 #endif

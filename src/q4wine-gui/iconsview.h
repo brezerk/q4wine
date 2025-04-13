@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,40 +19,39 @@
 #ifndef ICONSVIEW_H
 #define ICONSVIEW_H
 
+#include <src/q4wine-gui/ui_IconsView.h>
+
+#include <QAbstractItemView>
+#include <QDialog>
+#include <QFileDialog>
+#include <QInputDialog>
+#include <QMessageBox>
 #include <memory>
 
 #include "config.h"
 
-#include <src/q4wine-gui/ui_IconsView.h>
-
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QInputDialog>
-#include <QAbstractItemView>
-#include <QDialog>
-
-//q4wine lib
+// q4wine lib
 #include "q4wine-lib.h"
 
-class IconsView : public QDialog, public Ui::IconsView
-{
-	Q_OBJECT
-	public:
-		IconsView(QString tmpDir, QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
-		QString selectedFile;
+class IconsView : public QDialog, public Ui::IconsView {
+  Q_OBJECT
+ public:
+  IconsView(QString tmpDir, QWidget *parent = nullptr,
+            Qt::WindowFlags f = Qt::WindowFlags());
+  QString selectedFile;
 
-	private slots:
-		void cmdCancel_Click();
-		void cmdOk_Click();
+ private slots:
+  void cmdCancel_Click();
+  void cmdOk_Click();
 
-	private:
-        //! This is need for libq4wine-core.so import;
-        typedef void *CoreLibPrototype (bool);
-            CoreLibPrototype *CoreLibClassPointer;
-            std::unique_ptr<corelib> CoreLib;
-        QLibrary libq4wine;
+ private:
+  //! This is need for libq4wine-core.so import;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
+  QLibrary libq4wine;
 
-		QString tempDirectory;
+  QString tempDirectory;
 };
 
 #endif

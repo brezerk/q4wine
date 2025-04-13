@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -21,33 +21,31 @@
 
 #include <config.h>
 
-#include <memory>
-
+#include <QDateTime>
+#include <QDebug>
 #include <QList>
+#include <QSqlError>
+#include <QSqlQuery>
 #include <QString>
 #include <QStringList>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QDebug>
 #include <QVariant>
-#include <QDateTime>
+#include <memory>
 
-class Logging
-{
-public:
-    Logging();
+class Logging {
+ public:
+  Logging();
 
-    void addLogRecord(int prefix_id, QString program, int exit, QString stdout, uint date);
+  void addLogRecord(int prefix_id, QString program, int exit, QString stdout,
+                    qint64 date);
 
-    void clearLogs(void);
-    void deleteLogs(QString prefix_name);
-    void deleteLogs(QString prefix_name, QString app_name);
-    void deleteLogs(QString prefix_name, QString app_name, QString date);
+  void clearLogs(void);
+  void deleteLogs(QString prefix_name);
+  void deleteLogs(QString prefix_name, QString app_name);
+  void deleteLogs(QString prefix_name, QString app_name, QString date);
 
-    QStringList getApps(QString prefix_name);
-    QHash<uint, int> getDates(QString prefix_name, QString app_name);
-    QString getLogs(QString prefix_name, QString app_name, QString date);
-
+  QStringList getApps(QString prefix_name);
+  QHash<qint64, int> getDates(QString prefix_name, QString app_name);
+  QString getLogs(QString prefix_name, QString app_name, QString date);
 };
 
-#endif // LOGGING_H
+#endif  // LOGGING_H

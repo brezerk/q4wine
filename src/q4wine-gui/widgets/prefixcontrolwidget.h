@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,99 +19,98 @@
 #ifndef PREFIXCONTROLWIDGET_H
 #define PREFIXCONTROLWIDGET_H
 
-//System
+// System
 #include <memory>
 
-//Global config
+// Global config
 #include "config.h"
 
-//Database
-#include "prefix.h"
+// Database
 #include "dir.h"
 #include "icon.h"
+#include "prefix.h"
 #ifndef _OS_DARWIN_
 #include "sysmenu.h"
 #endif
 
-//Qt includes
+// Qt includes
+#include <QCheckBox>
+#include <QDate>
+#include <QHeaderView>
+#include <QMenu>
 #include <QSqlQueryModel>
 #include <QTableView>
-#include <QCheckBox>
 #include <QToolBar>
-#include <QMenu>
-#include <QHeaderView>
-#include <QDate>
 
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
-//Windows
+// Windows
 #include "prefixsettings.h"
 #include "process.h"
 
-//q4wine lib
+// q4wine lib
 #include "q4wine-lib.h"
 
-class PrefixControlWidget : public QWidget
-{
-Q_OBJECT
-public:
-	explicit PrefixControlWidget(QWidget *parent = nullptr);
+class PrefixControlWidget : public QWidget {
+  Q_OBJECT
+ public:
+  explicit PrefixControlWidget(QWidget *parent = nullptr);
 
-signals:
+ signals:
 
-public slots:
-	void setDefaultFocus(QString prefixName);
-    void updateDtabaseItems();
+ public slots:
+  void setDefaultFocus(QString prefixName);
+  void updateDtabaseItems();
 
-private:
-	//! This is need for libq4wine-core.so import.
-	QLibrary libq4wine;
-	typedef void *CoreLibPrototype (bool);
-	CoreLibPrototype *CoreLibClassPointer;
-	std::unique_ptr<corelib> CoreLib;
+ private:
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
 
-	void createActions();
+  void createActions();
 
-	std::unique_ptr<QSqlQueryModel> model;
+  std::unique_ptr<QSqlQueryModel> model;
 
-	std::unique_ptr<QTableView> prefixTable;
-	std::unique_ptr<QMenu> menu;
-	std::unique_ptr<QAction> prefixAdd;
-	std::unique_ptr<QAction> prefixDelete;
-	std::unique_ptr<QAction> prefixSettings;
-	std::unique_ptr<QAction> prefixImport;
-	std::unique_ptr<QAction> prefixExport;
-    std::unique_ptr<QAction> prefixSetup;
-    std::unique_ptr<QAction> versionsSetup;
+  std::unique_ptr<QTableView> prefixTable;
+  std::unique_ptr<QMenu> menu;
+  std::unique_ptr<QAction> prefixAdd;
+  std::unique_ptr<QAction> prefixDelete;
+  std::unique_ptr<QAction> prefixSettings;
+  std::unique_ptr<QAction> prefixImport;
+  std::unique_ptr<QAction> prefixExport;
+  std::unique_ptr<QAction> prefixSetup;
+  std::unique_ptr<QAction> versionsSetup;
 
-	void updateTableModel(void);
+  void updateTableModel(void);
 
-	// Database classes
-	Prefix db_prefix;
-	Dir db_dir;
-	Icon db_icon;
+  // Database classes
+  Prefix db_prefix;
+  Dir db_dir;
+  Icon db_icon;
 #ifndef _OS_DARWIN_
-    system_menu sys_menu;
+  system_menu sys_menu;
 #endif
 
-private slots:
-	void customContextMenuRequested(const QPoint &pos);
-	void itemClicked(const QModelIndex &);
+ private slots:
+  void customContextMenuRequested(const QPoint &pos);
+  void itemClicked(const QModelIndex &);
 
-	void prefixAdd_Click(void);
-	void prefixDelete_Click(void);
-	void prefixExport_Click(void);
-	void prefixImport_Click(void);
-	void prefixSettings_Click(void);
-    void prefixSetup_Click(void);
-    void versionsSetup_Click(void);
+  void prefixAdd_Click(void);
+  void prefixDelete_Click(void);
+  void prefixExport_Click(void);
+  void prefixImport_Click(void);
+  void prefixSettings_Click(void);
+  void prefixSetup_Click(void);
+  void versionsSetup_Click(void);
 
-signals:
-	void updateDatabaseConnections();
-	void prefixIndexChanged(QString);
-    void setTabIndex (int);
+ signals:
+  void updateDatabaseConnections();
+  void prefixIndexChanged(QString);
+  void setTabIndex(int);
 };
 
-#endif // PREFIXCONTROLWIDGET_H
+#endif  // PREFIXCONTROLWIDGET_H

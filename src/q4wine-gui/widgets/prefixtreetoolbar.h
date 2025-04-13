@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,60 +19,57 @@
 #ifndef PREFIXTREETOOLBAR_H
 #define PREFIXTREETOOLBAR_H
 
-//System
+// System
 #include <memory>
 
-//Global config
+// Global config
+#include <QAction>
+#include <QToolBar>
+#include <QWidget>
+
 #include "config.h"
 #include "progress.h"
 
-#include <QWidget>
-#include <QToolBar>
-#include <QAction>
-
-//q4wine lib
+// q4wine lib
 #include "q4wine-lib.h"
-
 #include "src/core/registry.h"
 #ifndef _OS_DARWIN_
 #include "sysmenu.h"
 #endif
 
-class PrefixTreeToolbar : public QWidget
-{
-Q_OBJECT
-public:
-    explicit PrefixTreeToolbar(QWidget *parent = nullptr);
-    ~PrefixTreeToolbar();
+class PrefixTreeToolbar : public QWidget {
+  Q_OBJECT
+ public:
+  explicit PrefixTreeToolbar(QWidget *parent = nullptr);
+  ~PrefixTreeToolbar();
 
-signals:
-    void updatePrefixTree(void);
-    void expandTree(void);
-    void collapseTree(void);
+ signals:
+  void updatePrefixTree(void);
+  void expandTree(void);
+  void collapseTree(void);
 
-public slots:
+ public slots:
 
-private:
-    //! This is need for libq4wine-core.so import.
-    QLibrary libq4wine;
-    typedef void *CoreLibPrototype (bool);
-    CoreLibPrototype *CoreLibClassPointer;
-    std::unique_ptr<corelib> CoreLib;
+ private:
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
 
-    void createActions(void);
+  void createActions(void);
 
-    std::unique_ptr<QAction> treeState;
+  std::unique_ptr<QAction> treeState;
 
-    std::unique_ptr<QAction> prefixImport;
-    std::unique_ptr<QAction> prefixExport;
+  std::unique_ptr<QAction> prefixImport;
+  std::unique_ptr<QAction> prefixExport;
 
-    int tree_state;
+  int tree_state;
 
-private slots:
-    void treeState_Click();
-    void prefixImport_Click();
-    void prefixExport_Click();
-
+ private slots:
+  void treeState_Click();
+  void prefixImport_Click();
+  void prefixExport_Click();
 };
 
-#endif // PREFIXTREETOOLBAR_H
+#endif  // PREFIXTREETOOLBAR_H

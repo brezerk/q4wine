@@ -1,5 +1,5 @@
-project(Q4Wine)
+cmake_minimum_required(VERSION 3.24)
 
-cmake_minimum_required(VERSION 2.8.0)
+project(Q4Wine)
 
 add_subdirectory(src)

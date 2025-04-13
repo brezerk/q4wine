@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,100 +19,95 @@
 #ifndef LOGGINGWIDGET_H
 #define LOGGINGWIDGET_H
 
-//System
+// System
 #include <memory>
 
-//Global config
-#include "config.h"
-
-#include <QWidget>
-#include <QToolBar>
+// Global config
 #include <QAction>
+#include <QBrush>
+#include <QClipboard>
+#include <QDateTime>
+#include <QKeyEvent>
+#include <QLineEdit>
+#include <QListWidget>
+#include <QMenu>
+#include <QPalette>
+#include <QPushButton>
+#include <QSplitter>
+#include <QToolBar>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include <QListWidget>
-#include <QSplitter>
-#include <QLineEdit>
-#include <QDateTime>
-#include <QBrush>
-#include <QPalette>
-#include <QMenu>
-#include <QKeyEvent>
-#include <QClipboard>
-#include <QPushButton>
+#include <QWidget>
 
+#include "config.h"
 #include "logging.h"
 #include "prefix.h"
 
-//q4wine lib
+// q4wine lib
 #include "q4wine-lib.h"
 
 #define D_LOGGING_DISABLED 0
 #define D_LOGGING_ENABLED 1
 
+class LoggingWidget : public QWidget {
+  Q_OBJECT
+ public:
+  explicit LoggingWidget(QWidget *parent = nullptr);
+  ~LoggingWidget();
 
-class LoggingWidget : public QWidget
-{
-Q_OBJECT
-public:
-    explicit LoggingWidget(QWidget *parent = nullptr);
-    ~LoggingWidget();
+ signals:
 
+ public slots:
+  void getLogRecords(void);
 
-signals:
+ private slots:
+  void logClear_Click(void);
+  void logDelete_Click(void);
+  void logExport_Click(void);
+  void logEnable_Click(void);
 
-public slots:
-    void getLogRecords(void);
+  void logCopy_Click(void);
+  void logSelectAll_Click(void);
 
-private slots:
-    void logClear_Click(void);
-    void logDelete_Click(void);
-    void logExport_Click(void);
-    void logEnable_Click(void);
+  void treeWidget_itemClicked(QTreeWidgetItem *item, int column);
+  void treeWidget_currentItemChanged(QTreeWidgetItem *item, QTreeWidgetItem *);
 
-    void logCopy_Click(void);
-    void logSelectAll_Click(void);
+  void treeWidget_customContextMenuRequested(const QPoint &pos);
+  void listWidget_customContextMenuRequested(const QPoint &pos);
 
-    void treeWidget_itemClicked (QTreeWidgetItem * item, int column);
-    void treeWidget_currentItemChanged (QTreeWidgetItem *item, QTreeWidgetItem *);
+ private:
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
 
-    void treeWidget_customContextMenuRequested(const QPoint &pos);
-    void listWidget_customContextMenuRequested(const QPoint &pos);
+  Logging db_log;
+  Prefix db_prefix;
 
-private:
-    //! This is need for libq4wine-core.so import.
-    QLibrary libq4wine;
-    typedef void *CoreLibPrototype (bool);
-    CoreLibPrototype *CoreLibClassPointer;
-    std::unique_ptr<corelib> CoreLib;
+  std::unique_ptr<QAction> logClear;
+  std::unique_ptr<QAction> logDelete;
+  std::unique_ptr<QAction> logExport;
 
-    Logging db_log;
-    Prefix db_prefix;
+  std::unique_ptr<QAction> logSelectAll;
+  std::unique_ptr<QAction> logCopy;
 
-    std::unique_ptr<QAction> logClear;
-    std::unique_ptr<QAction> logDelete;
-    std::unique_ptr<QAction> logExport;
+  std::unique_ptr<QAction> logEnable;
+  std::unique_ptr<QLabel> logStatus;
 
-    std::unique_ptr<QAction> logSelectAll;
-    std::unique_ptr<QAction> logCopy;
+  int log_status;
 
-    std::unique_ptr<QAction> logEnable;
-    std::unique_ptr<QLabel> logStatus;
+  std::unique_ptr<QTreeWidget> treeWidget;
+  std::unique_ptr<QListWidget> listWidget;
+  std::unique_ptr<QSplitter> splitter;
 
-    int log_status;
+  // std::unique_ptr<QMenu> menu;
 
-    std::unique_ptr<QTreeWidget> treeWidget;
-    std::unique_ptr<QListWidget> listWidget;
-    std::unique_ptr<QSplitter> splitter;
+  void createActions(void);
+  void clearLogs(void);
 
-    //std::unique_ptr<QMenu> menu;
-
-    void createActions(void);
-    void clearLogs(void);
-
-protected:
-    bool eventFilter(QObject *obj, QEvent *ev);
-
+ protected:
+  bool eventFilter(QObject *obj, QEvent *ev);
 };
 
-#endif // LOGGINGWIDGET_H
+#endif  // LOGGINGWIDGET_H

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -21,13 +21,13 @@
 
 #include <src/q4wine-gui/ui_WineDriveDialog.h>
 
-#include <QMessageBox>
 #include <QFileDialog>
 #include <QLibrary>
+#include <QMessageBox>
 
 #include "config.h"
 
-//q4wine lib
+// q4wine lib
 #include "q4wine-lib.h"
 
 /*!
@@ -36,33 +36,37 @@
  * \brief This class provide wizard dialog functions.
  *
  */
-class WineDriveDialog : public QDialog, public Ui::WineDriveDialog
-{
-	Q_OBJECT
-public:
-	/*! \brief This is class constructor.
-	 *
-	 * \param  WizardType	Type of wizard scenario.
-	 * \param  var1			This variable used for different scenario actions.
-	 */
-	WineDriveDialog(QStringList removeLetters, QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
-	WineDriveDialog(QStringList removeLetters, QString driveLetter, QString drivePath, QString driveType, QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+class WineDriveDialog : public QDialog, public Ui::WineDriveDialog {
+  Q_OBJECT
+ public:
+  /*! \brief This is class constructor.
+   *
+   * \param  WizardType	Type of wizard scenario.
+   * \param  var1			This variable used for different
+   * scenario actions.
+   */
+  WineDriveDialog(QStringList removeLetters, QWidget *parent = nullptr,
+                  Qt::WindowFlags f = Qt::WindowFlags());
+  WineDriveDialog(QStringList removeLetters, QString driveLetter,
+                  QString drivePath, QString driveType,
+                  QWidget *parent = nullptr,
+                  Qt::WindowFlags f = Qt::WindowFlags());
 
-	QString getLetter();
-	QString getPath();
-	QString getType();
+  QString getLetter();
+  QString getPath();
+  QString getType();
 
-private slots:
-	void cmdOk_Click();
-	void cmdCancel_Click();
-	void cmdGetDrivePath_Click();
+ private slots:
+  void cmdOk_Click();
+  void cmdCancel_Click();
+  void cmdGetDrivePath_Click();
 
-private:
-	//! This is need for libq4wine-core.so import;
-	typedef void *CoreLibPrototype (bool);
-		CoreLibPrototype *CoreLibClassPointer;
-		std::unique_ptr<corelib> CoreLib;
-	QLibrary libq4wine;
+ private:
+  //! This is need for libq4wine-core.so import;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
+  QLibrary libq4wine;
 };
 
-#endif // WINEDRIVEDIALOG_H
+#endif  // WINEDRIVEDIALOG_H

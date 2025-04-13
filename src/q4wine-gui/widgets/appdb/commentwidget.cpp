@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -18,76 +18,76 @@
 
 #include "commentwidget.h"
 
-CommentWidget::CommentWidget(const WineAppDBComment comment, QWidget * parent) : QFrame(parent)
-{
-	setupUi(this);
-	if (comment.id>0)
-		this->setObjectName(QString("%1").arg(comment.id));
-	this->setId(comment.id);
-	this->setParentId(comment.parent_id);
-	setTopic(comment.topic, comment.id);
-	setDate(comment.author, comment.date);
-	setMessage(comment.message);
-	return;
+CommentWidget::CommentWidget(const WineAppDBComment comment, QWidget* parent)
+    : QFrame(parent) {
+  setupUi(this);
+  if (comment.id > 0) this->setObjectName(QString("%1").arg(comment.id));
+  this->setId(comment.id);
+  this->setParentId(comment.parent_id);
+  setTopic(comment.topic, comment.id);
+  setDate(comment.author, comment.date);
+  setMessage(comment.message);
+  return;
 }
 
-void CommentWidget::setTopic(QString topic, int type){
-	std::unique_ptr<LinkItemWidget> label(new LinkItemWidget(topic, 8));
-	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-	label->setBold(true);
-	label->setWordWrap(true);
-	if (parentid>0){
-		label->setEnabled(true);
-		label->setParentId(parentid);
-		connect (label.get(), SIGNAL(requestParentComment(int)), this, SIGNAL(requestParentComment(int)));
-	} else {
-		label->setEnabled(false);
-	}
+void CommentWidget::setTopic(QString topic, int type) {
+  std::unique_ptr<LinkItemWidget> label(new LinkItemWidget(topic, 8));
+  label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+  label->setBold(true);
+  label->setWordWrap(true);
+  if (parentid > 0) {
+    label->setEnabled(true);
+    label->setParentId(parentid);
+    connect(label.get(), SIGNAL(requestParentComment(int)), this,
+            SIGNAL(requestParentComment(int)));
+  } else {
+    label->setEnabled(false);
+  }
 
-	widgetLabelLayout->addWidget(label.release());
-	QPalette p(palette());
+  widgetLabelLayout->addWidget(label.release());
+  QPalette p(palette());
 
-	if (type<=0){
-		//FIXME: check for WARNING and HOWTO colors
-		if (topic.contains("warning",  Qt::CaseInsensitive)){
-			p.setColor(QPalette::Background, QColor(190, 138, 138));
-		} else {
-			p.setColor(QPalette::Background, QColor(144, 160, 177));
-		}
-	} else {
-		p.setColor(QPalette::Background, QPalette().color(QPalette::Dark));
-	}
-	widgetLabel->setPalette(p);
-	widgetLabel->setAutoFillBackground(true);
-	return;
+  if (type <= 0) {
+    // FIXME: check for WARNING and HOWTO colors
+    if (topic.contains("warning", Qt::CaseInsensitive)) {
+      p.setColor(QPalette::Base, QColor(190, 138, 138));
+    } else {
+      p.setColor(QPalette::Base, QColor(144, 160, 177));
+    }
+  } else {
+    p.setColor(QPalette::Base, QPalette().color(QPalette::Dark));
+  }
+  widgetLabel->setPalette(p);
+  widgetLabel->setAutoFillBackground(true);
+  return;
 }
 
-void CommentWidget::setDate(QString author, QString date){
-	std::unique_ptr<QLabel> label(new QLabel());
-	label->setText(QString("by %1 on %2").arg(author).arg(date));
-	widgetLabelLayout->addWidget(label.release());
-	return;
+void CommentWidget::setDate(QString author, QString date) {
+  std::unique_ptr<QLabel> label(new QLabel());
+  label->setText(QString("by %1 on %2").arg(author).arg(date));
+  widgetLabelLayout->addWidget(label.release());
+  return;
 }
 
-void CommentWidget::setMessage(QString message){
-	lblContent->setText(message);
-	return;
+void CommentWidget::setMessage(QString message) {
+  lblContent->setText(message);
+  return;
 }
 
-void CommentWidget::setId(int id){
-	this->id=id;
-	return;
+void CommentWidget::setId(int id) {
+  this->id = id;
+  return;
 }
 
-void CommentWidget::setParentId(int id){
-	this->parentid=id;
-	return;
+void CommentWidget::setParentId(int id) {
+  this->parentid = id;
+  return;
 }
 
-bool CommentWidget::isId(int id){
-	if (this->id==id){
-		return true;
-	} else {
-		return false;
-	}
+bool CommentWidget::isId(int id) {
+  if (this->id == id) {
+    return true;
+  } else {
+    return false;
+  }
 }

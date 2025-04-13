@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,62 +19,61 @@
 #ifndef ICONLISTTOOLBAR_H
 #define ICONLISTTOOLBAR_H
 
-//System
+// System
 #include <memory>
 
-//Global config
-#include "config.h"
-
-#include <QWidget>
-#include <QToolBar>
+// Global config
 #include <QAction>
 #include <QLineEdit>
+#include <QToolBar>
+#include <QWidget>
 
-//q4wine lib
+#include "config.h"
+
+// q4wine lib
 #include "q4wine-lib.h"
 
-class IconListToolbar : public QWidget
-{
-Q_OBJECT
-public:
-    explicit IconListToolbar(QWidget *parent = nullptr);
+class IconListToolbar : public QWidget {
+  Q_OBJECT
+ public:
+  explicit IconListToolbar(QWidget *parent = nullptr);
 
-signals:
-    void searchFilterChange(QString filter);
-    void changeView(int action);
+ signals:
+  void searchFilterChange(QString filter);
+  void changeView(int action);
 
-public slots:
+ public slots:
 
-private:
-    //! This is need for libq4wine-core.so import.
-    QLibrary libq4wine;
-    typedef void *CoreLibPrototype (bool);
-    CoreLibPrototype *CoreLibClassPointer;
-    std::unique_ptr<corelib> CoreLib;
+ private:
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
 
-    void createActions(void);
+  void createActions(void);
 
-    std::unique_ptr<QLineEdit> searchField;
+  std::unique_ptr<QLineEdit> searchField;
 
-    std::unique_ptr<QAction> searchClear;
-    std::unique_ptr<QAction> viewMode;
+  std::unique_ptr<QAction> searchClear;
+  std::unique_ptr<QAction> viewMode;
 
-    std::unique_ptr<QAction> zoomIn;
-    std::unique_ptr<QAction> zoomOut;
+  std::unique_ptr<QAction> zoomIn;
+  std::unique_ptr<QAction> zoomOut;
 
-    std::unique_ptr<QAction> sortAlpha;
-    std::unique_ptr<QAction> sortCreation;
+  std::unique_ptr<QAction> sortAlpha;
+  std::unique_ptr<QAction> sortCreation;
 
-    int sort_order;
-    int view_mode;
+  int sort_order;
+  int view_mode;
 
-private slots:
-    void searchClear_Click();
-    void viewMode_Click();
-    void zoomIn_Click();
-    void zoomOut_Click();
-    void sortAlpha_Click();
-    void sortCreation_Click();
+ private slots:
+  void searchClear_Click();
+  void viewMode_Click();
+  void zoomIn_Click();
+  void zoomOut_Click();
+  void sortAlpha_Click();
+  void sortCreation_Click();
 };
 
-#endif // ICONLISTTOOLBAR_H
+#endif  // ICONLISTTOOLBAR_H

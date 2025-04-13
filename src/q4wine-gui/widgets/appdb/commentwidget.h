@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -21,43 +21,42 @@
 
 #include <src/q4wine-gui/ui_CommentWidget.h>
 
-//System
+// System
 #include <memory>
 
-//Global config
+// Global config
 #include "config.h"
 
-//Qt inc
+// Qt inc
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
-//Structs
+// Structs
 #include "appdbstructs.h"
 
-//Widgets
-#include "linkitemwidget.h"
+// Widgets
 #include "lineitemwidget.h"
+#include "linkitemwidget.h"
 
-class CommentWidget : public QFrame, public Ui::CommentWidget
-{
-	Q_OBJECT
-public:
-	CommentWidget(const WineAppDBComment comment, QWidget * parent = nullptr);
-	void setId(int id);
-	void setParentId(int id);
-	bool isId(int id);
+class CommentWidget : public QFrame, public Ui::CommentWidget {
+  Q_OBJECT
+ public:
+  CommentWidget(const WineAppDBComment comment, QWidget* parent = nullptr);
+  void setId(int id);
+  void setParentId(int id);
+  bool isId(int id);
 
-signals:
-	void itemTrigged(short int, QString, int, int, int);
-	void requestParentComment(int id);
+ signals:
+  void itemTrigged(short int, QString, int, int, int);
+  void requestParentComment(int id);
 
-private:
-	void setTopic(QString topic, int type);
-	void setDate(QString author, QString date);
-	void setMessage(QString message);
-	int id;
-	int parentid;
+ private:
+  void setTopic(QString topic, int type);
+  void setDate(QString author, QString date);
+  void setMessage(QString message);
+  int id;
+  int parentid;
 };
 
-#endif // COMMENTWIDGET_H
+#endif  // COMMENTWIDGET_H

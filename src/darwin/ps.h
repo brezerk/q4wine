@@ -39,56 +39,56 @@
 #include "config.h"
 
 struct usave {
-    struct timeval u_start;
-    struct rusage u_ru;
-    struct rusage u_cru;
-    char	u_acflag;
-    char	u_valid;
+  struct timeval u_start;
+  struct rusage u_ru;
+  struct rusage u_cru;
+  char u_acflag;
+  char u_valid;
 };
 
 #define KI_PROC(ki) (&(ki)->ki_p->kp_proc)
 #define KI_EPROC(ki) (&(ki)->ki_p->kp_eproc)
 
 typedef struct thread_values {
-    struct thread_basic_info tb;
-    /* struct policy_infos schedinfo; */
-    union {
-        struct policy_timeshare_info tshare;
-        struct policy_rr_info rr;
-        struct policy_fifo_info fifo;
-    } schedinfo;
+  struct thread_basic_info tb;
+  /* struct policy_infos schedinfo; */
+  union {
+    struct policy_timeshare_info tshare;
+    struct policy_rr_info rr;
+    struct policy_fifo_info fifo;
+  } schedinfo;
 } thread_values_t;
 
 typedef struct kinfo {
-    struct kinfo_proc *ki_p; /* proc structure */
-    struct usave ki_u; /* interesting parts of user */
-    char *ki_args; /* exec args */
-    char *ki_env; /* environment */
-    task_port_t task;
-    int state;
-    int cpu_usage;
-    int curpri;
-    int basepri;
-    int swapped;
-    struct task_basic_info tasks_info;
-    struct task_thread_times_info times;
-    /* struct policy_infos schedinfo; */
-    union {
-        struct policy_timeshare_info tshare;
-        struct policy_rr_info rr;
-        struct policy_fifo_info fifo;
-    } schedinfo;
-    int	invalid_tinfo;
-    int	thread_count;
-    thread_port_array_t thread_list;
-    thread_values_t *thval;
-    int	invalid_thinfo;
+  struct kinfo_proc *ki_p; /* proc structure */
+  struct usave ki_u;       /* interesting parts of user */
+  char *ki_args;           /* exec args */
+  char *ki_env;            /* environment */
+  task_port_t task;
+  int state;
+  int cpu_usage;
+  int curpri;
+  int basepri;
+  int swapped;
+  struct task_basic_info tasks_info;
+  struct task_thread_times_info times;
+  /* struct policy_infos schedinfo; */
+  union {
+    struct policy_timeshare_info tshare;
+    struct policy_rr_info rr;
+    struct policy_fifo_info fifo;
+  } schedinfo;
+  int invalid_tinfo;
+  int thread_count;
+  thread_port_array_t thread_list;
+  thread_values_t *thval;
+  int invalid_thinfo;
 } KINFO;
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-process_list* getProcessList(void);
+process_list *getProcessList(void);
 #ifdef __cplusplus
 }
 #endif

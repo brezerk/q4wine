@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -20,26 +20,23 @@
 #define ABOUT_H
 
 #include "config.h"
-
-#include "src/q4wine-gui/ui_About.h"
-#include "src/q4wine-gui/authors.h"
-
 #include "q4wine-lib.h"
+#include "src/q4wine-gui/authors.h"
+#include "src/q4wine-gui/ui_About.h"
 
-class About : public QDialog, public Ui::About
-{
-	Q_OBJECT
-public:
-    About(QWidget * parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+class About : public QDialog, public Ui::About {
+  Q_OBJECT
+ public:
+  About(QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
 
-private:
-    //! This is need for libq4wine-core.so import.
-    QLibrary libq4wine;
-    typedef void *CoreLibPrototype (bool);
-    CoreLibPrototype *CoreLibClassPointer;
-    std::unique_ptr<corelib> CoreLib;
-private slots:
-    void cmdOk_Click();
+ private:
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
+ private slots:
+  void cmdOk_Click();
 };
 
 #endif

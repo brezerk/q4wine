@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -21,17 +21,16 @@
 
 #include <config.h>
 
-#include <memory>
-
-#include <QList>
-#include <QString>
-#include <QStringList>
-#include <QSqlQuery>
-#include <QSqlError>
 #include <QDebug>
 #include <QDir>
-#include <QVariant>
+#include <QList>
 #include <QSettings>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QString>
+#include <QStringList>
+#include <QVariant>
+#include <memory>
 
 /*!
  * \class Sysconfig
@@ -40,47 +39,46 @@
  *
  */
 struct ProviderItem {
-    int id;
-    QString name;
-    QString icon;
+  int id;
+  QString name;
+  QString icon;
 };
 
 struct SysconfigItem {
-    int id;
-    QString name;
-    QString icon;
-    QString type;
-    QString desc;
-    int provider_id;
-    bool is_installed;
+  int id;
+  QString name;
+  QString icon;
+  QString type;
+  QString desc;
+  int provider_id;
+  bool is_installed;
 };
 
-class Sysconfig
-{
+class Sysconfig {
+ public:
+  /*! \brief This is class constructor.
+   */
+  Sysconfig();
 
-  public:
-     /*! \brief This is class constructor.
-      */
-      Sysconfig();
+  QList<ProviderItem> getProviders(void) const;
+  QStringList getProviderSubtypes(int provider_id) const;
+  QList<SysconfigItem> getItems(QString provider, QString type, int sort_order,
+                                QString filter) const;
+  bool add_item(QString name, QString icon, QString desc, QString type,
+                int provider_id, bool is_installed);
+  bool drop_items(int provider_id);
 
-      QList<ProviderItem> getProviders(void) const;
-      QStringList getProviderSubtypes(int provider_id) const;
-      QList<SysconfigItem> getItems(QString provider, QString type, int sort_order, QString filter) const;
-      bool add_item(QString name, QString icon, QString desc, QString type, int provider_id, bool is_installed);
-      bool drop_items(int provider_id);
+  bool begin();
+  bool commit();
+  bool vacuum();
 
-      bool begin();
-      bool commit();
-      bool vacuum();
-
-protected:
-      /*! \brief This function executes requested query.
-      *
-      * \param  SQL Query
-      * \return Return true on success
-      */
-      bool updateQuery(QSqlQuery *sqlQuery) const;
-
+ protected:
+  /*! \brief This function executes requested query.
+   *
+   * \param  SQL Query
+   * \return Return true on success
+   */
+  bool updateQuery(QSqlQuery *sqlQuery) const;
 };
 
-#endif // SYSCONFIG_H
+#endif  // SYSCONFIG_H

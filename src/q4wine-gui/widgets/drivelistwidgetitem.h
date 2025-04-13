@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,39 +19,38 @@
 #ifndef DRIVELISTWIDGETITEM_H
 #define DRIVELISTWIDGETITEM_H
 
-//Global config
+// Global config
 #include "config.h"
 
-//Qt inc
+// Qt inc
 #include <QListWidgetItem>
 
-//q4wine lib
+// q4wine lib
 #include "q4wine-lib.h"
 
-class DriveListWidgetItem : public QObject, public QListWidgetItem
-{
-Q_OBJECT
-public:
-	DriveListWidgetItem(QListWidget * parent = nullptr, int type = QListWidgetItem::UserType);
+class DriveListWidgetItem : public QObject, public QListWidgetItem {
+  Q_OBJECT
+ public:
+  DriveListWidgetItem(QListWidget *parent = nullptr,
+                      int type = QListWidgetItem::UserType);
 
-	void setDrive(QString letter, QString path, QString type);
-	QString getLetter();
-	QString getPath();
-	QString getType();
-signals:
+  void setDrive(QString letter, QString path, QString type);
+  QString getLetter();
+  QString getPath();
+  QString getType();
+ signals:
 
-public slots:
+ public slots:
 
-private:
-	QString themeName, letter, path, type;
-	QString getDrivePic(QString driveType);
+ private:
+  QString themeName, letter, path, type;
+  QString getDrivePic(QString driveType);
 
-	//! This is need for libq4wine-core.so import.
-	QLibrary libq4wine;
-	typedef void *CoreLibPrototype (bool);
-	CoreLibPrototype *CoreLibClassPointer;
-	std::unique_ptr<corelib> CoreLib;
-
+  //! This is need for libq4wine-core.so import.
+  QLibrary libq4wine;
+  typedef void *CoreLibPrototype(bool);
+  CoreLibPrototype *CoreLibClassPointer;
+  std::unique_ptr<corelib> CoreLib;
 };
 
-#endif // DRIVELISTWIDGETITEM_H
+#endif  // DRIVELISTWIDGETITEM_H

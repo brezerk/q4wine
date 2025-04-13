@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2021 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *   Copyright (C) 2008-2025 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -18,18 +18,10 @@
 
 #include "table.h"
 
-Table::Table()
-{
-}
+Table::Table() {}
 
-bool Table::load(){
-    return true;
-}
+bool Table::load() { return true; }
 
-bool Table::save(){
-    return true;
-}
+bool Table::save() { return true; }
 
-bool Table::remove(){
-    return true;
-}
+bool Table::remove() { return true; }
