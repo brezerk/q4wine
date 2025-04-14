@@ -17,12 +17,12 @@
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="141"/>
         <source>Utility for Wine applications and prefixes management.</source>
-        <translation>Een hulpprogramma voor wineprogramma- en profielbeheer.</translation>
+        <translation>Een hulpprogramma voor Wine-programma- en profielbeheer.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="206"/>
         <source>Translation authors</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertalers</translation>
     </message>
     <message>
         <source>Authors</source>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="188"/>
         <source>Translation</source>
-        <translation>Vertalers</translation>
+        <translation>Vertalingen</translation>
     </message>
     <message>
         <source>Thanks</source>
@@ -209,7 +209,7 @@
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="177"/>
         <source>App Icon:</source>
-        <translation>Programmapictogram:</translation>
+        <translation>Pictogram:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="191"/>
@@ -239,17 +239,17 @@
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="257"/>
         <source>Use tray icon.</source>
-        <translation>Systeemvakpictogram tonen</translation>
+        <translation>Toon een systeemvakpictogram.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="273"/>
         <source>Minimize to tray at startup.</source>
-        <translation>Geminimaliseerd opstarten</translation>
+        <translation>Geminimaliseerd automatisch opstarten</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="289"/>
         <source>Minimize to tray at application startup.</source>
-        <translation>Geminimaliseerd opstarten</translation>
+        <translation>Geminimaliseerd opstarten na openen</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="299"/>
@@ -724,7 +724,7 @@
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
+        <translation>Venster</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="66"/>
@@ -752,7 +752,7 @@
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="111"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1041"/>
         <source>Wine Browsers</source>
-        <translation>Winebrowsers</translation>
+        <translation>Wine-browsers</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="90"/>
@@ -777,7 +777,7 @@
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="133"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1056"/>
         <source>Wine Drives</source>
-        <translation>Wineschijven</translation>
+        <translation>Wine-schijven</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="105"/>
@@ -785,7 +785,7 @@
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="136"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1058"/>
         <source>Desktop Paths</source>
-        <translation>Bureaubladlocaties</translation>
+        <translation>Maplocaties</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="111"/>
@@ -898,12 +898,12 @@
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="575"/>
         <source>Wine Colors Theme</source>
-        <translation>Winethema</translation>
+        <translation>Wine-thema</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="593"/>
         <source>To change the color theme in Wine dialogs, select one of the following options:</source>
-        <translation>Kies een van onderstaande opties om het thema van winevensters te wijzigen:</translation>
+        <translation>Kies een van onderstaande opties om het thema van Wine-vensters te wijzigen:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="603"/>
@@ -922,7 +922,7 @@
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="620"/>
         <source>Use current &amp;Qt colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidige &amp;Qt-kleuren gebruiken</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="662"/>
@@ -949,7 +949,7 @@
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="840"/>
         <source>Post run script will be executed after the Prefix update. Wine environment settings will be exported as well.</source>
-        <translation>Onderstaand script wordt uitgevoerd na het bijwerken van het profiel. Ook worden de wine-omgevingsvariabelen geëxporteerd.</translation>
+        <translation>Onderstaand script wordt uitgevoerd na het bijwerken van het profiel. Ook worden de Wine-omgevingsvariabelen geëxporteerd.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="877"/>
@@ -1051,7 +1051,7 @@
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="3034"/>
         <source>Wine Desktop Paths:</source>
-        <translation>Wine-bureaubladlocaties:</translation>
+        <translation>Wine-locaties:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="3079"/>
@@ -1086,7 +1086,7 @@
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="3520"/>
         <source>Joystick Axes Mapping:</source>
-        <translation>Joystick-astoewijzing</translation>
+        <translation>Joystick-astoewijzing:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="3625"/>
@@ -5059,7 +5059,7 @@ Raadpleeg voor meer informatie de handleiding.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/winetricks.cpp" line="260"/>
         <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
-        <translation>‘%1’ is kan niet worden aangemaakt. Controleer de maprechten.</translation>
+        <translation>‘%1’ kan niet worden aangemaakt. Controleer de maprechten.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/winetricks.cpp" line="334"/>
