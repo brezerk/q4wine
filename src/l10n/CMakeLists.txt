@@ -11,7 +11,7 @@ foreach (LANG ${LINGUAS})
     )
     SET (QM_L10N
         ${QM_L10N}
-        ${CMAKE_SOURCE_DIR}/src/l10n/q4wine_${LANG}.qm
+        ${CMAKE_BINARY_DIR}/src/l10n/q4wine_${LANG}.qm
     )
     set(I18N_TRANSLATED_LANGUAGES
         ${I18N_TRANSLATED_LANGUAGES}
