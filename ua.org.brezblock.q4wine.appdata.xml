@@ -5,13 +5,22 @@
 
   <name>q4wine</name>
   <summary>Utility for Wine applications and prefixes management</summary>
-  <summary xml:lang="cs">Užitečný program pro správu Wine aplikací a prefixů</summary>
-  <summary xml:lang="de">Werkzeug zur Verwaltung der Wine-Anwendungen und -Präfixe</summary>
+  <summary xml:lang="cs">Užitečný program pro programy Wine a správu předpon</summary>
+  <summary xml:lang="de">Werkzeug zur Verwaltung von Wine-Anwendungen und Präfixen</summary>
   <summary xml:lang="en">Utility for Wine applications and prefixes management</summary>
-  <summary xml:lang="es">Utilidad para el manejo de aplicaciones y prefijos de wine</summary>
-  <summary xml:lang="it">Programma per gestire le applicazioni con Wine e i prefissi</summary>
-  <summary xml:lang="ru">Программа для настройки приложений и управления префиксами Wine</summary>
+  <summary xml:lang="es">Utilidad para el manejo de aplicaciones y prefijos de Wine</summary>
+  <summary xml:lang="it">Programma per gestire le applicazioni e i prefissi di Wine</summary>
   <summary xml:lang="uk">Програма для налаштування програм та керування префіксами Wine</summary>
+  <summary xml:lang="fa">>برنامه ای برای مدیریت پیشوند ها و برنامه های اجرا شونده تحت شراب.</summary>
+  <summary xml:lang="he">כלי לניהול יישומים וקידומות של Wine.</summary>
+  <summary xml:lang="zh_CN">用于 Wine 应用程序与前缀的管理实用程序。</summary>
+  <summary xml:lang="nl">Een hulpprogramma voor Wine-programma- en profielbeheer</summary>
+  <summary xml:lang="af">Nutsprogram vir Wine programmatuur en om Wine-tuistes te bestuur</summary>
+  <summary xml:lang="pl">Zarządzanie programami Wine i prefiksami</summary>
+  <summary xml:lang="fr">Utilitaire pour la gestion des préfixes et des applications Wine</summary>
+  <summary xml:lang="pt_BR">Utilitário para gerência de prefixos e programas do Wine</summary>
+  <summary xml:lang="ja.ts">Wine 上のアプリケーションと実行環境を管理するユーティリティです。</summary>
+  <summary xml:lang="zh_TW">Wine 應用程式與前綴管理的實用工具。</summary>
 
   <translation type="qt">q4wine/l10n/q4wine</translation>
 
@@ -42,6 +51,8 @@
   <developer_name>Oleksii S. Malakhov</developer_name>
 
   <releases>
+    <release version="1.4.1" date="2025-04-19" />
+    <release version="1.4.0" date="2025-04-13" />
     <release version="1.3.13" date="2020-09-10" />
     <release version="1.3.12" date="2020-02-08" />
     <release version="1.3.11" date="2019-01-02" />

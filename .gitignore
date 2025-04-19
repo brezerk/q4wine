@@ -25,6 +25,7 @@ q4wine-helper
 doc/
 src/version.h
 *build*/
+pkg/repo/
 CMakeFiles/
 CMakeCache.txt
 CMakeLists.txt.*
