@@ -6,6 +6,16 @@ Q4Wine is a Qt GUI for Wine that helps manage Wine prefixes and installed applic
 
 # Changelog
 
+## Version 1.4.1
+
+Updated:
+
+- Updated Dutch translation (#203);
+
+Fixed:
+
+- qm files are created in `CMAKE_BINARY_DIR` (#204);
+
 ## Version 1.4.0
 
 Initial Qt6 release
@@ -17,7 +27,7 @@ Updated:
 - Wine AppDB browser is marked as obsolete and disabled by default;
 - Cleanup legacy code and files;
 - PrefixSetupWizzard: Added missing win8, win8.1, win10, win11 options versions [PR #197];
-- Update zh_CN translation [PR #197];
+- Update `zh_CN` translation [PR #197];
 
 ## Version 1.3.13
 
@@ -27,7 +37,7 @@ Fixed:
 - Misspelled Color Theme Settings [BUG-155];
 - CMake warning [BUG-158];
 - XDG Base Directory Specification support [BUG-178];
-- Use LC_ALL instead of LANG to force override applciation locale [BUG-165];
+- Use `LC_ALL` instead of LANG to force override applciation locale [BUG-165];
 
 ## Version 1.3.12
 
@@ -70,7 +80,7 @@ Updated:
 ## Version 1.3.10
 Fixed:
 
-- cppcheck: Uninitialized struct member: item.provider_id;
+- cppcheck: Uninitialized struct member: `item.provider_id`;
 
 Add:
 
@@ -90,7 +100,7 @@ Added:
 ## Version 1.3.8
 Updated:
 
-- gui_sudo missing in Ubuntu 18.04 [BUG-120];
+- `gui_sudo` missing in Ubuntu 18.04 [BUG-120];
 
 Fixed:
 
@@ -203,8 +213,8 @@ Added:
 - Use icons from the system icon theme where possible [BUG-22];
 - Replace default raster icons with SVG analogs [BUG-21];
 - Extend App icons zoom sizes up to 512px [BUG-21];
-- Allow to choose *.svg and *.svgz images for icons [BUG-21];
-- Add an app option to switch default/ambiance-light/ambiance-dark icon [BUG-21];
+- Allow to choose `*.svg` and `*.svgz` images for icons [BUG-21];
+- Add an app option to switch `default/ambiance-light/ambiance-dark` icon [BUG-21];
 - Use ISO country codes for translation files (required for: pootle, gentoo ebuild);
 - Use native language name for language selection;
 
@@ -221,13 +231,13 @@ Added:
 
 Fixed:
 
-- QtSystemApplication library detection does not work well for Qt5 [BUG-64];
+- `QtSystemApplication` library detection does not work well for Qt5 [BUG-64];
 
 ## Version 1.2-r1
 
 Added:
 
-- Deleting prefix does not remove prefix folder in ~/.local/share/wineprefixes [BUG-43];
+- Deleting prefix does not remove prefix folder in `~/.local/share/wineprefixes` [BUG-43];
 
 Fixed:
 
@@ -240,11 +250,11 @@ Fixed:
 - Do not force startpage open;
 - add custom dll overrides outside from the list [BUG-60];
 - Revert "Kill dead online components" breaks the Qt5 build [BUG-62];
-- Do not build wineappdb core components if -DWITH_WINEAPPDB=OFF is set [BUG-62];
+- Do not build wineappdb core components if `-DWITH_WINEAPPDB=OFF` is set [BUG-62];
 - 'Run -> Browser' on Programs window not work [BUG-54];
 - QT5: Winetricks application list fails to refresh and causes segfault on quit [BUG-53];
 - Make -DQT5 flag visible during cmake build and runtime;
-- CLI: -v/-h options must not trigger nor database check nor wizard startup;
+- CLI: `-v/-h` options must not trigger nor database check nor wizard startup;
 - Remove useless and confusing appdb startup dialog;
 
 ## Version 1.1-r2
@@ -272,8 +282,8 @@ Added:
 
 Fixed:
 
-- Gentoo: QtSingleApplication package not found with DWITH_SYSTEM_SINGLEAPP=ON [BUG-39];
-- FreeBSD\clang error: use of undeclared identifier 'LC_*' [BUG-41];
+- Gentoo: QtSingleApplication package not found with `-DWITH_SYSTEM_SINGLEAPP=ON` [BUG-39];
+- FreeBSD\clang error: use of undeclared identifier `LC_*` [BUG-41];
 
 ## Version 1.0-r3
 
@@ -409,19 +419,19 @@ pointing to the mount point and $WINEPREFIX/dosdevices/${DRIVE}:: pointing to
 the Image file;
 Apparently this is needed so that the images are recognized as a proper
 cd/dvd drive; by aleric
-- Added cmake option WITH_SYSTEM_SINGLEAPP to compile q4wine with system
+- Added cmake option `WITH_SYSTEM_SINGLEAPP` to compile q4wine with system
 installed QtSingleAppliaction library;
-- Added cmake option RELEASE for translation and developing purposes;
-- Added cmake option LINGUAS which specify languages to build;
+- Added cmake option `RELEASE` for translation and developing purposes;
+- Added cmake option `LINGUAS` which specify languages to build;
 - "make translations" target; Use it for translation updates;
-- Added cmake option LIBS_ENTRY_PATH to allow override for libs install directory;
+- Added cmake option `LIBS_ENTRY_PATH` to allow override for libs install directory;
 - Implementation for feature request 3079649 (Prefixes list sorting);
 
 Fixed:
 
 - mount images in read only mode (ro); by aleric
 - removed media drive option in prefix settings dialog;
-- Fixed quote bugs for WINEDEBUG and DISPLAY variables, reported by Carlos Ignacio Ruax;
+- Fixed quote bugs for `WINEDEBUG` and `DISPLAY` variables, reported by Carlos Ignacio Ruax;
 - English fixes by Steven Panek;
 - Fake drive can create unlinked desktop folders;
 - Move File System item upper in Fake Drive Settings dialog;
@@ -431,7 +441,7 @@ Fixed:
 Added:
 
 - Czech translation (thx to Pavel Fric);
-- Added cmake option MANPAGE_ENTRY_PATH;
+- Added cmake option `MANPAGE_ENTRY_PATH`;
 - User now can open system terminal from q4wine programs tab menu for selected dir;
 - Winetricks plugin updates;
 - Added minimize to tray at startup option;
@@ -441,7 +451,7 @@ Added:
 
 Fixed:
 
-- warning: ignoring return value of ‘int chdir(const char*)’, declared with attribute warn_unused_result;
+- warning: ignoring return value of `int chdir(const char*)`, declared with attribute `warn_unused_result`;
 - Fixed unescaped characters in q4wine-helper (q4wine-Bugs-3059156);
 - Fixed run dialog bug for gut trunk (q4wine-Bugs-3075628);
 - Fixed bug in q4wine-helper while run games like: Fallout 1\2, Truck Simulator e.t.c.
@@ -571,7 +581,7 @@ Added:
 - Added q4wine-cli console utility for wine applications and prefixes management.
 - Added libq4wine implementation;
 - Added translation file for Portuguese (Brazil) by Marcio Moraes;
-- Added *.xpm filter to icon import patten;
+- Added `*.xpm` filter to icon import patten;
 - Added http proxy support for winetricks;
 - Improved icon display widget;
 - Added Drag & Drop support;
@@ -608,11 +618,11 @@ New:
 
 - Added Sidebar Urls for Run and IconSettings file dialogs;
 - Wine Dlls path autodetections; (If not work on your system -- plz mail to me ;) )
-- You can disable icotools support in q4wine by adding -DWITH_ICOTOOLS=OFF to cmake;
-- Winetools support is disabled by default. You can enable it by adding -DWITH_WINETOOLS=ON to cmake args;
-- All developer stuff is disabled by default. You can enable it by adding -DWITH_DEVELOP_STUFF=ON to cmake args;
+- You can disable icotools support in q4wine by adding `-DWITH_ICOTOOLS=OFF` to cmake;
+- Winetools support is disabled by default. You can enable it by adding `-DWITH_WINETOOLS=ON` to `cmake` args;
+- All developer stuff is disabled by default. You can enable it by adding `-DWITH_DEVELOP_STUFF=ON` to `cmake` args;
 - New database class;
-- kdesu\gksu support;
+- `kdesu`\`gksu` support;
 
 Fixed:
 
@@ -638,7 +648,6 @@ New:
 - Make install now install q4wine.desktop and icons;
 - Added basic shortcuts;
 - q4wine now save and restore size and position of main window;
-core:
 
 Fixed:
 
@@ -728,14 +737,14 @@ Fixed:
 - Fixed icons show update at context menu request;
 - Prefix setup bug with mount point and mount drive;
 - Numerous fixes and code reorganization;
-- Prefix Settings abd Prefix Wizard now use /etc/fstab instead of /proc/diskstats;
+- Prefix Settings abd Prefix Wizard now use `/etc/fstab` instead of `/proc/diskstats`;
 - Fixed QTranslator i18n settings load;
 
 ## Version 0.108
 
 New:
 
-- Fake drive wizard creates 'autostart' folder.
+- Fake drive wizard creates `autostart` folder.
 
 Fixed:
 
@@ -746,7 +755,7 @@ Fixed:
 New:
 
 - Updated Ukrainian translation.
-- Added en_us dummy translation (need professional English translation).
+- Added `en_us` dummy translation (need professional English translation).
 
 Fixed:
 
