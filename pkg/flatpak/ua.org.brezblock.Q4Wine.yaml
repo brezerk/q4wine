@@ -1,202 +1,153 @@
-app-id: ua.org.brezblock.Q4Wine
-branch: master
-runtime: org.kde.Sdk
-runtime-version: "6.8"
+id: ua.org.brezblock.q4wine
+runtime: org.kde.Platform
 sdk: org.kde.Sdk
-#inherit-extensions:
-#  - org.freedesktop.Platform.GL
-#  - org.freedesktop.Platform.Timezones
-#  - org.freedesktop.Platform.GStreamer
-#  - org.freedesktop.Platform.VAAPI.Intel
-#  - org.freedesktop.Sdk.Extension
-#    #  - org.freedesktop.Platform.Compat.i386
+runtime-version: 6.8
+base: org.winehq.Wine
+base-version: stable-24.08
 command: q4wine
+rename-icon: q4wine
+rename-desktop-file: q4wine.desktop
 finish-args:
-  - --share=network
-  - --share=ipc
-  - --socket=x11
-  - --socket=wayland
-  - --device=dri
+  - --allow=devel # For Wine crash handling
   - --allow=multiarch
-  - --env=PATH=/app/bin:/app/lib/wine/bin:/app/lib/wine-32bit/bin:/app/lib/32bit/wine:/usr/lib/wine/bin:/usr/lib/wine-32bit/bin:/usr/bin:/usr/lib/32bit/bin
-  - --env=XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/share
-  - --env=WINEDEBUG=-all
+  - --device=all
+  - --env=GST_PLUGIN_SYSTEM_PATH=/app/lib32/gstreamer-1.0:/app/lib/gstreamer-1.0:/usr/lib/i386-linux-gnu/gstreamer-1.0:/usr/lib/x86_64-linux-gnu/gstreamer-1.0
+  - --env=WINEDLLPATH=/app/dlls/lib32:/app/dlls/lib:/app/lib32/wine/wined3d:/app/lib/wine/wined3d
   - --env=WINEPREFIX=/var/data/wine
-#  - --filesystem=host
-#  - --persist=.config
+  - --filesystem=xdg-desktop
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+  - --filesystem=xdg-music
+  - --filesystem=xdg-pictures
+  - --filesystem=xdg-videos
+  - --persist=.wine
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=wayland
+  - --socket=x11
+  - --system-talk-name=org.freedesktop.NetworkManager
+  - --system-talk-name=org.freedesktop.UDisks2
+  - --talk-name=org.freedesktop.Notifications
 cleanup:
-  - /share/doc
-  - /share/man
   - '*.a'
   - '*.la'
-cleanup-commands: # https://github.com/flatpak/flatpak-builder/issues/233
-  - rm -rf /app/{include,lib/{cmake,mkspecs,pkgconfig}}
-build-options:
-  cflags: -O2 -g -fstack-protector-strong -D_FORTIFY_SOURCE=2
-  cxxflags: -O2 -g -fstack-protector-strong -D_FORTIFY_SOURCE=2
-  ldflags: -fstack-protector-strong -Wl,-z,relro,-z,now
-  env:
-    V: '1'
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+  - /lib32/cmake
+  - /lib32/pkgconfig
+  - /share/doc
+  - /share/man
+inherit-extensions:
+  - org.freedesktop.Platform.Compat.i386
+  - org.freedesktop.Platform.ffmpeg_full.i386
+  - org.freedesktop.Platform.ffmpeg-full
+  - org.freedesktop.Platform.GL32
+  - org.freedesktop.Platform.VAAPI.Intel.i386
+  - org.winehq.Wine.DLLs
+  - org.winehq.Wine.gecko
+  - org.winehq.Wine.mono
+add-extensions:
+  com.valvesoftware.Steam.Utility:
+    subdirectories: true
+    directory: utils
+    versions: stable;beta;test;master
+    add-ld-path: lib
+    merge-dirs: share/vulkan/explicit_layer.d;share/vulkan/implicit_layer.d;
+    no-autodownload: true
+    autodelete: false
 
 modules:
-# Since Wine 7.22 openldap 2.5.13 binary is bundled now
-#  - name: openldap
-#    config-opts:
-#      - --disable-static
-#    sources:
-#      # OpenLDAP required for Wine
-#      # Due to the licencing of BDB v6.* we must stick with OpenLDAP 2.4.46
-#      # FTP isn't support in flatpak & flatpak-builder so we use he https mirror
-#      # https://www.openldap.org/software/download/OpenLDAP/openldap-release/
-#      - type: archive
-#        url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.46.tgz
-#        sha256: 9a90dcb86b99ae790ccab93b7585a31fbcbeec8c94bf0f7ab0ca0a87ea0c4b2d
-#    modules:
-#      - name: BDB
-#        config-opts:
-#          - --enable-compat185
-#          - --enable-shared
-#          - --enable-static
-#          - --enable-cxx
-#          - --enable-dbm
-#          - --enable-stl
-#        make-install-args:
-#          - LIBSO_LIBS=-lpthread
-#        sources:
-#            # Bereley DB required for OpenLDAP
-#            # Due to licencing v6.* will not work with later versions of OpenLDAP
-#            # and for that matter a lot of other software. Stick to v5.3.28
-#            # http://www.oracle.com/technetwork/products/berkeleydb/downloads/index-082944.html
-#          - type: archive
-#            url: http://download.oracle.com/berkeley-db/db-5.3.28.tar.gz
-#            sha256: e0a992d740709892e81f9d93f06daf305cf73fb81b545afe72478043172c3628
-#          - type: patch
-#            path: files/db-5.1.29-rename-atomic-compare-exchange.patch
-#          - type: script
-#            dest-filename: configure
-#            commands:
-#            - "./dist/configure $@"
-
   - name: q4wine
-    buildsystem: simple
-    build-commands:
-      - mkdir build &&
-        cd build &&
-        cmake .. -DCMAKE_INSTALL_PREFIX=/app -DWITH_ICOUTILS=OFF &&
-        make -j4 &&
-        make install
-    sources:
-      - type: archive
-        url: "https://github.com/brezerk/q4wine/archive/refs/tags/v1.4.1.tar.gz"
-        sha256: 6d1f2bfbca4b783dabc7748ba34e9856c25fc4fca469e7f78fd2442797096e68
-  - name: wine64
-    only-arches:
-      - x86_64
-#    buildsystem: autotools
+    buildsystem: cmake-ninja
     config-opts:
-      - --enable-win64
-      - --disable-win16
-      - --disable-tests
-      - --with-x
-      - --with-pulse
-      - --with-dbus
-      - --without-hal
-      - --without-oss
-      - --with-ldap
-      - --without-cups
-      - --without-curses
-      - --without-capi
-      - --without-glu
-      - --without-gphoto
-      - --without-gsm
-      - --without-netapi
-      - --without-opencl
-      - --without-pcap
-      - --without-udev
-      - --without-v4l
-    cleanup:
-      - /share/man
-      - /share/applications
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DLIBS_ENTRY_PATH=/app/lib
+      - -DWITH_DBUS=ON
+    post-install:
+      - install -Dm644 -t /app/share/appdata/ pkg/flatpak/${FLATPAK_ID}.appdata.xml
+    sources:
+      - type: git
+        url: https://github.com/brezerk/q4wine.git
+        tag: v1.4.1
+        commit: a9b8bbe8e8bd1171a8d4c7270b09bd3eaae79526
+    modules:
+
+      - name: fuseiso
+        sources:
+          - type: archive
+            url: https://downloads.sourceforge.net/fuseiso/fuseiso-20070708.tar.bz2
+            sha256: 8b242e077d66cd20900c59c905ff90b4c934b0613dd5a20facb0b1260ac5fd88
+        modules:
+
+          - name: libfuse
+            config-opts:
+              - --enable-lib
+            build-options:
+              env:
+                MOUNT_FUSE_PATH: /app/bin
+                INIT_D_PATH: /app/etc/init.d
+                UDEV_RULES_PATH: /app/etc/udev/rules.d
+            sources:
+              - type: archive
+                url: https://github.com/libfuse/libfuse/releases/download/fuse-3.17.1/fuse-3.17.1.tar.gz
+                sha256: 2d8ae87a4525fbfa1db5e5eb010ff6f38140627a7004554ed88411c1843d51b2
+              - type: shell
+                commands:
+                  - ./makeconf.sh
+              #- type: patch
+              #  paths:
+              #    - fuse-closefrom.patch
+            cleanup:
+              - /etc
+              - /include
+              - /lib/pkgconfig
+
+      - name: icoutils
+        sources:
+          - type: archive
+            url: http://savannah.nongnu.org/download/icoutils/icoutils-0.32.3.tar.bz2
+            sha256: 17abe02d043a253b68b47e3af69c9fc755b895db68fdc8811786125df564c6e0
+
+  - name: konsole
+    buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: "https://dl.winehq.org/wine/source/9.0/wine-9.0.1.tar.xz"
-        sha256: fb822bcd2b470b91d8f7aecaabc899aae7edf510a5f0a8307f8d6f7687fb6cf0
-  - name: wine32
-    only-arches:
-      - i386
-#    buildsystem: autotools
-    config-opts:
-      - --disable-win64
-      - --disable-win16
-      - --disable-tests
-      - --with-x
-      - --with-pulse
-      - --with-dbus
-      - --without-hal
-      - --without-oss
-      - --with-ldap
-      - --without-cups
-      - --without-curses
-      - --without-capi
-      - --without-glu
-      - --without-gphoto
-      - --without-gsm
-      - --without-netapi
-      - --without-opencl
-      - --without-pcap
-      - --without-udev
-      - --without-v4l
+        url: https://github.com/KDE/konsole/archive/refs/tags/v25.04.0.tar.gz
+        sha256: 8112dddd00576d5ec2d2eb9eee8dad3f2ab59a6b168f3beb4abb17c6d8c2daf3
     cleanup:
-      - /share/man
       - /share/applications
-    sources:
-      - type: archive
-        url: "https://dl.winehq.org/wine/source/9.0/wine-9.0.1.tar.xz"
-        sha256: fb822bcd2b470b91d8f7aecaabc899aae7edf510a5f0a8307f8d6f7687fb6cf0
-  - name: wine-gecko
+      - /share/khotkeys
+      - /share/knotifications6
+      - /share/kservices6
+      - /share/kservicetypes6
+      - /share/metainfo
+
+    # FIXME: Replace with embedded support for sanbox env?
+  - name: q4wine-app-environment
     buildsystem: simple
     build-commands:
-      - install -D --target-directory=/app/usr/share/wine/gecko/ wine-gecko-*.msi
-    no-make-install: true
+      - mkdir -p /app/utils /app/share/vulkan
+      - ln -srv /app/{utils/,}share/vulkan/explicit_layer.d
+      - ln -srv /app/{utils/,}share/vulkan/implicit_layer.d
+      - install -Dm755 pkexec.sh /app/bin/pkexec
+      - install -Dm755 sudo.sh /app/bin/sudo
+      - ln -s /usr/bin/false /app/bin/mount
+      - ln -s /usr/bin/false /app/bin/umount
     sources:
-      - type: file
-        only-arches:
-          - x86_64
-        url: https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86_64.msi
-        sha256: e590b7d988a32d6aa4cf1d8aa3aa3d33766fdd4cf4c89c2dcc2095ecb28d066f
-      - type: file
-        url: https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86.msi
-        sha256: 26cecc47706b091908f7f814bddb074c61beb8063318e9efc5a7f789857793d6
+      - type: script
+        dest-filename: pkexec.sh
+        commands:
+          - |
+            zenity --error --no-wrap \
+                   --title="Command unavailable" \
+                   --text="Running $0 is not possible in flatpak sandbox; command was: $*"
+            exit 1
+      - type: script
+        dest-filename: sudo.sh
+        commands:
+          - |
+            echo "Running sudo is not possible in flatpak sandbox; command was: $*" > /dev/stderr
+            exit 1
 
-  - name: wine-mono
-    buildsystem: simple
-    build-commands:
-      - install -D --target-directory=/app/usr/share/wine/mono/ wine-mono-*.msi
-    no-make-install: true
-    sources:
-    - type: file
-      url: https://dl.winehq.org/wine/wine-mono/10.0.0/wine-mono-10.0.0-x86.msi
-      sha256: dbaca73e5d09f7a3a7c157ad04289af9ca47c3ced7012d46544a607046902b87
-
-  - name: cabextract
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: https://www.cabextract.org.uk/cabextract-1.11.tar.gz
-        sha256: b5546db1155e4c718ff3d4b278573604f30dd64c3c5bfd4657cd089b823a3ac6
-# FIXME
-#  - name: winetricks
-#    buildsystem: simple
-#    build-commands:
-#      - make
-#      - make install
-#    sources:
-#      - type: archive
-#        url: https://github.com/Winetricks/winetricks/archive/20180513.tar.gz
-#        sha256: 626aff64e3d93698704b0b668225d5504fd8ef556e3834f569058deaeafada8e
-  - name: icoutils
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: http://savannah.nongnu.org/download/icoutils/icoutils-0.32.3.tar.bz2
-        sha256: 17abe02d043a253b68b47e3af69c9fc755b895db68fdc8811786125df564c6e0
