@@ -82,8 +82,13 @@ modules:
         modules:
 
           - name: libfuse
+            buildsystem: meson
             config-opts:
-              - --enable-lib
+              - -Duseroot=false
+              - -Dexamples=false
+              - -Dtests=false
+              - -Dinitscriptdir=""
+              - -Ddisable-mtab=true
             build-options:
               env:
                 MOUNT_FUSE_PATH: /app/bin
@@ -93,12 +98,6 @@ modules:
               - type: archive
                 url: https://github.com/libfuse/libfuse/releases/download/fuse-3.17.1/fuse-3.17.1.tar.gz
                 sha256: 2d8ae87a4525fbfa1db5e5eb010ff6f38140627a7004554ed88411c1843d51b2
-              - type: shell
-                commands:
-                  - ./makeconf.sh
-              #- type: patch
-              #  paths:
-              #    - fuse-closefrom.patch
             cleanup:
               - /etc
               - /include
