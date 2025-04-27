@@ -102,8 +102,9 @@ int main(int argc, char *argv[]) {
   QString l10nPath = QString("%1/l10n").arg(QString::fromUtf8(APP_BUILD));
 #endif
 
-  qtt.load(CoreLib->getTranslationLang(), l10nPath);
-  app.installTranslator(&qtt);
+  if (qtt.load(CoreLib->getTranslationLang(), l10nPath)) {
+    app.installTranslator(&qtt);
+  }
 
   QTextStream Qcout(stdout);
   int result, startState = 0;

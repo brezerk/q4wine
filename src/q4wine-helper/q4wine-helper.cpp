@@ -72,8 +72,9 @@ int main(int argc, char *argv[]) {
   QString l10nPath = QString("%1/l10n").arg(QString::fromUtf8(APP_BUILD));
 #endif
 
-  qtt.load(CoreLib->getTranslationLang(), l10nPath);
-  app.installTranslator(&qtt);
+  if(qtt.load(CoreLib->getTranslationLang(), l10nPath)) {
+    app.installTranslator(&qtt);
+  }
 
   if (!CoreLib->isConfigured()) {
     QErr << "[EE] App is not configured! Rerun wizard, or delete Q4Wine broken "
