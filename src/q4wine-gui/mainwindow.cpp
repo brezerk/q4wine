@@ -1046,7 +1046,11 @@ void MainWindow::mainRaiseAndShine() {
   if (!isVisible()) setMeVisible(true);
   if (isMinimized()) showNormal();
   this->activateWindow();
-};
+  statusBar()->showMessage(
+    tr("Only one instance of %1 can be launched at same time.")
+    .arg(APP_SHORT_NAME)
+  );
+}
 
 void MainWindow::showNotifycation(const QString &header,
                                   const QString &message) {

@@ -208,8 +208,6 @@ int main(int argc, char *argv[]) {
   mainWin.show();
   mainWin.raise();
   mainWin.activateWindow();
-  QObject::connect(&app, SIGNAL(messageReceived(const QString &)), &mainWin,
-                   SLOT(messageReceived(const QString &)));
   QObject::connect(&app, &SingleApplication::instanceStarted, &mainWin,
                    &MainWindow::mainRaiseAndShine);
   result = app.exec();
