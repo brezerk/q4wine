@@ -328,7 +328,7 @@ void IconListWidget::mousePressEvent(QMouseEvent *event) {
   }
 
   if (QApplication::keyboardModifiers() == Qt::CTRL) {
-    std::unique_ptr<QListWidgetItem> item(this->itemAt(event->x(), event->y()));
+    std::unique_ptr<QListWidgetItem> item(itemAt(event->pos()));
     if (item.get()) {
       QListWidget::itemClicked(item.get());
       if (!item->isSelected()) {

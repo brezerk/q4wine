@@ -1057,7 +1057,7 @@ void MainWindow::showNotifycation(const QString &header,
 #ifdef WITH_DBUS
   QVariantList args;
   args << QString(APP_NAME);
-  args << QVariant(QVariant::UInt);
+  args << QVariant::fromValue(123u);
   args << QVariant("q4wine");
   args << QString("%1: %2").arg(APP_NAME).arg(header);
   args << message;
