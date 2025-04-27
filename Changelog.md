@@ -6,6 +6,17 @@ Q4Wine is a Qt GUI for Wine that helps manage Wine prefixes and installed applic
 
 # Changelog
 
+## Version 1.4.2
+
+Fixed:
+
+- Qt6 deprecation warnings;
+- No such signal QComboBox::currentIndexChanged(const QString);
+- Ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result];
+- No such signal SingleApplication::messageReceived(const QString);
+- Wine variables are not parsed properly for wine prefix kill action;
+- Invalid qm file location for cmake 4.x and qt6.9.x (I hope so);
+
 ## Version 1.4.1
 
 Updated:
