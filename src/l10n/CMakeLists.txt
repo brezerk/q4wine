@@ -9,10 +9,6 @@ foreach (LANG ${LINGUAS})
         ${TS_FILES}
         ${CMAKE_SOURCE_DIR}/src/l10n/q4wine_${LANG}.ts
     )
-    SET (QM_L10N
-        ${QM_L10N}
-        ${CMAKE_BINARY_DIR}/src/l10n/q4wine_${LANG}.qm
-    )
     set(I18N_TRANSLATED_LANGUAGES
         ${I18N_TRANSLATED_LANGUAGES}
         ${LANG}
@@ -34,6 +30,7 @@ set_source_files_properties(
 qt_add_translations(q4wine
     TS_FILES ${TS_FILES}
     SOURCES ${Q4WINE_CLI_SOURCES} ${Q4WINE_GUI_UI_SOURCES} ${Q4WINE_GUI_SOURCES} ${Q4WINE_HELPER_SOURCES} ${Q4WINE_LIB_SOURCES} ${PLUGINS_GUI_SOURCES} ${PLUGINS_GUI_UI_SOURCES}
+    QM_FILES_OUTPUT_VARIABLE QM_L10N
 )
 
 IF( RELEASE )
