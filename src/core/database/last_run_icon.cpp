@@ -83,49 +83,49 @@ bool Last_Run_Icon::addIcon(const QString &cmdargs, const QString &exec,
       ":nice, :lang);");
 
   if (cmdargs.isEmpty()) {
-    query.bindValue(":cmdargs", QVariant(QVariant::String));
+    query.bindValue(":cmdargs", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":cmdargs", cmdargs);
   }
 
   if (exec.isEmpty()) {
-    query.bindValue(":exec", QVariant(QVariant::String));
+    query.bindValue(":exec", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":exec", exec);
   }
 
   if (override.isEmpty()) {
-    query.bindValue(":override", QVariant(QVariant::String));
+    query.bindValue(":override", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":override", override);
   }
 
   if (winedebug.isEmpty()) {
-    query.bindValue(":winedebug", QVariant(QVariant::String));
+    query.bindValue(":winedebug", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":winedebug", winedebug);
   }
 
   if (useconsole.isEmpty()) {
-    query.bindValue(":useconsole", QVariant(QVariant::String));
+    query.bindValue(":useconsole", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":useconsole", useconsole);
   }
 
   if (display.isEmpty()) {
-    query.bindValue(":display", QVariant(QVariant::String));
+    query.bindValue(":display", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":display", display);
   }
 
   if (wrkdir.isEmpty()) {
-    query.bindValue(":wrkdir", QVariant(QVariant::String));
+    query.bindValue(":wrkdir", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wrkdir", wrkdir);
   }
 
   if (desktop.isEmpty()) {
-    query.bindValue(":desktop", QVariant(QVariant::String));
+    query.bindValue(":desktop", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":desktop", desktop);
   }
@@ -133,7 +133,7 @@ bool Last_Run_Icon::addIcon(const QString &cmdargs, const QString &exec,
   query.bindValue(":nice", nice);
 
   if (lang.isEmpty()) {
-    query.bindValue(":lang", QVariant(QVariant::String));
+    query.bindValue(":lang", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":lang", lang);
   }

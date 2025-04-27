@@ -267,61 +267,61 @@ bool Prefix::addPrefix(const QString &prefix_name, const QString &prefix_path,
   query.bindValue(":prefix_name", prefix_name);
 
   if (prefix_path.isEmpty()) {
-    query.bindValue(":prefix_path", QVariant(QVariant::String));
+    query.bindValue(":prefix_path", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":prefix_path", prefix_path);
   }
 
   if (wine_exec.isEmpty()) {
-    query.bindValue(":wine_exec", QVariant(QVariant::String));
+    query.bindValue(":wine_exec", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_exec", wine_exec);
   }
 
   if (wine_server.isEmpty()) {
-    query.bindValue(":wine_server", QVariant(QVariant::String));
+    query.bindValue(":wine_server", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_server", wine_server);
   }
 
   if (wine_loader.isEmpty()) {
-    query.bindValue(":wine_loader", QVariant(QVariant::String));
+    query.bindValue(":wine_loader", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_loader", wine_loader);
   }
 
   if (wine_dllpath.isEmpty()) {
-    query.bindValue(":wine_dllpath", QVariant(QVariant::String));
+    query.bindValue(":wine_dllpath", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_dllpath", wine_dllpath);
   }
 
   if (cdrom_mount.isEmpty()) {
-    query.bindValue(":cdrom_mount", QVariant(QVariant::String));
+    query.bindValue(":cdrom_mount", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":cdrom_mount", cdrom_mount);
   }
 
   if (arch == QObject::tr("Default")) {
-    query.bindValue(":arch", QVariant(QVariant::String));
+    query.bindValue(":arch", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":arch", arch);
   }
 
   if (mountpoint_windrive.isEmpty()) {
-    query.bindValue(":mountpoint_windrive", QVariant(QVariant::String));
+    query.bindValue(":mountpoint_windrive", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":mountpoint_windrive", mountpoint_windrive);
   }
 
   if (run_string.isEmpty()) {
-    query.bindValue(":run_string", QVariant(QVariant::String));
+    query.bindValue(":run_string", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":run_string", run_string);
   }
 
   if (version_id.isEmpty()) {
-    query.bindValue(":version_id", QVariant(QVariant::String));
+    query.bindValue(":version_id", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":version_id", version_id);
   }
@@ -354,61 +354,61 @@ bool Prefix::updatePrefix(
   query.bindValue(":old_prefix_name", old_prefix_name);
 
   if (prefix_path.isEmpty()) {
-    query.bindValue(":prefix_path", QVariant(QVariant::String));
+    query.bindValue(":prefix_path", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":prefix_path", prefix_path);
   }
 
   if (wine_exec.isEmpty()) {
-    query.bindValue(":wine_exec", QVariant(QVariant::String));
+    query.bindValue(":wine_exec", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_exec", wine_exec);
   }
 
   if (wine_server.isEmpty()) {
-    query.bindValue(":wine_server", QVariant(QVariant::String));
+    query.bindValue(":wine_server", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_server", wine_server);
   }
 
   if (wine_loader.isEmpty()) {
-    query.bindValue(":wine_loader", QVariant(QVariant::String));
+    query.bindValue(":wine_loader", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_loader", wine_loader);
   }
 
   if (wine_dllpath.isEmpty()) {
-    query.bindValue(":wine_dllpath", QVariant(QVariant::String));
+    query.bindValue(":wine_dllpath", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_dllpath", wine_dllpath);
   }
 
   if (cdrom_mount.isEmpty()) {
-    query.bindValue(":cdrom_mount", QVariant(QVariant::String));
+    query.bindValue(":cdrom_mount", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":cdrom_mount", cdrom_mount);
   }
 
   if (arch == QObject::tr("Default")) {
-    query.bindValue(":arch", QVariant(QVariant::String));
+    query.bindValue(":arch", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":arch", arch);
   }
 
   if (mountpoint_windrive.isEmpty()) {
-    query.bindValue(":mountpoint_windrive", QVariant(QVariant::String));
+    query.bindValue(":mountpoint_windrive", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":mountpoint_windrive", mountpoint_windrive);
   }
 
   if (run_string.isEmpty()) {
-    query.bindValue(":run_string", QVariant(QVariant::String));
+    query.bindValue(":run_string", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":run_string", run_string);
   }
 
   if (version_id.isEmpty()) {
-    query.bindValue(":version_id", QVariant(QVariant::String));
+    query.bindValue(":version_id", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":version_id", version_id);
   }

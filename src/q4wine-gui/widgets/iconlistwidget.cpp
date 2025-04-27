@@ -182,7 +182,7 @@ void IconListWidget::setDisplayType(int type) {
   return;
 }
 
-void IconListWidget::startDrag() {
+void IconListWidget::startDrag(Qt::DropActions supportedAction) {
 #ifndef _OS_DARWIN_
   if (this->prefixName.isEmpty()) return;
 
@@ -350,7 +350,7 @@ void IconListWidget::mouseMoveEvent(QMouseEvent *event) {
       int distance = (event->pos() - startPos).manhattanLength();
       if (distance > QApplication::startDragDistance())
         if (currentItem() && !drag) {
-          emit startDrag();
+          emit startDrag(IconListWidget::supportedDropActions());
           drag = true;
         }
       return;

@@ -514,25 +514,25 @@ bool Icon::addIcon(const QString &cmdargs, const QString &exec,
       ":postrun);");
 
   if (cmdargs.isEmpty()) {
-    query.bindValue(":cmdargs", QVariant(QVariant::String));
+    query.bindValue(":cmdargs", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":cmdargs", cmdargs);
   }
 
   if (exec.isEmpty()) {
-    query.bindValue(":exec", QVariant(QVariant::String));
+    query.bindValue(":exec", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":exec", exec);
   }
 
   if (icon_path.isEmpty()) {
-    query.bindValue(":icon_path", QVariant(QVariant::String));
+    query.bindValue(":icon_path", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":icon_path", icon_path);
   }
 
   if (desc.isEmpty()) {
-    query.bindValue(":desc", QVariant(QVariant::String));
+    query.bindValue(":desc", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":desc", desc);
   }
@@ -541,49 +541,49 @@ bool Icon::addIcon(const QString &cmdargs, const QString &exec,
   query.bindValue(":prefix_dir_name", prefix_name);
 
   if (dir_name.isEmpty()) {
-    query.bindValue(":dir_name", QVariant(QVariant::String));
+    query.bindValue(":dir_name", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":dir_name", dir_name);
   }
 
   if (name.isEmpty()) {
-    query.bindValue(":name", QVariant(QVariant::String));
+    query.bindValue(":name", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":name", name);
   }
 
   if (override.isEmpty()) {
-    query.bindValue(":override", QVariant(QVariant::String));
+    query.bindValue(":override", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":override", override);
   }
 
   if (winedebug.isEmpty()) {
-    query.bindValue(":winedebug", QVariant(QVariant::String));
+    query.bindValue(":winedebug", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":winedebug", winedebug);
   }
 
   if (useconsole.isEmpty()) {
-    query.bindValue(":useconsole", QVariant(QVariant::String));
+    query.bindValue(":useconsole", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":useconsole", useconsole);
   }
 
   if (display.isEmpty()) {
-    query.bindValue(":display", QVariant(QVariant::String));
+    query.bindValue(":display", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":display", display);
   }
 
   if (wrkdir.isEmpty()) {
-    query.bindValue(":wrkdir", QVariant(QVariant::String));
+    query.bindValue(":wrkdir", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wrkdir", wrkdir);
   }
 
   if (desktop.isEmpty()) {
-    query.bindValue(":desktop", QVariant(QVariant::String));
+    query.bindValue(":desktop", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":desktop", desktop);
   }
@@ -591,19 +591,19 @@ bool Icon::addIcon(const QString &cmdargs, const QString &exec,
   query.bindValue(":nice", nice);
 
   if (lang.isEmpty()) {
-    query.bindValue(":lang", QVariant(QVariant::String));
+    query.bindValue(":lang", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":lang", lang);
   }
 
   if (prerun.isEmpty()) {
-    query.bindValue(":prerun", QVariant(QVariant::String));
+    query.bindValue(":prerun", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":prerun", prerun);
   }
 
   if (postrun.isEmpty()) {
-    query.bindValue(":postrun", QVariant(QVariant::String));
+    query.bindValue(":postrun", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":postrun", postrun);
   }
@@ -729,67 +729,67 @@ bool Icon::updateIcon(const QString &cmdargs, const QString &exec,
         "NULL and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
   }
   if (override.isEmpty()) {
-    query.bindValue(":override", QVariant(QVariant::String));
+    query.bindValue(":override", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":override", override);
   }
 
   if (winedebug.isEmpty()) {
-    query.bindValue(":winedebug", QVariant(QVariant::String));
+    query.bindValue(":winedebug", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":winedebug", winedebug);
   }
 
   if (useconsole.isEmpty()) {
-    query.bindValue(":useconsole", QVariant(QVariant::String));
+    query.bindValue(":useconsole", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":useconsole", useconsole);
   }
 
   if (display.isEmpty()) {
-    query.bindValue(":display", QVariant(QVariant::String));
+    query.bindValue(":display", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":display", display);
   }
 
   if (cmdargs.isEmpty()) {
-    query.bindValue(":cmdargs", QVariant(QVariant::String));
+    query.bindValue(":cmdargs", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":cmdargs", cmdargs);
   }
 
   if (exec.isEmpty()) {
-    query.bindValue(":exec", QVariant(QVariant::String));
+    query.bindValue(":exec", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":exec", exec);
   }
 
   if (icon_path.isEmpty()) {
-    query.bindValue(":icon_path", QVariant(QVariant::String));
+    query.bindValue(":icon_path", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":icon_path", icon_path);
   }
 
   if (desc.isEmpty()) {
-    query.bindValue(":desc", QVariant(QVariant::String));
+    query.bindValue(":desc", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":desc", desc);
   }
 
   if (name.isEmpty()) {
-    query.bindValue(":name", QVariant(QVariant::String));
+    query.bindValue(":name", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":name", name);
   }
 
   if (wrkdir.isEmpty()) {
-    query.bindValue(":wrkdir", QVariant(QVariant::String));
+    query.bindValue(":wrkdir", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wrkdir", wrkdir);
   }
 
   if (desktop.isEmpty()) {
-    query.bindValue(":desktop", QVariant(QVariant::String));
+    query.bindValue(":desktop", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":desktop", desktop);
   }
@@ -797,19 +797,19 @@ bool Icon::updateIcon(const QString &cmdargs, const QString &exec,
   query.bindValue(":nice", nice);
 
   if (lang.isEmpty()) {
-    query.bindValue(":lang", QVariant(QVariant::String));
+    query.bindValue(":lang", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":lang", lang);
   }
 
   if (prerun.isEmpty()) {
-    query.bindValue(":prerun", QVariant(QVariant::String));
+    query.bindValue(":prerun", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":prerun", prerun);
   }
 
   if (postrun.isEmpty()) {
-    query.bindValue(":postrun", QVariant(QVariant::String));
+    query.bindValue(":postrun", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":postrun", postrun);
   }

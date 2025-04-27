@@ -122,31 +122,31 @@ bool Version::save() {
   query.bindValue(":name", name_);
 
   if (wine_exec_.isEmpty()) {
-    query.bindValue(":wine_exec", QVariant(QVariant::String));
+    query.bindValue(":wine_exec", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_exec", wine_exec_);
   }
 
   if (wine_server_.isEmpty()) {
-    query.bindValue(":wine_server", QVariant(QVariant::String));
+    query.bindValue(":wine_server", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_server", wine_server_);
   }
 
   if (wine_loader_.isEmpty()) {
-    query.bindValue(":wine_loader", QVariant(QVariant::String));
+    query.bindValue(":wine_loader", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_loader", wine_loader_);
   }
 
   if (wine_dllpath32_.isEmpty()) {
-    query.bindValue(":wine_dllpath32", QVariant(QVariant::String));
+    query.bindValue(":wine_dllpath32", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_dllpath32", wine_dllpath32_);
   }
 
   if (wine_dllpath64_.isEmpty()) {
-    query.bindValue(":wine_dllpath64", QVariant(QVariant::String));
+    query.bindValue(":wine_dllpath64", QVariant(QMetaType::fromType<QString>()));
   } else {
     query.bindValue(":wine_dllpath64", wine_dllpath64_);
   }

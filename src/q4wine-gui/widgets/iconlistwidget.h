@@ -114,7 +114,7 @@ class IconListWidget : public QListWidget {
  private slots:
   void showContents(QString filterString);
 
-  void startDrag();
+  void startDrag(Qt::DropActions supportedAction);
   void startDrop(QList<QUrl> files);
 
   void itemClicked(QListWidgetItem *item);
