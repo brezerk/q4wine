@@ -5,7 +5,7 @@ SET( DESKTOP_GUI_ENTRY
 )
 
 SET( APPDATA_ENTRY
-    ${CMAKE_SOURCE_DIR}/ua.org.brezblock.q4wine.appdata.xml
+    ${CMAKE_SOURCE_DIR}/pkg/flatpak/ua.org.brezblock.q4wine.appdata.xml
 )
 
 SET ( Q4WINE_RESOURCE_SOURCES
