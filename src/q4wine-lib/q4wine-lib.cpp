@@ -1701,15 +1701,13 @@ bool corelib::killWineServer(const QString &prefix_path, const QString &pid) {
       while (!e_line.isNull()) {
         qDebug() << e_line;
         foreach (const QString &env, e_line.split(QChar('\0'))) {
-          /*
-          //FIXME:
-          QRegularExpression rx_env("^(.*)=(.*)?");
-          if (rx_env.indexIn(env) != -1){
-              if (keywords.contains(rx_env.cap(1))){
-                  args << env;
-              }
-          }
-          */
+            QRegularExpression rx_env("^(.*)=(.*)?");
+            QRegularExpressionMatch match = rx_env.match(env);
+            if (match.hasMatch()) {
+                if (keywords.contains(match.captured(1))) {
+                    args << env;
+                }
+            }
         }
         e_line = e_in.readLine();
       }
