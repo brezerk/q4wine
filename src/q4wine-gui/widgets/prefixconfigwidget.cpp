@@ -49,6 +49,8 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) : QWidget(parent) {
   cbPrefixes->setSizePolicy(QSizePolicy::MinimumExpanding,
                             QSizePolicy::Maximum);
   cbPrefixes->setMinimumWidth(180);
+  connect(cbPrefixes.get(), SIGNAL(currentTextChanged(QString)), this,
+          SIGNAL(prefixIndexChanged(QString)));
 
   treeToolBar->addWidget(cbPrefixes.get());
   treeToolBar->addAction(prefixManage.release());
