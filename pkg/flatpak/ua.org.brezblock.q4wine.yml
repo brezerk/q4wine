@@ -1,7 +1,7 @@
 id: ua.org.brezblock.q4wine
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: 6.8
+runtime-version: 6.9
 base: org.winehq.Wine
 base-version: stable-24.08
 command: q4wine
@@ -45,7 +45,6 @@ inherit-extensions:
   - org.freedesktop.Platform.ffmpeg-full
   - org.freedesktop.Platform.GL32
   - org.freedesktop.Platform.VAAPI.Intel.i386
-  - org.winehq.Wine.DLLs
   - org.winehq.Wine.gecko
   - org.winehq.Wine.mono
 add-extensions:
@@ -65,13 +64,16 @@ modules:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DLIBS_ENTRY_PATH=/app/lib
       - -DWITH_DBUS=ON
-    post-install:
-      - install -Dm644 -t /app/share/appdata/ pkg/flatpak/${FLATPAK_ID}.appdata.xml
     sources:
       - type: git
         url: https://github.com/brezerk/q4wine.git
-        tag: v1.4.1
-        commit: a9b8bbe8e8bd1171a8d4c7270b09bd3eaae79526
+        tag: v1.4.2
+        commit: f506d89976c427d4878ac968db448bf7dd8cdbe2
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/brezerk/q4wine/releases/latest
+          tag-query: .tag_name
+          timestamp-query: .published_at
     modules:
 
       - name: fuseiso
@@ -82,13 +84,8 @@ modules:
         modules:
 
           - name: libfuse
-            buildsystem: meson
             config-opts:
-              - -Duseroot=false
-              - -Dexamples=false
-              - -Dtests=false
-              - -Dinitscriptdir=""
-              - -Ddisable-mtab=true
+              - --enable-lib
             build-options:
               env:
                 MOUNT_FUSE_PATH: /app/bin
@@ -96,8 +93,14 @@ modules:
                 UDEV_RULES_PATH: /app/etc/udev/rules.d
             sources:
               - type: archive
-                url: https://github.com/libfuse/libfuse/releases/download/fuse-3.17.1/fuse-3.17.1.tar.gz
-                sha256: 2d8ae87a4525fbfa1db5e5eb010ff6f38140627a7004554ed88411c1843d51b2
+                url: https://github.com/libfuse/libfuse/archive/fuse-2.9.9.tar.gz
+                sha256: e57a24721177c3b3dd71cb9239ca46b4dee283db9388d48f7ccd256184982194
+              - type: shell
+                commands:
+                  - ./makeconf.sh
+              - type: patch
+                paths:
+                  - fuse-closefrom.patch
             cleanup:
               - /etc
               - /include
@@ -149,4 +152,3 @@ modules:
           - |
             echo "Running sudo is not possible in flatpak sandbox; command was: $*" > /dev/stderr
             exit 1
-
