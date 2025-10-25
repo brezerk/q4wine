@@ -990,6 +990,9 @@ p, li { white-space: pre-wrap; }
                <property name="textInteractionFlags">
                 <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
                </property>
+               <property name="textFormat">
+                <set>Qt::PlainText</set>
+               </property>
               </widget>
              </item>
             </layout>
