@@ -54,6 +54,18 @@ struct ConnectionInfo {
 };
 
 class SingleApplicationPrivate : public QObject {
+ public:
+#if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+  //! Q4Wine: use System V shared memory where available. The crash recovery
+  //! in the constructor (attach + delete) only frees System V segments; a
+  //! stale POSIX segment left by a crash made every later start exit silently.
+  static QNativeIpcKey ipcKey(const QString &name) {
+    if (QSharedMemory::isKeyTypeSupported(QNativeIpcKey::Type::SystemV))
+      return QSharedMemory::legacyNativeKey(name, QNativeIpcKey::Type::SystemV);
+    return QNativeIpcKey(name);
+  }
+#endif
+
   Q_OBJECT
  public:
   enum ConnectionType : quint8 {
