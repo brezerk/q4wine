@@ -25,7 +25,7 @@ MainWindow::MainWindow(const int startState, const QString &run_binary,
 #ifdef RELEASE
   libq4wine.setFileName(_CORELIB_PATH_);
 #else
-  libq4wine.setFileName("../q4wine-lib/libq4wine-core");
+  libq4wine.setFileName(QString("%1/q4wine-lib/libq4wine-core").arg(QString::fromUtf8(APP_BUILD)));
 #endif
   if (!libq4wine.load()) {
     libq4wine.load();
