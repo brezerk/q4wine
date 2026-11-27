@@ -66,7 +66,7 @@ AppSettings::AppSettings(QWidget *parent, Qt::WindowFlags f)
   connect(cmdVersionManager, SIGNAL(clicked()), this,
           SLOT(cmdVersionManager_Click()));
 
-  connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this,
+  connect(comboProxyType, SIGNAL(currentTextChanged(QString)), this,
           SLOT(comboProxyType_indexChanged(QString)));
 
   // Installing event filters for get buttons
