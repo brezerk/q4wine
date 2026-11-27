@@ -22,17 +22,15 @@ get_directory_property(Q4WINE_GUI_SOURCES DIRECTORY ../q4wine-gui DEFINITION Q4W
 get_directory_property(Q4WINE_HELPER_SOURCES DIRECTORY ../q4wine-helper DEFINITION Q4WINE_HELPER_SOURCES)
 get_directory_property(Q4WINE_LIB_SOURCES DIRECTORY ../q4wine-lib DEFINITION Q4WINE_LIB_SOURCES)
 
-set_source_files_properties(
-    ${TS_FILES}
-    PROPERTIES OUTPUT_LOCATION "${CMAKE_SOURCE_DIR}/src/l10n"
-)
-
 qt_add_translations(q4wine
     TS_FILES ${TS_FILES}
     SOURCES ${Q4WINE_CLI_SOURCES} ${Q4WINE_GUI_UI_SOURCES} ${Q4WINE_GUI_SOURCES} ${Q4WINE_HELPER_SOURCES} ${Q4WINE_LIB_SOURCES} ${PLUGINS_GUI_SOURCES} ${PLUGINS_GUI_UI_SOURCES}
     QM_FILES_OUTPUT_VARIABLE QM_L10N
-    QM_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/src/l10n
 )
+# .qm files are generated in the build tree (where development builds load
+# them from, APP_BUILD/l10n) and installed from there. QM_OUTPUT_DIRECTORY
+# only exists since Qt 6.9, so writing them into the source tree broke
+# `make install` with older Qt 6 versions.
 
 IF( RELEASE )
     install(FILES ${QM_L10N} DESTINATION ${L10N_ENTRY_PATH})
