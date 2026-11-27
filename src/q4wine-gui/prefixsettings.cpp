@@ -132,7 +132,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget *parent,
   connect(cmdClnWineLibs, SIGNAL(clicked()), this,
           SLOT(cmdClnWineLibs_Click()));
 
-  connect(comboVersionList, SIGNAL(currentIndexChanged(const QString)), this,
+  connect(comboVersionList, SIGNAL(currentTextChanged(QString)), this,
           SLOT(comboVersionList_Change(const QString)));
   connect(comboTemplatesList, SIGNAL(currentIndexChanged(const int)), this,
           SLOT(comboTemplatesList_Change(int)));
@@ -200,7 +200,7 @@ PrefixSettings::PrefixSettings(QWidget *parent, Qt::WindowFlags f)
   connect(txtPrefixName, SIGNAL(textChanged(QString)), this,
           SLOT(setDefPath(QString)));
 
-  connect(comboVersionList, SIGNAL(currentIndexChanged(const QString)), this,
+  connect(comboVersionList, SIGNAL(currentTextChanged(QString)), this,
           SLOT(comboVersionList_Change(const QString)));
   connect(comboTemplatesList, SIGNAL(currentIndexChanged(const int)), this,
           SLOT(comboTemplatesList_Change(int)));

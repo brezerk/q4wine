@@ -77,7 +77,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget *parent, Qt::WindowFlags f)
   connect(cmdNext, SIGNAL(clicked()), this, SLOT(nextWizardPage()));
   connect(cmdBack, SIGNAL(clicked()), this, SLOT(previosWizardPage()));
   connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
-  connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this,
+  connect(comboProxyType, SIGNAL(currentTextChanged(QString)), this,
           SLOT(comboProxyType_indexChanged(QString)));
   connect(comboMountProfiles, SIGNAL(currentIndexChanged(int)), this,
           SLOT(comboMountProfiles_currentIndexChanged(int)));
